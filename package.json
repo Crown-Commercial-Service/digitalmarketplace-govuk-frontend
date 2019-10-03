@@ -1,0 +1,11 @@
+{
+  "name": "dmp-frontend",
+  "version": "0.0.1",
+  "description": "Digital Marketplace Frontend - Containing GOV.UK Frontned (Sass,JavaScrip, nunjucks templates) and Digital Marketplace custom components",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "",
+  "license": "ISC"
+}
