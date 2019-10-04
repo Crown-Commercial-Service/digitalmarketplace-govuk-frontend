@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test",
-    "build": "gulp --silent"
+    "build": "standard && gulp --silent"
   },
   "author": "",
   "license": "MIT",
@@ -15,6 +15,7 @@
     "govuk-frontend": "^2.13.0",
     "gulp": "^4.0.2",
     "gulp-debug": "^4.0.0",
-    "node-emoji": "^1.10.0"
+    "node-emoji": "^1.10.0",
+    "standard": "^14.3.1"
   }
 }
