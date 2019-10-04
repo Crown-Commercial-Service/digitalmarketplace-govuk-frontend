@@ -5,15 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test",
-    "clean": "gulp clean --silent"
+    "build": "gulp --silent"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
     "del": "^5.1.0",
     "govuk-frontend": "^2.13.0",
     "gulp": "^4.0.2",
+    "gulp-debug": "^4.0.0",
     "node-emoji": "^1.10.0"
   }
 }
