@@ -4,12 +4,17 @@
   "description": "Digital Marketplace Frontend - Containing GOV.UK Frontned (Sass,JavaScrip, nunjucks templates) and Digital Marketplace custom components",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "build": "gulp --silent"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "chalk": "^2.4.2",
+    "del": "^5.1.0",
     "govuk-frontend": "^2.13.0",
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-debug": "^4.0.0",
+    "node-emoji": "^1.10.0"
   }
 }
