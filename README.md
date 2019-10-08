@@ -49,7 +49,7 @@ To be notified when there’s a new release:
 
 - [watch the digitalmarketplace-govuk-frontend Github repository](https://help.github.com/en/articles/watching-and-unwatching-repositories)
 
-Find out how to [update with npm](https://github.com/alphagov/digitalmarketplace-govuk-frontend/blob/master/docs/installation/updating-with-npm.md).
+Find out how to [update with npm](docs/installation/updating-with-npm.md).
 
 ## Licence
 
