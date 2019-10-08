@@ -5,14 +5,14 @@ Digital Marketplace GOV.UK Frontend ·
 
 This repository does two things:
 
-- provides a central repository for custom components used in Digital Marketplace.
-- Imports GOV.UK Frontend and serves it to Digital Marketplace Frontend applications
+- it provides a central repository for custom components used in the Digital Marketplace
+- it imports GOV.UK Frontend and serves it to Digital Marketplace frontend applications
   where they can consume GOV.UK Frontend and all the custom components in a single dependency
 
 The problem we are trying to solve:
 
-- its difficult to ensure that all our applications are using the same version of GOV.UK Frontend and digitalmarketplace-frontend-toolkit (which is being replaced).
-- its difficult to ensure that we are only importing and using css/js for components we are actually using and not been removed.
+- it is difficult to ensure that all our applications are using the same version of GOV.UK Frontend and digitalmarketplace-frontend-toolkit (which is being replaced).
+- it is difficult to ensure that we are only importing and using css/js for components we are actually using and not been removed.
 
 ## GOV.UK Frontend
 
@@ -34,7 +34,7 @@ Digital Marketplace GOV.UK Frontend contains the code you need to start building
 
 ### Contact the Digital Marketplace team
 
-Digital Marketplace GOV.UK Frontend is maintained by a team at Government Digital Service. If you want to know more about Digital Marketplace GOV.UK Frontend, please email the [Digital Marketplace team](mailto:digital-marketplace-development@digital.cabinet-office.gov.uk)
+Digital Marketplace GOV.UK Frontend is maintained by a team at Government Digital Service. If you want to know more about Digital Marketplace GOV.UK Frontend, please email the [Digital Marketplace team](mailto:digital-marketplace-development@digital.cabinet-office.gov.uk).
 
 ## Quick start
 
