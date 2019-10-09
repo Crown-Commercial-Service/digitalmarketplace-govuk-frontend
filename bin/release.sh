@@ -1,5 +1,13 @@
 #!/bin/sh
+#
+# Usage: release.sh [--dry-run]
 set -e
+
+if [[ "$1" == "--dry-run" ]]; then
+  DRY_RUN=true
+  NPM_ARGS=" --dry-run"
+  echo "Starting a dry run release..."
+fi
 
 echo "Starting a release..."
 echo " "
@@ -29,7 +37,7 @@ echo "📦  Publishing package..."
 
 # Try publishing
 cd package
-npm publish
+npm publish $NPM_ARGS
 echo "🗒 Package published!"
 cd ..
 
@@ -38,6 +46,10 @@ read -r -p "Would you like to logout of NPM? [y/N] " continue_prompt
 if [[ $continue_prompt == 'y' ]]; then
     echo "Logging out of NPM"
     npm logout
+fi
+
+if $DRY_RUN; then
+  exit 0
 fi
 
 # Extract tag version from ./package/package.json
