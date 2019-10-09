@@ -48,7 +48,7 @@
 
 12. Checkout **master** and pull the latest changes.
 
-13. Log into npm, using team [credentials](https://github.com/alphagov/design-system-team-credentials/tree/master/npm/govuk-patterns-and-tools).
+13. Log into npm, using team [credentials](https://github.com/alphagov/digitalmarketplace-credentials/tree/master/pass/npmjs.org).
 
 14. Run `npm run release`, you will be prompted to continue or cancel.
 
