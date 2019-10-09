@@ -6,8 +6,10 @@
     "node": "10.15.1"
   },
   "scripts": {
-    "test": "npm test",
-    "build": "standard && gulp --silent"
+    "test": "standard",
+    "build": "gulp build --silent",
+    "pre-release": "./bin/pre-release.sh",
+    "release": "./bin/release.sh"
   },
   "license": "MIT",
   "dependencies": {
