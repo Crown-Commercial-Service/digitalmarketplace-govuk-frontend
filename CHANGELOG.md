@@ -20,6 +20,10 @@
 
   ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
 
+- Import and use govuk-frontend
+
+  ([PR #1](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/1))
+
 🔧 Fixes:
 
 - Pull Request Title goes here
