@@ -1,5 +1,13 @@
 #!/bin/sh
+#
+# Usage: release.sh [--dry-run]
 set -e
+
+if [[ "$0" == "--dry-run" ]]; then
+  DRY_RUN=true
+  NPM_ARGS=" --dry-run"
+  echo "Starting a dry run release..."
+fi
 
 echo "Starting a release..."
 echo " "
@@ -29,7 +37,7 @@ echo "📦  Publishing package..."
 
 # Try publishing
 cd package
-npm publish
+npm publish $NPM_ARGS
 echo "🗒 Package published!"
 cd ..
 
