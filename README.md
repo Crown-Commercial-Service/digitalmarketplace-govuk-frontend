@@ -50,10 +50,3 @@ To be notified when there’s a new release:
 - [watch the digitalmarketplace-govuk-frontend Github repository](https://help.github.com/en/articles/watching-and-unwatching-repositories)
 
 Find out how to [update with npm](docs/installation/updating-with-npm.md).
-
-## Licence
-
-Unless stated otherwise, the codebase is released under the MIT License. This
-covers both the codebase and any sample code in the documentation. The
-documentation is &copy; Crown copyright and available under the terms of the
-Open Government 3.0 licence.
