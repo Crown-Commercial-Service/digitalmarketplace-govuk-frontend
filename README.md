@@ -1,6 +1,6 @@
 Digital Marketplace GOV.UK Frontend ·
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Known Vulnerabilities](https://snyk.io//test/github/alphagov/digitalmarketplace-govuk-frontend/badge.svg?targetFile=package.json)](https://snyk.io//test/github/alphagov/digitalmarketplace-govuk-frontend?targetFile=package.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/alphagov/digitalmarketplace-govuk-frontend/badge.svg?targetFile=package.json)](https://snyk.io/test/github/alphagov/digitalmarketplace-govuk-frontend?targetFile=package.json)
 =====================
 
 This repository does two things:
