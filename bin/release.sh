@@ -48,7 +48,7 @@ if [[ $continue_prompt == 'y' ]]; then
     npm logout
 fi
 
-if $DRY_RUN; then
+if [ "$DRY_RUN" = "true" ]; then
   exit 0
 fi
 
