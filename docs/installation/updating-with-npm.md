@@ -1,7 +1,6 @@
 # Updating Digital Marketplace GOV.UK Frontend using Node.js package manager (npm)
 
-You can update with Node.js package manager (npm) if you [originally installed
-GOV.UK Frontend with npm](https://github.com/alphagov/govuk-frontend/blob/master/docs/installation/installing-with-npm.md).
+You can update Digital Marketplace GOV.UK Frontend with Node.js package manager (npm).
 
 ## Find out which version you're using
 
