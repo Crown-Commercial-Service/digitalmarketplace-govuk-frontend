@@ -9,7 +9,8 @@
     "test": "standard",
     "build": "gulp build --silent",
     "pre-release": "./bin/pre-release.sh",
-    "release": "./bin/release.sh"
+    "release": "./bin/release.sh",
+    "release-to-branch": "./bin/release-to-branch.sh"
   },
   "license": "MIT",
   "dependencies": {
