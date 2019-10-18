@@ -1,0 +1,17 @@
+{% extends "_base_page.html" %}
+
+{% block pageTitle %}Bad request - Digital Marketplace{% endblock %}
+
+{% block content %}
+  <div class="error-page">
+    <h1 class="govuk-heading-xl">Sorry, there was a problem with your request</h1>
+
+    <p class="govuk-body">
+      {% if error_message %}
+        {{ error_message }}
+      {% else %}
+        Please do not attempt the same request again.
+      {% endif %}
+    </p>
+  </div>
+{% endblock %}
