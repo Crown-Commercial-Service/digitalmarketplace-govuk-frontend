@@ -20,6 +20,12 @@
 
   ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
 
+- Add error templates
+
+  Error templates which use GOV.UK Frontend classes for styling.
+
+  ([PR #14](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/14))
+
 🔧 Fixes:
 
 - Pull Request Title goes here
