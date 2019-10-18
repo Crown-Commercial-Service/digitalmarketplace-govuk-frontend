@@ -6,7 +6,7 @@ echo " "
 echo "This will:"
 echo "- run the test suite"
 echo "- build GOV.UK Frontend into the 'package/' directory"
-#echo "- build Digital Marketplace Frontend into the 'package/' directory"
+echo "- build Digital Marketplace Frontend into the 'package/' directory"
 echo "- commit all changes and push the branch to remote"
 echo " "
 
