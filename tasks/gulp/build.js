@@ -1,5 +1,4 @@
 const { task, src, dest } = require('gulp')
-const debug = require('gulp-debug')
 const emoji = require('node-emoji')
 const { green } = require('chalk')
 const log = require('fancy-log')
