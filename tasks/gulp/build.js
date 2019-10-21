@@ -11,6 +11,7 @@ task('build:govuk-frontend', async () => {
 
 task('build:digitalmarketplace', async () => {
   log(`${emoji.get('clipboard')}  ${green.bold('- Copying Digital Marketplace to package directory')}`)
-  src(['src/digitalmarketplace/**'])
+  src(['src/digitalmarketplace/**',
+    '!**/*.test.js'])
     .pipe(dest('package/digitalmarketplace'))
 })
