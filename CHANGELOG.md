@@ -26,6 +26,13 @@
 
   ([PR #14](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/14))
 
+- Add site verification and custom dimension tracking
+
+  This originally originally built into `digitalmarketplace-frontend-toolkit` and will
+  be needed in the future when we do away with `digitalmarketplace-frontend-toolkit`.
+
+  ([PR #15](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/15))
+
 🔧 Fixes:
 
 - Pull Request Title goes here
