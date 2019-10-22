@@ -5,8 +5,3 @@ node_js:
 notifications:
   email: false
 sudo: false
-jobs:
-  include:
-    - stage: Run npm test
-      script:
-      - npm test
