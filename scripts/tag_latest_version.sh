@@ -9,6 +9,10 @@ version=v$(jq -r ".version" package/package.json)
 changelog="https://github.com/alphagov/digitalmarketplace-govuk-frontend/blob/master/CHANGELOG.md#"
 echo Version:\ \ $version
 echo "================================================================================"
-git tag -a $version -m "Digital Marketplace GOV.UK Frontend release $version" -m "[Changelog]($changelog$version)"
-echo "New tag created!"
+{
+  git tag -a $version -m "Digital Marketplace GOV.UK Frontend release $version" -m "[Changelog]($changelog$version)" && echo "New tag created!"
+} || {
+  echo "Tagging failed, probably because the tag already exists."
+}
+
 echo "--------------------------------------------------------------------------------"
