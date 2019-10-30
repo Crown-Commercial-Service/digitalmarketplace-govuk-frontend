@@ -21,6 +21,11 @@
     "node-emoji": "^1.10.0",
     "standard": "^14.3.1"
   },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./config/jest-setup.js"
+    ]
+  },
   "standard": {
     "env": [
       "jest"
