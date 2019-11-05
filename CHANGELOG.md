@@ -28,6 +28,16 @@
 
   ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
 
+- Fix layout issues with error pages
+
+  Error pages content was not centrally aligned.
+
+  Check frontend app `config.py` includes `os.path.join(repo_root, 'node_modules', 'digitalmarketplace-govuk-frontend', 'digitalmarketplace', 'templates'),` to lookup the error templates
+
+  Make sure `base_page.html` is using `mainContent` and `pageTitle` blocks
+
+  ([PR #23](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/23))
+
 ## 0.2.0
 
 🆕 New features:
