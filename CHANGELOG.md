@@ -28,6 +28,10 @@
 
   ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
 
+## 0.2.1
+
+🔧 Fixes:
+
 - Fix layout issues with error pages
 
   Error pages content was not centrally aligned.
