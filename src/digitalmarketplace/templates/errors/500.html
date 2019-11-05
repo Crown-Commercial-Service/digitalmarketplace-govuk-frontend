@@ -2,16 +2,14 @@
 
 {% block pageTitle %}Sorry, we’re experiencing technical difficulties - Digital Marketplace{% endblock %}
 
-{% block content %}
-  <div class="error-page">
-    <h1 class="govuk-heading-xl">Sorry, we’re experiencing technical difficulties</h1>
+{% block mainContent %}
+  <h1 class="govuk-heading-xl">Sorry, we’re experiencing technical difficulties</h1>
 
-    <p class="govuk-body">
-      {% if error_message %}
-        {{ error_message }}
-      {% else %}
-        Try again later.
-      {% endif %}
-    </p>
-  </div>
+  <p class="govuk-body">
+    {% if error_message %}
+      {{ error_message }}
+    {% else %}
+      Try again later.
+    {% endif %}
+  </p>
 {% endblock %}
