@@ -8,7 +8,7 @@ exports[`footer renders a footer component with all our standard links 1`] = `
             <h2 class=\\"govuk-footer__heading govuk-heading-m\\">Contact</h2>
               <ul class=\\"govuk-footer__list govuk-footer__list--columns-3\\">
                     <li class=\\"govuk-footer__list-item\\">
-                      <a class=\\"govuk-footer__link\\" href=\\"/help\\">
+                      <a class=\\"govuk-footer__link\\" href=\\"http://www.google.com\\">
                         Digital Marketplace help
                       </a>
                     </li>
@@ -38,7 +38,7 @@ exports[`footer renders a footer component with all our standard links 1`] = `
                       </a>
                     </li>
                     <li class=\\"govuk-footer__list-item\\">
-                      <a class=\\"govuk-footer__link\\" href=\\"/g-cloud/suppliers\\">
+                      <a class=\\"govuk-footer__link\\" href=\\"http://www.gov.uk\\">
                         G-Cloud supplier A-Z
                       </a>
                     </li>
