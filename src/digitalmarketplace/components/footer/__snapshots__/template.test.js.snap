@@ -86,17 +86,17 @@ exports[`footer renders a footer component with all our standard links 1`] = `
           <h2 class=\\"govuk-visually-hidden\\">Support links</h2>
             <ul class=\\"govuk-footer__inline-list\\">
                 <li class=\\"govuk-footer__inline-list-item\\">
-                  <a class=\\"govuk-footer__link\\" href=\\"/terms-and-conditions\\">
+                  <a class=\\"govuk-footer__link\\" href=\\"http://www.yahoo.co.uk\\">
                     Terms and conditions
                   </a>
                 </li>
                 <li class=\\"govuk-footer__inline-list-item\\">
-                  <a class=\\"govuk-footer__link\\" href=\\"/cookies\\">
+                  <a class=\\"govuk-footer__link\\" href=\\"http://www.bbc.co.uk\\">
                     Cookies
                   </a>
                 </li>
                 <li class=\\"govuk-footer__inline-list-item\\">
-                  <a class=\\"govuk-footer__link\\" href=\\"/privacy-notice\\">
+                  <a class=\\"govuk-footer__link\\" href=\\"http://www.amazon.co.uk\\">
                     Privacy notice
                   </a>
                 </li>

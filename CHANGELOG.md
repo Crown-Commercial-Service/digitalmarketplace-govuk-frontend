@@ -22,8 +22,11 @@
 
 - New component: Digital Marketplace Footer component
 
-  ! To use this the application must be using `govuk-frontend` template !
+  *Requirement before using this component:*
+  - To use this the application must be using `govuk-frontend` template
+  - digitalmarketplace-util v48.8.0+ must be installed
 
+  *Installing component:*
   1. Check config.py has this line for jinja to find the components
       ```
                   os.path.join(repo_root, 'node_modules', 'digitalmarketplace-govuk-frontend')

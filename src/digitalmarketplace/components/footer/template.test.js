@@ -10,7 +10,14 @@ const urlForMock = jest.fn((param) => {
     value = 'http://www.google.com'
   } else if (param === 'external.suppliers_list_by_prefix') {
     value = 'http://www.gov.uk'
+  } else if (param === 'external.cookies') {
+    value = 'http://www.bbc.co.uk'
+  } else if (param === 'external.privacy-notice') {
+    value = 'http://www.amazon.co.uk'
+  } else if (param === 'external.terms-and-conditions') {
+    value = 'http://www.yahoo.co.uk'
   }
+
   return value
 })
 
