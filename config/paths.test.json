@@ -1,0 +1,5 @@
+{
+  "dmSource": "src/digitalmarketplace/",
+  "dmComponents": "src/digitalmarketplace/components/",
+  "govukSource": "src/govuk-frontend/"
+}

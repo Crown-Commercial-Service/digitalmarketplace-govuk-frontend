@@ -20,6 +20,25 @@
 
   ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
 
+- New component: Digital Marketplace Footer component
+
+  *Requirement before using this component:*
+  - To use this the application must be using `govuk-frontend` template
+  - digitalmarketplace-util v48.8.0+ must be installed
+
+  *Installing component:*
+  1. Check config.py has this line for jinja to find the components
+      ```
+                  os.path.join(repo_root, 'node_modules', 'digitalmarketplace-govuk-frontend')
+      ```
+
+  2. Import the component in `_base_page.html`
+     `{% from "digitalmarketplace/components/footer/macro.njk" import dmFooter %}`
+
+  3. Use the component `{{ dmFooter({}) }}`
+
+  ([PR #21](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/21))
+
 🔧 Fixes:
 
 - Pull Request Title goes here
