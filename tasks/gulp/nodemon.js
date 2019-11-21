@@ -1,4 +1,5 @@
 const nodemon = require('nodemon')
+const browserSync = require('browser-sync')
 
 // Nodemon task --------------------------
 // Restarts node app for changes affecting
@@ -16,4 +17,13 @@ const serverMonitor = async (done) => {
   })
 }
 
-module.exports = serverMonitor
+const liveReload = (done) => {
+  browserSync.init(null, {
+    proxy: 'http://localhost:3000',
+    files: ['app/public/**/*.*', 'app/**/*.njk', 'src/**/*'],
+    port: 3001
+  })
+  done()
+}
+
+module.exports = { server: serverMonitor, browser: liveReload }

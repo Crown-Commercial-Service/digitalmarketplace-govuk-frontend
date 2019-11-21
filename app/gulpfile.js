@@ -1,5 +1,5 @@
 const { parallel, series } = require('gulp')
-const nodemon = require('../tasks/gulp/nodemon')
+const monitoring = require('../tasks/gulp/nodemon')
 const watching = require('../tasks/gulp/watch')
 const compile = require('../tasks/gulp/compile-assets')
 
@@ -9,10 +9,10 @@ process.chdir('../')
 // Dev task -----------------------------
 // Runs a sequence of task on start
 // --------------------------------------
-exports.dev = series(compile.scss, parallel(watching, nodemon))
+exports.dev = series(compile.scss, parallel(watching, monitoring.server, monitoring.browser))
 
 // Serve task ---------------------------
 // Restarts node app when there is changed
 // affecting js, css or njk files
 // --------------------------------------
-exports.serve = parallel(watching, nodemon)
+exports.serve = parallel(watching, monitoring.server, monitoring.browser)
