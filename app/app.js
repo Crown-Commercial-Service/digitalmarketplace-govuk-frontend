@@ -27,7 +27,7 @@ module.exports = (options) => {
   const nunjucksOptions = options ? options.nunjucks : {}
 
   // Configure nunjucks
-  let env = nunjucks.configure(appViews, {
+  const env = nunjucks.configure(appViews, {
     autoescape: true, // output with dangerous characters are escaped automatically
     express: app, // the express app that nunjucks should install to
     noCache: true, // never use a cache and recompile templates each time
@@ -72,17 +72,6 @@ module.exports = (options) => {
   // Handle the banner component serverside.
   require('./banner.js')(app)
 
-  // Define middleware for all routes
-  app.use('*', function (request, response, next) {
-    response.locals.legacy = request.query['legacy'] === '1'
-    if (response.locals.legacy) {
-      response.locals.legacyQuery = '?legacy=1'
-    } else {
-      response.locals.legacyQuery = ''
-    }
-    next()
-  })
-
   // Define routes
 
   // Index page - render the component list template
@@ -110,8 +99,8 @@ module.exports = (options) => {
     const components = fileHelper.allComponents
 
     res.locals.componentData = components.map(componentName => {
-      let componentData = fileHelper.getComponentData(componentName)
-      let defaultExample = componentData.examples.find(
+      const componentData = fileHelper.getComponentData(componentName)
+      const defaultExample = componentData.examples.find(
         example => example.name === 'default'
       )
       return {
@@ -119,7 +108,7 @@ module.exports = (options) => {
         examples: [defaultExample]
       }
     })
-    res.render(`all-components`, function (error, html) {
+    res.render('all-components', function (error, html) {
       if (error) {
         next(error)
       } else {
@@ -145,12 +134,12 @@ module.exports = (options) => {
   // Component example preview
   app.get('/components/:component/:example*?/preview', function (req, res, next) {
     // Find the data for the specified example (or the default example)
-    let componentName = req.params.component
-    let requestedExampleName = req.params.example || 'default'
+    const componentName = req.params.component
+    const requestedExampleName = req.params.example || 'default'
 
-    let previewLayout = res.locals.componentData.previewLayout || 'layout'
+    const previewLayout = res.locals.componentData.previewLayout || 'layout'
 
-    let exampleConfig = res.locals.componentData.examples.find(
+    const exampleConfig = res.locals.componentData.examples.find(
       example => example.name.replace(/ /g, '-') === requestedExampleName
     )
 
@@ -159,8 +148,8 @@ module.exports = (options) => {
     }
 
     // Construct and evaluate the component with the data for this example
-    let macroName = helperFunctions.componentNameToMacroName(componentName)
-    let macroParameters = JSON.stringify(exampleConfig.data, null, '\t')
+    const macroName = helperFunctions.componentNameToMacroName(componentName)
+    const macroParameters = JSON.stringify(exampleConfig.data, null, '\t')
 
     res.locals.componentView = env.renderString(
       `{% from '${componentName}/macro.njk' import ${macroName} %}

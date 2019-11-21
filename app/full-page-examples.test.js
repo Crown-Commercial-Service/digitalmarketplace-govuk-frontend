@@ -1,7 +1,6 @@
 /* eslint-env jest */
 
 const request = require('request')
-const cheerio = require('cheerio')
 
 const configPaths = require('../config/paths.json')
 const PORT = configPaths.ports.test
