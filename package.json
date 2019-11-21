@@ -27,6 +27,10 @@
   "jest": {
     "setupFilesAfterEnv": [
       "./config/jest-setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/app/"
     ]
   },
   "standard": {
