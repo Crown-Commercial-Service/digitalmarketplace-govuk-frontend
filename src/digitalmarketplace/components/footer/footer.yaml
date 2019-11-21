@@ -1,4 +1,5 @@
 params:
+previewLayout: full-width
 examples:
   - name: default
     data:
