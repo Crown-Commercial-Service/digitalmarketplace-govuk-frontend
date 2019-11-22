@@ -1,9 +1,9 @@
-const { task, series, parallel } = require('gulp')
-require('./tasks/gulp/clean')
-require('./tasks/gulp/build')
+const { series } = require('gulp')
+const clean = require('./tasks/gulp/clean')
+const copy = require('./tasks/gulp/copy')
 
-task('build',
-  series('clean',
-    parallel('build:govuk-frontend', 'build:digitalmarketplace')
-  )
-)
+exports.postInstall = series(clean.all, copy.development)
+
+exports.build = series(clean.pkg, copy.forPublishing)
+
+exports.default = exports.postInstall
