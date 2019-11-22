@@ -1,3 +1,5 @@
+/app/public
+
 node_modules
 package/govuk-frontend/
 package/digitalmarketplace/
