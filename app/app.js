@@ -40,6 +40,9 @@ module.exports = (options) => {
   // make the function available as a filter for all templates
   env.addFilter('componentNameToMacroName', helperFunctions.componentNameToMacroName)
 
+  // Add mock `url_for` for components that get urls from Flask
+  env.addGlobal('url_for', function () { return '#' })
+
   // Set view engine
   app.set('view engine', 'njk')
 
