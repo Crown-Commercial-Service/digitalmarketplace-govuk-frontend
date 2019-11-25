@@ -5,7 +5,7 @@
 <pre><code class="govuk-!-font-size-16">{{- componentHtml | e -}}</code></pre>
 
 <h4 class="govuk-heading-s">Macro</h4>
-<pre class="govuk-!-margin-bottom-0 govuk-!-font-size-16"><code>{% raw %}{%{% endraw %} from "{{ componentSlug }}/macro.njk" import {{ componentSlug | componentNameToMacroName }} {% raw %}%}{% endraw %}
+<pre class="govuk-!-margin-bottom-0 govuk-!-font-size-16"><code>{% raw %}{%{% endraw %} from "digitalmarketplace/components/{{ componentSlug }}/macro.njk" import {{ componentSlug | componentNameToMacroName }} {% raw %}%}{% endraw %}
 
 {% raw %}{{ {% endraw %}{{ componentSlug | componentNameToMacroName }}(
   {{- example.data | dump(2) -}}
