@@ -1,0 +1,25 @@
+params:
+previewLayout: full-width
+examples:
+  - name: default
+    data:
+      isAdmin: false
+      logged_in: false
+  - name: for Admin Frontend
+    data:
+      isAdmin: true
+      logged_in: false
+  - name: for Buyer
+    data:
+      logged_in: true
+      role: 'buyer'
+  - name: for Supplier
+    data:
+      logged_in: true
+      role: 'supplier'
+  - name: for users in other roles
+    data:
+      logged_in: true
+      role: 'woodchucker'
+
+

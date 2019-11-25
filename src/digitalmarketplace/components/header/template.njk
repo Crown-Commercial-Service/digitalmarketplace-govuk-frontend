@@ -1,0 +1,85 @@
+{% from "../../../govuk-frontend/components/header/macro.njk" import govukHeader -%}
+
+{% set isAdmin = params.isAdmin | default(false) %}
+
+{% if isAdmin %}
+  {% set adminAppClass = 'app-admin-header' %}
+  {% set productName = 'Digital Marketplace Admin' %}
+{% else %}
+  {% set adminAppClass = '' %}
+  {% set productName = 'Digital Marketplace' %}
+{% endif %}
+
+{# current_user = global Flask object provided by a plugin called Flask-Login #}
+{# params.logged_in/role = used for testing or where current_user is not set #}
+
+{% if current_user %}
+  {% set user_logged_in = current_user.is_authenticated() if current_user.is_authenticated is callable else
+    current_user.is_authenticated %}
+{% else %}
+  {% set user_logged_in = params.logged_in | default(false, true) %}
+{% endif %}
+
+{% if user_logged_in %}
+  {% set users_role = (params.role or current_user.role) %}
+
+  {% if users_role in['buyer', 'supplier'] %}
+    {% set headerNavigation = [
+      {
+        'text': 'Guidance',
+        'href': 'https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace'
+      },
+      {
+        'text': 'Help',
+        'href': url_for('external.help')
+      },
+      {
+        'text': 'View your account',
+        'href': url_for('external.' + users_role + '_dashboard')
+      },
+      {
+        'text': 'Log out',
+        'href': url_for('external.user_logout')
+      }
+    ]%}
+  {% else %}
+    {# Any other role #}
+    {% set headerNavigation = [
+      {
+        'text': 'Guidance',
+        'href': 'https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace'
+      },
+      {
+        'text': 'Help',
+        'href': url_for('external.help')
+      },
+      {
+        'text': 'Log out',
+        'href': url_for('external.user_logout')
+      }
+    ]%}
+  {% endif %}
+{% else %}
+  {% set headerNavigation = [
+    {
+      'text': 'Guidance',
+      'href': 'https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace'
+    },
+    {
+      'text': 'Help',
+      'href': url_for('external.help')
+    },
+    {
+      'text': 'Log in',
+      'href': url_for('external.render_login')
+    }
+  ]%}
+{% endif %}
+{{
+  govukHeader({
+    'productName': productName,
+    'productUrl': '/',
+    'classes': adminAppClass,
+    'navigation': headerNavigation
+  })
+}}

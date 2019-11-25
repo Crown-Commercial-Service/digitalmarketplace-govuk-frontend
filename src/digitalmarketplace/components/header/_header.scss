@@ -1,0 +1,29 @@
+@import "../../../govuk-frontend/tools/all";
+@import "../../../govuk-frontend/helpers/all";
+
+@include govuk-exports("digitalmarketplace/component/header") {
+
+
+/* This file extends GOV.UK Frontend header component
+   by changing the blue bottom border to red and shifting
+   the navigation items to the far right.
+*/
+
+  .app-admin-header {
+    .govuk-header__container {
+      border-bottom-color: govuk-colour("red");
+    }
+  }
+
+  .govuk-header__logo {
+    width: auto;
+  }
+
+  .govuk-header__content {
+    @include govuk-media-query(desktop) {
+      width: auto;
+      float: none;
+      text-align: right;
+    }
+  }
+}
