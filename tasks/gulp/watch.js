@@ -8,7 +8,7 @@ const compile = require('./compile-assets')
 // ---------------------------------------
 const watching = () => {
   watch([configPaths.src + '**/**/*.scss', configPaths.app + 'assets/scss/**/*.scss'], parallel(compile.scss))
-  // gulp.watch([configPaths.src + '**/**/*.js'], gulp.task('scripts'))
+  watch([configPaths.src + '**/**/*.js'], parallel(compile.js))
 }
 
 module.exports = watching

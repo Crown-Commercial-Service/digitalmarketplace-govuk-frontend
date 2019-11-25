@@ -9,7 +9,7 @@ process.chdir('../')
 // Dev task -----------------------------
 // Runs a sequence of task on start
 // --------------------------------------
-exports.dev = series(compile.scss, parallel(watching, monitoring.server, monitoring.browser))
+exports.dev = series(parallel(compile.js, compile.scss), parallel(watching, monitoring.server, monitoring.browser))
 
 // Serve task ---------------------------
 // Restarts node app when there is changed
