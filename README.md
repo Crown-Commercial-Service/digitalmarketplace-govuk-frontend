@@ -51,6 +51,40 @@ To be notified when there’s a new release:
 
 Find out how to [update with npm](docs/installation/updating-with-npm.md).
 
+
+## Developing new components
+
+We use gulp to automate various tasks. Below we will detail what each part of the process is
+and what task are run
+
+
+## 1. Installing the repo
+After cloning this repository you will need to run `npm install`. After npm has successfully installed
+all packages and dependencies, an npm `postinstall` script will automatically run to do the following tasks:
+
+- Removes `govuk-frontend` from `src`(if it exists)
+- Copy `govuk-frontend` from `node_modules` to `src`
+
+The reason for copying `govuk-frontend` to `src` is to ensure that `src` mirrors what will eventually become `package` and it also helps with import file paths as they would have vary between `src` and `packaged`
+
+## 2. Developing components/features and previewing
+
+Run `npm start dev`
+
+- compiles sass and js from `src` and places in `app/public`
+- watch task for any file changes to `src`, compiles and reloads the browser (using browsersync)
+- Start the webserver and reload the server if any server config changes (using nodemon)
+
+
+## 3. Publishing to npm
+
+Run `npm run release`
+- Removes `package/govuk-frontend`  and `package/digitalmarketplace`
+- Copy `node_modules/govuk-frontend` to `package`
+- copy `src/digitalmarketplace` to `package`
+- publishes to npm repositiory
+
+
 ## Licence
 
 Unless stated otherwise, the codebase is released under [the MIT License][mit].
