@@ -14,7 +14,7 @@ const cssnano = require('cssnano')
 
 const scss = () => {
   return gulp.src('app/assets/scss/app.scss')
-    .pipe(sass())
+    .pipe(sass({ includePaths: 'src/' }))
     // minify css add vendor prefixes and normalize to compiled css
     .pipe(postcss([
       autoprefixer,
