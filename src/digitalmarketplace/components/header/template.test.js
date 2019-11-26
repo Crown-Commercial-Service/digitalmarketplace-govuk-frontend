@@ -124,4 +124,24 @@ describe('header', () => {
       expect($('header.govuk-header.app-admin-header').length).toBe(1)
     })
   })
+
+  describe('when a user is signed out or not signed in specifically', () => {
+    beforeAll(() => {
+      mockedMethods = {
+        url_for: urlForMock
+      }
+    })
+
+    it('default example passes accessibility tests', async () => {
+      const $ = render('header', examples['for user who is not signed in'], mockedMethods)
+
+      const results = await axe($.html())
+      expect(results).toHaveNoViolations()
+    })
+
+    it('renders a header component with all our standard links', () => {
+      const $ = render('header', examples['for user who is not signed in'], mockedMethods)
+      expect($.html()).toMatchSnapshot()
+    })
+  })
 })
