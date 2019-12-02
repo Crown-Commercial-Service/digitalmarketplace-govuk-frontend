@@ -1,5 +1,6 @@
 $govuk-show-breakpoints: true;
 
 @import "govuk-frontend/all.scss";
+@import "digitalmarketplace/all.scss";
 @import "./partials/app";
 @import "./partials/banner";
