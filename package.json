@@ -43,7 +43,7 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.2",
+    "autoprefixer": "^9.7.3",
     "browser-sync": "^2.26.7",
     "cheerio": "^1.0.0-rc.3",
     "cookie-parser": "^1.4.4",
