@@ -1,0 +1,58 @@
+{% from "../../../govuk-frontend/components/fieldset/macro.njk" import govukFieldset -%}
+{% from "../../../govuk-frontend/components/hint/macro.njk" import govukHint -%}
+{% from "../../../govuk-frontend/components/label/macro.njk" import govukLabel %}
+
+{#-  We need this for error messages and hints as well -#}
+{% set id = params.id%}
+{# {% set params.fieldset.legend.classes = 'app-list-entry__legend' %} #}
+
+{#- a record of other elements that we need to associate with the input using
+   aria-describedby – for example hints or error messages -#}
+{% set describedBy = params.describedBy if params.describedBy else "" %}
+
+{% if params.fieldset.describedBy %}
+   {% set describedBy = params.fieldset.describedBy %}
+{% endif %}
+
+<div class="dm-list-entry" id="{{ id }}">
+  {% call govukFieldset({
+    legend: {
+      text: params.fieldset.legend.text + ('<span class="dm-entry__optional">(Optional)</span>' if params.optional) ,
+      classes: 'dm-list-entry__legend ' + ( params.fields.legend.classes if params.fields.legend.classes)
+    }
+  }) %}
+
+  {% if params.hint %}
+    {% set hintId = id + '-hint' %}
+    {% set describedBy = describedBy + ' ' + hintId if describedBy else  hintId -%}
+      {{ govukHint({
+        id: hintId,
+        classes: params.hint.classes,
+        attributes: params.hint.attributes,
+        html: params.hint.html,
+        text: params.hint.text
+      }) | indent(2) | trim() }}
+  {% endif -%}
+
+    {% for i in range(0, params.maxItems) -%}
+      {%- set item = params.items[i] if params.items[i] else {} -%}
+      {%- set itemValue = item.value if item.value else None -%}
+      {%- set entryItemId = params.id + '-' + i -%}
+        <div class="dm-list-entry__item">
+        {#- Add label and text field -#}
+        {{ govukLabel ({
+          classes: 'dm-list-entry__item-label ' + (params.items[i].label.classes if params.items[i].label.classes),
+          html: '<span class="govuk-visually-hidden">' + params.items[i].label.text +'. Number </span>' + ( i + 1 ) + '.',
+          for: entryItemId
+        })| indent(2) }}
+
+        <input class="govuk-input dm-list-entry__item-input{%- if i > 99 %} dm-list-entry__item-input--large{% endif -%} {%- if params.classes %} {{ params.classes }}{% endif %} {%- if params.errorMessage %} govuk-input--error{% endif %}" id="{{ entryItemId }}" name="{{ params.name }}" type="{{ params.type | default('text') }}"
+          {%- if itemValue %} value="{{ itemValue }}"{% endif -%}
+          {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif -%}
+          {%- if params.autocomplete %} autocomplete="{{ params.autocomplete }}"{% endif -%}
+          {%- if params.pattern %} pattern="{{ params.pattern }}"{% endif -%}
+          {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor -%}>
+      </div>
+    {% endfor %}
+  {% endcall %}
+</div>

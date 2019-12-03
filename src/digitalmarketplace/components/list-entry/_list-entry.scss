@@ -1,0 +1,54 @@
+@import "../../govuk-frontend/settings/all";
+@import "../../../govuk-frontend/tools/all";
+@import "../../../govuk-frontend/helpers/all";
+
+
+// @import "../error-message/error-message";
+@import "../../../govuk-frontend/components/fieldset/fieldset";
+@import "../../../govuk-frontend/components/hint/hint";
+@import "../../../govuk-frontend/components/input/input";
+
+
+@include govuk-exports("digitalmarketplace/component/list-entry") {
+  .dm-list-entry__legend {
+    @include govuk-text-colour;
+    @include govuk-font($size: 24, $weight: bold);
+
+    display: block;
+
+    margin-top: 0;
+    @include govuk-responsive-margin(4, "bottom");
+  }
+
+  .dm-list-entry__item {
+    @include govuk-responsive-margin(3, "bottom");
+    vertical-align: middle;
+    position: relative;
+  }
+
+  .dm-list-entry__item-label {
+    @include govuk-font($size: 19, $tabular: true, $weight: bold, $line-height: 1.25);
+    float: left;
+    width: 1.7em;
+    margin: govuk-px-to-rem(10) -1.7em 0 0;
+    position: relative;
+    left: govuk-spacing(2);
+    color: $govuk-secondary-text-colour;
+    pointer-events: none;
+
+  }
+
+  .dm-list-entry__item-input {
+    padding-left: 2.8em;
+    width: 100%;
+
+    @include govuk-media-query(desktop) {
+      display: inline-block;
+    }
+  }
+
+  .dm-list-entry__item-input--large {
+    padding-left: 3.0em;
+  }
+
+}

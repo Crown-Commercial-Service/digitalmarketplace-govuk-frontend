@@ -1,0 +1,73 @@
+params:
+- name: id
+  type: string
+  required: true
+  description: Used as an `id` in the HTML for the list-entry as a whole, and also as a prefix for the `id`'s of the hints & input fields'
+- name: fieldset
+  type: object
+  required: true
+  description: Options for the fieldset component (e.g. legend).
+- name: label
+  type: object
+  required: true
+  description: Options for the label component.
+- name: maxEntries
+  type: integer
+  required: true
+  description: Maximum number of entries a user can add
+- name: items
+  type: array
+  required: false
+
+examples:
+  - name: default
+    data:
+      id: 'my-list'
+      fieldset:
+        legend:
+          text: 'What requirements are essential to carry out the work?'
+      name: 'requirements'
+      maxItems: 110
+      hint:
+        text: Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
+      items:
+        - label:
+            text: 'Input number 1'
+          value: 'sweet'
+        - label:
+            text: 'Input number 2'
+        - label:
+            text: 'Input number 3'
+
+  - name: with no hint text
+    data:
+      id: 'my-list'
+      fieldset:
+        legend:
+          text: 'What requirements are essential to carry out the work?'
+      name: 'requirements'
+      items:
+        - label:
+            text: 'Input number 1'
+          value: 'sweet'
+        - label:
+            text: 'Input number 2'
+        - label:
+            text: 'Input number 3'
+  - name: for optional question
+    data:
+      id: 'my-list'
+      fieldset:
+        legend:
+          text: 'What requirements are essential to carry out the work?'
+      name: 'requirements'
+      items:
+        - label:
+            text: 'Input number 1'
+          value: 'sweet'
+        - label:
+            text: 'Input number 2'
+        - label:
+            text: 'Input number 3'
+      optional: true
+
