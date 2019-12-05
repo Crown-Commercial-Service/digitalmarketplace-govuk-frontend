@@ -27,25 +27,26 @@
     {% set describedBy = describedBy + ' ' + hintId if describedBy else  hintId -%}
       {{ govukHint({
         id: hintId,
-        classes: params.hint.classes,
+        classes: 'dm-list-entry__hint ' + ( params.hint.classes if params.hint.classes),
         attributes: params.hint.attributes,
         html: params.hint.html,
         text: params.hint.text
       }) | indent(2) | trim() }}
   {% endif -%}
-
+    <div class="dm-list-entry__item-container">
     {% for i in range(0, params.maxItems) -%}
       {%- set item = params.items[i] if params.items[i] else {} -%}
       {%- set itemValue = item.value if item.value else None -%}
       {%- set entryItemId = params.id + '-' + i -%}
         <div class="dm-list-entry__item">
         {#- Add label and text field -#}
+
+        <div>
         {{ govukLabel ({
           classes: 'dm-list-entry__item-label ' + (params.items[i].label.classes if params.items[i].label.classes),
           html: '<span class="govuk-visually-hidden">' + params.items[i].label.text +'. Number </span>' + ( i + 1 ) + '.',
           for: entryItemId
         })| indent(2) }}
-
         <input class="govuk-input dm-list-entry__item-input{%- if i > 99 %} dm-list-entry__item-input--large{% endif -%} {%- if params.classes %} {{ params.classes }}{% endif %} {%- if params.errorMessage %} govuk-input--error{% endif %}" id="{{ entryItemId }}" name="{{ params.name }}" type="{{ params.type | default('text') }}"
           {%- if itemValue %} value="{{ itemValue }}"{% endif -%}
           {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif -%}
@@ -53,6 +54,10 @@
           {%- if params.pattern %} pattern="{{ params.pattern }}"{% endif -%}
           {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor -%}>
       </div>
+        <button class="govuk-button govuk-button--secondary dm-list-entry__item-remove">Remove</button>
+      </div>
     {% endfor %}
+    </div>
+    <button class="govuk-button govuk-button--secondary">Add another {{ params.name }} ( x remaining)</button>
   {% endcall %}
 </div>

@@ -27,7 +27,7 @@ examples:
         legend:
           text: 'What requirements are essential to carry out the work?'
       name: 'requirements'
-      maxItems: 110
+      maxItems: 15
       hint:
         text: Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
       items:
@@ -35,9 +35,11 @@ examples:
             text: 'Input number 1'
           value: 'sweet'
         - label:
-            text: 'Input number 2'
+          value: 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
         - label:
-            text: 'Input number 3'
+          value: 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
+        - label:
+          value: 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
 
   - name: with no hint text
     data:
