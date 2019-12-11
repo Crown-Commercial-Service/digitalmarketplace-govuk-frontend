@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const axe = require('../../../../lib/axe-helper')
 
 const { render, getExamples } = require('../../../../lib/jest-helpers.js')

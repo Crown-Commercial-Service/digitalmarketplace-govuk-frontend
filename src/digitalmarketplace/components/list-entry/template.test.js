@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const axe = require('../../../../lib/axe-helper')
 
 const { render, getExamples } = require('../../../../lib/jest-helpers.js')
@@ -15,7 +19,7 @@ describe('List entry', () => {
     describe('fieldset', () => {
       it('renders the component with a legend', () => {
         const $ = render('list-entry', examples.default)
-        const legend = $('.app-list-entry__legend').text().trim()
+        const legend = $('.dm-list-entry__legend').text().trim()
         expect(legend).toBe(examples.default.fieldset.legend.text)
       })
     })
@@ -31,7 +35,7 @@ describe('List entry', () => {
     describe('list of entries', () => {
       it('renders the component with the correct number of items it was given', () => {
         const $ = render('list-entry', examples.default)
-        expect($('.govuk-input').length).toBe(examples.default.items.length)
+        expect($('.govuk-input').length).toBe(examples.default.maxItems)
       })
     })
   })

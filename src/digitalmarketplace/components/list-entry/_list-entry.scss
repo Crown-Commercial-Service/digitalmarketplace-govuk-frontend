@@ -29,6 +29,10 @@
     align-items: start;
   }
 
+  .dm-list-entry__item--hidden {
+    display: none;
+  }
+
   .dm-list-entry__item-label {
     @include govuk-font($size: 19, $tabular: true, $weight: bold, $line-height: 1.25);
 
@@ -51,5 +55,9 @@
 
   .dm-list-entry__item-remove {
     margin-bottom: 0;
+  }
+
+  .dm-list-entry__item-remove--hidden, .dmp-list-entry__item-add--hidden {
+    display: none;
   }
 }
