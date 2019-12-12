@@ -1,3 +1,4 @@
+{% from "../../../govuk-frontend/components/error-message/macro.njk" import govukErrorMessage -%}
 {% from "../../../govuk-frontend/components/fieldset/macro.njk" import govukFieldset -%}
 {% from "../../../govuk-frontend/components/hint/macro.njk" import govukHint -%}
 {% from "../../../govuk-frontend/components/label/macro.njk" import govukLabel %}
@@ -14,6 +15,7 @@
    {% set describedBy = params.fieldset.describedBy %}
 {% endif %}
 
+<div class="dm-list-entry {% if params.fields.legend.classes %} params.classes {% endif %}{% if params.errorMessage %} govuk-form-group--error{% endif %}">
 {% call govukFieldset({
   legend: {
     text: params.fieldset.legend.text + ('<span class="dm-entry__optional">(Optional)</span>' if params.optional) ,
@@ -34,7 +36,22 @@
       html: params.hint.html,
       text: params.hint.text
     }) | indent(2) | trim() }}
-{% endif -%}
+  {% endif -%}
+
+  {% if params.errorMessage %}
+    {% set errorId = id + '-error' %}
+    {% set describedBy = describedBy + ' ' + errorId if describedBy else errorId %}
+    {{ govukErrorMessage({
+      id: errorId,
+      classes: params.errorMessage.classes,
+      attributes: params.errorMessage.attributes,
+      html: params.errorMessage.html,
+      text: params.errorMessage.text,
+      visuallyHiddenText: params.errorMessage.visuallyHiddenText
+    }) | indent(2) | trim }}
+{% endif %}
+
+
   <div class="dm-list-entry__item-container">
   {% for i in range(0, params.maxItems) -%}
     {%- set item = params.items[i] if params.items[i] else {} -%}
@@ -49,7 +66,7 @@
         html: '<span class="govuk-visually-hidden">' + params.items[i].label.text +'. Number </span><span class="dm-list-entry__counter">' + ( i + 1 ) + '</span>.',
         for: entryItemId
       })| indent(2) }}
-      <input class="govuk-input dm-list-entry__item-input{%- if i > 99 %} dm-list-entry__item-input--large{% endif -%} {%- if params.classes %} {{ params.classes }}{% endif %} {%- if params.errorMessage %} govuk-input--error{% endif %}" id="{{ entryItemId }}" name="{{ params.name }}" type="{{ params.type | default('text') }}"
+      <input class="govuk-input dm-list-entry__item-input{%- if i > 99 %} dm-list-entry__item-input--large{% endif -%} {%- if params.classes %} {{ params.classes }}{% endif %} {%- if params.items[i].error %} govuk-input--error{% endif %}" id="{{ entryItemId }}" name="{{ params.name }}" type="{{ params.type | default('text') }}"
         {%- if itemValue %} value="{{ itemValue }}"{% endif -%}
         {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif -%}
         {%- if params.autocomplete %} autocomplete="{{ params.autocomplete }}"{% endif -%}
@@ -62,3 +79,4 @@
   </div>
   <button class="govuk-button govuk-button--secondary dmp-list-entry__item-add dmp-list-entry__item-add--hidden">Add another {{ params.name }} ( <span class="dm-list-entry__js-remaining-counter">0</span> remaining)</button>
 {% endcall %}
+</div>

@@ -43,19 +43,17 @@ examples:
 
   - name: with no hint text
     data:
-      id: 'my-list'
+      id: 'my-list-2'
       fieldset:
         legend:
           text: 'What requirements are essential to carry out the work?'
       name: 'requirements'
+      maxItems: 3
       items:
         - label:
             text: 'Input number 1'
           value: 'sweet'
-        - label:
-            text: 'Input number 2'
-        - label:
-            text: 'Input number 3'
+
   - name: for optional question
     data:
       id: 'my-list'
@@ -63,6 +61,7 @@ examples:
         legend:
           text: 'What requirements are essential to carry out the work?'
       name: 'requirements'
+      maxItems: 3
       items:
         - label:
             text: 'Input number 1'
@@ -73,3 +72,41 @@ examples:
             text: 'Input number 3'
       optional: true
 
+  - name: with error
+    data:
+      id: 'my-list-2'
+      fieldset:
+        legend:
+          text: 'What requirements are essential to carry out the work?'
+      errorMessage:
+        text: 'Please provide at least one requirement.'
+      name: 'requirements'
+      maxItems: 3
+      items:
+        - label:
+          value: ''
+        - label:
+          value: 'sweet'
+        - label:
+          value: ''
+
+  - name: with error for specific fields
+    data:
+      id: 'my-list-3'
+      fieldset:
+        legend:
+          text: 'What requirements are essential to carry out the work?'
+      errorMessage:
+        text: 'Requirements must not be more than 10 words.'
+      hint:
+        text: Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
+      name: 'requirements'
+      maxItems: 3
+      items:
+        - label:
+          value: 'Professionally initiate innovative partnerships.'
+        - label:
+          value: 'Synergistically iterate scalable leadership skills without competitive testing procedures. Quickly envisioneer.'
+          error: true
+        - label:
+          value: ''
