@@ -121,7 +121,7 @@ describe('header', () => {
 
     it('renders a header component with a custom class to style the bottom border', () => {
       const $ = render('header', examples['for Admin Frontend'], mockedMethods)
-      expect($('header.govuk-header.app-admin-header').length).toBe(1)
+      expect($('header.govuk-header.dm-admin-header').length).toBe(1)
     })
   })
 
