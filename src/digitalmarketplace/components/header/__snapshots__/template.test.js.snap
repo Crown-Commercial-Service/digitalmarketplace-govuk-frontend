@@ -110,7 +110,7 @@ exports[`header buyer signed in renders a header component with all our standard
 `;
 
 exports[`header component being used in admin frontend renders a header component with all our standard links 1`] = `
-"<html><head></head><body><header class=\\"govuk-header app-admin-header\\" role=\\"banner\\" data-module=\\"header\\">
+"<html><head></head><body><header class=\\"govuk-header dm-admin-header\\" role=\\"banner\\" data-module=\\"header\\">
   <div class=\\"govuk-header__container govuk-width-container\\">
 
     <div class=\\"govuk-header__logo\\">
