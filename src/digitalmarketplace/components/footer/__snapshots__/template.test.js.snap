@@ -5,18 +5,13 @@ exports[`footer renders a footer component with all our standard links 1`] = `
   <div class=\\"govuk-width-container \\">
       <div class=\\"govuk-footer__navigation\\">
           <div class=\\"govuk-footer__section\\">
-            <h2 class=\\"govuk-footer__heading govuk-heading-m\\">Contact</h2>
-              <ul class=\\"govuk-footer__list govuk-footer__list--columns-3\\">
+            <h2 class=\\"govuk-footer__heading govuk-heading-m\\">About Digital Marketplace</h2>
+              <ul class=\\"govuk-footer__list \\">
                     <li class=\\"govuk-footer__list-item\\">
                       <a class=\\"govuk-footer__link\\" href=\\"http://www.google.com\\">
-                        Digital Marketplace help
+                        Contact
                       </a>
                     </li>
-              </ul>
-          </div>
-          <div class=\\"govuk-footer__section\\">
-            <h2 class=\\"govuk-footer__heading govuk-heading-m\\">About the Digital Marketplace</h2>
-              <ul class=\\"govuk-footer__list \\">
                     <li class=\\"govuk-footer__list-item\\">
                       <a class=\\"govuk-footer__link\\" href=\\"https://www.gov.uk/guidance/digital-marketplace-buyers-guide\\">
                         Services you can buy
@@ -45,7 +40,7 @@ exports[`footer renders a footer component with all our standard links 1`] = `
               </ul>
           </div>
           <div class=\\"govuk-footer__section\\">
-            <h2 class=\\"govuk-footer__heading govuk-heading-m\\">Guidance</h2>
+            <h2 class=\\"govuk-footer__heading govuk-heading-m\\">Guidance for using Digital Marketplace</h2>
               <ul class=\\"govuk-footer__list \\">
                     <li class=\\"govuk-footer__list-item\\">
                       <a class=\\"govuk-footer__link\\" href=\\"https://www.gov.uk/guidance/g-cloud-suppliers-guide\\">
@@ -54,12 +49,12 @@ exports[`footer renders a footer component with all our standard links 1`] = `
                     </li>
                     <li class=\\"govuk-footer__list-item\\">
                       <a class=\\"govuk-footer__link\\" href=\\"https://www.gov.uk/guidance/digital-outcomes-and-specialists-suppliers-guide\\">
-                        Applying to sell on the Digital Outcomes and Specialists framework
+                        Applying to sell on the DOS framework
                       </a>
                     </li>
                     <li class=\\"govuk-footer__list-item\\">
                       <a class=\\"govuk-footer__link\\" href=\\"https://www.gov.uk/guidance/how-to-sell-your-digital-outcomes-and-specialists-services\\">
-                        Responding to buyer requirements on the Digital Outcomes and Specialists framework
+                        Responding to buyer requirements on the DOS framework
                       </a>
                     </li>
                     <li class=\\"govuk-footer__list-item\\">
@@ -69,7 +64,7 @@ exports[`footer renders a footer component with all our standard links 1`] = `
                     </li>
                     <li class=\\"govuk-footer__list-item\\">
                       <a class=\\"govuk-footer__link\\" href=\\"https://www.gov.uk/guidance/digital-outcomes-and-specialists-buyers-guide\\">
-                        Buying on the Digital Outcomes and Specialists framework
+                        Buying on the DOS framework
                       </a>
                     </li>
                     <li class=\\"govuk-footer__list-item\\">

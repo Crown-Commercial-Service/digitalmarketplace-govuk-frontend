@@ -1,4 +1,6 @@
 $govuk-show-breakpoints: true;
+$govuk-images-path: "/public/assets/govuk-frontend/images/";
+$govuk-fonts-path: "/public/assets/govuk-frontend/fonts/";
 
 @import "govuk-frontend/all.scss";
 @import "digitalmarketplace/all.scss";
