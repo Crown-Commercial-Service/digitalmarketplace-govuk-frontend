@@ -28,6 +28,17 @@
 
   ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
 
+## 0.3.1
+
+🔧 Fixes:
+
+- Update release script
+
+  We changed the release process but did not update the script as a result we had
+  to unpublish v0.3.0 from npm.
+
+  ([PR #42](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/42))
+
 ## 0.3.0
 
 🆕 New features:
