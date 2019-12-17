@@ -35,7 +35,7 @@
 - Update release script
 
   We changed the release process but did not update the script as a result we had
-  unpublish v0.3.0 from npm.
+  to unpublish v0.3.0 from npm.
 
   ([PR #42](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/42))
 
