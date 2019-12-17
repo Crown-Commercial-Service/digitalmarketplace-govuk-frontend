@@ -20,6 +20,18 @@
 
   ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
 
+🔧 Fixes:
+
+- Pull Request Title goes here
+
+  Description goes here (optional)
+
+  ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
+
+## 0.3.0
+
+🆕 New features:
+
 - New component: Digital Marketplace Header component
 
   *Requirement before using this component:*
@@ -59,13 +71,6 @@
 
   ([PR #21](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/21))
 
-🔧 Fixes:
-
-- Pull Request Title goes here
-
-  Description goes here (optional)
-
-  ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
 
 ## 0.2.1
 
