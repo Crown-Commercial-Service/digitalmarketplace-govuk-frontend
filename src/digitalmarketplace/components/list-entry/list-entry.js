@@ -1,5 +1,26 @@
 import { nodeListForEach } from '../../common'
 
+var getSibling = function (direction, elem, selector) {
+  // Get the next sibling element
+  var sibling = (direction === 'next') ? elem.nextElementSibling : elem.previousElementSibling
+
+  // If there's no selector, return the first sibling
+  if (!selector) return sibling
+
+  // If the sibling matches our selector, use it
+  // If not, jump to the next sibling and continue the loop
+
+  // For IE10,11 (Polyfill for matches)
+  if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector ||
+                                Element.prototype.webkitMatchesSelector
+  }
+  while (sibling) {
+    if (sibling.matches(selector)) return sibling
+    sibling = (direction === 'next') ? sibling.nextElementSibling : sibling = sibling.previousElementSibling
+  }
+}
+
 function ListEntry ($module) {
   this.$module = $module
   this.$allVisibleItems = $module.querySelectorAll('.dm-list-entry__item:not(.dm-list-entry__item--hidden)')
@@ -14,8 +35,8 @@ ListEntry.prototype.init = function () {
     return
   }
 
-  this.hideItems()
-  this.updateRemainingCounter()
+  this.hideEmptyItems()
+  this.updateAllCounters()
 
   this.bindRemoveClickEvent()
 
@@ -23,20 +44,21 @@ ListEntry.prototype.init = function () {
   this.bindAddClickEvent()
 }
 
-ListEntry.prototype.hideItems = function () {
-  var $visibleItems = 0
+// Hide all items that do not have a value (except for the first one)
+ListEntry.prototype.hideEmptyItems = function () {
+  var numberOfVisibleEmptyItems = 0
   nodeListForEach(this.$allItems, function ($item) {
     var $input = $item.querySelector('.dm-list-entry__item-input')
     var $removeButton = $item.querySelector('.dm-list-entry__item-remove')
 
     if ($input.value === '') {
-      if ($visibleItems >= 1) {
+      if (numberOfVisibleEmptyItems >= 1) {
         $item.classList.add('dm-list-entry__item--hidden')
         $removeButton.classList.add('dm-list-entry__item-remove--hidden')
       } else {
         $removeButton.classList.remove('dm-list-entry__item-remove--hidden')
       }
-      $visibleItems += 1
+      numberOfVisibleEmptyItems += 1
     } else {
       $item.classList.remove('dm-list-entry__item--hidden')
       $removeButton.classList.remove('dm-list-entry__item-remove--hidden')
@@ -45,6 +67,8 @@ ListEntry.prototype.hideItems = function () {
   this.$allVisibleItems = this.$module.querySelectorAll('.dm-list-entry__item:not(.dm-list-entry__item--hidden)')
 }
 
+// Binds an event listener to module to listen for any
+// click events fired by the items "Remove" button
 ListEntry.prototype.bindRemoveClickEvent = function () {
   this.$module.addEventListener('click', function (event) {
     var $clickedEl = event.target
@@ -55,20 +79,42 @@ ListEntry.prototype.bindRemoveClickEvent = function () {
       $item.classList.add('dm-list-entry__item--hidden')
       this.$allVisibleItems = this.$module.querySelectorAll('.dm-list-entry__item:not(.dm-list-entry__item--hidden)')
 
+      // Remove Error messages and styling
+      var $errorContainer = $item
+
+      if ($errorContainer.classList.contains('govuk-form-group--error')) {
+        $errorContainer.classList.remove('govuk-form-group--error')
+        $errorContainer.classList.remove('dm-list-entry__item--error')
+        $errorContainer.querySelector('.govuk-error-message').remove()
+        $errorContainer.querySelector('.govuk-input--error').classList.remove('govuk-input--error')
+      }
+
       // Hide Remove buttons if there are only one item left
       if (this.$allVisibleItems.length === 1) {
         var $removeButtons = this.$module.querySelectorAll('.dm-list-entry__item-remove')
         nodeListForEach($removeButtons, function ($button) {
           $button.classList.add('dm-list-entry__item-remove--hidden')
         })
+        this.$allVisibleItems[0].querySelector('input').focus()
+      } else {
+        // Set focus to the next input
+        var $nextVisibleItem = getSibling('next', $item, '.dm-list-entry__item:not(.dm-list-entry__item--hidden)')
+
+        if ($nextVisibleItem) {
+          $nextVisibleItem.querySelector('input').focus()
+        } else {
+          var $previousVisibleItem = getSibling('previous', $item, '.dm-list-entry__item:not(.dm-list-entry__item--hidden)')
+          $previousVisibleItem.querySelector('input').focus()
+        }
       }
 
-      this.updateCounters()
+      this.updateAllCounters()
       this.toggleAddAnotherButton()
     }
   }.bind(this))
 }
 
+// Used to update each item's label and remove button hidden text
 ListEntry.prototype.updateCounters = function () {
   var $visibleItems = this.$allVisibleItems
   var counter = 1
@@ -79,9 +125,10 @@ ListEntry.prototype.updateCounters = function () {
     })
     counter += 1
   })
-  this.updateRemainingCounter()
 }
 
+// Used to update "Add another" buttons "Remaining" counter
+// and sets focus to the new additional input
 ListEntry.prototype.updateRemainingCounter = function () {
   var $visibleItems = this.$allVisibleItems
   var totalItems = this.$allItems.length
@@ -98,8 +145,7 @@ ListEntry.prototype.bindAddClickEvent = function () {
       this.$module.querySelector('.dm-list-entry__item-container').appendChild($firstHiddenItem)
       $firstHiddenItem.classList.remove('dm-list-entry__item--hidden')
       this.$allVisibleItems = this.$module.querySelectorAll('.dm-list-entry__item:not(.dm-list-entry__item--hidden)')
-      this.updateCounters()
-      this.updateRemainingCounter()
+      this.updateAllCounters()
       $firstHiddenItem.querySelector('.dm-list-entry__item-remove').classList.remove('dm-list-entry__item-remove--hidden')
       $firstHiddenItem.querySelector('input').focus()
       this.toggleAddAnotherButton()
@@ -125,4 +171,8 @@ ListEntry.prototype.toggleAddAnotherButton = function () {
   }
 }
 
+ListEntry.prototype.updateAllCounters = function () {
+  this.updateCounters()
+  this.updateRemainingCounter()
+}
 export default ListEntry
