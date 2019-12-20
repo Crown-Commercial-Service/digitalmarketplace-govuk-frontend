@@ -24,13 +24,13 @@
   {% set describedBy = params.fieldset.describedBy %}
 {% endif %}
 
-<div class="dm-list-entry {% if params.fields.legend.classes %} params.classes {% endif %}{% if params.errorMessage %} govuk-form-group--error{% endif %}">
+<div class="dm-list-entry {% if params.fieldset.legend.classes %} params.classes {% endif %}{% if params.errorMessage %} govuk-form-group--error{% endif %}">
   {% call govukFieldset({
     describedBy: describedBy,
     classes: params.fieldset.classes,
     legend: {
       text: params.fieldset.legend.text + ('<span class="dm-entry__optional">(Optional)</span>' if params.optional) ,
-      classes: 'dm-list-entry__legend ' + ( params.fields.legend.classes if params.fields.legend.classes)
+      classes: 'dm-list-entry__legend ' + ( params.fieldset.legend.classes if params.fieldset.legend.classes)
     },
     attributes: {
       'data-module': 'dm-list-entry'
