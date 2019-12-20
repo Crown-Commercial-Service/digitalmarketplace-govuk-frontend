@@ -65,6 +65,50 @@ describe('/components/list-entry', () => {
 
         expect(isAddButtonVisible).toBeTruthy()
       })
+
+      describe('when a list entry is removed', () => {
+        const firstRow = '.dm-list-entry .dm-list-entry__item-container > .dm-list-entry__item:nth-child(1)'
+        beforeEach(async () => {
+          await page.goto(baseUrl + '/components/list-entry/preview', { waitUntil: 'load' })
+        })
+        it('"removes" the list entry by hiding it', async () => {
+          await page.click(firstRow + ' .govuk-button')
+
+          await page.waitForSelector(firstRow, { visible: false })
+          expect(await page.$(firstRow + '.dm-list-entry__item--hidden')).toBeTruthy()
+        })
+
+        it('sets focus to the next visible list entry, if the list item removed is not the last one', async () => {
+          await page.click(firstRow + ' .govuk-button')
+          await page.waitForSelector(firstRow, { visible: false })
+          const focussedInputID = await page.evaluate(() => document.activeElement.getAttribute('id'))
+          const secondRowInputID = 'my-list-1' /* zero based index i.e "1" is second item */
+
+          expect(focussedInputID).toEqual(secondRowInputID)
+        })
+
+        it('sets focus to the previous visible list entry, if the list item removed is the last one', async () => {
+          const lastRow = '.dm-list-entry .dm-list-entry__item-container > .dm-list-entry__item:nth-child(5)'
+          await page.click(lastRow + ' .govuk-button')
+          await page.waitForSelector(lastRow, { visible: false })
+          const focussedInputID = await page.evaluate(() => document.activeElement.getAttribute('id'))
+          const second2LastRowInputID = 'my-list-3' /* zero based index i.e "1" is second item */
+
+          expect(focussedInputID).toEqual(second2LastRowInputID)
+        })
+
+        it('clears the list entry input value', async () => {
+          await page.click(firstRow + ' .govuk-button')
+          await page.waitForSelector(firstRow, { visible: false })
+          const removedListEntryValue = await page.evaluate((firstRow) => document.querySelector(firstRow + ' input'))
+
+          expect(removedListEntryValue).toBeNull()
+        })
+
+        it('removes any error styling if the list entry had a previous validation error', async () => {
+
+        })
+      })
     })
   })
 })

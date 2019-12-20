@@ -5,7 +5,6 @@
 
 {#-  We need this for error messages and hints as well -#}
 {% set id = params.id%}
-{# {% set params.fieldset.legend.classes = 'app-list-entry__legend' %} #}
 
 {% if params.hint %}
   {% set hintId = id + '-hint' %}
@@ -84,7 +83,7 @@
           {%- if params.pattern %} pattern="{{ params.pattern }}"{% endif -%}
           {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor -%}>
         </div>
-        <button class="govuk-button govuk-button--secondary dm-list-entry__item-remove dm-list-entry__item-remove--hidden">Remove <span class="govuk-visually-hidden">number <span class="dm-list-entry__counter"></span> entry</span></button>
+        <button class="govuk-button govuk-button--secondary dm-list-entry__item-remove dm-list-entry__item-remove--hidden">Remove <span class="govuk-visually-hidden">entry number <span class="dm-list-entry__counter"></span></span></button>
       </div>
     {% endfor %}
   </div>
