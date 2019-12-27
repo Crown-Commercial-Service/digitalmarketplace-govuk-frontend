@@ -1,0 +1,26 @@
+params:
+- name: role
+  type: string
+  required: false
+  description: Used to determine whether a user is logged in or not. Could be set to "None" if the user is not logged in
+examples:
+  - name: default
+    data:
+      isAdmin: false
+  - name: for Admin Frontend
+    data:
+      isAdmin: true
+  - name: for Buyer
+    data:
+      role: 'buyer'
+  - name: for Supplier
+    data:
+      role: 'supplier'
+  - name: for users in other roles
+    data:
+      role: 'woodchucker'
+  - name: for user who is not signed in
+    data:
+      role: null
+
+
