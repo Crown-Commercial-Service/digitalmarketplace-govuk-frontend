@@ -17,5 +17,11 @@
     .dm-alert--noticees {
         border-color: govuk-colour("blue");
     }
-
+    .dm-alert__title {
+        margin: 0px;
+    }
+    .dm-alert__body {
+        @include govuk-responsive-padding(4);
+        @include govuk-font(19);
+    }
 }
