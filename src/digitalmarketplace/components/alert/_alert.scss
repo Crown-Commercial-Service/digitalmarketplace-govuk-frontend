@@ -14,12 +14,15 @@
     .dm-alert--error {
         border-color: $govuk-error-colour;
     }
-    .dm-alert--noticees {
+    .dm-alert--notice {
         border-color: govuk-colour("blue");
     }
     .dm-alert__title {
-        @include govuk-font(24);
+        @include govuk-font(19, $weight: bold);
         margin: 0px;
+    }
+    .dm-alert__title--large {
+        @include govuk-font(24, $weight: bold);
     }
     .dm-alert__body {
         @include govuk-font(19);
