@@ -1,29 +1,38 @@
-// const axe = require('../../../../lib/axe-helper')
+const axe = require('../../../../lib/axe-helper')
 
-// const { render, getExamples } = require('../../../../lib/jest-helpers.js')
+const { render, getExamples } = require('../../../../lib/jest-helpers.js')
 
-// const examples = getExamples('header')
+const examples = getExamples('alert')
 
-// describe('header', () => {
+describe('alert', () => {
 //   describe('when a user is not logged in', () => {
 //     beforeAll(() => {
 //       mockedMethods = {
 //         url_for: urlForMock
 //       }
-//     })
+    // })
 
-//     it('default example passes accessibility tests', async () => {
-//       const $ = render('header', examples.default, mockedMethods)
+  it('default example passes accessibility tests', async () => {
+    const $ = render('alert', examples.default)
+    const results = await axe($.html())
+    expect(results).toHaveNoViolations()
+  })
 
-//       const results = await axe($.html())
-//       expect(results).toHaveNoViolations()
-//     })
-//     it('renders a header component with all our standard links', () => {
-//       const $ = render('header', examples.default, mockedMethods)
-//       expect($.html()).toMatchSnapshot()
-//     })
-//   })
+  it('renders an alert component with the title text', () => {
+    const $ = render('alert', examples.default)
+    expect($.html()).toMatchSnapshot()
+  })
 
+  it('renders an alert component with the optional headingLevel param of 1', () => {
+    const $ = render('alert', examples["with optional headingLevel param"])
+    expect($.html()).toMatchSnapshot()
+  })
+
+  it('renders an alert component with error message', () => {
+    const $ = render('alert', examples["with an error message"])
+    expect($.html()).toMatchSnapshot()
+  })
+  
 //   describe('buyer signed in', () => {
 //     beforeAll(() => {
 //       mockedMethods = {
@@ -125,4 +134,4 @@
 //       expect($.html()).toMatchSnapshot()
 //     })
 //   })
-// })
+})
