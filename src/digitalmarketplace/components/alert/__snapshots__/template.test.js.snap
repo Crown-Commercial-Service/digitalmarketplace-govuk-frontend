@@ -2,7 +2,7 @@
 
 exports[`alert renders an alert component with error message 1`] = `
 "<html><head></head><body><div data-module=\\"dm-alert\\" class=\\"dm-alert dm-alert--error dm-alert-test-class\\" dm-alert-test-key-1=\\"dm-alert-test-value-1\\" dm-alert-test-key-2=\\"dm-alert-test-value-2\\">
-    <h2 class=\\"dm-alert__title\\">
+    <h2 class=\\"dm-alert__title dm-alert__title--large\\">
         An action has been <span style=\\"color: red\\">completed</span> that lead to an error alert.
     </h2>
         <div class=\\"dm-alert__body\\">
@@ -23,7 +23,7 @@ exports[`alert renders an alert component with the optional headingLevel param o
 
 exports[`alert renders an alert component with the title text 1`] = `
 "<html><head></head><body><div data-module=\\"dm-alert\\" class=\\"dm-alert dm-alert--success\\">
-    <h2 class=\\"dm-alert__title\\">
+    <h2 class=\\"dm-alert__title dm-alert__title--large\\">
         A successful action has been completed.
     </h2>
         <div class=\\"dm-alert__body\\">
