@@ -4,6 +4,7 @@
 @include govuk-exports("digitalmarketplace/component/alert") {
 
     .dm-alert {
+        @include govuk-focusable;
         @include govuk-responsive-padding(4);
         @include govuk-responsive-margin(8, "bottom");
         border: govuk-spacing(1) solid;
