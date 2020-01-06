@@ -32,11 +32,6 @@
 
 - New component: Digital Marketplace Alert component
 
-  *Requirement before using this component:*
-  - To use this the application must be using `govuk-frontend` template
-  - To use this the application must be using `govuk-frontend` phase banner as phase tag
-    is no longer part of the header and sits underneath and outside the header
-
   *Installing component:*
   1. Check config.py has this line for jinja to find the components
       ```
@@ -46,7 +41,7 @@
   2. Import the component in `_base_page.html`
      `{% from "digitalmarketplace/components/alert/macro.njk" import dmAlert %}`
 
-  3. Use the component `{{ dmAlert({}) }}`
+  3. Use the component `{{ dmAlert({...}) }}`. For its parameters, see its README and/or YAML. For examples, see the review app.
 
   ([PR #45](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/45))
 
