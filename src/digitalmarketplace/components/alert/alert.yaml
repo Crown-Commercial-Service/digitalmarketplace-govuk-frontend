@@ -2,7 +2,7 @@ params:
 - name: type
   type: string
   required: true
-  description: Defines which type of alert will be rendered.
+  description: Defines which type of alert will be rendered. The options are alert (red), notice (blue) and success (green).
 - name: titleText
   type: string
   required: true
