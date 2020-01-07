@@ -1,0 +1,17 @@
+<div
+    data-module="dm-alert"
+    class="dm-alert dm-alert--{{ params.type }}{%- if params.classes %} {{ params.classes }}{% endif %}"
+    {%- for key, value in params.attributes %} {{key}}="{{value}}"{% endfor %}
+    tabindex="0"
+>
+    <h{% if params.headingLevel %}{{ params.headingLevel }}{% else %}2{% endif %}
+        class="dm-alert__title{% if params.html or params.text %} dm-alert__title--large{% endif %}"
+    >
+        {{ params.titleHtml|safe if params.titleHtml else params.titleText }}
+    </h{% if params.headingLevel %}{{ params.headingLevel }}{% else %}2{% endif %}>
+    {% if params.html or params.text %}
+        <div class="dm-alert__body">
+            {{ params.html|safe if params.html else params.text }}
+        </div>
+    {% endif %}
+</div>

@@ -28,6 +28,23 @@
 
   ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
 
+🆕 New features:
+
+- New component: Digital Marketplace Alert component
+
+  *Installing component:*
+  1. Check config.py has this line for jinja to find the components
+      ```
+                  os.path.join(repo_root, 'node_modules', 'digitalmarketplace-govuk-frontend')
+      ```
+
+  2. Import the component in `_base_page.html`
+     `{% from "digitalmarketplace/components/alert/macro.njk" import dmAlert %}`
+
+  3. Use the component `{{ dmAlert({...}) }}`. For its parameters, see its README and/or YAML. For examples, see the review app.
+
+  ([PR #45](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/45))
+
 ## 0.3.1
 
 🔧 Fixes:
