@@ -3,8 +3,9 @@ const sass = require('gulp-sass')
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 const rollup = require('gulp-better-rollup')
+const rename = require('gulp-rename')
 // const taskArguments = require('./task-arguments')
-// const gulpif = require('gulp-if')
+const gulpif = require('gulp-if')
 // const uglify = require('gulp-uglify')
 // const eol = require('gulp-eol')
 const cssnano = require('cssnano')
@@ -32,6 +33,12 @@ const js = async (done) => {
   // let srcFiles = isDist ? configPaths.src + 'all.js' : configPaths.src + '**/*.js'
   const dmFrontendSrc = 'src/digitalmarketplace/'
   const srcFiles = dmFrontendSrc + 'all.js'
+  let destPath = 'app/public/assets/javascript/'
+  const preparingToPublish = (process.env.DMTASK || 'development').trim().toLowerCase() === 'preparing'
+
+  if (preparingToPublish) {
+    destPath = 'package/digitalmarketplace/'
+  }
 
   await gulp.src([
     srcFiles,
@@ -44,14 +51,14 @@ const js = async (done) => {
       format: 'umd'
     }))
     // .pipe(uglify({ie8: true }))
-    // .pipe(gulpif(isDist,
-    //   rename({
-    //     basename: 'govuk-frontend',
-    //     extname: '.min.js'
-    //   })
-    // ))
+    .pipe(gulpif(preparingToPublish,
+      rename({
+        basename: 'all.compiled',
+        extname: '.js'
+      })
+    ))
     // .pipe(eol())
-    .pipe(gulp.dest('app/public/assets/javascript/'))
+    .pipe(gulp.dest(destPath))
 
   await done()
 }
