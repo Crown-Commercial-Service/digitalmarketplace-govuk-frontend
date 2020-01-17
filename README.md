@@ -75,15 +75,9 @@ Run `npm start dev`
 - watch task for any file changes to `src`, compiles and reloads the browser (using browsersync)
 - Start the webserver and reload the server if any server config changes (using nodemon)
 
+## 3. Publishing
 
-## 3. Publishing to npm
-
-Run `npm run release`
-- Removes `package/govuk-frontend`  and `package/digitalmarketplace`
-- Copy `node_modules/govuk-frontend` to `package`
-- copy `src/digitalmarketplace` to `package`
-- publishes to npm repositiory
-
+Follow the steps in `docs/publishing.md`.
 
 ## Licence
 
