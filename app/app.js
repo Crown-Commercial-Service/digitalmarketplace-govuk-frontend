@@ -59,6 +59,7 @@ module.exports = (options) => {
   // Set up middleware to serve static assets
   app.use('/public', express.static('app/public/'))
   app.use('/public/assets/govuk-frontend', express.static('node_modules/govuk-frontend/assets/'))
+  app.use('/public/assets/govuk-frontend/javascript', express.static('node_modules/govuk-frontend/'))
 
   app.use('/docs', express.static(configPaths.sassdoc))
 
