@@ -28,6 +28,8 @@
 
   ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
 
+## 0.4.0
+
 🆕 New features:
 
 - New component: Digital Marketplace Alert component
