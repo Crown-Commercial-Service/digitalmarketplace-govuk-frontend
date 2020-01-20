@@ -1,0 +1,17 @@
+params:
+- name: serviceName
+  type: string
+  required: false
+  description: Name of the service that the user is visiting.
+previewLayout: full-width
+examples:
+  - name: default
+    data:
+      serviceName: Digital Marketplace
+  - name: with custom service name
+    data:
+      serviceName: Digital Marketplace Admin
+  - name: with custom componentID
+    data:
+      serviceName: Digital Marketplace
+      id: 'my-custom-component-id'
