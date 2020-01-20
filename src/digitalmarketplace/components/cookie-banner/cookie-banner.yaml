@@ -1,0 +1,10 @@
+params:
+- name: serviceName
+  type: string
+  required: false
+  description: Name of the service that the user is visiting.
+previewLayout: full-width
+examples:
+  - name: default
+    data:
+      serviceName: Digital Marketplace
