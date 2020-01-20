@@ -44,5 +44,3 @@
 ```bash
 npm logout
 ```
-
-14. Add a card in Trello to update each Digital Marketplace frontend application.
