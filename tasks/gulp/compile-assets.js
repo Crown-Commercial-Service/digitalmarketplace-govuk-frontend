@@ -2,11 +2,12 @@ const gulp = require('gulp')
 const sass = require('gulp-sass')
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
-// const rollup = require('gulp-better-rollup')
-// const taskArguments = require('./task-arguments')
-// const gulpif = require('gulp-if')
-// const uglify = require('gulp-uglify')
-// const eol = require('gulp-eol')
+const rollup = require('gulp-better-rollup')
+const rollupPluginCommonjs = require('rollup-plugin-commonjs')
+const rollupPluginNodeResolve = require('rollup-plugin-node-resolve')
+const babel = require('gulp-babel')
+const gulpif = require('gulp-if')
+const rename = require('gulp-rename')
 const cssnano = require('cssnano')
 
 // Compile CSS task ---------------------
@@ -27,31 +28,50 @@ scss.displayName = 'Compile : SCSS'
 
 // Compile js task for preview ----------
 // --------------------------------------
-const js = () => {
-  // for dist/ folder we only want compiled 'all.js' file
-  // let srcFiles = isDist ? configPaths.src + 'all.js' : configPaths.src + '**/*.js'
-  const govukFrontendSrc = 'src/govuk-frontend/'
-  const srcFiles = govukFrontendSrc + 'all.js'
+const js = async (done) => {
+  const dmFrontendSrc = 'src/digitalmarketplace/'
+  const srcFiles = dmFrontendSrc + 'all.js'
+  let destPath = 'app/public/assets/javascript/'
+  const preparingToPublish = (process.env.DMTASK || 'development').trim().toLowerCase() === 'preparing'
 
-  return gulp.src([
+  if (preparingToPublish) {
+    destPath = 'package/digitalmarketplace/'
+  }
+
+  await gulp.src([
     srcFiles,
-    '!' + govukFrontendSrc + '**/*.test.js'
+    '!' + dmFrontendSrc + '**/*.test.js'
   ])
-    // .pipe(rollup({
-    //   // Used to set the `window` global and UMD/AMD export name.
-    //   name: 'GOVUKFrontend',
-    //   // UMD allows the published bundle to work in CommonJS and in the browser.
-    //   format: 'umd'
-    // }))
-    // .pipe(uglify({ie8: true }))
-    // .pipe(gulpif(isDist,
-    //   rename({
-    //     basename: 'govuk-frontend',
-    //     extname: '.min.js'
-    //   })
-    // ))
-    // .pipe(eol())
-    .pipe(gulp.dest('app/public/assets/javascript/'))
+    .pipe(rollup({
+      plugins: [
+        // determine module entry points from either 'module' or 'main' fields in package.json
+        rollupPluginNodeResolve({
+          mainFields: ['module', 'main']
+        }),
+        // gulp rollup runs on nodeJS so reads modules in commonJS format
+        // this adds node_modules to the require path so it can find the GOVUK Frontend modules
+        rollupPluginCommonjs({
+          include: 'node_modules/**'
+        })
+      ]
+    }, {
+      // Used to set the `window` global and UMD/AMD export name.
+      name: 'DMGOVUKFrontend',
+      // UMD allows the published bundle to work in CommonJS and in the browser.
+      format: 'umd'
+    }))
+    .pipe(babel({
+      presets: ['@babel/preset-env']
+    }))
+    .pipe(gulpif(preparingToPublish,
+      rename({
+        basename: 'digitalmarketplace-govuk-frontend',
+        extname: '.js'
+      })
+    ))
+    .pipe(gulp.dest(destPath))
+
+  await done()
 }
 
 js.displayName = 'Compile : JavaScript'
