@@ -28,15 +28,19 @@
 
 9. Once the Digital Marketplace GOV.UK Frontend pull request is approved, merge to **master**.
 
-###  Publishing to NPM
-
 10. Checkout **master** and pull the latest changes.
 
 11. Log into npm `npm login`, using team [credentials](https://github.com/alphagov/digitalmarketplace-credentials/tree/master/pass/npmjs.org).
 
 12. Run `npm run release`, you will be prompted to continue or cancel. This will run tests and build `package` folder before finally going on to publish the package to npm.
 
-13. Log out from npm
+13. Create a release in the [GitHub interface](https://github.com/alphagov/digitalmarketplace-govuk-frontend/releases/new)
+  - select the latest tag version
+  - set "Digital Marketplace GOV.UK Frontend release v[version-number]" as the title
+  - add release notes from changelog
+  - publish release
+
+14. Log out from npm
 ```bash
 npm logout
 ```
