@@ -21,7 +21,7 @@
 
 6. Update [`package/package.json`](../package/package.json) version with the new version number.
 
-7. Commit all the changes you made (Should only be 2 files) and push up to Github
+7. Commit the changes to `CHANGELOG.md` and `package/package.json` with the commit message "Release [version number]".
 
 8. Create a pull request and copy the changelog text.
    When reviewing the PR, check that the version numbers have been updated and the changelog
