@@ -1,5 +1,7 @@
 import CookieBanner from './components/cookie-banner/cookie-banner'
 
+import Analytics from './components/analytics/analytics'
+
 function initAll (options) {
   const $cookieBanner = document.querySelector('[data-module="dm-cookie-banner')
   if ($cookieBanner) {
@@ -9,5 +11,6 @@ function initAll (options) {
 
 export {
   initAll,
+  Analytics,
   CookieBanner
 }
