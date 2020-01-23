@@ -25,6 +25,7 @@
     "standard": "^14.3.1"
   },
   "jest": {
+    "preset": "jest-puppeteer",
     "setupFilesAfterEnv": [
       "./config/jest-setup.js"
     ],
@@ -33,9 +34,26 @@
       "/app/"
     ]
   },
+  "browserslist": [
+    ">0.1%",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "last 2 Samsung versions",
+    "Safari >= 12",
+    "ie 11",
+    "iOS >= 9"
+  ],
   "standard": {
     "env": [
       "jest"
+    ],
+    "globals": [
+      "page",
+      "browser",
+      "context",
+      "Element",
+      "jestPuppeteer"
     ],
     "ignore": [
       "/package/**/*",
@@ -57,8 +75,10 @@
     "jest": "^25.1.0",
     "jest-axe": "^3.3.0",
     "install-peers": "^1.0.3",
+    "jest-puppeteer": "^4.3.0",
     "nodemon": "^2.0.2",
     "nunjucks": "^3.2.0",
+    "puppeteer": "^2.0.0",
     "rollup": "^1.29.0"
   }
 }
