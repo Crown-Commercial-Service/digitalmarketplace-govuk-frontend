@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "gulp dev --gulpfile 'app/gulpfile.js'",
-    "test": "standard && jest",
+    "test": "standard && gulp compiling && jest",
     "build": "gulp build --silent",
     "release": "./bin/release.sh",
     "release:dry-run": "npm run release -- --dry-run",
