@@ -1,7 +1,8 @@
 import Cookie from '../../helpers/cookie/cookie-functions'
+import Analytics from '../analytics/analytics'
 
-function CookieBanner ($module) {
-  this.cookie = Cookie
+const CookieBanner = function ($module) {
+  this.cookie = new Cookie()
   this.$module = $module
 }
 
@@ -74,7 +75,7 @@ CookieBanner.prototype.setCookieConsent = function (analyticsConsent) {
   this.$module.showConfirmationMessage(analyticsConsent)
   this.$module.cookieBannerConfirmationMessage.focus()
 
-  if (analyticsConsent) { window.GOVUK.initAnalytics() }
+  if (analyticsConsent) { Analytics.init() }
 }
 
 CookieBanner.prototype.showConfirmationMessage = function (analyticsConsent) {

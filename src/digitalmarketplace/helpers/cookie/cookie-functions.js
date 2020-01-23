@@ -1,9 +1,9 @@
 // used by the cookie banner component
-var DEFAULT_COOKIE_CONSENT = {
+const DEFAULT_COOKIE_CONSENT = {
   analytics: false
 }
 
-var COOKIE_CATEGORIES = {
+const COOKIE_CATEGORIES = {
   _ga: 'analytics',
   _gid: 'analytics'
 }

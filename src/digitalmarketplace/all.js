@@ -1,9 +1,9 @@
 import CookieBanner from './components/cookie-banner/cookie-banner'
 
-import Analytics from './components/analytics/analytics'
+import initAnalytics from './components/analytics/init'
 
 function initAll (options) {
-  const $cookieBanner = document.querySelector('[data-module="dm-cookie-banner')
+  const $cookieBanner = document.querySelector('[data-module="dm-cookie-banner"]')
   if ($cookieBanner) {
     new CookieBanner($cookieBanner).init()
   }
@@ -11,6 +11,6 @@ function initAll (options) {
 
 export {
   initAll,
-  Analytics,
+  initAnalytics,
   CookieBanner
 }
