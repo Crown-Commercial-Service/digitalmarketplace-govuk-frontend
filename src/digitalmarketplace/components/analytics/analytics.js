@@ -18,10 +18,7 @@ Analytics.prototype.init = function () { /* eslint-disable */
 }
 
 Analytics.prototype.trackPageview = function (path, title, options) {
-  // strip UUIDs
-  const page = (window.location.pathname + window.location.search).replace(
-    /[a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12}/g, '…'
-  )
+  const page = (window.location.pathname + window.location.search)
   window.ga('send', 'pageview', page)
 }
 

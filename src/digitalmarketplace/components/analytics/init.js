@@ -14,6 +14,9 @@ function initAnalytics () {
     // TODO: Check if we still need this hack for the domain
     const cookieDomain = (document.domain === 'www.digitalmarketplace.service.gov.uk') ? '.digitalmarketplace.service.gov.uk' : document.domain
 
+    // Load Analytics libraries
+    Analytics.init()
+
     // Configure profiles and make interface public
     // for custom dimensions, virtual pageviews and events
     window.DMGOVUKFrontend.analytics = new Analytics({
