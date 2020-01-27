@@ -51,7 +51,7 @@
     "express": "^4.17.1",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
-    "jest": "^24.9.0",
+    "jest": "^25.1.0",
     "jest-axe": "^3.2.0",
     "nodemon": "^2.0.2",
     "nunjucks": "^3.2.0"
