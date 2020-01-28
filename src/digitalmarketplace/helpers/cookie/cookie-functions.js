@@ -8,7 +8,7 @@ const COOKIE_CATEGORIES = {
   _gid: 'analytics'
 }
 
-const getCookie = function (name) {
+export function getCookie (name) {
   var nameEQ = name + '='
   var cookies = document.cookie.split(';')
   for (var i = 0, len = cookies.length; i < len; i++) {
@@ -29,10 +29,10 @@ Cookie methods
 Usage:
 
   Setting a cookie:
-  Cookie('hobnob', 'tasty', { days: 30 })
+  setCookie('hobnob', 'tasty', { days: 30 })
 
   Reading a cookie:
-  Cookie('hobnob')
+  getCookie('hobnob')
 
   Deleting a cookie:
   Cookie('hobnob', null)
@@ -41,21 +41,21 @@ Usage:
 function Cookie (name, value, options) {
   if (typeof value !== 'undefined') {
     if (value === false || value === null) {
-      return this.setCookie(name, '', { days: -1 })
+      return setCookie(name, '', { days: -1 })
     } else {
       // Default expiry date of 30 days
       if (typeof options === 'undefined') {
         options = { days: 30 }
       }
-      return this.setCookie(name, value, options)
+      return setCookie(name, value, options)
     }
   } else {
     return getCookie(name)
   }
 }
 
-Cookie.prototype.getConsentCookie = function () {
-  var consentCookie = this.cookie('cookies_policy')
+export function getConsentCookie () {
+  var consentCookie = getCookie('cookies_policy')
   var consentCookieObj
 
   if (consentCookie) {
@@ -75,8 +75,8 @@ Cookie.prototype.getConsentCookie = function () {
   return consentCookieObj
 }
 
-Cookie.prototype.setConsentCookie = function (options) {
-  var cookieConsent = this.getConsentCookie()
+export function setConsentCookie (options) {
+  var cookieConsent = getConsentCookie()
 
   if (!cookieConsent) {
     cookieConsent = JSON.parse(JSON.stringify(DEFAULT_COOKIE_CONSENT))
@@ -99,18 +99,18 @@ Cookie.prototype.setConsentCookie = function (options) {
     }
   }
 
-  this.setCookie('cookies_policy', JSON.stringify(cookieConsent), { days: 365 })
+  setCookie('cookies_policy', JSON.stringify(cookieConsent), { days: 365 })
 }
 
-Cookie.prototype.checkConsentCookieCategory = function (cookieName, cookieCategory) {
-  var currentConsentCookie = this.getConsentCookie()
+function checkConsentCookieCategory (cookieName, cookieCategory) {
+  var currentConsentCookie = getConsentCookie()
 
   // If the consent cookie doesn't exist, but the cookie is in our known list, return true
   if (!currentConsentCookie && COOKIE_CATEGORIES[cookieName]) {
     return true
   }
 
-  currentConsentCookie = this.getConsentCookie()
+  currentConsentCookie = getConsentCookie()
 
   // Sometimes currentConsentCookie is malformed in some of the tests, so we need to handle these
   try {
@@ -121,7 +121,7 @@ Cookie.prototype.checkConsentCookieCategory = function (cookieName, cookieCatego
   }
 }
 
-Cookie.prototype.checkConsentCookie = function (cookieName, cookieValue) {
+function checkConsentCookie (cookieName, cookieValue) {
   // If we're setting the consent cookie OR deleting a cookie, allow by default
   if (cookieName === 'cookies_policy' || (cookieValue === null || cookieValue === false)) {
     return true
@@ -130,15 +130,19 @@ Cookie.prototype.checkConsentCookie = function (cookieName, cookieValue) {
   if (COOKIE_CATEGORIES[cookieName]) {
     var cookieCategory = COOKIE_CATEGORIES[cookieName]
 
-    return this.checkConsentCookieCategory(cookieName, cookieCategory)
+    return checkConsentCookieCategory(cookieName, cookieCategory)
   } else {
     // Deny the cookie if it is not known to us
     return false
   }
 }
 
-Cookie.prototype.setCookie = function (name, value, options) {
-  if (this.checkConsentCookie(name, value)) {
+// Usage :
+// Setting a cookie:
+// Cookie('hobnob', 'tasty', { days: 30 })
+
+export function setCookie (name, value, options) {
+  if (checkConsentCookie(name, value)) {
     if (typeof options === 'undefined') {
       options = {}
     }
@@ -154,9 +158,3 @@ Cookie.prototype.setCookie = function (name, value, options) {
     document.cookie = cookieString
   }
 }
-
-Cookie.prototype.getCookie = function (name) {
-  getCookie(name)
-}
-
-export default Cookie

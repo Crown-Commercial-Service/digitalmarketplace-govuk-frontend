@@ -1,8 +1,7 @@
-import Cookie from '../../helpers/cookie/cookie-functions'
-import Analytics from '../analytics/analytics'
+import { getCookie, setConsentCookie } from '../../helpers/cookie/cookie-functions'
+import InitialiseAnalytics from '../analytics/init'
 
 const CookieBanner = function ($module) {
-  this.cookie = new Cookie()
   this.$module = $module
 }
 
@@ -11,7 +10,7 @@ CookieBanner.prototype.clearOldCookies = function () {
   var oldCookies = ['seen_cookie_message', '_ga', '_gid']
 
   for (var i = 0; i < oldCookies.length; i++) {
-    if (this.cookie(oldCookies[i])) {
+    if (getCookie(oldCookies[i])) {
       var cookieString = oldCookies[i] + '=;expires=' + new Date() + ';domain=' + window.location.hostname.replace(/^www\./, '.') + ';path=/'
       document.cookie = cookieString
     }
@@ -51,7 +50,7 @@ CookieBanner.prototype.setupCookieMessage = function () {
 CookieBanner.prototype.showCookieMessage = function () {
   // Show the cookie banner if not in the cookie settings page
   if (!this.isInCookiesPage()) {
-    var hasCookiesPolicy = this.cookie('cookies_policy')
+    var hasCookiesPolicy = getCookie('cookies_policy')
 
     if (this.$module && !hasCookiesPolicy) {
       this.$module.style.display = 'block'
@@ -70,12 +69,12 @@ CookieBanner.prototype.hideCookieMessage = function (event) {
 }
 
 CookieBanner.prototype.setCookieConsent = function (analyticsConsent) {
-  this.cookie.setConsentCookie({ analytics: analyticsConsent })
+  setConsentCookie({ analytics: analyticsConsent })
 
   this.$module.showConfirmationMessage(analyticsConsent)
   this.$module.cookieBannerConfirmationMessage.focus()
 
-  if (analyticsConsent) { Analytics.init() }
+  if (analyticsConsent) { InitialiseAnalytics() }
 }
 
 CookieBanner.prototype.showConfirmationMessage = function (analyticsConsent) {

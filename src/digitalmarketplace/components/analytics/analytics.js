@@ -1,6 +1,6 @@
 // Stripped-down wrapper for Google Analytics, based on:
 // https://github.com/alphagov/static/blob/master/doc/analytics.md
-const Analytics = function (config) {
+export function SetupAnalytics (config) {
   window.ga('create', config.trackingId, config.cookieDomain, config.name, { cookieExpires: config.expires * 24 * 60 * 60 })
 
   window.ga('set', 'anonymizeIp', config.anonymizeIp)
@@ -8,7 +8,7 @@ const Analytics = function (config) {
   window.ga('set', 'transport', config.transport)
 }
 
-Analytics.prototype.init = function () { /* eslint-disable */
+export function LoadGoogleAnalytics () { /* eslint-disable */
   /* jshint ignore:start */
   (function(i, s, o, g, r, a, m){ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
     (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
@@ -17,13 +17,13 @@ Analytics.prototype.init = function () { /* eslint-disable */
   /* jshint ignore:end */
 }
 
-Analytics.prototype.trackPageview = function (path, title, options) {
+export function TrackPageview (path, title, options) {
   const page = (window.location.pathname + window.location.search)
   window.ga('send', 'pageview', page)
 }
 
 // https://developers.google.com/analytics/devguides/collection/analyticsjs/events
-Analytics.prototype.trackEvent = function (category, action, options) {
+export function TrackEvent (category, action, options) {
   options = options || {}
 
   var evt = {
@@ -43,4 +43,3 @@ Analytics.prototype.trackEvent = function (category, action, options) {
   window.ga('send', 'event', evt)
 }
 
-export default Analytics

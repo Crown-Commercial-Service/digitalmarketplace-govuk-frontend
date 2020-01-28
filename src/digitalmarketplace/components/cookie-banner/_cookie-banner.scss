@@ -10,6 +10,10 @@
 @import '../../../govuk-frontend/components/button/_button';
 
 @include govuk-exports("digitalmarketplace/component/cookie-banner") {
+  // component should only be shown if JS is available, by the cookieMessage JS, so hide by default
+  .dm-cookie-banner {
+    display: none;
+  }
 
   .dm-cookie-banner__wrapper {
     @include govuk-responsive-padding(4, "top");
