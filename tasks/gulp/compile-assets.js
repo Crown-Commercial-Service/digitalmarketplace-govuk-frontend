@@ -36,6 +36,8 @@ const js = async (done) => {
   let destPath = 'app/public/assets/javascript/'
   const preparingToPublish = (process.env.DMTASK || 'development').trim().toLowerCase() === 'preparing'
 
+
+  console.log(preparingToPublish)
   if (preparingToPublish) {
     destPath = 'package/digitalmarketplace/'
   }
@@ -53,8 +55,8 @@ const js = async (done) => {
     // .pipe(uglify({ie8: true }))
     .pipe(gulpif(preparingToPublish,
       rename({
-        basename: 'govuk-frontend',
-        extname: '.min.js'
+        basename: 'digitalmarketplace-govuk-frontend',
+        extname: '.js'
       })
     ))
     // .pipe(eol())
