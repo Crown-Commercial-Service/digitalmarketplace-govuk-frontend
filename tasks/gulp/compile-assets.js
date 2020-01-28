@@ -37,7 +37,7 @@ const js = async (done) => {
   const dmFrontendSrc = 'src/digitalmarketplace/'
   const srcFiles = dmFrontendSrc + 'all.js'
   let destPath = 'app/public/assets/javascript/'
-  const preparingToPublish = (process.env.DMTASK || 'development').trim().toLowerCase() !== 'preparing'
+  const preparingToPublish = (process.env.DMTASK || 'development').trim().toLowerCase() === 'preparing'
 
   if (preparingToPublish) {
     destPath = 'package/digitalmarketplace/'
