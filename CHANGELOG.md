@@ -28,6 +28,14 @@
 
   ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
 
+## 0.4.1
+
+🔧 Fixes:
+
+- Change link text for G-Cloud supplier A to Z link in footer
+
+  ([PR 55](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/55))
+
 ## 0.4.0
 
 🆕 New features:
