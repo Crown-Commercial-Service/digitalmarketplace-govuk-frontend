@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import initAnalytics from './init'
+import InitialiseAnalytics from './init'
 
 beforeAll(() => {
   // add the script GA looks for in the document
@@ -9,7 +9,7 @@ beforeAll(() => {
 
   // Set up mocks
   window.ga = jest.fn()
-  jest.spyOn(window.DMGOVUKFrontend.Analytics, 'init')
+  // jest.spyOn(window.DMGOVUKFrontend.analytics, 'init')
 
   // pretend we're on the /privacy-notice page
   jest.spyOn(window, 'location', 'get').mockImplementation(() => {
@@ -25,7 +25,7 @@ afterEach(() => {
   window.ga.mockClear()
 })
 
-describe('initAnalytics component', () => {
+describe('InitialiseAnalytics component', () => {
   it('Google Analytics is disabled by default', async () => {
     expect(window['ga-disable-UA-26179049-1']).toBe(true)
   })
@@ -37,7 +37,7 @@ describe('initAnalytics component', () => {
     })
 
     beforeEach(() => {
-      initAnalytics()
+      InitialiseAnalytics()
     })
 
     afterAll(() => {
@@ -51,7 +51,7 @@ describe('initAnalytics component', () => {
 
   describe('If initAnalytics has not yet been called', () => {
     beforeEach(() => {
-      initAnalytics()
+      InitialiseAnalytics()
     })
 
     afterEach(() => {

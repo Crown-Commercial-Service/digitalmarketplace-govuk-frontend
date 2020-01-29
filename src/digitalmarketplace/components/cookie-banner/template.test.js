@@ -2,10 +2,9 @@
  * @jest-environment jsdom
  */
 import CookieBanner from './cookie-banner'
-import Cookie from '../helpers/cookie/cookie-functions'
+import Cookie from '../../helpers/cookie/cookie-functions'
 import initAnalytics from '../analytics/init'
 const axe = require('../../../../lib/axe-helper')
-const jquery = require('jquery')
 
 const { render, getExamples } = require('../../../../lib/jest-helpers.js')
 const examples = getExamples('cookie-banner')
