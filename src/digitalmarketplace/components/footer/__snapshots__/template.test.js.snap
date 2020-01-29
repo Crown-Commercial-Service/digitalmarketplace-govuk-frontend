@@ -34,7 +34,7 @@ exports[`footer renders a footer component with all our standard links 1`] = `
                     </li>
                     <li class=\\"govuk-footer__list-item\\">
                       <a class=\\"govuk-footer__link\\" href=\\"http://www.gov.uk\\">
-                        G-Cloud supplier A-Z
+                        G-Cloud supplier A to Z
                       </a>
                     </li>
               </ul>
