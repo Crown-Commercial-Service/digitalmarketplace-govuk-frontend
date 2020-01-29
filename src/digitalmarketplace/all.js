@@ -1,5 +1,5 @@
 import CookieBanner from './components/cookie-banner/cookie-banner'
-
+import * as Analytics from './components/analytics/analytics'
 import initAnalytics from './components/analytics/init'
 
 function initAll (options) {
@@ -12,5 +12,6 @@ function initAll (options) {
 export {
   initAll,
   initAnalytics,
+  Analytics,
   CookieBanner
 }
