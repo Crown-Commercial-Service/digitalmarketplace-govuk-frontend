@@ -37,7 +37,7 @@ export function TrackEvent (category, action, options) {
   }
 
   if (typeof options === 'object') {
-    $.extend(evt, options)
+    Object.assign(evt, options)
   }
 
   window.ga('send', 'event', evt)
