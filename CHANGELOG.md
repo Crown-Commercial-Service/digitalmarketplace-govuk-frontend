@@ -28,6 +28,10 @@
 
   ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
 
+- Fix option in header component
+
+  ([PR #58](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/58))
+
 ## 0.4.1
 
 🔧 Fixes:
