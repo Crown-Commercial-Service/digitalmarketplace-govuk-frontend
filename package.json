@@ -62,11 +62,15 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@rollup/plugin-node-resolve": "^7.0.0",
     "browser-sync": "^2.26.7",
     "cheerio": "^1.0.0-rc.3",
     "cookie-parser": "^1.4.4",
     "cssnano": "^4.1.10",
     "express": "^4.17.1",
+    "gulp-babel": "^8.0.0",
     "gulp-better-rollup": "^4.0.1",
     "gulp-if": "^3.0.0",
     "gulp-plumber": "^1.2.1",
@@ -79,6 +83,9 @@
     "nodemon": "^2.0.2",
     "nunjucks": "^3.2.0",
     "puppeteer": "^2.0.0",
-    "rollup": "^1.29.0"
+    "rollup": "^1.29.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
