@@ -32,6 +32,30 @@
 
   ([PR #58](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/58))
 
+🆕 New features:
+
+- New component: Cookie banner and analytics
+
+  *Requirement before using this component:*
+  - To use this the application must be using `govuk-frontend` template
+  - There must be functionality for the user to change their cookie preferences
+
+  *Installing component:*
+  1. Check config.py has this line for jinja to find the components
+      ```
+      os.path.join(repo_root, 'node_modules', 'digitalmarketplace-govuk-frontend')
+      ```
+
+  2. Import the component in `_base_page.html`
+     ```
+     {% from "digitalmarketplace/components/cookie-banner/macro.njk" import dmCookieBanner %}
+     ```
+
+  3. Include the component `{{ dmCookieBanner({...}) }}` in the `{% block header %}` block.
+     For its parameters, see its README and/or YAML. For examples, see the review app.
+
+  ([PR #49](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/49))
+
 ## 0.4.1
 
 🔧 Fixes:
