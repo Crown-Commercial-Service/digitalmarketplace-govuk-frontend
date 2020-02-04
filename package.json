@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "gulp dev --gulpfile 'app/gulpfile.js'",
-    "test": "standard && jest",
+    "test": "standard && gulp compiling && jest",
     "build": "gulp build --silent",
     "release": "./bin/release.sh",
     "release:dry-run": "npm run release -- --dry-run",
@@ -25,6 +25,7 @@
     "standard": "^14.3.1"
   },
   "jest": {
+    "preset": "jest-puppeteer",
     "setupFilesAfterEnv": [
       "./config/jest-setup.js"
     ],
@@ -33,9 +34,26 @@
       "/app/"
     ]
   },
+  "browserslist": [
+    ">0.1%",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "last 2 Samsung versions",
+    "Safari >= 12",
+    "ie 11",
+    "iOS >= 9"
+  ],
   "standard": {
     "env": [
       "jest"
+    ],
+    "globals": [
+      "page",
+      "browser",
+      "context",
+      "Element",
+      "jestPuppeteer"
     ],
     "ignore": [
       "/package/**/*",
@@ -44,16 +62,30 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@rollup/plugin-node-resolve": "^7.0.0",
     "browser-sync": "^2.26.7",
     "cheerio": "^1.0.0-rc.3",
     "cookie-parser": "^1.4.4",
     "cssnano": "^4.1.10",
     "express": "^4.17.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-if": "^3.0.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.0.2",
     "jest": "^25.1.0",
     "jest-axe": "^3.3.0",
+    "install-peers": "^1.0.3",
+    "jest-puppeteer": "^4.3.0",
     "nodemon": "^2.0.2",
-    "nunjucks": "^3.2.0"
+    "nunjucks": "^3.2.0",
+    "puppeteer": "^2.0.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
