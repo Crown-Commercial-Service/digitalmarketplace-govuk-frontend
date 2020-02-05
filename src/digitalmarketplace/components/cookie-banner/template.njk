@@ -1,5 +1,7 @@
 {% set componentID = params.id if params.id else 'dm-cookie-banner' %}
 {% set serviceName = params.serviceName if params.serviceName else 'Digital Marketplace' %}
+{% set cookieInfoUrl = params.cookieInfoUrl if params.cookieInfoUrl else '/cookies' %}
+{% set cookieSettingsUrl = params.cookieSettingsUrl if params.cookieSettingsUrl else '/users/cookie-settings' %}
 
 <div id="{{ componentID }}" class="dm-cookie-banner govuk-width-container" data-module="dm-cookie-banner" role="region" aria-describedby="dm-cookie-banner__heading">
   <div class="dm-cookie-banner__wrapper">
@@ -16,13 +18,13 @@
       <button class="govuk-button dm-cookie-banner__button dm-cookie-banner__button--reject" type="submit" data-accept-cookies="false" aria-describedby="dm-cookie-banner__heading">
         No<span class="govuk-visually-hidden">, {{ serviceName }} cannot store analytics cookies on your device</span>
       </button>
-      <a class="govuk-link dm-cookie-banner__link" href="/cookies">How {{ serviceName }} uses cookies</a>
+      <a class="govuk-link dm-cookie-banner__link" href="{{ cookieInfoUrl }}">How {{ serviceName }} uses cookies</a>
     </div>
   </div>
 
   <div class="dm-cookie-banner__confirmation" tabindex="-1">
     <p class="dm-cookie-banner__confirmation-message govuk-body">
-      You can <a class="govuk-link" href="/cookies">change your cookie settings</a> at any time.
+      You can <a class="govuk-link" href="{{ cookieSettingsUrl }}">change your cookie settings</a> at any time.
     </p>
     <button class="dm-cookie-banner__hide-button govuk-link" data-hide-cookie-banner="true" role="link">Hide</button>
   </div>

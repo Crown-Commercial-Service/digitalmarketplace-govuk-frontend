@@ -22,7 +22,7 @@ exports[`cookie-banner component renders a cookie banner with visible content an
 
   <div class=\\"dm-cookie-banner__confirmation\\" tabindex=\\"-1\\">
     <p class=\\"dm-cookie-banner__confirmation-message govuk-body\\">
-      You can <a class=\\"govuk-link\\" href=\\"/cookies\\">change your cookie settings</a> at any time.
+      You can <a class=\\"govuk-link\\" href=\\"/user/cookie-settings\\">change your cookie settings</a> at any time.
     </p>
     <button class=\\"dm-cookie-banner__hide-button govuk-link\\" data-hide-cookie-banner=\\"true\\" role=\\"link\\">Hide</button>
   </div>
