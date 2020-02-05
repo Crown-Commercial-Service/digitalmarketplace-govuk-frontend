@@ -32,6 +32,8 @@
 
   ([PR #58](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/58))
 
+## 0.5.0
+
 🆕 New features:
 
 - New component: Cookie banner and analytics
