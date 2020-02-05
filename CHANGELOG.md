@@ -2,7 +2,13 @@
 
 ## Unreleased
 
-See Changelog Examples at the bottom of this page.
+🔧 Fixes:
+
+- Use dm_cookies_policy to be in line with our other custom cookies
+- Use template parameters for Cookie Settings URL and Cookie Info URL
+- Banner should not be displayed on the Cookie Settings page
+
+  ([PR #62](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/62))
 
 ## 0.5.0
 
