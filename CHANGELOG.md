@@ -2,35 +2,7 @@
 
 ## Unreleased
 
-💥 Breaking changes:
-
-- Pull Request Title goes here
-
-  Description goes here (optional)
-
-  To migrate you need to change: X
-
-  ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
-
-🆕 New features:
-
-- Pull Request Title goes here
-
-  Description goes here (optional)
-
-  ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
-
-🔧 Fixes:
-
-- Pull Request Title goes here
-
-  Description goes here (optional)
-
-  ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
-
-- Fix option in header component
-
-  ([PR #58](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/58))
+See Changelog Examples at the bottom of this page.
 
 ## 0.5.0
 
@@ -57,6 +29,12 @@
      For its parameters, see its README and/or YAML. For examples, see the review app.
 
   ([PR #49](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/49))
+
+🔧 Fixes:
+
+- Fix option in header component
+
+  ([PR #58](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/58))
 
 ## 0.4.1
 
@@ -178,3 +156,32 @@
 - Import and use govuk-frontend v2.13.0
 
   ([PR #1](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/1))
+
+
+## Changelog Examples
+
+💥 Breaking changes:
+
+- Pull Request Title goes here
+
+  Description goes here (optional)
+
+  To migrate you need to change: X
+
+  ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
+
+🆕 New features:
+
+- Pull Request Title goes here
+
+  Description goes here (optional)
+
+  ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
+
+🔧 Fixes:
+
+- Pull Request Title goes here
+
+  Description goes here (optional)
+
+  ([PR #N](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/N))
