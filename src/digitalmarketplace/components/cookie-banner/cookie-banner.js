@@ -50,7 +50,7 @@ CookieBanner.prototype.setupCookieMessage = function () {
 CookieBanner.prototype.showCookieMessage = function () {
   // Show the cookie banner if not in the cookie settings page
   if (!this.isInCookiesPage()) {
-    var hasCookiesPolicy = getCookie('cookies_policy')
+    var hasCookiesPolicy = getCookie('dm_cookies_policy')
 
     if (this.$module && !hasCookiesPolicy) {
       this.$module.style.display = 'block'

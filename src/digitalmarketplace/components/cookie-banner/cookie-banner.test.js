@@ -42,7 +42,7 @@ describe('cookie-banner new user', () => {
 
 describe('cookie-banner returning user', () => {
   it('with consent cookie set should not see the cookie banner', async () => {
-    const cookie = { name: 'cookies_policy', value: '{"analytics": true }' }
+    const cookie = { name: 'dm_cookies_policy', value: '{"analytics": true }' }
 
     await goToAndGetComponent('cookie-banner', { cookie })
     await page.setCookie(cookie) // set cookies to browser to pretend that user has agreed
@@ -53,7 +53,7 @@ describe('cookie-banner returning user', () => {
   })
 
   it('with consent cookie set to accept analytics should have analytics enabled', async () => {
-    const cookie = { name: 'cookies_policy', value: '{"analytics": true }' }
+    const cookie = { name: 'dm_cookies_policy', value: '{"analytics": true }' }
     await goToAndGetComponent('cookie-banner')
     await page.setCookie(cookie) // set cookies to browser to pretend that user has agreed
     await page.reload() // reload the page
@@ -64,7 +64,7 @@ describe('cookie-banner returning user', () => {
   })
 
   it('with consent cookie set to reject analytics should not have analytics enabled', async () => {
-    const cookie = { name: 'cookies_policy', value: '{"analytics": false }' }
+    const cookie = { name: 'dm_cookies_policy', value: '{"analytics": false }' }
     await goToAndGetComponent('cookie-banner')
     await page.setCookie(cookie) // set cookies to browser to pretend that user has agreed
     await page.reload() // reload the page
@@ -77,7 +77,7 @@ describe('cookie-banner returning user', () => {
 describe('cookie-banner new user', () => {
   describe('cookie-banner accepting analytics', () => {
     beforeEach(async () => {
-      await page.deleteCookie({ name: 'cookies_policy' })
+      await page.deleteCookie({ name: 'dm_cookies_policy' })
       await page.deleteCookie({ name: '_gid' })
       await page.deleteCookie({ name: '_ga' })
 
@@ -92,7 +92,7 @@ describe('cookie-banner new user', () => {
 
     it('should set consent cookie', async () => {
       const cookies = await page.cookies()
-      expect(cookies).toEqual(expect.arrayContaining([expect.objectContaining({ name: 'cookies_policy' })]))
+      expect(cookies).toEqual(expect.arrayContaining([expect.objectContaining({ name: 'dm_cookies_policy' })]))
       expect(cookies).toEqual(expect.arrayContaining([expect.objectContaining({ value: '{"analytics":true}' })]))
     })
 
@@ -121,7 +121,7 @@ describe('cookie-banner new user', () => {
 
   describe('cookie-banner rejecting analytics', () => {
     beforeEach(async () => {
-      await page.deleteCookie({ name: 'cookies_policy' })
+      await page.deleteCookie({ name: 'dm_cookies_policy' })
       await page.deleteCookie({ name: '_gid' })
       await page.deleteCookie({ name: '_ga' })
 
@@ -136,7 +136,7 @@ describe('cookie-banner new user', () => {
 
     it('should set consent cookie', async () => {
       const cookies = await page.cookies()
-      expect(cookies[0].name).toEqual('cookies_policy')
+      expect(cookies[0].name).toEqual('dm_cookies_policy')
       expect(cookies[0].value).toEqual('{"analytics":false}')
     })
 
