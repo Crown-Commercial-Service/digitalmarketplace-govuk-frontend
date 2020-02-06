@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+🆕 New features:
+
+- New component: Cookie settings page javascript
+
+  - Allows a user to set their analytics cookie preferences
+
 🔧 Fixes:
 
 - Use dm_cookies_policy to be in line with our other custom cookies
