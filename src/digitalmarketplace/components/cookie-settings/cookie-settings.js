@@ -77,8 +77,8 @@ CookieSettings.prototype.submitSettingsForm = function (event) {
 }
 
 CookieSettings.prototype.showConfirmationMessage = function () {
-  var confirmationMessage = document.querySelector('#cookie-settings-confirmation')
-  var previousPageLink = document.querySelector('.cookie-settings__prev-page')
+  var confirmationMessage = document.querySelector('#dm-cookie-settings-confirmation')
+  var previousPageLink = document.querySelector('.dm-cookie-settings__prev-page')
   var referrer = CookieSettings.prototype.getReferrerLink()
 
   document.body.scrollTop = document.documentElement.scrollTop = 0
@@ -94,7 +94,7 @@ CookieSettings.prototype.showConfirmationMessage = function () {
 }
 
 CookieSettings.prototype.showErrorMessage = function () {
-  var errorMessage = document.querySelector('div#cookie-settings-error')
+  var errorMessage = document.querySelector('#dm-cookie-settings-error')
   if (errorMessage !== null) {
     errorMessage.style.display = 'block'
     document.body.scrollTop = document.documentElement.scrollTop = 0
@@ -102,14 +102,14 @@ CookieSettings.prototype.showErrorMessage = function () {
 }
 
 CookieSettings.prototype.hideErrorMessage = function () {
-  var errorMessage = document.querySelector('div#cookie-settings-error')
+  var errorMessage = document.querySelector('#dm-cookie-settings-error')
   if (errorMessage !== null) {
     errorMessage.style.display = 'none'
   }
 }
 
 CookieSettings.prototype.hideWarningMessage = function () {
-  var warningMessage = document.querySelector('div#cookie-settings-warning')
+  var warningMessage = document.querySelector('#dm-cookie-settings-warning')
   if (warningMessage !== null) {
     warningMessage.style.display = 'none'
   }
