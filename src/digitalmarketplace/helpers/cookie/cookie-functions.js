@@ -55,7 +55,7 @@ function Cookie (name, value, options) {
 }
 
 export function getConsentCookie () {
-  var consentCookie = getCookie('cookies_policy')
+  var consentCookie = getCookie('dm_cookies_policy')
   var consentCookieObj
 
   if (consentCookie) {
@@ -99,7 +99,7 @@ export function setConsentCookie (options) {
     }
   }
 
-  setCookie('cookies_policy', JSON.stringify(cookieConsent), { days: 365 })
+  setCookie('dm_cookies_policy', JSON.stringify(cookieConsent), { days: 365 })
 }
 
 function checkConsentCookieCategory (cookieName, cookieCategory) {
@@ -123,7 +123,7 @@ function checkConsentCookieCategory (cookieName, cookieCategory) {
 
 function checkConsentCookie (cookieName, cookieValue) {
   // If we're setting the consent cookie OR deleting a cookie, allow by default
-  if (cookieName === 'cookies_policy' || (cookieValue === null || cookieValue === false)) {
+  if (cookieName === 'dm_cookies_policy' || (cookieValue === null || cookieValue === false)) {
     return true
   }
 

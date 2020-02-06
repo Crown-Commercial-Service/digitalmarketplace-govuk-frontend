@@ -8,6 +8,8 @@ examples:
   - name: default
     data:
       serviceName: Digital Marketplace
+      cookieInfoUrl: '/cookies'
+      cookieSettingsUrl: '/user/cookie-settings'
   - name: with custom service name
     data:
       serviceName: Digital Marketplace Admin
