@@ -1,8 +1,6 @@
 import { getCookie, setConsentCookie } from '../../helpers/cookie/cookie-functions'
 import InitialiseAnalytics from '../analytics/init'
 
-const cookieSettingsUrl = '/user/cookie-settings'
-
 const CookieBanner = function ($module) {
   this.$module = $module
 }
@@ -50,13 +48,11 @@ CookieBanner.prototype.setupCookieMessage = function () {
 }
 
 CookieBanner.prototype.showCookieMessage = function () {
-  // Show the cookie banner if policy cookie not set AND not on the cookie settings page
-  if (!this.isInCookieSettingsPage()) {
-    var hasCookiesPolicy = getCookie('dm_cookies_policy')
+  // Show the cookie banner if policy cookie not set
+  var hasCookiesPolicy = getCookie('dm_cookies_policy')
 
-    if (this.$module && !hasCookiesPolicy) {
-      this.$module.style.display = 'block'
-    }
+  if (this.$module && !hasCookiesPolicy) {
+    this.$module.style.display = 'block'
   }
 }
 
@@ -88,10 +84,6 @@ CookieBanner.prototype.showConfirmationMessage = function (analyticsConsent) {
   this.$cookieBannerConfirmationMessage.insertAdjacentText('afterbegin', messagePrefix)
   this.$cookieBannerMainContent.style.display = 'none'
   this.$module.cookieBannerConfirmationMessage.style.display = 'block'
-}
-
-CookieBanner.prototype.isInCookieSettingsPage = function () {
-  return window.location.pathname === cookieSettingsUrl
 }
 
 export default CookieBanner
