@@ -2,17 +2,24 @@
 
 ## Unreleased
 
+See Changelog Examples at the bottom of this page.
+
+## 0.6.0
+
 🆕 New features:
 
 - New component: Cookie settings page javascript
 
   - Allows a user to set their analytics cookie preferences
 
+  ([PR #60](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/60))
+
 🔧 Fixes:
 
 - Use dm_cookies_policy to be in line with our other custom cookies
 - Use template parameters for Cookie Settings URL and Cookie Info URL
 - Banner should not be displayed on the Cookie Settings page
+- Prefix custom CSS classes with 'dm-'
 
   ([PR #62](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/62))
 
