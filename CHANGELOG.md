@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-See Changelog Examples at the bottom of this page.
+🔧 Fixes:
+
+- Fix pre-filled values on the Cookie Settings form, by parsing dm_cookies_policy as a JSON object.
+
+  ([PR #67](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/67))
 
 ## 0.6.0
 
