@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+See below for example changelog entries.
+
+## 0.6.2
+
 🔧 Fixes:
 
 - Fix incorrect Google Analytics tracking ID.
