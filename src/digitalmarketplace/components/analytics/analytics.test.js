@@ -9,7 +9,6 @@ const defaultConfig = {
   anonymizeIp: true,
   displayFeaturesTask: null,
   transport: 'beacon',
-  name: 'DMGOVUKFrontend',
   expires: 365
 }
 
@@ -32,7 +31,7 @@ afterEach(() => {
 describe('analytics component', () => {
   it('init creates script element', async () => {
     expect(window.ga.mock.calls).toEqual([
-      ['create', 'UA-12345', 'www.digitalmarketplace.service.gov.uk', 'DMGOVUKFrontend', { cookieExpires: 31536000 }],
+      ['create', 'UA-12345', 'www.digitalmarketplace.service.gov.uk', { cookieExpires: 31536000 }],
       ['set', 'anonymizeIp', true],
       ['set', 'displayFeaturesTask', null],
       ['set', 'transport', 'beacon']
