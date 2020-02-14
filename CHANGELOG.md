@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-See below for example changelog entries.
+🔧 Fixes:
+
+- Initialise Analytics if consent cookie is present.
 
 ## 0.6.2
 
