@@ -1,5 +1,5 @@
 // Javascript code to support the Cookie Settings page
-import { getCookie, setConsentCookie } from '../../helpers/cookie/cookie-functions'
+import { getConsentCookie, setConsentCookie } from '../../helpers/cookie/cookie-functions'
 import InitialiseAnalytics from '../analytics/init'
 
 export function CookieSettings ($module) {
@@ -18,7 +18,7 @@ CookieSettings.prototype.init = function () {
 }
 
 CookieSettings.prototype.setInitialFormValues = function () {
-  var currentConsentCookie = getCookie('dm_cookies_policy')
+  var currentConsentCookie = getConsentCookie()
 
   if (!currentConsentCookie) {
     // Don't populate the form

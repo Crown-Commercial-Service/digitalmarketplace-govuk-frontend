@@ -49,7 +49,7 @@ beforeEach(() => {
 
 afterEach(() => {
   CookieHelpers.setConsentCookie.mockClear()
-  CookieHelpers.getCookie.mockClear()
+  CookieHelpers.getConsentCookie.mockClear()
   InitialiseAnalytics.mockClear()
 })
 
@@ -86,7 +86,7 @@ describe('Cookie settings', () => {
 
     describe('with existing analytics', () => {
       beforeEach(async () => {
-        CookieHelpers.getCookie.mockImplementation(() => {
+        CookieHelpers.getConsentCookie.mockImplementation(() => {
           return { dm_cookies_policy: { analytics: true } }
         })
       })
