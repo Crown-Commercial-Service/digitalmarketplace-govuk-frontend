@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+See changelog examples at the bottom of this page.
+
+## 0.6.1
+
 🔧 Fixes:
 
 - Fix pre-filled values on the Cookie Settings form, by parsing dm_cookies_policy as a JSON object.
