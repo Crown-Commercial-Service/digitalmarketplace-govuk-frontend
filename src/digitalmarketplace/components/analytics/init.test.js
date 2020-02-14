@@ -21,7 +21,7 @@ beforeAll(() => {
 
 describe('InitialiseAnalytics component', () => {
   it('Google Analytics is disabled by default', async () => {
-    expect(window['ga-disable-UA-26179049-1']).toBe(true)
+    expect(window['ga-disable-UA-49258698-1']).toBe(true)
   })
 
   describe('If initAnalytics has already been called', () => {
@@ -59,7 +59,7 @@ describe('InitialiseAnalytics component', () => {
     })
 
     it('Google Analytics will not be disabled', () => {
-      expect(window['ga-disable-UA-26179049-1']).toBe(false)
+      expect(window['ga-disable-UA-49258698-1']).toBe(false)
     })
 
     it('the Google Analytics libraries will have been loaded', () => {
