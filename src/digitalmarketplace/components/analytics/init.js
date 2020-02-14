@@ -12,8 +12,7 @@ function InitialiseAnalytics () {
   if (!('analytics' in window.DMGOVUKFrontend)) {
     window[`ga-disable-${trackingId}`] = false
 
-    // TODO: Check if we still need this hack for the domain
-    const cookieDomain = (document.domain === 'www.digitalmarketplace.service.gov.uk') ? '.digitalmarketplace.service.gov.uk' : document.domain
+    const cookieDomain = (document.domain === 'www.digitalmarketplace.service.gov.uk') ? '.www.digitalmarketplace.service.gov.uk' : document.domain
 
     // Load Analytics libraries
     PageAnalytics.LoadGoogleAnalytics()
