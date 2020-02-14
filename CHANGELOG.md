@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+See below for Changelog examples.
+
+## 0.6.3
 
 🔧 Fixes:
 
