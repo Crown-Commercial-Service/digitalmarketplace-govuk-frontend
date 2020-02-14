@@ -2,7 +2,10 @@
 
 ## Unreleased
 
-See changelog examples at the bottom of this page.
+🔧 Fixes:
+
+- Fix incorrect Google Analytics tracking ID.
+  ([PR #70](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/70))
 
 ## 0.6.1
 
