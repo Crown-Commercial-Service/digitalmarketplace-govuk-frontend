@@ -4,6 +4,8 @@
 
 See below for Changelog examples.
 
+### 0.6.4
+
 🔧 Fixes:
 
 - Remove Google Analytics tracker name.
