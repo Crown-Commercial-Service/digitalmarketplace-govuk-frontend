@@ -26,7 +26,6 @@ function InitialiseAnalytics () {
       anonymizeIp: true,
       displayFeaturesTask: null,
       transport: 'beacon',
-      name: 'DMGOVUKFrontend.analytics',
       expires: 365
     })
 

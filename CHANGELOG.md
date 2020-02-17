@@ -1,7 +1,12 @@
 # Changelog
 
 ## Unreleased
+
 See below for Changelog examples.
+
+🔧 Fixes:
+
+- Remove Google Analytics tracker name.
 
 ## 0.6.3
 

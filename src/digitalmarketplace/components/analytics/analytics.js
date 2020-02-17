@@ -1,7 +1,7 @@
 // Stripped-down wrapper for Google Analytics, based on:
 // https://github.com/alphagov/static/blob/master/doc/analytics.md
 export function SetupAnalytics (config) {
-  window.ga('create', config.trackingId, config.cookieDomain, config.name, { cookieExpires: config.expires * 24 * 60 * 60 })
+  window.ga('create', config.trackingId, config.cookieDomain, { cookieExpires: config.expires * 24 * 60 * 60 })
 
   window.ga('set', 'anonymizeIp', config.anonymizeIp)
   window.ga('set', 'displayFeaturesTask', config.displayFeaturesTask)
