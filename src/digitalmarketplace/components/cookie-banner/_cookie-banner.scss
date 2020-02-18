@@ -40,6 +40,7 @@
     padding-left: govuk-spacing(9);
     padding-right: govuk-spacing(9);
     margin-bottom: govuk-spacing(2);
+    margin-right: govuk-spacing(4);
 
     @include govuk-media-query($from: tablet) {
       flex: 0 0 150px;
@@ -47,10 +48,6 @@
       padding-right: govuk-spacing(2);
       margin-bottom: govuk-spacing(1);
     }
-  }
-
-  .dm-cookie-banner__button--accept {
-    margin-right: govuk-spacing(4);
   }
 
   .dm-cookie-banner__link {
