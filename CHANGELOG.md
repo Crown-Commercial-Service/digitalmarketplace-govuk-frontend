@@ -4,12 +4,6 @@
 
 See below for Changelog examples.
 
-### 0.6.5
-
-🔧 Fixes:
-
-- Moving margin-right from accept to both cookie buttons.
-
 ### 0.6.4
 
 🔧 Fixes:
