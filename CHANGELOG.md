@@ -4,6 +4,8 @@
 
 See below for Changelog examples.
 
+## 0.6.5
+
 🔧 Fixes:
 
 - Fix typo in footer. ([PR #79](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/79))
