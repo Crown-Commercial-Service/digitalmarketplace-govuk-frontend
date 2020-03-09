@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`banner renders a banner component with the title text 1`] = `
+"<html><head></head><body><section data-module=\\"dm-banner\\" class=\\"dm-banner dm-banner--\\" tabindex=\\"0\\">
+    <h2 class=\\"dm-banner__title dm-banner__title--large\\">
+        This is the title of the banner component.
+    </h2>
+        <div class=\\"dm-banner__body\\">
+            This is the text below the title.
+        </div>
+</section></body></html>"
+`;
+
+exports[`banner renders an banner component with the optional headingLevel param of 1 1`] = `
+"<html><head></head><body><section data-module=\\"dm-banner\\" class=\\"dm-banner dm-banner--\\" tabindex=\\"0\\">
+    <h1 class=\\"dm-banner__title\\">
+        Banner with optional headingLevel param.
+    </h1>
+</section></body></html>"
+`;

@@ -1,0 +1,42 @@
+params:
+- name: title
+  type: string
+  required: true
+  description: Message of the title heading element.
+- name: text
+  type: string
+  required: true
+  description: Text message below the title heading element. If `html` is provided, the `text` argument is not required and will be ignored.
+- name: html
+  type: string
+  required: true
+  description: HTML message below the title heading element. If `html` is provided, the `text` argument is not required and will be ignored.
+- name: headingLevel
+  type: integer
+  required: false
+  description: The level of the heading element of the title, default is 2.
+- name: classes
+  type: string
+  required: false
+  description: Classes to add to the banner's div container.
+- name: attributes
+  type: object
+  required: false
+  description: HTML attributes to add to the banner's div container.
+
+examples:
+  - name: default
+    data:
+      title: This is the title of the banner component.
+      text: This is the text below the title.
+  - name: with optional headingLevel param
+    data:
+      headingLevel: 1
+      title: Banner with optional headingLevel param.
+  - name: with all optional parameters
+    data:
+      title: Banner with all optional parameters.
+      html: This is the <strong>HTML</strong> below the title.
+      text: This should not show up.
+      classes: dm-banner-test-class
+      attributes: {"dm-banner-test-key-1": "dm-banner-test-value-1", "dm-banner-test-key-2": "dm-banner-test-value-2"}
