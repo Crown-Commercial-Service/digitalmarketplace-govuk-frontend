@@ -4,6 +4,8 @@
 
 See below for Changelog examples.
 
+## 0.7.0
+
 🆕 New features:
 
 - New component: Digital Marketplace Banner component
