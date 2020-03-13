@@ -4,6 +4,8 @@
 
 See below for Changelog examples.
 
+## 0.7.0
+
 🆕 New features:
 
 - New component: Digital Marketplace Banner component
@@ -20,6 +22,10 @@ See below for Changelog examples.
   3. Use the component `{{ dmBanner({...}) }}`. For its parameters, see its README and/or YAML. For examples, see the review app.
 
   ([PR #87](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/87))
+
+🔧 Fixes:
+
+- Fix node version in `.nvmrc` and `package/package.json` to match docker images.
 
 ## 0.6.5
 
