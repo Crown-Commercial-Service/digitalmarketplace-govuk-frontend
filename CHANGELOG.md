@@ -21,6 +21,10 @@ See below for Changelog examples.
 
   ([PR #87](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/87))
 
+🔧 Fixes:
+
+- Fix node version in `.nvmrc` and `package/package.json` to match docker images.
+
 ## 0.6.5
 
 🔧 Fixes:
