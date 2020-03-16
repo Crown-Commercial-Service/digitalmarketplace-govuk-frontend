@@ -67,7 +67,7 @@
     "@rollup/plugin-node-resolve": "^7.1.1",
     "browser-sync": "^2.26.7",
     "cheerio": "^1.0.0-rc.3",
-    "cookie-parser": "^1.4.4",
+    "cookie-parser": "^1.4.5",
     "cssnano": "^4.1.10",
     "express": "^4.17.1",
     "gulp-babel": "^8.0.0",
