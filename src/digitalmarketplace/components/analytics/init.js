@@ -2,8 +2,9 @@ import * as PageAnalytics from './analytics'
 
 window.DMGOVUKFrontend = window.DMGOVUKFrontend || {}
 
-// TODO: Remove hard coded tracking ID to make this more generic and useful to others
+// TODO: Remove hard coded tracking IDs to make this more generic and useful to others
 const trackingId = 'UA-49258698-1'
+const linkedTrackingId = 'UA-145652997-1'
 
 window[`ga-disable-${trackingId}`] = true
 
@@ -28,6 +29,9 @@ function InitialiseAnalytics () {
       transport: 'beacon',
       expires: 365
     })
+
+    // Add cross-domain tracking for www.gov.uk domain
+    PageAnalytics.AddLinkedTrackerDomain(linkedTrackingId, 'govuk_shared', ['www.gov.uk'])
 
     // Track initial pageview
     PageAnalytics.TrackPageview()

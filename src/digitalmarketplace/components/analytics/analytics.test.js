@@ -2,6 +2,9 @@
  * @jest-environment jsdom
  */
 import * as Analytics from './analytics'
+import stripPII from './pii'
+
+jest.mock('./pii')
 
 const defaultConfig = {
   trackingId: 'UA-12345',
@@ -73,5 +76,28 @@ describe('analytics component', () => {
         eventLabel: 'myLabel'
       }
     ])
+  })
+
+  it('AddLinkedTrackerDomain initialises tracker', () => {
+    window.ga.mockClear()
+
+    stripPII.mockImplementation(() => {
+      // We'd expect the helper to return a sanitised url
+      return '/search?q=[email]'
+    })
+
+    Analytics.AddLinkedTrackerDomain('UA-54321', 'myDomain', ['www.example.com'])
+
+    // Assert tracker setup calls
+    expect(window.ga.mock.calls[0]).toEqual(['create', 'UA-54321', 'auto', { name: 'myDomain' }])
+    expect(window.ga.mock.calls[1]).toEqual(['require', 'linker'])
+    expect(window.ga.mock.calls[2]).toEqual(['myDomain.require', 'linker'])
+    expect(window.ga.mock.calls[3]).toEqual(['linker:autoLink', ['www.example.com']])
+    expect(window.ga.mock.calls[4]).toEqual(['myDomain.linker:autoLink', ['www.example.com']])
+    expect(window.ga.mock.calls[5]).toEqual(['myDomain.set', 'anonymizeIp', true])
+    expect(window.ga.mock.calls[6]).toEqual(['myDomain.set', 'location', '/search?q=[email]'])
+    expect(window.ga.mock.calls[7]).toEqual(['myDomain.send', 'pageview'])
+
+    expect(stripPII).toHaveBeenCalled()
   })
 })

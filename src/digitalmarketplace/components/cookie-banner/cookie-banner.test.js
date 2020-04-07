@@ -80,6 +80,7 @@ describe('cookie-banner new user', () => {
       await page.deleteCookie({ name: 'dm_cookies_policy' })
       await page.deleteCookie({ name: '_gid' })
       await page.deleteCookie({ name: '_ga' })
+      await page.deleteCookie({ name: '_gat_govuk_shared' })
 
       await goToAndGetComponent('cookie-banner')
       await page.click('.dm-cookie-banner__button--accept')
@@ -96,14 +97,15 @@ describe('cookie-banner new user', () => {
       expect(cookies).toEqual(expect.arrayContaining([expect.objectContaining({ value: '{"analytics":true}' })]))
     })
 
-    // Flaky test - only 2 out of 3 cookies are set reliability before the assertion
-    it.skip('should have analytics cookies set', async () => {
+    // Flaky test - only 3 out of 4 cookies are set reliability before the assertion
+    it('should have analytics cookies set', async () => {
       const cookies = await page.cookies()
       // Make sure we wait until the page has loaded the Analytics code
       await page.evaluate(() => window.GoogleAnalyticsObject)
       expect(cookies).toEqual(expect.arrayContaining([expect.objectContaining({ name: '_gid' })]))
       expect(cookies).toEqual(expect.arrayContaining([expect.objectContaining({ name: '_ga' })]))
-      expect(cookies.length).toEqual(3) // 2 GA cookies plus consent cookie
+      expect(cookies).toEqual(expect.arrayContaining([expect.objectContaining({ name: '_gat_govuk_shared' })]))
+      expect(cookies.length).toEqual(4) // 3 GA cookies plus consent cookie
     })
 
     it('should have analytics enabled', async () => {
@@ -124,6 +126,7 @@ describe('cookie-banner new user', () => {
       await page.deleteCookie({ name: 'dm_cookies_policy' })
       await page.deleteCookie({ name: '_gid' })
       await page.deleteCookie({ name: '_ga' })
+      await page.deleteCookie({ name: '_gat_govuk_shared' })
 
       await goToAndGetComponent('cookie-banner')
       await page.click('.dm-cookie-banner__button--reject')
