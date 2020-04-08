@@ -2,9 +2,6 @@
  * @jest-environment jsdom
  */
 import * as Analytics from './analytics'
-import stripPII from './pii'
-
-jest.mock('./pii')
 
 const defaultConfig = {
   trackingId: 'UA-12345',
@@ -47,57 +44,100 @@ describe('analytics component', () => {
     expect(window.GoogleAnalyticsObject).toEqual('ga')
   })
 
-  it('trackPageView sends pageview event', () => {
-    window.ga.mockClear()
-
-    jest.spyOn(window, 'location', 'get').mockImplementation(() => {
-      return {
-        pathname: '/privacy-policy',
-        search: ''
-      }
+  describe('sends data to Google Analytics when', () => {
+    beforeAll(() => {
+      jest.spyOn(window, 'location', 'get').mockImplementation(() => {
+        return {
+          pathname: '/privacy-policy',
+          search: '',
+          href: '/privacy-policy'
+        }
+      })
     })
 
-    Analytics.TrackPageview()
+    it('trackPageView sends pageview event', () => {
+      window.ga.mockClear()
 
-    expect(window.ga.mock.calls[0]).toEqual(['send', 'pageview', '/privacy-policy'])
-  })
+      Analytics.TrackPageview()
 
-  it('trackEvent sends generic event', () => {
-    window.ga.mockClear()
-
-    Analytics.TrackEvent('myCategory', 'myAction', { label: 'myLabel' })
-
-    expect(window.ga.mock.calls[0]).toEqual([
-      'send',
-      'event',
-      {
-        eventAction: 'myAction',
-        eventCategory: 'myCategory',
-        eventLabel: 'myLabel'
-      }
-    ])
-  })
-
-  it('AddLinkedTrackerDomain initialises tracker', () => {
-    window.ga.mockClear()
-
-    stripPII.mockImplementation(() => {
-      // We'd expect the helper to return a sanitised url
-      return '/search?q=[email]'
+      expect(window.ga.mock.calls[0]).toEqual(['send', 'pageview', '/privacy-policy'])
     })
 
-    Analytics.AddLinkedTrackerDomain('UA-54321', 'myDomain', ['www.example.com'])
+    it('trackEvent sends generic event', () => {
+      window.ga.mockClear()
 
-    // Assert tracker setup calls
-    expect(window.ga.mock.calls[0]).toEqual(['create', 'UA-54321', 'auto', { name: 'myDomain' }])
-    expect(window.ga.mock.calls[1]).toEqual(['require', 'linker'])
-    expect(window.ga.mock.calls[2]).toEqual(['myDomain.require', 'linker'])
-    expect(window.ga.mock.calls[3]).toEqual(['linker:autoLink', ['www.example.com']])
-    expect(window.ga.mock.calls[4]).toEqual(['myDomain.linker:autoLink', ['www.example.com']])
-    expect(window.ga.mock.calls[5]).toEqual(['myDomain.set', 'anonymizeIp', true])
-    expect(window.ga.mock.calls[6]).toEqual(['myDomain.set', 'location', '/search?q=[email]'])
-    expect(window.ga.mock.calls[7]).toEqual(['myDomain.send', 'pageview'])
+      Analytics.TrackEvent('myCategory', 'myAction', { label: 'myLabel' })
 
-    expect(stripPII).toHaveBeenCalled()
+      expect(window.ga.mock.calls[0]).toEqual([
+        'send',
+        'event',
+        {
+          eventAction: 'myAction',
+          eventCategory: 'myCategory',
+          eventLabel: 'myLabel'
+        }
+      ])
+    })
+
+    it('AddLinkedTrackerDomain initialises tracker', () => {
+      window.ga.mockClear()
+
+      Analytics.AddLinkedTrackerDomain('UA-54321', 'myDomain', ['www.example.com'])
+
+      // Assert tracker setup calls
+      expect(window.ga.mock.calls[0]).toEqual(['create', 'UA-54321', 'auto', { name: 'myDomain' }])
+      expect(window.ga.mock.calls[1]).toEqual(['require', 'linker'])
+      expect(window.ga.mock.calls[2]).toEqual(['myDomain.require', 'linker'])
+      expect(window.ga.mock.calls[3]).toEqual(['linker:autoLink', ['www.example.com']])
+      expect(window.ga.mock.calls[4]).toEqual(['myDomain.linker:autoLink', ['www.example.com']])
+      expect(window.ga.mock.calls[5]).toEqual(['myDomain.set', 'anonymizeIp', true])
+      expect(window.ga.mock.calls[6]).toEqual(['myDomain.set', 'location', '/privacy-policy'])
+      expect(window.ga.mock.calls[7]).toEqual(['myDomain.send', 'pageview'])
+    })
+  })
+
+  describe('sanitises personal data when', () => {
+    beforeAll(() => {
+      jest.spyOn(window, 'location', 'get').mockImplementation(() => {
+        return {
+          pathname: '/search',
+          search: '?q=email@example.com',
+          href: '/search?q=email@example.com'
+        }
+      })
+    })
+
+    it('trackPageView sends a pageview event', () => {
+      window.ga.mockClear()
+
+      Analytics.TrackPageview()
+
+      expect(window.ga.mock.calls[0]).toEqual(['send', 'pageview', '/search?q=[email]'])
+    })
+
+    it('trackEvent sends an event', () => {
+      window.ga.mockClear()
+
+      Analytics.TrackEvent('myCategory', 'myAction', { label: 'email@example.com' })
+
+      expect(window.ga.mock.calls[0]).toEqual([
+        'send',
+        'event',
+        {
+          eventAction: 'myAction',
+          eventCategory: 'myCategory',
+          eventLabel: '[email]'
+        }
+      ])
+    })
+
+    it('AddLinkedTrackerDomain initialises tracker', () => {
+      window.ga.mockClear()
+
+      Analytics.AddLinkedTrackerDomain('UA-54321', 'myDomain', ['www.example.com'])
+
+      // Assert location has been stripped of PII when setting up tracker
+      expect(window.ga.mock.calls[6]).toEqual(['myDomain.set', 'location', '/search?q=[email]'])
+    })
   })
 })

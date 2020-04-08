@@ -22,7 +22,7 @@ export function LoadGoogleAnalytics () { /* eslint-disable */
 
 export function TrackPageview (path, title, options) {
   const page = (window.location.pathname + window.location.search)
-  window.ga('send', 'pageview', page)
+  window.ga('send', 'pageview', stripPII(page))
 }
 
 // https://developers.google.com/analytics/devguides/collection/analyticsjs/events
@@ -43,7 +43,7 @@ export function TrackEvent (category, action, options) {
     Object.assign(evt, options)
   }
 
-  window.ga('send', 'event', evt)
+  window.ga('send', 'event', stripPII(evt))
 }
 
 export function AddLinkedTrackerDomain (trackingId, name, domains) {
