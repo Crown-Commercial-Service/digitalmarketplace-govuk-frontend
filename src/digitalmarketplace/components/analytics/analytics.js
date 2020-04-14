@@ -1,3 +1,5 @@
+import stripPII from './pii'
+
 // Stripped-down wrapper for Google Analytics, based on:
 // https://github.com/alphagov/static/blob/master/doc/analytics.md
 export function SetupAnalytics (config) {
@@ -20,7 +22,7 @@ export function LoadGoogleAnalytics () { /* eslint-disable */
 
 export function TrackPageview (path, title, options) {
   const page = (window.location.pathname + window.location.search)
-  window.ga('send', 'pageview', page)
+  window.ga('send', 'pageview', stripPII(page))
 }
 
 // https://developers.google.com/analytics/devguides/collection/analyticsjs/events
@@ -41,6 +43,21 @@ export function TrackEvent (category, action, options) {
     Object.assign(evt, options)
   }
 
-  window.ga('send', 'event', evt)
+  window.ga('send', 'event', stripPII(evt))
 }
 
+export function AddLinkedTrackerDomain (trackingId, name, domains) {
+  window.ga('create', trackingId, 'auto', { name: name })
+
+  // Load the plugin.
+  window.ga('require', 'linker')
+  window.ga(name + '.require', 'linker')
+
+  // Define which domains to autoLink.
+  window.ga('linker:autoLink', domains)
+  window.ga(name + '.linker:autoLink', domains)
+
+  window.ga(name + '.set', 'anonymizeIp', true)
+  window.ga(name + '.set', 'location', stripPII(window.location.href))
+  window.ga(name + '.send', 'pageview')
+}

@@ -46,6 +46,10 @@ describe('InitialiseAnalytics component', () => {
       expect(PageAnalytics.SetupAnalytics).not.toHaveBeenCalled()
     })
 
+    it('the linked tracker domain will not have been fired', () => {
+      expect(PageAnalytics.AddLinkedTrackerDomain).not.toHaveBeenCalled()
+    })
+
     it('the initial trackPageview will not have been fired', () => {
       expect(PageAnalytics.TrackPageview).not.toHaveBeenCalled()
     })
@@ -78,6 +82,10 @@ describe('InitialiseAnalytics component', () => {
           expires: 365
         })
       )
+    })
+
+    it('adds the linked tracker domain', () => {
+      expect(PageAnalytics.AddLinkedTrackerDomain).toHaveBeenCalled()
     })
 
     it('fires an initial trackPageview', () => {

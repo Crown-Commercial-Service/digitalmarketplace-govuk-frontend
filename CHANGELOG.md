@@ -2,7 +2,10 @@
 
 ## Unreleased
 
-See below for Changelog examples.
+🆕 New features:
+
+- Adding gov.uk cross-domain tracking to Digital Marketplace analytics, based on the old [Frontend Toolkit analytics code](https://github.com/alphagov/digitalmarketplace-frontend-toolkit/blob/master/toolkit/javascripts/analytics/_register.js#L16).
+    - Includes function calls to strip personal data from both DMP analytics events and cross domain tracker events.
 
 ## 0.7.0
 
