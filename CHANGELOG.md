@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+See below for Changelog examples.
+
+## 0.8.0
 
 🆕 New features:
 
