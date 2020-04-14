@@ -3,10 +3,17 @@ const clean = require('./tasks/gulp/clean')
 const copy = require('./tasks/gulp/copy')
 const compile = require('./tasks/gulp/compile-assets')
 
-exports.postInstall = series(clean.all, copy.development)
+const postInstall = series(clean.all, copy.development)
 
-exports.build = series(clean.pkg, copy.forPublishing, compile.js)
+const compiling = series(parallel(compile.js, compile.scss))
 
-exports.compiling = series(parallel(compile.js, compile.scss))
+const build = series(
+  clean.pkg,
+  copy.forPublishing,
+  compiling
+)
 
+exports.build = build
+exports.compiling = compiling
+exports.postInstall = postInstall
 exports.default = exports.postInstall

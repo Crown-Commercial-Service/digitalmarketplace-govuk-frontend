@@ -2,7 +2,7 @@
 
 <h4 class="govuk-heading-s">Markup</h4>
 {% set componentHtml %}{{ loadComponentTemplate(componentSlug, example.data) }}{% endset %}
-<pre><code class="govuk-!-font-size-16">{{- componentHtml | e -}}</code></pre>
+<pre><code class="govuk-!-font-size-16 language-markup">{{- componentHtml | e -}}</code></pre>
 
 <h4 class="govuk-heading-s">Macro</h4>
 <pre class="govuk-!-margin-bottom-0 govuk-!-font-size-16"><code>{% raw %}{%{% endraw %} from "digitalmarketplace/components/{{ componentSlug }}/macro.njk" import {{ componentSlug | componentNameToMacroName }} {% raw %}%}{% endraw %}
