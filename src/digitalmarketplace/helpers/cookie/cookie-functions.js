@@ -5,7 +5,8 @@ const DEFAULT_COOKIE_CONSENT = {
 
 const COOKIE_CATEGORIES = {
   _ga: 'analytics',
-  _gid: 'analytics'
+  _gid: 'analytics',
+  _gat_govuk_shared: 'analytics'
 }
 
 export function getCookie (name) {
