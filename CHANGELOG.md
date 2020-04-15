@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🔧 Fixes:
+  - Deletes cross domain tracking cookie (along with other analytics cookies) when the user changes their preferences.
+  - Adds test coverage for cookie helper functions
+
 ## 0.8.0
 
 🆕 New features:
