@@ -2,7 +2,7 @@
 
 See below for Changelog examples.
 
-## Unreleased
+## 0.8.1
 
 🔧 Fixes:
   - Deletes cross domain tracking cookie (along with other analytics cookies) when the user changes their preferences.
