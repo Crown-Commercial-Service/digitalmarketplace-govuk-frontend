@@ -62,7 +62,7 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.5",
+    "autoprefixer": "^9.7.6",
     "@babel/plugin-transform-modules-commonjs": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@rollup/plugin-node-resolve": "^7.1.1",
