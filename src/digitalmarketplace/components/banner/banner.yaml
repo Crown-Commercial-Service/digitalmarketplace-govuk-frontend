@@ -40,3 +40,16 @@ examples:
       text: This should not show up.
       classes: dm-banner-test-class
       attributes: {"dm-banner-test-key-1": "dm-banner-test-value-1", "dm-banner-test-key-2": "dm-banner-test-value-2"}
+  - name: for an expired G-Cloud search
+    data:
+      title: The G-Cloud 10 services you found have expired
+      html: |
+        If you did not award a contract by Tuesday 2 July 2019, you need to
+        <a class="govuk-link" href="#">start a new search for G-Cloud 11 services</a>.
+        If you did award a contract, please tell us the outcome.
+  - name: for a withdrawn DOS opportunity
+    data:
+      title: This service was removed on Friday 1 November 2019
+      html: |
+        If you don’t know why this service was removed or you want to reinstate it, contact
+        <a class="govuk-link" href="mailto:#">cloud_digital@crowncommercial.gov.uk</a>.
