@@ -2,6 +2,15 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🆕 New features:
+  - Representative usage examples for the banner component [PR #114](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/114).
+
+🔧 Fixes:
+  - Fix mismatched tags in the banner component [PR #114](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/114).
+  - Ensure links are readable in the banner component [PR #114](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/114).
+
 ## 0.8.1
 
 🔧 Fixes:
