@@ -2,7 +2,7 @@
 
 See below for Changelog examples.
 
-## Unreleased
+## 0.9.0
 
 🆕 New features:
   - Representative usage examples for the banner component [PR #114](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/114).
