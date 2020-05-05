@@ -8,6 +8,8 @@ See below for Changelog examples.
   - Representative usage examples for the banner component [PR #114](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/114).
 
 🔧 Fixes:
+  - Add ARIA roles and labels to alert and banner components [PR #113](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/113)
+  - Adjust tabindex attribute on alert and banner components [PR #113](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/113)
   - Fix mismatched tags in the banner component [PR #114](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/114).
   - Ensure links are readable in the banner component [PR #114](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/114).
 

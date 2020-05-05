@@ -1,8 +1,10 @@
 <div
     data-module="dm-alert"
-    class="dm-alert dm-alert--{{ params.type }}{%- if params.classes %} {{ params.classes }}{% endif %}"
-    {%- for key, value in params.attributes %} {{key}}="{{value}}"{% endfor %}
-    tabindex="0"
+    role="alert"
+    aria-label="{{ params.titleHtml|striptags if params.titleHtml else params.titleText }}"
+    class="dm-alert{%- if params.type %} dm-alert--{{ params.type }}{% endif %}{%- if params.classes %} {{ params.classes }}{% endif %}"
+    {% for key, value in params.attributes %} {{key}}="{{value}}"{% endfor %}
+    tabindex="-1"
 >
     <h{% if params.headingLevel %}{{ params.headingLevel }}{% else %}2{% endif %}
         class="dm-alert__title{% if params.html or params.text %} dm-alert__title--large{% endif %}"
