@@ -23,7 +23,7 @@
     "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
     "node-emoji": "^1.10.0",
-    "standard": "^14.3.3"
+    "standard": "^14.3.4"
   },
   "jest": {
     "preset": "jest-puppeteer",
