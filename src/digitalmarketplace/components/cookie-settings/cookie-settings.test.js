@@ -106,7 +106,15 @@ describe('Cookie settings', () => {
     beforeEach(async () => {
       document.querySelector = jest.fn()
       // Create a fake element to get/set display attribute
-      document.querySelector.mockImplementation(() => { return { style: {} } })
+      document.querySelector.mockImplementation(() => {
+        return {
+          style: {},
+          classList: { remove: jest.fn(), add: jest.fn() },
+          parentElement: {
+            insertBefore: jest.fn()
+          }
+        }
+      })
     })
 
     describe('with No selected', () => {

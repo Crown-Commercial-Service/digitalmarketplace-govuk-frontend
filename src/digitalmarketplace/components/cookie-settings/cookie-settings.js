@@ -99,7 +99,7 @@ CookieSettings.prototype.showErrorMessage = function () {
     errorMessage.style.display = 'block'
     document.body.scrollTop = document.documentElement.scrollTop = 0
   }
-  showInlineErrorMessage()
+  this.showInlineErrorMessage()
 }
 
 CookieSettings.prototype.hideErrorMessage = function () {
@@ -107,7 +107,7 @@ CookieSettings.prototype.hideErrorMessage = function () {
   if (errorMessage !== null) {
     errorMessage.style.display = 'none'
   }
-  hideInlineErrorMessage()
+  this.hideInlineErrorMessage()
 }
 
 CookieSettings.prototype.hideWarningMessage = function () {
@@ -117,7 +117,7 @@ CookieSettings.prototype.hideWarningMessage = function () {
   }
 }
 
-function hideInlineErrorMessage () {
+CookieSettings.prototype.hideInlineErrorMessage = function () {
   var inlineErrorMessage = document.querySelector('#dm-cookie-settings-error-inline')
   if (inlineErrorMessage !== null) {
     inlineErrorMessage.style.display = 'none'
@@ -127,7 +127,7 @@ function hideInlineErrorMessage () {
   inlineErrorHighlight && inlineErrorHighlight.classList.remove('govuk-form-group--error')
 }
 
-function showInlineErrorMessage () {
+CookieSettings.prototype.showInlineErrorMessage = function () {
   var firstFormGroup = document.querySelector('.govuk-form-group')
   firstFormGroup && firstFormGroup.classList.add('govuk-form-group--error')
 
@@ -136,7 +136,7 @@ function showInlineErrorMessage () {
   inlineErrorSpan.className = 'govuk-error-message'
   inlineErrorSpan.innerHTML = '<span class="govuk-visually-hidden">Error:</span> Please select \'Yes\' or \'No\''
 
-  var siblingElement = document.getElementsByClassName('govuk-radios govuk-radios--inline')[0]
+  var siblingElement = document.querySelector('govuk-radios govuk-radios--inline')
   var parentElement = siblingElement.parentElement
   parentElement.insertBefore(inlineErrorSpan, siblingElement)
 }
