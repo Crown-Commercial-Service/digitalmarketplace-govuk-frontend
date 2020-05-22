@@ -136,9 +136,9 @@ function showInlineErrorMessage () {
   inlineErrorSpan.className = 'govuk-error-message'
   inlineErrorSpan.innerHTML = '<span class="govuk-visually-hidden">Error:</span> Please select \'Yes\' or \'No\''
 
-  var parentElement = document.getElementsByClassName('govuk-radios govuk-radios--inline')[0]
-  var grandparentElement = parentElement.parentElement
-  grandparentElement.insertBefore(inlineErrorSpan, parentElement)
+  var siblingElement = document.getElementsByClassName('govuk-radios govuk-radios--inline')[0]
+  var parentElement = siblingElement.parentElement
+  parentElement.insertBefore(inlineErrorSpan, siblingElement)
 }
 
 CookieSettings.prototype.hideCookieBanner = function () {
