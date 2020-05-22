@@ -134,7 +134,7 @@ CookieSettings.prototype.showInlineErrorMessage = function () {
   var inlineErrorSpan = document.createElement('span')
   inlineErrorSpan.setAttribute('id', 'dm-cookie-settings-error-inline')
   inlineErrorSpan.className = 'govuk-error-message'
-  inlineErrorSpan.innerHTML = '<span class="govuk-visually-hidden">Error:</span> Please select \'Yes\' or \'No\''
+  inlineErrorSpan.innerHTML = '<span class="govuk-visually-hidden">Error:</span> Select yes to accept analytics cookies'
 
   var siblingElement = document.querySelector('govuk-radios govuk-radios--inline')
   var parentElement = siblingElement.parentElement
