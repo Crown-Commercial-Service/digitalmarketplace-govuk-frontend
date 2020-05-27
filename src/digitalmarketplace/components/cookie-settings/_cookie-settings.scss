@@ -1,0 +1,30 @@
+@import "../../../govuk-frontend/settings/all";
+@import "../../../govuk-frontend/tools/all";
+@import "../../../govuk-frontend/helpers/all";
+
+@include govuk-exports("digitalmarketplace/component/cookie-settings") {
+  .dm-cookie-settings__form-wrapper,
+  .dm-cookie-settings__warning {
+    display: none;
+
+    .js-enabled & {
+      display: block;
+    }
+  }
+
+  .dm-cookie-settings__no-js {
+    .js-enabled & {
+      display: none;
+    }
+  }
+
+  .dm-cookie-settings__confirmation {
+    @include govuk-font(19);
+    display: none;
+  }
+
+  .dm-cookie-settings__error {
+    @include govuk-font(19);
+    display: none;
+  }
+}
