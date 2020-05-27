@@ -55,7 +55,7 @@ CookieSettings.prototype.submitSettingsForm = function (event) {
   }
   // the cookie choice must be set when form is submitted
   if (options.analytics === undefined) {
-    this.showErrorMessage()
+    this.showError()
     return false
   }
 
@@ -70,7 +70,7 @@ CookieSettings.prototype.submitSettingsForm = function (event) {
   }
 
   this.hideWarningMessage()
-  this.hideErrorMessage()
+  this.hideError()
   this.showConfirmationMessage()
 
   return false
@@ -93,21 +93,21 @@ CookieSettings.prototype.showConfirmationMessage = function () {
   confirmationMessage.style.display = 'block'
 }
 
-CookieSettings.prototype.showErrorMessage = function () {
-  var errorMessage = document.querySelector('#dm-cookie-settings-error')
-  if (errorMessage !== null) {
-    errorMessage.style.display = 'block'
+CookieSettings.prototype.showError = function () {
+  var errorSummary = document.querySelector('#dm-cookie-settings-error')
+  if (errorSummary !== null) {
+    errorSummary.style.display = 'block'
     document.body.scrollTop = document.documentElement.scrollTop = 0
   }
-  this.showInlineErrorMessage()
+  this.showErrorMessage()
 }
 
-CookieSettings.prototype.hideErrorMessage = function () {
-  var errorMessage = document.querySelector('#dm-cookie-settings-error')
-  if (errorMessage !== null) {
-    errorMessage.style.display = 'none'
+CookieSettings.prototype.hideError = function () {
+  var errorSummary = document.querySelector('#dm-cookie-settings-error')
+  if (errorSummary !== null) {
+    errorSummary.style.display = 'none'
   }
-  this.hideInlineErrorMessage()
+  this.hideErrorMessage()
 }
 
 CookieSettings.prototype.hideWarningMessage = function () {
@@ -117,28 +117,28 @@ CookieSettings.prototype.hideWarningMessage = function () {
   }
 }
 
-CookieSettings.prototype.hideInlineErrorMessage = function () {
-  var inlineErrorMessage = document.querySelector('#dm-cookie-settings-error-inline')
-  if (inlineErrorMessage !== null) {
-    inlineErrorMessage.style.display = 'none'
+CookieSettings.prototype.hideErrorMessage = function () {
+  var errorMessage = document.querySelector('#dm-cookie-settings-error-message')
+  if (errorMessage !== null) {
+    errorMessage.style.display = 'none'
   }
 
-  var inlineErrorHighlight = document.querySelector('.govuk-form-group--error')
-  inlineErrorHighlight && inlineErrorHighlight.classList.remove('govuk-form-group--error')
+  var errorMessageHighlight = document.querySelector('.govuk-form-group--error')
+  errorMessageHighlight && errorMessageHighlight.classList.remove('govuk-form-group--error')
 }
 
-CookieSettings.prototype.showInlineErrorMessage = function () {
+CookieSettings.prototype.showErrorMessage = function () {
   var firstFormGroup = document.querySelector('.govuk-form-group')
   firstFormGroup && firstFormGroup.classList.add('govuk-form-group--error')
 
-  var inlineErrorSpan = document.createElement('span')
-  inlineErrorSpan.setAttribute('id', 'dm-cookie-settings-error-inline')
-  inlineErrorSpan.className = 'govuk-error-message'
-  inlineErrorSpan.innerHTML = '<span class="govuk-visually-hidden">Error:</span> Select yes to accept analytics cookies'
+  var errorMessageSpan = document.createElement('span')
+  errorMessageSpan.setAttribute('id', 'dm-cookie-settings-error-message')
+  errorMessageSpan.className = 'govuk-error-message'
+  errorMessageSpan.innerHTML = '<span class="govuk-visually-hidden">Error:</span> Select yes to accept analytics cookies'
 
   var siblingElement = document.querySelector('govuk-radios govuk-radios--inline')
   var parentElement = siblingElement.parentElement
-  parentElement.insertBefore(inlineErrorSpan, siblingElement)
+  parentElement.insertBefore(errorMessageSpan, siblingElement)
 }
 
 CookieSettings.prototype.hideCookieBanner = function () {
