@@ -1,0 +1,103 @@
+{% extends "_generic.njk" %}
+
+{% from "govuk-frontend/components/button/macro.njk" import govukButton %}
+{% from "govuk-frontend/components/radios/macro.njk" import govukRadios %}
+
+{% from "alert/macro.njk" import dmAlert %}
+
+{% block content %}
+  {{ dmAlert({
+    "type": "error",
+    "classes": "dm-cookie-settings__error",
+    "titleText": "There was a problem saving your settings",
+    "text": "Please select 'Yes' or 'No'.",
+    "attributes": {"id": "dm-cookie-settings-error"}
+  }) }}
+
+  {{ dmAlert({
+    "type": "success",
+    "classes": "dm-cookie-settings__confirmation",
+    "titleText": "Your cookie settings were saved",
+    "html": '<p class="govuk-body">You can change your preferences at any time on this page.</p><p class="govuk-body"><a href="/" class="govuk-link dm-cookie-settings__prev-page">Go back to the page you were looking at.</a></p>',
+    "attributes": {"id": "dm-cookie-settings-confirmation"}
+  }) }}
+
+  {{ dmAlert({
+    "type": "notice",
+    "classes": "dm-cookie-settings__warning",
+    "titleText": "Your cookie settings have not yet been saved",
+    "text": 'Digital Marketplace sets cookies when you visit our website. You can choose to change these settings to your own preferences. You need to save this page with your new choices.',
+    "attributes": {"id": "dm-cookie-settings-warning"}
+  }) }}
+
+  <div class="dm-cookie-settings__no-js">
+    <p class="govuk-body">We use Javascript to set most of our cookies.
+      Unfortunately Javascript is not running on your browser, so you cannot change your settings. You can try:</p>
+    <ul class="govuk-list">
+      <li>reloading the page</li>
+      <li>turning on Javascript in your browser</li>
+    </ul>
+  </div>
+
+  <form id="dm-cookie-settings" data-module="dm-cookie-settings">
+    {{ govukRadios({
+      "name": "cookies-analytics",
+      "idPrefix": "cookie-settings",
+      "classes": "govuk-radios--inline",
+      "fieldset": {
+        "legend": {
+          "text": "Do you want to accept analytics cookies?",
+          "isPageHeading": false,
+          "classes": "govuk-fieldset__legend--m"
+        }
+      },
+      "items": [
+        {
+          "text": "Yes",
+          "value": "On"
+        },
+        {
+          "text": "No",
+          "value": "Off"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      "text": "Save cookie settings"
+    }) }}
+  </form>
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    "meta": {
+      "items": [
+        {
+          "text": "Clear cookie settings",
+          "attributes": {
+            "data-module": "app-link-clear-cookie-settings"
+          }
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+  <script>
+    function clearCookieSettings() {
+      document.cookie = (
+        'dm_cookies_policy=;expires=Thu, 01 Jan 1970 00:00:00 GMT'
+        + ';domain=' + window.location.hostname.replace(/^www\./, '.') + ';path=/');
+        location.reload();
+        return false;
+    }
+
+    window.onload = function() {
+      var a = document.querySelector('a[data-module=app-link-clear-cookie-settings]');
+      a.onclick = clearCookieSettings;
+    }
+  </script>
+  {{ super() }}
+{% endblock %}
