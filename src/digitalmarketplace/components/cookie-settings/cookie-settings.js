@@ -128,15 +128,15 @@ CookieSettings.prototype.hideErrorMessage = function () {
 }
 
 CookieSettings.prototype.showErrorMessage = function () {
-  var firstFormGroup = document.querySelector('.govuk-form-group')
-  firstFormGroup && firstFormGroup.classList.add('govuk-form-group--error')
+  var formGroup = document.querySelector('#dm-cookie-settings, .govuk-form-group')
+  formGroup && formGroup.classList.add('govuk-form-group--error')
 
   var errorMessageSpan = document.createElement('span')
   errorMessageSpan.setAttribute('id', 'dm-cookie-settings-error-message')
   errorMessageSpan.className = 'govuk-error-message'
   errorMessageSpan.innerHTML = '<span class="govuk-visually-hidden">Error:</span> Select yes to accept analytics cookies'
 
-  var siblingElement = document.querySelector('govuk-radios govuk-radios--inline')
+  var siblingElement = document.querySelector('#cookie-settings-1, .govuk-radios--inline')
   var parentElement = siblingElement.parentElement
   parentElement.insertBefore(errorMessageSpan, siblingElement)
 }
