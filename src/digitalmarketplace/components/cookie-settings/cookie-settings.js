@@ -128,7 +128,7 @@ CookieSettings.prototype.hideErrorMessage = function () {
 }
 
 CookieSettings.prototype.showErrorMessage = function () {
-  var formGroup = document.querySelector('#dm-cookie-settings, .govuk-form-group')
+  var formGroup = document.querySelector('#dm-cookie-settings .govuk-form-group')
   formGroup && formGroup.classList.add('govuk-form-group--error')
 
   var errorMessageSpan = document.createElement('span')
