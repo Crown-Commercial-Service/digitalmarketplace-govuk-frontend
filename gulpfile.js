@@ -5,15 +5,15 @@ const compile = require('./tasks/gulp/compile-assets')
 
 const postInstall = series(clean.all, copy.development)
 
-const compiling = series(parallel(compile.js, compile.scss))
+const compile = series(parallel(compile.js, compile.scss))
 
 const build = series(
   clean.pkg,
   copy.forPublishing,
-  compiling
+  compile
 )
 
 exports.build = build
-exports.compiling = compiling
+exports.compile = compile
 exports.postInstall = postInstall
 exports.default = exports.postInstall

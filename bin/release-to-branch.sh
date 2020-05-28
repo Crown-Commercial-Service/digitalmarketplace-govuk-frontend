@@ -20,9 +20,7 @@ fi
 git checkout -b $BRANCH_NAME
 
 # Build the package as normal
-export DMTASK='preparing'
 npm run build
-unset DMTASK
 
 echo "✍️ Commiting changed package"
 git add package/ --force
