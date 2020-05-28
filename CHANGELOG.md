@@ -2,6 +2,11 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🔧 Fixes:
+  - Javascript to support error message on cookie settings page [PR #124](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/124)
+
 ## 0.9.0
 
 🆕 New features:

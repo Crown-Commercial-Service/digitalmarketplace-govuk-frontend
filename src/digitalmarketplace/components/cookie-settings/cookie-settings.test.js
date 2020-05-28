@@ -106,7 +106,15 @@ describe('Cookie settings', () => {
     beforeEach(async () => {
       document.querySelector = jest.fn()
       // Create a fake element to get/set display attribute
-      document.querySelector.mockImplementation(() => { return { style: {} } })
+      document.querySelector.mockImplementation(() => {
+        return {
+          style: {},
+          classList: { remove: jest.fn(), add: jest.fn() },
+          parentElement: {
+            insertBefore: jest.fn()
+          }
+        }
+      })
     })
 
     describe('with No selected', () => {
@@ -129,13 +137,13 @@ describe('Cookie settings', () => {
       it('shows confirmation message and hides other messages', async () => {
         const $cookieSettings = await new CookieSettings(cookieSettingsForm)
         $cookieSettings.hideWarningMessage = jest.fn()
-        $cookieSettings.hideErrorMessage = jest.fn()
+        $cookieSettings.hideError = jest.fn()
         $cookieSettings.showConfirmationMessage = jest.fn()
 
         await $cookieSettings.submitSettingsForm(submitEvent)
 
         expect($cookieSettings.hideWarningMessage).toHaveBeenCalled()
-        expect($cookieSettings.hideErrorMessage).toHaveBeenCalled()
+        expect($cookieSettings.hideError).toHaveBeenCalled()
         expect($cookieSettings.showConfirmationMessage).toHaveBeenCalled()
       })
     })
@@ -160,13 +168,13 @@ describe('Cookie settings', () => {
       it('shows confirmation message and hides other messages', async () => {
         const $cookieSettings = await new CookieSettings(cookieSettingsForm)
         $cookieSettings.hideWarningMessage = jest.fn()
-        $cookieSettings.hideErrorMessage = jest.fn()
+        $cookieSettings.hideError = jest.fn()
         $cookieSettings.showConfirmationMessage = jest.fn()
 
         await $cookieSettings.submitSettingsForm(submitEvent)
 
         expect($cookieSettings.hideWarningMessage).toHaveBeenCalled()
-        expect($cookieSettings.hideErrorMessage).toHaveBeenCalled()
+        expect($cookieSettings.hideError).toHaveBeenCalled()
         expect($cookieSettings.showConfirmationMessage).toHaveBeenCalled()
       })
     })
@@ -190,11 +198,11 @@ describe('Cookie settings', () => {
 
       it('shows error message', async () => {
         const $cookieSettings = await new CookieSettings(cookieSettingsForm)
-        $cookieSettings.showErrorMessage = jest.fn()
+        $cookieSettings.showError = jest.fn()
 
         await $cookieSettings.submitSettingsForm(submitEvent)
 
-        expect($cookieSettings.showErrorMessage).toHaveBeenCalled()
+        expect($cookieSettings.showError).toHaveBeenCalled()
       })
     })
   })
