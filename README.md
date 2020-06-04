@@ -61,6 +61,7 @@ and what task are run
 
 
 ## 1. Installing the repo
+
 After cloning this repository you will need to run `npm install`. After npm has successfully installed
 all packages and dependencies, an npm `postinstall` script will automatically run to do the following tasks:
 
@@ -76,6 +77,18 @@ Run `npm start dev`
 - compiles sass and js from `src` and places in `app/public`
 - watch task for any file changes to `src`, compiles and reloads the browser (using browsersync)
 - Start the webserver and reload the server if any server config changes (using nodemon)
+
+## 3. Testing features in apps
+
+Follow the steps in `docs/publishing-a-pre-release.md` to push a branch to GitHub as a release that can be consumed by other NodeJS apps.
+
+Alternatively, you can create a package locally using `npm run build`:
+
+    # in digitalmarketplace-govuk-frontend
+    $ npm run build
+    # change to an app
+    $ cd ../digitalmarketplace-user-frontend
+    $ npm install ../digitalmarketplace-govuk-frontend/package
 
 ## 3. Publishing
 
