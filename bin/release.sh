@@ -27,9 +27,7 @@ if [[ $continue_prompt != 'y' ]]; then
 fi
 
 npm run test
-export DMTASK='preparing'
 npm run build
-unset DMTASK
 
 if [ "$DRY_RUN" = "false" ]; then
   NPM_USER=$(npm whoami)

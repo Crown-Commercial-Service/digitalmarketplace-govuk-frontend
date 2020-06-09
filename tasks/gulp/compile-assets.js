@@ -6,7 +6,6 @@ const rollup = require('gulp-better-rollup')
 const rollupPluginCommonjs = require('rollup-plugin-commonjs')
 const rollupPluginNodeResolve = require('rollup-plugin-node-resolve')
 const babel = require('gulp-babel')
-const gulpif = require('gulp-if')
 const rename = require('gulp-rename')
 const cssnano = require('cssnano')
 
@@ -26,17 +25,11 @@ const scss = () => {
 
 scss.displayName = 'Compile : SCSS'
 
-// Compile js task for preview ----------
+// Compile js task ----------------------
 // --------------------------------------
 const js = async (done) => {
   const dmFrontendSrc = 'src/digitalmarketplace/'
   const srcFiles = dmFrontendSrc + 'all.js'
-  let destPath = 'app/public/assets/javascript/'
-  const preparingToPublish = (process.env.DMTASK || 'development').trim().toLowerCase() === 'preparing'
-
-  if (preparingToPublish) {
-    destPath = 'package/digitalmarketplace/'
-  }
 
   await gulp.src([
     srcFiles,
@@ -63,13 +56,12 @@ const js = async (done) => {
     .pipe(babel({
       presets: ['@babel/preset-env']
     }))
-    .pipe(gulpif(preparingToPublish,
-      rename({
-        basename: 'digitalmarketplace-govuk-frontend',
-        extname: '.js'
-      })
-    ))
-    .pipe(gulp.dest(destPath))
+    .pipe(gulp.dest('app/public/assets/javascript/')) // save copy for review app
+    .pipe(rename({
+      basename: 'digitalmarketplace-govuk-frontend',
+      extname: '.js'
+    }))
+    .pipe(gulp.dest('package/digitalmarketplace/')) // save copy for publishing
 
   await done()
 }
