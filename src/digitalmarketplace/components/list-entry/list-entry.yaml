@@ -1,0 +1,87 @@
+params:
+- name: id
+  type: string
+  required: true
+  description: Used as an `id` in the HTML for the list-entry as a whole, and also as a prefix for the `id`'s of the hints & input fields'
+- name: fieldset
+  type: object
+  required: true
+  description: Options for the fieldset component (e.g. legend).
+- name: label
+  type: object
+  required: true
+  description: Options for the label component.
+- name: maxItems
+  type: integer
+  required: true
+  description: Maximum number of entries a user can add
+- name: items
+  type: array
+  required: false
+
+examples:
+  - name: default
+    data:
+      id: 'my-list'
+      fieldset:
+        legend:
+          text: 'What requirements are essential to carry out the work?'
+      name: 'requirements'
+      maxItems: 10
+      hint:
+        text: Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
+      label:
+        text: Requirements
+      items:
+        - value: 'sweet'
+        - value: 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
+        - value: 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
+        - value: 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
+
+  - name: with no hint text
+    data:
+      id: 'my-list-2'
+      fieldset:
+        legend:
+          text: 'What requirements are essential to carry out the work?'
+      name: 'requirements'
+      maxItems: 3
+      label:
+        text: 'Input number 1'
+      items:
+        - value: 'sweet'
+
+  - name: with error
+    data:
+      id: 'my-list-2'
+      fieldset:
+        legend:
+          text: 'What requirements are essential to carry out the work?'
+      name: 'requirements'
+      maxItems: 3
+      items:
+        - value: ''
+          errorMessage:
+            text: 'Please provide at least one requirement.'
+
+  - name: with error for specific fields
+    data:
+      id: 'my-list-3'
+      fieldset:
+        legend:
+          text: 'What requirements are essential to carry out the work?'
+      hint:
+        text: Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
+      name: 'requirements'
+      maxItems: 3
+      items:
+        - label:
+          value: 'Professionally initiate innovative partnerships.'
+        - label:
+          value: 'Synergistically iterate scalable leadership skills without competitive testing procedures. Quickly envisioneer.'
+          errorMessage:
+            text: 'Must be less than 5 words'
+        - label:
+          value: 'Saturday Night Fever'
+          errorMessage:
+            text: 'Must be numeric'

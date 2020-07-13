@@ -1,0 +1,92 @@
+{% from "../../../govuk-frontend/components/error-message/macro.njk" import govukErrorMessage -%}
+{% from "../../../govuk-frontend/components/fieldset/macro.njk" import govukFieldset -%}
+{% from "../../../govuk-frontend/components/hint/macro.njk" import govukHint -%}
+{% from "../../../govuk-frontend/components/label/macro.njk" import govukLabel %}
+
+{#-  We need this for error messages and hints as well -#}
+{% set id = params.id%}
+
+{% if params.hint %}
+  {% set hintId = id + '-hint' %}
+  {% set describedBy = describedBy + ' ' + hintId if describedBy else  hintId -%}
+{% endif  %}
+
+{#- a record of other elements that we need to associate with the input using
+   aria-describedby – for example hints or error messages -#}
+{% set describedBy = params.describedBy if params.describedBy else "" %}
+
+{% if params.hint %}
+  {% set hintId = id + '-hint' %}
+  {% set describedBy = describedBy + ' ' + hintId if describedBy else  hintId -%}
+{% endif  %}
+
+{% if params.fieldset.describedBy %}
+  {% set describedBy = params.fieldset.describedBy %}
+{% endif %}
+
+<div class="dm-list-entry {% if params.fieldset.legend.classes %} params.classes {% endif %}{% if params.errorMessage %} govuk-form-group--error{% endif %}">
+  {% call govukFieldset({
+    describedBy: describedBy,
+    classes: params.fieldset.classes,
+    legend: {
+      text: params.fieldset.legend.text + ('<span class="dm-entry__optional">(Optional)</span>' if params.optional) ,
+      classes: 'dm-list-entry__legend ' + ( params.fieldset.legend.classes if params.fieldset.legend.classes)
+    },
+    attributes: {
+      'data-module': 'dm-list-entry'
+    }
+  }) %}
+
+  {% if params.hint %}
+    {{ govukHint({
+        id: hintId,
+        classes: 'dm-list-entry__hint ' + ( params.hint.classes if params.hint.classes),
+        attributes: params.hint.attributes,
+        html: params.hint.html,
+        text: params.hint.text
+      }) | indent(2) | trim() }}
+  {% endif -%}
+
+  <div class="dm-list-entry__item-container" role="region" aria-live="assertive">
+    {% for i in range(0, params.maxItems) -%}
+      {%- set item = params.items[i] if params.items[i] else {} -%}
+      {%- set itemValue = item.value if item.value else None -%}
+      {%- set entryItemId = params.id + '-' + i -%}
+      {% if params.items[i].errorMessage %}
+        {% set errorId = entryItemId + '-error' %}
+        {% set describedBy = describedBy + ' ' + errorId if describedBy else errorId %}
+      {% endif %}
+
+      <div class="dm-list-entry__item {% if params.items[i].errorMessage %}dm-list-entry__item--error govuk-form-group--error{% endif %}">
+        {% if params.items[i].errorMessage %}
+        {{ govukErrorMessage({
+          id: errorId,
+          classes: 'dm-list-entry-error-message  ' + params.errorMessage.classes,
+          attributes: params.errorMessage.attributes,
+          html: params.errorMessage.html,
+          text: params.items[i].errorMessage.text,
+          visuallyHiddenText: params.errorMessage.visuallyHiddenText
+        }) | indent(2) | trim }}
+        {% endif %}
+        {#- Add label and text field -#}
+        <div class="dm-list-entry__inputs">
+          {{ govukLabel ({
+            classes: 'dm-list-entry__item-label ' + (params.items[i].label.classes if params.items[i].label.classes),
+            html: '<span class="govuk-visually-hidden">' + params.label.text +'. Number </span><span class="dm-list-entry__counter">' + ( i + 1 ) + '</span>.',
+            for: entryItemId
+          })| indent(2) }}
+
+          <input class="govuk-input dm-list-entry__item-input{%- if i > 99 %} dm-list-entry__item-input--large{% endif -%} {%- if params.classes %} {{ params.classes }}{% endif %} {%- if params.items[i].errorMessage %} govuk-input--error{% endif %}" id="{{ entryItemId }}" name="{{ params.name }}" type="{{ params.type | default('text') }}"
+          {%- if itemValue %} value="{{ itemValue }}"{% endif -%}
+          {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif -%}
+          {%- if params.autocomplete %} autocomplete="{{ params.autocomplete }}"{% endif -%}
+          {%- if params.pattern %} pattern="{{ params.pattern }}"{% endif -%}
+          {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor -%}>
+        </div>
+        <button class="govuk-button govuk-button--secondary dm-list-entry__item-remove dm-list-entry__item-remove--hidden">Remove <span class="govuk-visually-hidden">entry number <span class="dm-list-entry__counter"></span></span></button>
+      </div>
+    {% endfor %}
+  </div>
+  <button class="govuk-button govuk-button--secondary dmp-list-entry__item-add dmp-list-entry__item-add--hidden">Add another {{ params.name }} ( <span class="dm-list-entry__js-remaining-counter">0</span> remaining)</button>
+  {% endcall %}
+</div>
