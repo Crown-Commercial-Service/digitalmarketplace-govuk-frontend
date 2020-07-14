@@ -3,6 +3,9 @@ params:
   type: string
   required: true
   description: Used as an `id` in the HTML for the list-entry as a whole, and also as a prefix for the `id`'s of the hints & input fields'
+- name: optional
+  type: string
+  description: Identifies the list entry as an optional question.
 - name: fieldset
   type: object
   required: true
@@ -41,6 +44,20 @@ examples:
   - name: with no hint text
     data:
       id: 'my-list-2'
+      fieldset:
+        legend:
+          text: 'What requirements are essential to carry out the work?'
+      name: 'requirements'
+      maxItems: 3
+      label:
+        text: 'Input number 1'
+      items:
+        - value: 'sweet'
+
+  - name: optional
+    data:
+      id: 'my-list-2'
+      optional: 'optional'
       fieldset:
         legend:
           text: 'What requirements are essential to carry out the work?'

@@ -11,8 +11,7 @@ const examples = getExamples('list-entry')
 describe('List entry', () => {
   describe('Describe when no JavaScript', () => {
     it('default example passes accessibility tests', async () => {
-      const $ = render('list-entry', examples.default)
-
+      const $ = render('list-entry', examples.default, false, false, true)
       const results = await axe($.html())
       expect(results).toHaveNoViolations()
     })
@@ -21,6 +20,11 @@ describe('List entry', () => {
         const $ = render('list-entry', examples.default)
         const legend = $('.dm-list-entry__legend').text().trim()
         expect(legend).toBe(examples.default.fieldset.legend.text)
+      })
+      it('renders the component with "(Optional)" text if marked optional', () => {
+        const $ = render('list-entry', examples.optional)
+        const legend = $('.dm-list-entry__legend').text().trim()
+        expect(legend).toBe(examples.optional.fieldset.legend.text + ' (Optional)')
       })
     })
 
