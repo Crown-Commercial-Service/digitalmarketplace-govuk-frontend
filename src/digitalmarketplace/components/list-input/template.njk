@@ -17,14 +17,29 @@
 
 {% if params.hint %}
   {% set hintId = id + '-hint' %}
-  {% set describedBy = describedBy + ' ' + hintId if describedBy else  hintId -%}
+  {% set describedBy = describedBy + ' ' + hintId if describedBy else hintId -%}
 {% endif  %}
+
+{% if params.errorMessage %}
+    {% set listErrorId = id + '-error' %}
+    {% set describedBy = describedBy + ' ' + listErrorId if describedBy else listErrorId -%}
+{% endif %}
 
 {% if params.fieldset.describedBy %}
   {% set describedBy = params.fieldset.describedBy %}
 {% endif %}
 
 <div class="dm-list-input{% if params.fieldset.legend.classes %} params.classes {% endif %}{% if params.errorMessage %} govuk-form-group--error{% endif %}">
+  {% if params.errorMessage %}
+    {{ govukErrorMessage({
+      id: listErrorId,
+      classes: 'dm-list-input-error-message' + params.errorMessage.classes if params.errorMessage.classes,
+      attributes: params.errorMessage.attributes,
+      html: params.errorMessage.html,
+      text: params.errorMessage.text,
+      visuallyHiddenText: params.errorMessage.visuallyHiddenText
+    }) | indent(2) | trim }}
+  {% endif %}
   {% call govukFieldset({
     describedBy: describedBy,
     classes: params.fieldset.classes,
@@ -83,10 +98,11 @@
           {%- if params.pattern %} pattern="{{ params.pattern }}"{% endif -%}
           {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor -%}>
         </div>
+
         <button class="govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden">Remove <span class="govuk-visually-hidden">entry number <span class="dm-list-input__counter"></span></span></button>
       </div>
     {% endfor %}
   </div>
-  <button class="govuk-button govuk-button--secondary dmp-list-input__item-add dmp-list-input__item-add--hidden">Add another {{ params.name }} ( <span class="dm-list-input__js-remaining-counter">0</span> remaining)</button>
+  <button class="govuk-button govuk-button--secondary dmp-list-input__item-add dmp-list-input__item-add--hidden">Add another {{ params.addButtonName }} ( <span class="dm-list-input__js-remaining-counter">0</span> remaining)</button>
   {% endcall %}
 </div>

@@ -65,6 +65,10 @@ ListInput.prototype.hideEmptyItems = function () {
     }
   })
   this.$allVisibleItems = this.$module.querySelectorAll('.dm-list-input__item:not(.dm-list-input__item--hidden)')
+  // Hide remove button if there's only one item in the list
+  if (this.$allVisibleItems.length === 1) {
+    this.$allVisibleItems[0].querySelector('button').classList.add('dm-list-input__item-remove--hidden')
+  }
 }
 
 // Binds an event listener to module to listen for any

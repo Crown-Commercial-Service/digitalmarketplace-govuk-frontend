@@ -1,15 +1,22 @@
 params:
-- name: id
+- name: addButtonName
   type: string
   required: true
-  description: Used as an `id` in the HTML for the list-input as a whole, and also as a prefix for the `id`'s of the hints & input fields'
-- name: optional
-  type: string
-  description: Identifies the list input as an optional question.
+  description: Displayed on the add button as "Add another {addButtonName}"
 - name: fieldset
   type: object
   required: true
   description: Options for the fieldset component (e.g. legend).
+- name: hint
+  type: object
+  description: Options for the hint component.
+- name: id
+  type: string
+  required: true
+  description: Used as an `id` in the HTML for the list-input as a whole, and also as a prefix for the `id`'s of the hints & input fields'
+- name: items
+  type: array
+  required: false
 - name: label
   type: object
   required: true
@@ -18,43 +25,59 @@ params:
   type: integer
   required: true
   description: Maximum number of entries a user can add
-- name: items
-  type: array
-  required: false
+- name: name
+  type: string
+  required: true
+  description: Used as the name attribute for inputs.
+- name: optional
+  type: string
+  description: Identifies the list input as an optional question.
 
 examples:
   - name: default
     data:
-      id: 'my-list'
+      addButtonName: 'requirement'
       fieldset:
         legend:
           text: 'What requirements are essential to carry out the work?'
-      name: 'requirements'
-      maxItems: 10
-      hint:
-        text: Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
+      id: 'my-list'
       label:
         text: Requirements
-      items:
-        - value: 'sweet'
-        - value: 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
-        - value: 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
-        - value: 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
+      maxItems: 10
+      name: 'requirements'
 
-  - name: with no hint text
+  - name: with existing values
+    data:
+      addButtonName: 'requirement'
+      fieldset:
+        legend:
+          text: 'What requirements are essential to carry out the work?'
+      id: 'my-list'
+      label:
+        text: Requirements
+      maxItems: 10
+      name: 'requirements'
+      items:
+        - value: 'Professionally initiate innovative partnerships.'
+        - value: 'Synergistically iterate scalable leadership skills without competitive testing procedures. Quickly envisioneer.'
+
+  - name: with hint
     data:
       id: 'my-list-2'
       fieldset:
         legend:
           text: 'What requirements are essential to carry out the work?'
       name: 'requirements'
+      addButtonName: 'requirement'
+      hint:
+        text: Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
       maxItems: 3
       label:
-        text: 'Input number 1'
+        text: 'Requirements'
       items:
-        - value: 'sweet'
+        - value: 'Professionally initiate innovative partnerships.'
 
-  - name: optional
+  - name: is optional
     data:
       id: 'my-list-2'
       optional: 'optional'
@@ -62,24 +85,26 @@ examples:
         legend:
           text: 'What requirements are essential to carry out the work?'
       name: 'requirements'
+      addButtonName: 'requirement'
       maxItems: 3
       label:
-        text: 'Input number 1'
+        text: 'Requirements'
       items:
-        - value: 'sweet'
+        - value: 'Professionally initiate innovative partnerships.'
 
   - name: with error
     data:
       id: 'my-list-2'
+      errorMessage:
+        text: 'Enter at least one requirement'
       fieldset:
         legend:
           text: 'What requirements are essential to carry out the work?'
+      label:
+        text: 'Requirements'
       name: 'requirements'
+      addButtonName: 'requirement'
       maxItems: 3
-      items:
-        - value: ''
-          errorMessage:
-            text: 'Please provide at least one requirement.'
 
   - name: with error for specific fields
     data:
@@ -90,6 +115,9 @@ examples:
       hint:
         text: Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
       name: 'requirements'
+      addButtonName: 'requirement'
+      label:
+        text: 'Requirements'
       maxItems: 3
       items:
         - label:
@@ -97,8 +125,8 @@ examples:
         - label:
           value: 'Synergistically iterate scalable leadership skills without competitive testing procedures. Quickly envisioneer.'
           errorMessage:
-            text: 'Must be less than 5 words'
+            text: 'Feature must be 5 words or fewer'
         - label:
           value: 'Saturday Night Fever'
           errorMessage:
-            text: 'Must be numeric'
+            text: 'Enter a number'
