@@ -7,19 +7,19 @@
 @import "../../../govuk-frontend/components/hint/hint";
 @import "../../../govuk-frontend/components/input/input";
 
-@include govuk-exports("digitalmarketplace/component/list-entry") {
-  .dm-list-entry__legend {
+@include govuk-exports("digitalmarketplace/component/list-input") {
+  .dm-list-input__legend {
     @include govuk-text-colour;
     @include govuk-font($size: 24, $weight: bold);
     @include govuk-responsive-margin(4, "bottom");
   }
 
-  .dm-list-entry__item-container {
+  .dm-list-input__item-container {
     margin-top: govuk-spacing(6);
     margin-bottom: govuk-spacing(6);
   }
 
-  .dm-list-entry__item {
+  .dm-list-input__item {
     @include govuk-responsive-margin(3, "bottom");
     display: block; /* HACK NEEDED FOR BROWSER WHICH DO NO SUPPORT CSS GRIDS (IE 10, 11)*/
     display: grid;
@@ -28,20 +28,20 @@
     align-items: start;
   }
 
-  .dm-list-entry-error-message {
+  .dm-list-input-error-message {
     grid-area: 1 / span 2;
   }
 
-  .dm-list-entry__inputs {
+  .dm-list-input__inputs {
     position: relative; /* NEEDED to position number inside input*/
     grid-row: 2 / span 1 ;
   }
 
-  .dm-list-entry__item--hidden {
+  .dm-list-input__item--hidden {
     display: none;
   }
 
-  .dm-list-entry__item-label {
+  .dm-list-input__item-label {
     @include govuk-font($size: 19, $tabular: true, $weight: bold, $line-height: 1.25);
 
     width: 1.5em;
@@ -52,25 +52,25 @@
     pointer-events: none;
   }
 
-  .dm-list-entry__item-input {
+  .dm-list-input__item-input {
     padding-left: 2em;
     margin-bottom: govuk-spacing(1);
   }
 
-  .dm-list-entry__item-input--large {
+  .dm-list-input__item-input--large {
     padding-left: 3.0em;
   }
 
-  .dm-list-entry__item-remove {
+  .dm-list-input__item-remove {
     margin-bottom: 0;
     grid-row: 2 / span 2;
   }
 
-  .dm-list-entry__item-remove--hidden, .dmp-list-entry__item-add--hidden {
+  .dm-list-input__item-remove--hidden, .dmp-list-input__item-add--hidden {
     display: none;
   }
 
-  .dmp-list-entry__item-add {
+  .dmp-list-input__item-add {
     margin-bottom: govuk-spacing(1);
   }
 }

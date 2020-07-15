@@ -2,10 +2,10 @@ params:
 - name: id
   type: string
   required: true
-  description: Used as an `id` in the HTML for the list-entry as a whole, and also as a prefix for the `id`'s of the hints & input fields'
+  description: Used as an `id` in the HTML for the list-input as a whole, and also as a prefix for the `id`'s of the hints & input fields'
 - name: optional
   type: string
-  description: Identifies the list entry as an optional question.
+  description: Identifies the list input as an optional question.
 - name: fieldset
   type: object
   required: true

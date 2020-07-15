@@ -6,31 +6,31 @@ const axe = require('../../../../lib/axe-helper')
 
 const { render, getExamples } = require('../../../../lib/jest-helpers.js')
 
-const examples = getExamples('list-entry')
+const examples = getExamples('list-input')
 
-describe('List entry', () => {
+describe('list input', () => {
   describe('Describe when no JavaScript', () => {
     it('default example passes accessibility tests', async () => {
-      const $ = render('list-entry', examples.default, false, false, true)
+      const $ = render('list-input', examples.default, false, false, true)
       const results = await axe($.html())
       expect(results).toHaveNoViolations()
     })
     describe('fieldset', () => {
       it('renders the component with a legend', () => {
-        const $ = render('list-entry', examples.default)
-        const legend = $('.dm-list-entry__legend').text().trim()
+        const $ = render('list-input', examples.default)
+        const legend = $('.dm-list-input__legend').text().trim()
         expect(legend).toBe(examples.default.fieldset.legend.text)
       })
       it('renders the component with "(Optional)" text if marked optional', () => {
-        const $ = render('list-entry', examples.optional)
-        const legend = $('.dm-list-entry__legend').text().trim()
+        const $ = render('list-input', examples.optional)
+        const legend = $('.dm-list-input__legend').text().trim()
         expect(legend).toBe(examples.optional.fieldset.legend.text + ' (Optional)')
       })
     })
 
     describe('hint text', () => {
       it('renders the component with hint text when it has been provided', () => {
-        const $ = render('list-entry', examples.default)
+        const $ = render('list-input', examples.default)
         const hint = $('.govuk-hint').text().trim()
         expect(hint).toBe(examples.default.hint.text)
       })
@@ -38,8 +38,13 @@ describe('List entry', () => {
 
     describe('list of entries', () => {
       it('renders the component with the correct number of items it was given', () => {
-        const $ = render('list-entry', examples.default)
+        const $ = render('list-input', examples.default)
         expect($('.govuk-input').length).toBe(examples.default.maxItems)
+      })
+
+      it('does not render remove buttons if javascript is disabled', () => {
+        const $ = render('list-input', examples.default)
+        expect($('.dm-list-input__item-remove')).toBeNull()
       })
     })
   })

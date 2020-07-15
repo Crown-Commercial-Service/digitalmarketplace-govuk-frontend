@@ -4,7 +4,7 @@ import * as Analytics from './components/analytics/analytics'
 import initAnalytics from './components/analytics/init'
 import { getConsentCookie } from './helpers/cookie/cookie-functions'
 import { nodeListForEach } from './common'
-import ListEntry from './components/list-entry/list-entry'
+import ListInput from './components/list-input/list-input'
 
 function initAll (options) {
   // Set the options to an empty object by default if no options are passed.
@@ -28,9 +28,9 @@ function initAll (options) {
     initAnalytics()
   }
 
-  var $listEntry = scope.querySelectorAll('[data-module="dm-list-entry"]')
-  nodeListForEach($listEntry, function ($listEntry) {
-    new ListEntry($listEntry).init()
+  var $ListInput = scope.querySelectorAll('[data-module="dm-list-input"]')
+  nodeListForEach($ListInput, function ($ListInput) {
+    new ListInput($ListInput).init()
   })
 }
 
@@ -40,5 +40,5 @@ export {
   Analytics,
   CookieBanner,
   CookieSettings,
-  ListEntry
+  ListInput
 }
