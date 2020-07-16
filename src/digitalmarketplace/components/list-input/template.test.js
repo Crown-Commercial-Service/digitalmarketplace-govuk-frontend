@@ -7,6 +7,7 @@ const axe = require('../../../../lib/axe-helper')
 const { render, getExamples } = require('../../../../lib/jest-helpers.js')
 
 const examples = getExamples('list-input')
+
 describe('List Input', () => {
   describe('by default', () => {
     it('matches existing snapshot', () => {

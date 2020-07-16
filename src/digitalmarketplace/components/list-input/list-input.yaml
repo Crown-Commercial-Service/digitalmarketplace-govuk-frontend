@@ -30,7 +30,7 @@ params:
   required: true
   description: Used as the name attribute for inputs.
 - name: optional
-  type: string
+  type: boolean
   description: Identifies the list input as an optional question.
 
 examples:
@@ -80,7 +80,7 @@ examples:
   - name: is optional
     data:
       id: 'my-list-2'
-      optional: 'optional'
+      optional: true
       fieldset:
         legend:
           text: 'What requirements are essential to carry out the work?'
@@ -120,13 +120,10 @@ examples:
         text: 'Requirements'
       maxItems: 3
       items:
-        - label:
-          value: 'Professionally initiate innovative partnerships.'
-        - label:
-          value: 'Synergistically iterate scalable leadership skills without competitive testing procedures. Quickly envisioneer.'
+        - value: 'Professionally initiate innovative partnerships.'
+        - value: 'Synergistically iterate scalable leadership skills without competitive testing procedures. Quickly envisioneer.'
           errorMessage:
             text: 'Feature must be 5 words or fewer'
-        - label:
-          value: 'Saturday Night Fever'
+        - value: 'Saturday Night Fever'
           errorMessage:
             text: 'Enter a number'

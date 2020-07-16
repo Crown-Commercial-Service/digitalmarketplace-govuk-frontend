@@ -188,7 +188,7 @@ exports[`List Input when it is optional matches existing snapshot 1`] = `
 <div class=\\"dm-list-input__inputs\\">
           
   <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-0\\">
-    <span class=\\"govuk-visually-hidden\\">Input number 1. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
   </label>
   
   
@@ -204,7 +204,7 @@ exports[`List Input when it is optional matches existing snapshot 1`] = `
 <div class=\\"dm-list-input__inputs\\">
           
   <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-1\\">
-    <span class=\\"govuk-visually-hidden\\">Input number 1. Number </span><span class=\\"dm-list-input__counter\\">2</span>.
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">2</span>.
   </label>
   
   
@@ -220,7 +220,7 @@ exports[`List Input when it is optional matches existing snapshot 1`] = `
 <div class=\\"dm-list-input__inputs\\">
           
   <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-2\\">
-    <span class=\\"govuk-visually-hidden\\">Input number 1. Number </span><span class=\\"dm-list-input__counter\\">3</span>.
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">3</span>.
   </label>
   
   
@@ -240,10 +240,10 @@ exports[`List Input when it is optional matches existing snapshot 1`] = `
 
 exports[`List Input with errors with component-level error matches existing snapshot 1`] = `
 "<html><head></head><body><div class=\\"dm-list-input govuk-form-group--error\\">
-    <span class=\\"govuk-error-message\\">
+    <span id=\\"my-list-2-error\\" class=\\"govuk-error-message\\">
   <span class=\\"govuk-visually-hidden\\">Error:</span> Enter at least one requirement
   </span>
-<fieldset class=\\"govuk-fieldset\\" data-module=\\"dm-list-input\\">
+<fieldset class=\\"govuk-fieldset\\" aria-describedby=\\"my-list-2-error\\" data-module=\\"dm-list-input\\">
   <legend class=\\"govuk-fieldset__legend dm-list-input__legend \\">
     What requirements are essential to carry out the work?
   </legend>
@@ -254,13 +254,13 @@ exports[`List Input with errors with component-level error matches existing snap
 <div class=\\"dm-list-input__inputs\\">
           
   <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-0\\">
-    <span class=\\"govuk-visually-hidden\\">undefined. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
   </label>
   
   
 
 
-          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-0\\" name=\\"requirements\\" type=\\"text\\">
+          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-0\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"my-list-2-error\\">
         </div>
 
         <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
@@ -270,13 +270,13 @@ exports[`List Input with errors with component-level error matches existing snap
 <div class=\\"dm-list-input__inputs\\">
           
   <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-1\\">
-    <span class=\\"govuk-visually-hidden\\">undefined. Number </span><span class=\\"dm-list-input__counter\\">2</span>.
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">2</span>.
   </label>
   
   
 
 
-          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-1\\" name=\\"requirements\\" type=\\"text\\">
+          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-1\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"my-list-2-error\\">
         </div>
 
         <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
@@ -286,13 +286,13 @@ exports[`List Input with errors with component-level error matches existing snap
 <div class=\\"dm-list-input__inputs\\">
           
   <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-2\\">
-    <span class=\\"govuk-visually-hidden\\">undefined. Number </span><span class=\\"dm-list-input__counter\\">3</span>.
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">3</span>.
   </label>
   
   
 
 
-          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-2\\" name=\\"requirements\\" type=\\"text\\">
+          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-2\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"my-list-2-error\\">
         </div>
 
         <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
@@ -320,7 +320,7 @@ exports[`List Input with errors with input-level errors matches existing snapsho
 <div class=\\"dm-list-input__inputs\\">
           
   <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-3-0\\">
-    <span class=\\"govuk-visually-hidden\\">undefined. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
   </label>
   
   
@@ -339,7 +339,7 @@ exports[`List Input with errors with input-level errors matches existing snapsho
 <div class=\\"dm-list-input__inputs\\">
           
   <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-3-1\\">
-    <span class=\\"govuk-visually-hidden\\">undefined. Number </span><span class=\\"dm-list-input__counter\\">2</span>.
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">2</span>.
   </label>
   
   
@@ -358,13 +358,13 @@ exports[`List Input with errors with input-level errors matches existing snapsho
 <div class=\\"dm-list-input__inputs\\">
           
   <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-3-2\\">
-    <span class=\\"govuk-visually-hidden\\">undefined. Number </span><span class=\\"dm-list-input__counter\\">3</span>.
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">3</span>.
   </label>
   
   
 
 
-          <input class=\\"govuk-input dm-list-input__item-input govuk-input--error\\" id=\\"my-list-3-2\\" name=\\"requirements\\" type=\\"text\\" value=\\"Saturday Night Fever\\" aria-describedby=\\"my-list-3-hint my-list-3-1-error my-list-3-2-error\\">
+          <input class=\\"govuk-input dm-list-input__item-input govuk-input--error\\" id=\\"my-list-3-2\\" name=\\"requirements\\" type=\\"text\\" value=\\"Saturday Night Fever\\" aria-describedby=\\"my-list-3-hint my-list-3-2-error\\">
         </div>
 
         <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
@@ -567,7 +567,7 @@ exports[`List Input with hint matches existing snapshot 1`] = `
 <div class=\\"dm-list-input__inputs\\">
           
   <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-0\\">
-    <span class=\\"govuk-visually-hidden\\">Input number 1. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
   </label>
   
   
@@ -583,7 +583,7 @@ exports[`List Input with hint matches existing snapshot 1`] = `
 <div class=\\"dm-list-input__inputs\\">
           
   <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-1\\">
-    <span class=\\"govuk-visually-hidden\\">Input number 1. Number </span><span class=\\"dm-list-input__counter\\">2</span>.
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">2</span>.
   </label>
   
   
@@ -599,7 +599,7 @@ exports[`List Input with hint matches existing snapshot 1`] = `
 <div class=\\"dm-list-input__inputs\\">
           
   <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-2\\">
-    <span class=\\"govuk-visually-hidden\\">Input number 1. Number </span><span class=\\"dm-list-input__counter\\">3</span>.
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">3</span>.
   </label>
   
   

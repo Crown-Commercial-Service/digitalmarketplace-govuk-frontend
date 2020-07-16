@@ -44,31 +44,31 @@ ListInput.prototype.init = function () {
   this.bindAddClickEvent()
 }
 
-// Hide all items that do not have a value (except for the first one)
+// Hide all items that do not have a value (except for the first one, or the first two if no items have a value)
 ListInput.prototype.hideEmptyItems = function () {
   var numberOfVisibleEmptyItems = 0
-  nodeListForEach(this.$allItems, function ($item) {
+  var numberOfFilledInItems = 0
+  nodeListForEach(this.$allItems, function ($item, index) {
     var $input = $item.querySelector('.dm-list-input__item-input')
     var $removeButton = $item.querySelector('.dm-list-input__item-remove')
 
     if ($input.value === '') {
-      if (numberOfVisibleEmptyItems >= 1) {
+      if (numberOfVisibleEmptyItems === 0) {
+        $removeButton.classList.remove('dm-list-input__item-remove--hidden')
+      } else if (numberOfVisibleEmptyItems === 1 && numberOfFilledInItems === 0) {
+        $removeButton.classList.remove('dm-list-input__item-remove--hidden')
+      } else {
         $item.classList.add('dm-list-input__item--hidden')
         $removeButton.classList.add('dm-list-input__item-remove--hidden')
-      } else {
-        $removeButton.classList.remove('dm-list-input__item-remove--hidden')
       }
       numberOfVisibleEmptyItems += 1
     } else {
       $item.classList.remove('dm-list-input__item--hidden')
       $removeButton.classList.remove('dm-list-input__item-remove--hidden')
+      numberOfFilledInItems += 1
     }
   })
   this.$allVisibleItems = this.$module.querySelectorAll('.dm-list-input__item:not(.dm-list-input__item--hidden)')
-  // Hide remove button if there's only one item in the list
-  if (this.$allVisibleItems.length === 1) {
-    this.$allVisibleItems[0].querySelector('button').classList.add('dm-list-input__item-remove--hidden')
-  }
 }
 
 // Binds an event listener to module to listen for any
@@ -78,7 +78,10 @@ ListInput.prototype.bindRemoveClickEvent = function () {
     var $clickedEl = event.target
     if ($clickedEl.tagName === 'BUTTON' && $clickedEl.classList.contains('dm-list-input__item-remove')) {
       var $item = $clickedEl.parentNode
-      $item.querySelector('input').value = ''
+      // Remove the input's content and remove its value attribute
+      var $input = $item.querySelector('input')
+      $input.value = ''
+      $input.removeAttribute('value')
       $clickedEl.classList.add('dm-list-input__item-remove--hidden')
       $item.classList.add('dm-list-input__item--hidden')
       this.$allVisibleItems = this.$module.querySelectorAll('.dm-list-input__item:not(.dm-list-input__item--hidden)')
@@ -90,10 +93,14 @@ ListInput.prototype.bindRemoveClickEvent = function () {
         $errorContainer.classList.remove('govuk-form-group--error')
         $errorContainer.classList.remove('dm-list-input__item--error')
         $errorContainer.querySelector('.govuk-error-message').remove()
+        var $errorInput = $errorContainer.querySelector('.govuk-input--error')
+        var inputId = $errorInput.getAttribute('id')
+        var inputDescribedBy = $errorInput.getAttribute('aria-describedby')
+        $errorInput.setAttribute('aria-describedby', inputDescribedBy.replace(inputId + '-error', ''))
         $errorContainer.querySelector('.govuk-input--error').classList.remove('govuk-input--error')
       }
 
-      // Hide Remove buttons if there are only one item left
+      // Hide Remove buttons if there is only one item left
       if (this.$allVisibleItems.length === 1) {
         var $removeButtons = this.$module.querySelectorAll('.dm-list-input__item-remove')
         nodeListForEach($removeButtons, function ($button) {
