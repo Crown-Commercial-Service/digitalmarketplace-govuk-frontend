@@ -71,13 +71,19 @@ describe('/components/list-input', () => {
         const numberOfVisibleInputs = (await page.$$(VISIBLE_INPUT_SELECTOR)).length
         const numberOfVisibleRemoveButtons = (await page.$$(REMOVE_BUTTON_SELECTOR)).length
 
-        expect(numberOfVisibleRemoveButtons).toEqual(numberOfVisibleInputs)
+        expect(numberOfVisibleRemoveButtons).toBe(numberOfVisibleInputs)
       })
 
-      it('displays "Add more" button ', async () => {
+      it('displays "Add more" button', async () => {
         const isAddButtonVisible = (await page.$$(ADD_BUTTON_SELECTOR)).length > 0
 
         expect(isAddButtonVisible).toBeTruthy()
+      })
+
+      it('disables hidden inputs', async () => {
+        const numberOfDisabledInputs = (await page.$$(HIDDEN_INPUT_SELECTOR + ' input[disabled]')).length
+
+        expect(numberOfDisabledInputs).toBe(8)
       })
 
       describe('when an input is removed', () => {
@@ -85,11 +91,19 @@ describe('/components/list-input', () => {
         beforeEach(async () => {
           await page.goto(DEFAULT_EXAMPLE_URL, { waitUntil: 'load' })
         })
+
         it('"removes" the input by hiding it', async () => {
           await page.click(firstRow + ' .govuk-button')
 
           await page.waitForSelector(firstRow, { visible: false })
           expect(await page.$(firstRow + '.dm-list-input__item--hidden')).toBeTruthy()
+        })
+
+        it('disables the input', async () => {
+          await page.click(firstRow + ' .govuk-button')
+
+          await page.waitForSelector(firstRow, { visible: false })
+          expect(await page.$(firstRow + ' input[disabled]')).toBeTruthy()
         })
 
         it('sets focus to the next visible input, if the list item removed is not the last one', async () => {
@@ -129,6 +143,19 @@ describe('/components/list-input', () => {
           expect(isAddButtonVisible).toBeTruthy()
         })
 
+        it('hides the add more button when there are no more remaining available items', async () => {
+          for (let i = 0; i < 8; i++) {
+            await page.click(ADD_BUTTON_SELECTOR)
+          }
+
+          const numberOfVisibleInputs = (await page.$$(VISIBLE_INPUT_SELECTOR)).length
+
+          expect(numberOfVisibleInputs).toBe(10)
+
+          const isAddButtonHidden = (await page.$$(ADD_BUTTON_SELECTOR)).length === 0
+          expect(isAddButtonHidden).toBeTruthy()
+        })
+
         it('hides the remove button on the first input if the visible inputs have been reduced to one', async () => {
           let numberOfVisibleRemoveButtons = (await page.$$(REMOVE_BUTTON_SELECTOR)).length
           expect(numberOfVisibleRemoveButtons).toEqual(2)
@@ -144,18 +171,27 @@ describe('/components/list-input', () => {
       describe('when the "add more" button is clicked', () => {
         beforeEach(async () => {
           await page.waitForSelector(ADD_BUTTON_SELECTOR, { visible: true })
+          await page.click(ADD_BUTTON_SELECTOR)
         })
 
         it('makes another input visible', async () => {
-          await page.click(ADD_BUTTON_SELECTOR)
+          const numberOfVisibleInputs = (await page.$$(VISIBLE_INPUT_SELECTOR)).length
+
+          expect(numberOfVisibleInputs).toBe(3)
+        })
+
+        it('enables the newly visible input', async () => {
+          await page.waitForSelector(ROW_SELECTOR + ':nth-child(3)', { visible: false })
+          const numberOfDisabledVisibleInputs = (await page.$$(VISIBLE_INPUT_SELECTOR + ' input[disabled]')).length
+          expect(numberOfDisabledVisibleInputs).toBe(0)
         })
 
         it('decrements "remaining" available items number', async () => {
-          await page.click(ADD_BUTTON_SELECTOR)
-        })
+          const numberOfHiddenInputs = (await page.$$(HIDDEN_INPUT_SELECTOR)).length
+          const addButton = await page.$(ADD_BUTTON_SELECTOR)
+          const addButtonContent = await page.evaluate(addButton => addButton.textContent, addButton)
 
-        it('hides the add more button when there are no more remaining available items', async () => {
-          await page.click(ADD_BUTTON_SELECTOR)
+          expect(addButtonContent).toEqual(expect.stringContaining(numberOfHiddenInputs + ' remaining'))
         })
       })
     })

@@ -60,6 +60,7 @@ ListInput.prototype.hideEmptyItems = function () {
       } else {
         $item.classList.add('dm-list-input__item--hidden')
         $removeButton.classList.add('dm-list-input__item-remove--hidden')
+        $input.setAttribute('disabled', 'true')
       }
       numberOfVisibleEmptyItems += 1
     } else {
@@ -79,9 +80,10 @@ ListInput.prototype.bindRemoveClickEvent = function () {
     if ($clickedEl.tagName === 'BUTTON' && $clickedEl.classList.contains('dm-list-input__item-remove')) {
       var $item = $clickedEl.parentNode
       // Remove the input's content and remove its value attribute
-      var $input = $item.querySelector('input')
+      var $input = $item.querySelector('.dm-list-input__item-input')
       $input.value = ''
       $input.removeAttribute('value')
+      $input.setAttribute('disabled', 'true')
       $clickedEl.classList.add('dm-list-input__item-remove--hidden')
       $item.classList.add('dm-list-input__item--hidden')
       this.$allVisibleItems = this.$module.querySelectorAll('.dm-list-input__item:not(.dm-list-input__item--hidden)')
@@ -151,14 +153,16 @@ ListInput.prototype.bindAddClickEvent = function () {
   this.$addAnotherButton.addEventListener('click', function () {
     // Find the first hidden item
     var $firstHiddenItem = this.$module.querySelector('.dm-list-input__item.dm-list-input__item--hidden')
+    var $firstHiddenInput = $firstHiddenItem.querySelector('.dm-list-input__item-input')
 
     if ($firstHiddenItem) {
+      $firstHiddenInput.removeAttribute('disabled')
       this.$module.querySelector('.dm-list-input__item-container').appendChild($firstHiddenItem)
       $firstHiddenItem.classList.remove('dm-list-input__item--hidden')
       this.$allVisibleItems = this.$module.querySelectorAll('.dm-list-input__item:not(.dm-list-input__item--hidden)')
       this.updateAllCounters()
       $firstHiddenItem.querySelector('.dm-list-input__item-remove').classList.remove('dm-list-input__item-remove--hidden')
-      $firstHiddenItem.querySelector('input').focus()
+      $firstHiddenInput.focus()
       this.toggleAddAnotherButton()
 
       // Show Remove buttons if there is more one item

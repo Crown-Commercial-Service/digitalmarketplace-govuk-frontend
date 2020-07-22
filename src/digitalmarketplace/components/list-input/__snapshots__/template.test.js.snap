@@ -432,118 +432,6 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
 
         <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
       </div>
-
-      <div class=\\"dm-list-input__item \\">
-<div class=\\"dm-list-input__inputs\\">
-          
-  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-3\\">
-    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">4</span>.
-  </label>
-  
-  
-
-
-          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-3\\" name=\\"requirements\\" type=\\"text\\">
-        </div>
-
-        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
-      </div>
-
-      <div class=\\"dm-list-input__item \\">
-<div class=\\"dm-list-input__inputs\\">
-          
-  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-4\\">
-    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">5</span>.
-  </label>
-  
-  
-
-
-          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-4\\" name=\\"requirements\\" type=\\"text\\">
-        </div>
-
-        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
-      </div>
-
-      <div class=\\"dm-list-input__item \\">
-<div class=\\"dm-list-input__inputs\\">
-          
-  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-5\\">
-    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">6</span>.
-  </label>
-  
-  
-
-
-          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-5\\" name=\\"requirements\\" type=\\"text\\">
-        </div>
-
-        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
-      </div>
-
-      <div class=\\"dm-list-input__item \\">
-<div class=\\"dm-list-input__inputs\\">
-          
-  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-6\\">
-    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">7</span>.
-  </label>
-  
-  
-
-
-          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-6\\" name=\\"requirements\\" type=\\"text\\">
-        </div>
-
-        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
-      </div>
-
-      <div class=\\"dm-list-input__item \\">
-<div class=\\"dm-list-input__inputs\\">
-          
-  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-7\\">
-    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">8</span>.
-  </label>
-  
-  
-
-
-          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-7\\" name=\\"requirements\\" type=\\"text\\">
-        </div>
-
-        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
-      </div>
-
-      <div class=\\"dm-list-input__item \\">
-<div class=\\"dm-list-input__inputs\\">
-          
-  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-8\\">
-    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">9</span>.
-  </label>
-  
-  
-
-
-          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-8\\" name=\\"requirements\\" type=\\"text\\">
-        </div>
-
-        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
-      </div>
-
-      <div class=\\"dm-list-input__item \\">
-<div class=\\"dm-list-input__inputs\\">
-          
-  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-9\\">
-    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">10</span>.
-  </label>
-  
-  
-
-
-          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-9\\" name=\\"requirements\\" type=\\"text\\">
-        </div>
-
-        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
-      </div>
   </div>
   <button class=\\"govuk-button govuk-button--secondary dmp-list-input__item-add dmp-list-input__item-add--hidden\\">Add another requirement ( <span class=\\"dm-list-input__js-remaining-counter\\">0</span> remaining)</button>
 </fieldset>
@@ -606,6 +494,118 @@ exports[`List Input with hint matches existing snapshot 1`] = `
 
 
           <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-2\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"my-list-2-hint\\">
+        </div>
+
+        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
+      </div>
+
+      <div class=\\"dm-list-input__item \\">
+<div class=\\"dm-list-input__inputs\\">
+          
+  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-3\\">
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">4</span>.
+  </label>
+  
+  
+
+
+          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-3\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"my-list-2-hint\\">
+        </div>
+
+        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
+      </div>
+
+      <div class=\\"dm-list-input__item \\">
+<div class=\\"dm-list-input__inputs\\">
+          
+  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-4\\">
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">5</span>.
+  </label>
+  
+  
+
+
+          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-4\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"my-list-2-hint\\">
+        </div>
+
+        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
+      </div>
+
+      <div class=\\"dm-list-input__item \\">
+<div class=\\"dm-list-input__inputs\\">
+          
+  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-5\\">
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">6</span>.
+  </label>
+  
+  
+
+
+          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-5\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"my-list-2-hint\\">
+        </div>
+
+        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
+      </div>
+
+      <div class=\\"dm-list-input__item \\">
+<div class=\\"dm-list-input__inputs\\">
+          
+  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-6\\">
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">7</span>.
+  </label>
+  
+  
+
+
+          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-6\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"my-list-2-hint\\">
+        </div>
+
+        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
+      </div>
+
+      <div class=\\"dm-list-input__item \\">
+<div class=\\"dm-list-input__inputs\\">
+          
+  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-7\\">
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">8</span>.
+  </label>
+  
+  
+
+
+          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-7\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"my-list-2-hint\\">
+        </div>
+
+        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
+      </div>
+
+      <div class=\\"dm-list-input__item \\">
+<div class=\\"dm-list-input__inputs\\">
+          
+  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-8\\">
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">9</span>.
+  </label>
+  
+  
+
+
+          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-8\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"my-list-2-hint\\">
+        </div>
+
+        <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
+      </div>
+
+      <div class=\\"dm-list-input__item \\">
+<div class=\\"dm-list-input__inputs\\">
+          
+  <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-9\\">
+    <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">10</span>.
+  </label>
+  
+  
+
+
+          <input class=\\"govuk-input dm-list-input__item-input\\" id=\\"my-list-2-9\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"my-list-2-hint\\">
         </div>
 
         <button class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\"></span></span></button>
