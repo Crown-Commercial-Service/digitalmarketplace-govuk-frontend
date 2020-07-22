@@ -20,7 +20,7 @@
   {%- set describedBy = describedBy + ' ' + listErrorId if describedBy and listErrorId not in describedBy else listErrorId -%}
 {% endif -%}
 
-<div class="dm-list-input{% if params.fieldset.legend.classes %} params.classes {% endif %}{% if params.errorMessage %} govuk-form-group--error{% endif %}">
+<div class="dm-list-input{% if params.classes %} params.classes {% endif %}{% if params.errorMessage %} govuk-form-group--error{% endif %}">
   {% if params.errorMessage %}
     {{ govukErrorMessage({
       id: listErrorId,
@@ -77,7 +77,7 @@
           visuallyHiddenText: item.errorMessage.visuallyHiddenText
         }) | indent(2) | trim }}
         {% endif %}
-        {#- Add label and text field -#}
+        {#- Add label and input field -#}
         <div class="dm-list-input__inputs">
           {{ govukInput ({
             attributes: item.attributes,
@@ -91,12 +91,12 @@
             inputmode: item.inputmode,
             label: {
               classes: 'dm-list-input__item-label ' + (item.label.classes if item.label.classes),
-              html: '<span class="govuk-visually-hidden">' + params.label.text +'. Number </span><span class="dm-list-input__counter">' + ( i + 1 ) + '</span>.',
+              html: '<span class="govuk-visually-hidden">' + (params.labelPrefix if params.labelPrefix else params.name) + '. Number </span><span class="dm-list-input__counter">' + ( i + 1 ) + '</span>.',
               for: entryItemId
             },
             name: params.name,
             pattern: item.pattern,
-            type: params.type | default('text'),
+            type: item.type | default('text'),
             value: item.value
           }) | indent(2) | trim }}
         </div>

@@ -35,26 +35,26 @@ params:
 
 examples:
   - name: default
+    description: 'With JavaScript enabled, a list input should display at least two inputs, including at least one empty input.'
     data:
       addButtonName: 'requirement'
       fieldset:
         legend:
           text: 'What requirements are essential to carry out the work?'
       id: 'my-list'
-      label:
-        text: Requirements
+      labelPrefix: Requirements'
       maxItems: 10
       name: 'requirements'
 
   - name: with existing values
+    description: 'Any existing values should be displayed, along with one extra empty input.'
     data:
       addButtonName: 'requirement'
       fieldset:
         legend:
           text: 'What requirements are essential to carry out the work?'
       id: 'my-list'
-      label:
-        text: Requirements
+      labelPrefix: Requirements'
       maxItems: 10
       name: 'requirements'
       items:
@@ -72,8 +72,7 @@ examples:
       hint:
         text: Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
       maxItems: 3
-      label:
-        text: 'Requirements'
+      labelPrefix: Requirements'
       items:
         - value: 'Professionally initiate innovative partnerships.'
 
@@ -87,12 +86,12 @@ examples:
       name: 'requirements'
       addButtonName: 'requirement'
       maxItems: 3
-      label:
-        text: 'Requirements'
+      labelPrefix: Requirements'
       items:
         - value: 'Professionally initiate innovative partnerships.'
 
   - name: with error
+    description: 'An error at the component-level can be defined.'
     data:
       id: 'my-list-2'
       errorMessage:
@@ -100,13 +99,13 @@ examples:
       fieldset:
         legend:
           text: 'What requirements are essential to carry out the work?'
-      label:
-        text: 'Requirements'
+      labelPrefix: Requirements'
       name: 'requirements'
       addButtonName: 'requirement'
       maxItems: 3
 
   - name: with error for specific fields
+    description: 'An error for each input can be defined.'
     data:
       id: 'my-list-3'
       fieldset:
@@ -116,8 +115,7 @@ examples:
         text: Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
       name: 'requirements'
       addButtonName: 'requirement'
-      label:
-        text: 'Requirements'
+      labelPrefix: Requirements'
       maxItems: 3
       items:
         - value: 'Professionally initiate innovative partnerships.'
