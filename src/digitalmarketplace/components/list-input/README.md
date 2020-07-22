@@ -10,7 +10,7 @@ clicking the "add more button". Inputs can be removed from the list by clicking 
 * `fieldset`: **Required** _Object_. Options for the [GOV.UK fieldset component](https://github.com/alphagov/govuk-frontend/tree/master/src/govuk/components/fieldset) which wraps the inputs.
 * `hint`: **Optional** _Object_. Options for the [GOV.UK hint component](https://github.com/alphagov/govuk-frontend/tree/master/src/govuk/components/hint).
 * `id`: **Required** _String_. The id of the List Input component.
-* `items`: **Optional** _Object_. Individual inputs. Each can have a `value` and an `errorMessage` object.
+* `items`: **Optional** _Object_. Options for the [GOV.UK input component](https://github.com/alphagov/govuk-frontend/tree/master/src/govuk/components/input)
 * `label`: **Required** _Object_. Options for the [GOV.UK label component](https://github.com/alphagov/govuk-frontend/tree/master/src/govuk/components/label).
 * `maxItems`: **Required** _Int_. The maximum number of inputs a user can add.
 * `name`: **Required** _String_. Used as the name attribute for inputs.
@@ -21,8 +21,8 @@ clicking the "add more button". Inputs can be removed from the list by clicking 
 * For an error that's component-level, where does describedby need to point?
 * Do we need to display at least two inputs at any given time (even if they're both blank?). This is the behaviour of the current list entry component.
 
-- [ ] Items should conform to govukInput shape (or should they? MVP might be just to handle text inputs as per current implementation?)
 - [ ] Make sure all params in template are reflected in README
+- [ ] Test for presence of numbers in inputs
 - [ ] Review test suites
 - [ ] Review template
 - [ ] Review JS
