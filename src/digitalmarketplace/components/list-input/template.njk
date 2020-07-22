@@ -7,27 +7,17 @@
 {#-  We need this for error messages and hints as well -#}
 {%- set id = params.id -%}
 
-{%- if params.hint %}
-  {%- set hintId = id + '-hint' -%}
-  {%- set describedBy = describedBy + ' ' + hintId if describedBy else  hintId -%}
-{% endif -%}
-
-{#- a record of other elements that we need to associate with the input using
-   aria-describedby – for example hints or error messages -#}
-{%- set describedBy = params.describedBy if params.describedBy else "" -%}
+{#- A record of elements we want associated with the fieldset's aria-describedby -#}
+{%- set describedBy = params.fieldset.describedBy -%}
 
 {%- if params.hint %}
   {%- set hintId = id + '-hint' -%}
-  {%- set describedBy = describedBy + ' ' + hintId if describedBy else hintId -%}
+  {%- set describedBy = describedBy + ' ' + hintId if describedBy and hintId not in describedBy else hintId -%}
 {% endif -%}
 
 {%- if params.errorMessage %}
-    {%- set listErrorId = id + '-error' -%}
-    {%- set describedBy = describedBy + ' ' + listErrorId if describedBy else listErrorId -%}
-{% endif -%}
-
-{%- if params.fieldset.describedBy %}
-  {%- set describedBy = params.fieldset.describedBy -%}
+  {%- set listErrorId = id + '-error' -%}
+  {%- set describedBy = describedBy + ' ' + listErrorId if describedBy and listErrorId not in describedBy else listErrorId -%}
 {% endif -%}
 
 <div class="dm-list-input{% if params.fieldset.legend.classes %} params.classes {% endif %}{% if params.errorMessage %} govuk-form-group--error{% endif %}">
@@ -42,7 +32,7 @@
     }) | indent(2) | trim }}
   {% endif %}
   {% call govukFieldset({
-    describedBy: describedBy,
+    describedBy: params.fieldset.describedBy if params.fieldset.describedBy else describedBy,
     classes: params.fieldset.classes,
     legend: {
       html: params.fieldset.legend.text + ('<span class="dm-list-input__optional__optional"> (Optional)</span>' if params.optional) ,
@@ -93,7 +83,7 @@
             attributes: item.attributes,
             autocomplete: item.autocomplete,
             classes: itemClassesBase + itemClassesLarge + itemClassesExternal + itemClassesError,
-            describedBy: describedBy + errorId if errorId else describedBy,
+            describedBy: (item.describedBy if item.describedBy else describedBy) + (' ' + errorId if errorId),
             formGroup: {
               classes: 'dm-list-input__form-group'
             },

@@ -13,7 +13,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-0\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-0\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-0\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -25,7 +25,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-1\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">2</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-1\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-1\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -37,7 +37,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">3</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -49,7 +49,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-3\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">4</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-3\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-3\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -61,7 +61,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-4\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">5</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-4\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-4\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -73,7 +73,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-5\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">6</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-5\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-5\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -85,7 +85,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-6\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">7</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-6\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-6\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -97,7 +97,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-7\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">8</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-7\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-7\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -109,7 +109,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-8\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">9</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-8\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-8\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -121,7 +121,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-9\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">10</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-9\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-9\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -147,7 +147,7 @@ exports[`List Input when it is optional matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-0\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-0\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-0\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -159,7 +159,7 @@ exports[`List Input when it is optional matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-1\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">2</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-1\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-1\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -171,7 +171,7 @@ exports[`List Input when it is optional matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-2\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">3</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-2\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-2\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -268,7 +268,7 @@ exports[`List Input with errors with input-level errors matches existing snapsho
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-3-1\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">2</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input govuk-input--error\\" id=\\"my-list-3-1\\" name=\\"requirements\\" type=\\"text\\" value=\\"Synergistically iterate scalable leadership skills without competitive testing procedures. Quickly envisioneer.\\" aria-describedby=\\"my-list-3-hintmy-list-3-1-error\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input govuk-input--error\\" id=\\"my-list-3-1\\" name=\\"requirements\\" type=\\"text\\" value=\\"Synergistically iterate scalable leadership skills without competitive testing procedures. Quickly envisioneer.\\" aria-describedby=\\"my-list-3-hint my-list-3-1-error\\">
   </div>
         </div>
 
@@ -283,7 +283,7 @@ exports[`List Input with errors with input-level errors matches existing snapsho
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-3-2\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">3</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input govuk-input--error\\" id=\\"my-list-3-2\\" name=\\"requirements\\" type=\\"text\\" value=\\"Saturday Night Fever\\" aria-describedby=\\"my-list-3-hintmy-list-3-2-error\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input govuk-input--error\\" id=\\"my-list-3-2\\" name=\\"requirements\\" type=\\"text\\" value=\\"Saturday Night Fever\\" aria-describedby=\\"my-list-3-hint my-list-3-2-error\\">
   </div>
         </div>
 
@@ -309,7 +309,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-0\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-0\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-0\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -321,7 +321,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-1\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">2</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-1\\" name=\\"requirements\\" type=\\"text\\" value=\\"Synergistically iterate scalable leadership skills without competitive testing procedures. Quickly envisioneer.\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-1\\" name=\\"requirements\\" type=\\"text\\" value=\\"Synergistically iterate scalable leadership skills without competitive testing procedures. Quickly envisioneer.\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -333,7 +333,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">3</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -345,7 +345,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-3\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">4</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-3\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-3\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -357,7 +357,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-4\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">5</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-4\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-4\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -369,7 +369,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-5\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">6</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-5\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-5\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -381,7 +381,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-6\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">7</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-6\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-6\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -393,7 +393,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-7\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">8</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-7\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-7\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -405,7 +405,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-8\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">9</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-8\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-8\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
@@ -417,7 +417,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-9\\">
       <span class=\\"govuk-visually-hidden\\">Requirements. Number </span><span class=\\"dm-list-input__counter\\">10</span>.
     </label>
-    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-9\\" name=\\"requirements\\" type=\\"text\\">
+    <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-9\\" name=\\"requirements\\" type=\\"text\\" aria-describedby=\\"undefined\\">
   </div>
         </div>
 
