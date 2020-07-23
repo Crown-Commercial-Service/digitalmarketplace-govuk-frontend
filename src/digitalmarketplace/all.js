@@ -1,9 +1,9 @@
+import './vendor/polyfills/NodeList/prototype/forEach'
 import CookieBanner from './components/cookie-banner/cookie-banner'
 import CookieSettings from './components/cookie-settings/cookie-settings'
 import * as Analytics from './components/analytics/analytics'
 import initAnalytics from './components/analytics/init'
 import { getConsentCookie } from './helpers/cookie/cookie-functions'
-import { nodeListForEach } from './common'
 import ListInput from './components/list-input/list-input'
 
 function initAll (options) {
@@ -29,7 +29,7 @@ function initAll (options) {
   }
 
   var $ListInput = scope.querySelectorAll('[data-module="dm-list-input"]')
-  nodeListForEach($ListInput, function ($ListInput) {
+  $ListInput.forEach(function ($ListInput) {
     new ListInput($ListInput).init()
   })
 }

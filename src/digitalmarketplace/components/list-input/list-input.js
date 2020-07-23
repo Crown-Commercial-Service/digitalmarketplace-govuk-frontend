@@ -1,5 +1,3 @@
-import { nodeListForEach } from '../../common'
-
 var getSibling = function (direction, elem, selector) {
   // Get the next sibling element
   var sibling = (direction === 'next') ? elem.nextElementSibling : elem.previousElementSibling
@@ -48,7 +46,7 @@ ListInput.prototype.init = function () {
 ListInput.prototype.hideEmptyItems = function () {
   var numberOfVisibleEmptyItems = 0
   var numberOfFilledInItems = 0
-  nodeListForEach(this.$allItems, function ($item, index) {
+  this.$allItems.forEach(function ($item) {
     var $input = $item.querySelector('.dm-list-input__item-input')
     var $removeButton = $item.querySelector('.dm-list-input__item-remove')
 
@@ -105,7 +103,7 @@ ListInput.prototype.bindRemoveClickEvent = function () {
       // Hide Remove buttons if there is only one item left
       if (this.$allVisibleItems.length === 1) {
         var $removeButtons = this.$module.querySelectorAll('.dm-list-input__item-remove')
-        nodeListForEach($removeButtons, function ($button) {
+        $removeButtons.forEach(function ($button) {
           $button.classList.add('dm-list-input__item-remove--hidden')
         })
         this.$allVisibleItems[0].querySelector('input').focus()
@@ -131,9 +129,9 @@ ListInput.prototype.bindRemoveClickEvent = function () {
 ListInput.prototype.updateCounters = function () {
   var $visibleItems = this.$allVisibleItems
   var counter = 1
-  nodeListForEach($visibleItems, function (item) {
+  $visibleItems.forEach(function (item) {
     var $counters = item.querySelectorAll('.dm-list-input__counter')
-    nodeListForEach($counters, function ($counter) {
+    $counters.forEach(function ($counter) {
       $counter.innerHTML = counter
     })
     counter += 1
@@ -168,7 +166,7 @@ ListInput.prototype.bindAddClickEvent = function () {
       // Show Remove buttons if there is more one item
       if (this.$allVisibleItems.length > 1) {
         var $removeButtons = this.$module.querySelectorAll('.dm-list-input__item-remove')
-        nodeListForEach($removeButtons, function ($button) {
+        $removeButtons.forEach(function ($button) {
           $button.classList.remove('dm-list-input__item-remove--hidden')
         })
       }
