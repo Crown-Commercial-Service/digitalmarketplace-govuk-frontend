@@ -22,9 +22,24 @@ var getSibling = function (direction, elem, selector) {
 function ListInput ($module) {
   this.$module = $module
   this.$allVisibleItems = $module.querySelectorAll('.dm-list-input__item:not(.dm-list-input__item--hidden)')
-  this.$addAnotherButton = $module.querySelector('.dmp-list-input__item-add')
+  this.$addAnotherButton = $module.querySelector('.dm-list-input__item-add')
   this.$allItems = $module.querySelectorAll('.dm-list-input__item')
   this.visibleItems = 0
+
+  this.itemContainerClass = 'dm-list-input__item-container'
+  this.hiddenItemClass = 'dm-list-input__item--hidden'
+  this.visibleItemClass = 'dm-list-input__item--visible'
+  this.itemInputClass = 'dm-list-input__item-input'
+  this.itemErrorClass = 'dm-list-input__item--error'
+  this.itemErrorMsgClass = 'govuk-error-message'
+  this.itemCounterClass = 'dm-list-input__counter'
+  this.inputErrorClass = 'govuk-input--error'
+  this.removeButtonClass = 'dm-list-input__item-remove'
+  this.hiddenRemoveButtonClass = 'dm-list-input__item-remove--hidden'
+
+  this.formgroupErrorClass = 'govuk-form-group--error'
+  this.hiddenAddButtonClass = 'dm-list-input__item-add--hidden'
+  this.addButtonRemainingClass = 'dm-list-input__js-remaining-counter'
 }
 
 ListInput.prototype.init = function () {
@@ -47,27 +62,29 @@ ListInput.prototype.hideEmptyItems = function () {
   var numberOfVisibleEmptyItems = 0
   var numberOfFilledInItems = 0
   this.$allItems.forEach(function ($item) {
-    var $input = $item.querySelector('.dm-list-input__item-input')
-    var $removeButton = $item.querySelector('.dm-list-input__item-remove')
+    var $input = $item.querySelector('.' + this.itemInputClass)
+    var $removeButton = $item.querySelector('.' + this.removeButtonClass)
 
     if ($input.value === '') {
       if (numberOfVisibleEmptyItems === 0) {
-        $removeButton.classList.remove('dm-list-input__item-remove--hidden')
+        $removeButton.classList.remove(this.hiddenRemoveButtonClass)
       } else if (numberOfVisibleEmptyItems === 1 && numberOfFilledInItems === 0) {
-        $removeButton.classList.remove('dm-list-input__item-remove--hidden')
+        $removeButton.classList.remove(this.hiddenRemoveButtonClass)
       } else {
-        $item.classList.add('dm-list-input__item--hidden')
-        $removeButton.classList.add('dm-list-input__item-remove--hidden')
+        $item.classList.add(this.hiddenItemClass)
+        $item.classList.remove(this.visibleItemClass)
+        $removeButton.classList.add(this.hiddenRemoveButtonClass)
         $input.setAttribute('disabled', 'true')
       }
       numberOfVisibleEmptyItems += 1
     } else {
-      $item.classList.remove('dm-list-input__item--hidden')
-      $removeButton.classList.remove('dm-list-input__item-remove--hidden')
+      $item.classList.remove(this.hiddenItemClass)
+      $item.classList.add(this.visibleItemClass)
+      $removeButton.classList.remove(this.hiddenRemoveButtonClass)
       numberOfFilledInItems += 1
     }
-  })
-  this.$allVisibleItems = this.$module.querySelectorAll('.dm-list-input__item:not(.dm-list-input__item--hidden)')
+  }, this)
+  this.$allVisibleItems = this.$module.querySelectorAll('.' + this.visibleItemClass)
 }
 
 // Binds an event listener to module to listen for any
@@ -75,46 +92,47 @@ ListInput.prototype.hideEmptyItems = function () {
 ListInput.prototype.bindRemoveClickEvent = function () {
   this.$module.addEventListener('click', function (event) {
     var $clickedEl = event.target
-    if ($clickedEl.tagName === 'BUTTON' && $clickedEl.classList.contains('dm-list-input__item-remove')) {
-      var $item = $clickedEl.parentNode
+    if ($clickedEl.tagName === 'BUTTON' && $clickedEl.classList.contains(this.removeButtonClass)) {
+      var $item = $clickedEl.parentNode.parentNode
       // Remove the input's content and remove its value attribute
-      var $input = $item.querySelector('.dm-list-input__item-input')
+      var $input = $item.querySelector('.' + this.itemInputClass)
       $input.value = ''
       $input.removeAttribute('value')
       $input.setAttribute('disabled', 'true')
-      $clickedEl.classList.add('dm-list-input__item-remove--hidden')
-      $item.classList.add('dm-list-input__item--hidden')
-      this.$allVisibleItems = this.$module.querySelectorAll('.dm-list-input__item:not(.dm-list-input__item--hidden)')
+      $clickedEl.classList.add(this.hiddenRemoveButtonClass)
+      $item.classList.add(this.hiddenItemClass)
+      $item.classList.remove(this.visibleItemClass)
+      this.$allVisibleItems = this.$module.querySelectorAll('.' + this.visibleItemClass)
 
       // Remove Error messages and styling
       var $errorContainer = $item
 
-      if ($errorContainer.classList.contains('govuk-form-group--error')) {
-        $errorContainer.classList.remove('govuk-form-group--error')
-        $errorContainer.classList.remove('dm-list-input__item--error')
-        $errorContainer.querySelector('.govuk-error-message').remove()
-        var $errorInput = $errorContainer.querySelector('.govuk-input--error')
+      if ($errorContainer.classList.contains(this.formgroupErrorClass)) {
+        $errorContainer.classList.remove(this.formgroupErrorClass)
+        $errorContainer.classList.remove(this.itemErrorClass)
+        $errorContainer.querySelector('.' + this.itemErrorMsgClass).remove()
+        var $errorInput = $errorContainer.querySelector('.' + this.inputErrorClass)
         var inputId = $errorInput.getAttribute('id')
         var inputDescribedBy = $errorInput.getAttribute('aria-describedby')
         $errorInput.setAttribute('aria-describedby', inputDescribedBy.replace(inputId + '-error', ''))
-        $errorContainer.querySelector('.govuk-input--error').classList.remove('govuk-input--error')
+        $errorContainer.querySelector('.' + this.inputErrorClass).classList.remove(this.inputErrorClass)
       }
 
       // Hide Remove buttons if there is only one item left
       if (this.$allVisibleItems.length === 1) {
-        var $removeButtons = this.$module.querySelectorAll('.dm-list-input__item-remove')
+        var $removeButtons = this.$module.querySelectorAll('.' + this.removeButtonClass)
         $removeButtons.forEach(function ($button) {
-          $button.classList.add('dm-list-input__item-remove--hidden')
-        })
+          $button.classList.add(this.hiddenRemoveButtonClass)
+        }, this)
         this.$allVisibleItems[0].querySelector('input').focus()
       } else {
         // Set focus to the next input
-        var $nextVisibleItem = getSibling('next', $item, '.dm-list-input__item:not(.dm-list-input__item--hidden)')
+        var $nextVisibleItem = getSibling('next', $item, '.' + this.visibleItemClass)
 
         if ($nextVisibleItem) {
           $nextVisibleItem.querySelector('input').focus()
         } else {
-          var $previousVisibleItem = getSibling('previous', $item, '.dm-list-input__item:not(.dm-list-input__item--hidden)')
+          var $previousVisibleItem = getSibling('previous', $item, '.' + this.visibleItemClass)
           $previousVisibleItem.querySelector('input').focus()
         }
       }
@@ -130,12 +148,12 @@ ListInput.prototype.updateCounters = function () {
   var $visibleItems = this.$allVisibleItems
   var counter = 1
   $visibleItems.forEach(function (item) {
-    var $counters = item.querySelectorAll('.dm-list-input__counter')
+    var $counters = item.querySelectorAll('.' + this.itemCounterClass)
     $counters.forEach(function ($counter) {
       $counter.innerHTML = counter
     })
     counter += 1
-  })
+  }, this)
 }
 
 // Used to update "Add another" buttons "Remaining" counter
@@ -144,43 +162,44 @@ ListInput.prototype.updateRemainingCounter = function () {
   var $visibleItems = this.$allVisibleItems
   var totalItems = this.$allItems.length
 
-  this.$module.querySelector('.dm-list-input__js-remaining-counter').innerHTML = totalItems - $visibleItems.length
+  this.$module.querySelector('.' + this.addButtonRemainingClass).innerHTML = totalItems - $visibleItems.length
 }
 
 ListInput.prototype.bindAddClickEvent = function () {
   this.$addAnotherButton.addEventListener('click', function () {
     // Find the first hidden item
-    var $firstHiddenItem = this.$module.querySelector('.dm-list-input__item.dm-list-input__item--hidden')
-    var $firstHiddenInput = $firstHiddenItem.querySelector('.dm-list-input__item-input')
+    var $firstHiddenItem = this.$module.querySelector('.' + this.hiddenItemClass)
+    var $firstHiddenInput = $firstHiddenItem.querySelector('.' + this.itemInputClass)
 
     if ($firstHiddenItem) {
       $firstHiddenInput.removeAttribute('disabled')
-      this.$module.querySelector('.dm-list-input__item-container').appendChild($firstHiddenItem)
-      $firstHiddenItem.classList.remove('dm-list-input__item--hidden')
-      this.$allVisibleItems = this.$module.querySelectorAll('.dm-list-input__item:not(.dm-list-input__item--hidden)')
+      this.$module.querySelector('.' + this.itemContainerClass).appendChild($firstHiddenItem)
+      $firstHiddenItem.classList.remove(this.hiddenItemClass)
+      $firstHiddenItem.classList.add(this.visibleItemClass)
+      this.$allVisibleItems = this.$module.querySelectorAll('.' + this.visibleItemClass)
       this.updateAllCounters()
-      $firstHiddenItem.querySelector('.dm-list-input__item-remove').classList.remove('dm-list-input__item-remove--hidden')
+      $firstHiddenItem.querySelector('.' + this.removeButtonClass).classList.remove(this.hiddenRemoveButtonClass)
       $firstHiddenInput.focus()
       this.toggleAddAnotherButton()
 
       // Show Remove buttons if there is more one item
       if (this.$allVisibleItems.length > 1) {
-        var $removeButtons = this.$module.querySelectorAll('.dm-list-input__item-remove')
+        var $removeButtons = this.$module.querySelectorAll('.' + this.removeButtonClass)
         $removeButtons.forEach(function ($button) {
-          $button.classList.remove('dm-list-input__item-remove--hidden')
-        })
+          $button.classList.remove(this.hiddenRemoveButtonClass)
+        }, this)
       }
     }
   }.bind(this))
 }
 
 ListInput.prototype.toggleAddAnotherButton = function () {
-  var $hiddenItems = this.$module.querySelector('.dm-list-input__item--hidden')
+  var $firstHiddenItem = this.$module.querySelector('.' + this.hiddenItemClass)
 
-  if ($hiddenItems) {
-    this.$addAnotherButton.classList.remove('dmp-list-input__item-add--hidden')
+  if ($firstHiddenItem) {
+    this.$addAnotherButton.classList.remove(this.hiddenAddButtonClass)
   } else {
-    this.$addAnotherButton.classList.add('dmp-list-input__item-add--hidden')
+    this.$addAnotherButton.classList.add(this.hiddenAddButtonClass)
   }
 }
 
@@ -188,4 +207,5 @@ ListInput.prototype.updateAllCounters = function () {
   this.updateCounters()
   this.updateRemainingCounter()
 }
+
 export default ListInput

@@ -66,7 +66,7 @@
         {% set errorId = entryItemId + '-error' %}
       {% endif -%}
 
-      <div class="dm-list-input__item {% if item.errorMessage %}dm-list-input__item--error govuk-form-group--error{% endif %}">
+      <div class="dm-list-input__item dm-list-input__item--visible {% if item.errorMessage %}dm-list-input__item--error govuk-form-group--error{% endif %}">
         {% if item.errorMessage %}
         {{ govukErrorMessage({
           id: errorId,
@@ -78,7 +78,7 @@
         }) | indent(2) | trim }}
         {% endif %}
         {#- Add label and input field -#}
-        <div class="dm-list-input__inputs">
+        <div class="dm-list-input__row">
           {{ govukInput ({
             attributes: item.attributes,
             autocomplete: item.autocomplete,
@@ -99,12 +99,11 @@
             type: item.type | default('text'),
             value: item.value
           }) | indent(2) | trim }}
+          <button class="govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden">Remove <span class="govuk-visually-hidden">entry number <span class="dm-list-input__counter"></span></span></button>
         </div>
-
-        <button class="govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden">Remove <span class="govuk-visually-hidden">entry number <span class="dm-list-input__counter"></span></span></button>
       </div>
     {% endfor %}
   </div>
-  <button class="govuk-button govuk-button--secondary dmp-list-input__item-add dmp-list-input__item-add--hidden">Add another {{ params.addButtonName }} ( <span class="dm-list-input__js-remaining-counter">0</span> remaining)</button>
+  <button class="govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden">Add another {{ params.addButtonName }} (<span class="dm-list-input__js-remaining-counter">0</span> remaining)</button>
   {% endcall %}
 </div>

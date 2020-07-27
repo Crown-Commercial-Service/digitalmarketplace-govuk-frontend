@@ -14,7 +14,7 @@ const VISIBLE_INPUT_SELECTOR = '.dm-list-input__item:not(.dm-list-input__item--h
 const HIDDEN_INPUT_SELECTOR = '.dm-list-input__item.dm-list-input__item--hidden'
 const REMOVE_BUTTON_SELECTOR = '.dm-list-input__item-remove:not(.dm-list-input__item-remove--hidden)'
 const HIDDEN_REMOVE_BUTTON_SELECTOR = '.dm-list-input__item-remove.dm-list-input__item-remove--hidden'
-const ADD_BUTTON_SELECTOR = '.dmp-list-input__item-add:not(.dmp-list-input__item-add--hidden)'
+const ADD_BUTTON_SELECTOR = '.dm-list-input__item-add:not(.dm-list-input__item-add--hidden)'
 
 describe('/components/list-input', () => {
   describe('/components/list-input/preview', () => {

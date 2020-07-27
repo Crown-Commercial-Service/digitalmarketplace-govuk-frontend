@@ -21,56 +21,54 @@
 
   .dm-list-input__item {
     @include govuk-responsive-margin(3, "bottom");
-    display: block; /* HACK NEEDED FOR BROWSER WHICH DO NO SUPPORT CSS GRIDS (IE 10, 11)*/
-    display: grid;
-    grid-template-columns: 1fr min-content;
-    column-gap: govuk-spacing(2);
-    align-items: start;
+
+    &--hidden {
+      display: none;
+    }
+
+    .dm-list-input__row {
+      display: flex;
+      flex-flow: row nowrap;
+      position: relative; // Needed to position number inside input
+
+      .dm-list-input__item-label {
+        @include govuk-font($size: 19, $tabular: true, $weight: bold, $line-height: 1.25);
+    
+        width: 1.5em;
+        position: absolute;
+        top: 9px;
+        text-align: right;
+        left: govuk-spacing(1);
+        pointer-events: none;
+      }
+
+      .dm-list-input__form-group {
+        flex: 1 1 auto;
+        margin-bottom: govuk-spacing(1);
+
+        .dm-list-input__item-input {
+          padding-left: 2em;
+        }
+      }
+
+      .dm-list-input__item-remove {
+        width: auto;
+        height: 38px;
+        margin-left: govuk-spacing(2);
+        margin-bottom: 0;
+
+        &--hidden {
+          display: none;
+        }
+      }
+    }
   }
 
-  .dm-list-input-error-message {
-    grid-area: 1 / span 2;
-  }
-
-  .dm-list-input__inputs {
-    position: relative; /* NEEDED to position number inside input*/
-    grid-row: 2 / span 1 ;
-  }
-
-  .dm-list-input__item--hidden {
-    display: none;
-  }
-
-  .dm-list-input__item-label {
-    @include govuk-font($size: 19, $tabular: true, $weight: bold, $line-height: 1.25);
-
-    width: 1.5em;
-    position: absolute;
-    top: 9px;
-    text-align: right;
-    left: govuk-spacing(1);
-    pointer-events: none;
-  }
-
-  .dm-list-input__item-input {
-    padding-left: 2em;
+  .dm-list-input__item-add {
     margin-bottom: govuk-spacing(1);
-  }
 
-  .dm-list-input__item-input--large {
-    padding-left: 3.0em;
-  }
-
-  .dm-list-input__item-remove {
-    margin-bottom: 0;
-    grid-row: 2 / span 2;
-  }
-
-  .dm-list-input__item-remove--hidden, .dmp-list-input__item-add--hidden {
-    display: none;
-  }
-
-  .dmp-list-input__item-add {
-    margin-bottom: govuk-spacing(1);
+    &--hidden {
+      display: none;
+    }
   }
 }

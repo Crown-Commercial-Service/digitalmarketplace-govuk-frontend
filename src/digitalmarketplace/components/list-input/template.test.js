@@ -69,7 +69,7 @@ describe('List Input', () => {
     describe('"add another" button', () => {
       it('renders a hidden add button with the correct string', () => {
         const $ = render('list-input', examples.default)
-        expect($('.dmp-list-input__item-add--hidden').text()).toContain(examples.default.addButtonName)
+        expect($('.dm-list-input__item-add--hidden').text()).toContain(examples.default.addButtonName)
       })
     })
   })
