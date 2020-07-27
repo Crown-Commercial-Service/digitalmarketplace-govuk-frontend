@@ -1,7 +1,7 @@
 const configPaths = require('../../../../config/paths.json')
 const PORT = configPaths.ports.test
 
-// URLS
+// URLs
 const BASE_URL = 'http://localhost:' + PORT
 const DEFAULT_EXAMPLE_URL = BASE_URL + '/components/list-input/preview'
 const EXISTING_VALUES_EXAMPLE_URL = BASE_URL + '/components/list-input/with-existing-values/preview'
@@ -9,7 +9,7 @@ const ERRORS_EXAMPLE_URL = BASE_URL + '/components/list-input/with-error-for-spe
 
 // SELECTORS
 const ROW_SELECTOR = '.dm-list-input .dm-list-input__item-container > .dm-list-input__item'
-const ERROR_ROW_SELECTOR = '.dm-list-input .dm-list-input__item-container > .dm-list-input__item--error'
+const ERROR_ROW_SELECTOR = '.dm-list-input .dm-list-input__item-container .dm-list-input__item--error'
 const VISIBLE_INPUT_SELECTOR = '.dm-list-input__item:not(.dm-list-input__item--hidden)'
 const HIDDEN_INPUT_SELECTOR = '.dm-list-input__item.dm-list-input__item--hidden'
 const REMOVE_BUTTON_SELECTOR = '.dm-list-input__item-remove:not(.dm-list-input__item-remove--hidden)'
@@ -110,7 +110,7 @@ describe('/components/list-input', () => {
           await page.click(firstRow + ' .govuk-button')
           await page.waitForSelector(firstRow, { visible: false })
           const focussedInputID = await page.evaluate(() => document.activeElement.getAttribute('id'))
-          const secondRowInputID = 'my-list-1' /* zero based index i.e "1" is second item */
+          const secondRowInputID = 'my-list-2' /* zero based index i.e "1" is second item */
 
           expect(focussedInputID).toEqual(secondRowInputID)
         })
@@ -120,7 +120,7 @@ describe('/components/list-input', () => {
           await page.click(lastRow + ' .govuk-button')
           await page.waitForSelector(lastRow, { visible: false })
           const focussedInputID = await page.evaluate(() => document.activeElement.getAttribute('id'))
-          const firstRowInputID = 'my-list-0' /* zero based index i.e "1" is second item */
+          const firstRowInputID = 'my-list'
 
           expect(focussedInputID).toEqual(firstRowInputID)
         })

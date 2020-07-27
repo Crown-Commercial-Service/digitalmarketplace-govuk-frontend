@@ -42,8 +42,12 @@ describe('List Input', () => {
         const $inputs = $component.find(`input[name="${examples.default.name}"]`)
         expect($inputs.length).toEqual(examples.default.maxItems)
 
-        for (let i = 0; i < examples.default.maxItems; i++) {
-          expect($inputs[i].attribs.id).toEqual(examples.default.id + '-' + i)
+        for (let i = 1; i <= examples.default.maxItems; i++) {
+          if (i === 1) {
+            expect($inputs[i - 1].attribs.id).toEqual(examples.default.id)
+          } else {
+            expect($inputs[i - 1].attribs.id).toEqual(examples.default.id + '-' + i)
+          }
         }
       })
 
@@ -146,11 +150,11 @@ describe('List Input', () => {
         )
 
         const $ = render('list-input', errorExample)
-        const $errorMessages = $('.dm-list-input__item--error .govuk-error-message')
+        const $errorMessages = $('.dm-list-input-error-message.govuk-error-message')
 
         expect($errorMessages.length).toBe(exampleErrors.length)
         exampleErrors.forEach(item => {
-          const hasErrorRendered = $(`.dm-list-input__item--error .govuk-error-message:contains(${item.errorMessage.text})`).length === 1
+          const hasErrorRendered = $(`.dm-list-input-error-message.govuk-error-message:contains(${item.errorMessage.text})`).length === 1
           expect(hasErrorRendered).toBeTruthy()
         })
       })

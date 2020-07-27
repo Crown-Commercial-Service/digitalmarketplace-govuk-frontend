@@ -21,16 +21,6 @@
 {% endif -%}
 
 <div class="dm-list-input{% if params.classes %} params.classes {% endif %}{% if params.errorMessage %} govuk-form-group--error{% endif %}">
-  {% if params.errorMessage %}
-    {{ govukErrorMessage({
-      id: listErrorId,
-      classes: 'dm-list-input-error-message' + params.errorMessage.classes if params.errorMessage.classes,
-      attributes: params.errorMessage.attributes,
-      html: params.errorMessage.html,
-      text: params.errorMessage.text,
-      visuallyHiddenText: params.errorMessage.visuallyHiddenText
-    }) | indent(2) | trim }}
-  {% endif %}
   {% call govukFieldset({
     describedBy: params.fieldset.describedBy if params.fieldset.describedBy else describedBy,
     classes: params.fieldset.classes,
@@ -51,39 +41,51 @@
         html: params.hint.html,
         text: params.hint.text
       }) | indent(2) | trim() }}
-  {% endif -%}
+  {% endif -%}  
+  
+  {% if params.errorMessage %}
+    {{ govukErrorMessage({
+      id: listErrorId,
+      classes: 'dm-list-input-error-message' + params.errorMessage.classes if params.errorMessage.classes,
+      attributes: params.errorMessage.attributes,
+      html: params.errorMessage.html,
+      text: params.errorMessage.text,
+      visuallyHiddenText: params.errorMessage.visuallyHiddenText
+    }) | indent(2) | trim }}
+  {% endif %}
 
   <div class="dm-list-input__item-container" role="region" aria-live="assertive">
     {% for i in range(0, params.maxItems) -%}
       {%- set item = params.items[i] if params.items[i] else {} -%}
-      {%- set entryItemId = params.id + '-' + i -%}
+      {%- if loop.first -%}
+       {%- set entryItemId = params.id -%}
+      {%- else -%}
+        {%- set entryItemId = params.id + '-' + loop.index -%}
+      {% endif %}
       {# Classes #}
       {%- set itemClassesBase = 'govuk-input dm-list-input__item-input' -%}
       {%- set itemClassesLarge = ' dm-list-input__item-input--large' if i > 99 else '' -%}
       {%- set itemClassesExternal = ' ' + item.classes if item.classes else '' -%}
-      {%- set itemClassesError = ' govuk-input--error' if item.errorMessage else '' -%}
       {%- if item.errorMessage %}
         {% set errorId = entryItemId + '-error' %}
       {% endif -%}
 
-      <div class="dm-list-input__item dm-list-input__item--visible {% if item.errorMessage %}dm-list-input__item--error govuk-form-group--error{% endif %}">
-        {% if item.errorMessage %}
-        {{ govukErrorMessage({
-          id: errorId,
-          classes: 'dm-list-input-error-message  ' + item.errorMessage.classes if item.errorMessage.classes,
-          attributes: item.errorMessage.attributes,
-          html: item.errorMessage.html,
-          text: item.errorMessage.text,
-          visuallyHiddenText: item.errorMessage.visuallyHiddenText
-        }) | indent(2) | trim }}
-        {% endif %}
+      <div class="dm-list-input__item dm-list-input__item--visible{% if item.errorMessage %} dm-list-input__item--error {% endif %}">
         {#- Add label and input field -#}
         <div class="dm-list-input__row">
           {{ govukInput ({
             attributes: item.attributes,
             autocomplete: item.autocomplete,
-            classes: itemClassesBase + itemClassesLarge + itemClassesExternal + itemClassesError,
-            describedBy: (item.describedBy if item.describedBy else describedBy) + (' ' + errorId if errorId),
+            classes: itemClassesBase + itemClassesLarge + itemClassesExternal,
+            describedBy: (item.describedBy if item.describedBy else describedBy),
+            errorMessage: {
+              id: errorId,
+              classes: 'dm-list-input-error-message  ' + (item.errorMessage.classes if item.errorMessage.classes),
+              attributes: item.errorMessage.attributes,
+              html: item.errorMessage.html,
+              text: item.errorMessage.text,
+              visuallyHiddenText: item.errorMessage.visuallyHiddenText
+            } if item.errorMessage,
             formGroup: {
               classes: 'dm-list-input__form-group'
             },

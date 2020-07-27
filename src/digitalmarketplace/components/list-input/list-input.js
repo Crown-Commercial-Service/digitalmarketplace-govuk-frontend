@@ -21,7 +21,7 @@ var getSibling = function (direction, elem, selector) {
 
 function ListInput ($module) {
   this.$module = $module
-  this.$allVisibleItems = $module.querySelectorAll('.dm-list-input__item:not(.dm-list-input__item--hidden)')
+  this.$allVisibleItems = $module.querySelectorAll('.dm-list-input__item--visible')
   this.$addAnotherButton = $module.querySelector('.dm-list-input__item-add')
   this.$allItems = $module.querySelectorAll('.dm-list-input__item')
   this.visibleItems = 0
@@ -31,13 +31,13 @@ function ListInput ($module) {
   this.visibleItemClass = 'dm-list-input__item--visible'
   this.itemInputClass = 'dm-list-input__item-input'
   this.itemErrorClass = 'dm-list-input__item--error'
-  this.itemErrorMsgClass = 'govuk-error-message'
+  this.itemErrorMsgClass = 'dm-list-input-error-message'
   this.itemCounterClass = 'dm-list-input__counter'
   this.inputErrorClass = 'govuk-input--error'
   this.removeButtonClass = 'dm-list-input__item-remove'
   this.hiddenRemoveButtonClass = 'dm-list-input__item-remove--hidden'
 
-  this.formgroupErrorClass = 'govuk-form-group--error'
+  this.formGroupErrorClass = 'govuk-form-group--error'
   this.hiddenAddButtonClass = 'dm-list-input__item-add--hidden'
   this.addButtonRemainingClass = 'dm-list-input__js-remaining-counter'
 }
@@ -50,9 +50,7 @@ ListInput.prototype.init = function () {
 
   this.hideEmptyItems()
   this.updateAllCounters()
-
   this.bindRemoveClickEvent()
-
   this.toggleAddAnotherButton()
   this.bindAddClickEvent()
 }
@@ -105,17 +103,16 @@ ListInput.prototype.bindRemoveClickEvent = function () {
       this.$allVisibleItems = this.$module.querySelectorAll('.' + this.visibleItemClass)
 
       // Remove Error messages and styling
-      var $errorContainer = $item
-
-      if ($errorContainer.classList.contains(this.formgroupErrorClass)) {
-        $errorContainer.classList.remove(this.formgroupErrorClass)
-        $errorContainer.classList.remove(this.itemErrorClass)
-        $errorContainer.querySelector('.' + this.itemErrorMsgClass).remove()
-        var $errorInput = $errorContainer.querySelector('.' + this.inputErrorClass)
+      if ($item.classList.contains(this.itemErrorClass)) {
+        $item.classList.remove(this.itemErrorClass)
+        var $errorFormGroup = $item.querySelector('.' + this.formGroupErrorClass)
+        $errorFormGroup.classList.remove(this.formGroupErrorClass)
+        $errorFormGroup.querySelector('.' + this.itemErrorMsgClass).remove()
+        var $errorInput = $errorFormGroup.querySelector('.' + this.inputErrorClass)
         var inputId = $errorInput.getAttribute('id')
         var inputDescribedBy = $errorInput.getAttribute('aria-describedby')
         $errorInput.setAttribute('aria-describedby', inputDescribedBy.replace(inputId + '-error', ''))
-        $errorContainer.querySelector('.' + this.inputErrorClass).classList.remove(this.inputErrorClass)
+        $errorInput.classList.remove(this.inputErrorClass)
       }
 
       // Hide Remove buttons if there is only one item left
