@@ -17,8 +17,8 @@
     <div class="govuk-width-container">
       <div class="govuk-heading-m">
         <h3 id="heading-{{ exampleSlug }}" class="app-!-di">{{ heading | safe }}</h3>
-        <a href="{{ path }}{{ legacyQuery }}" class="govuk-link govuk-!-margin-left-1 govuk-!-font-size-16">
-          (open in a new window)
+        <a href="{{ path }}{{ legacyQuery }}" target="_blank" class="govuk-link govuk-!-margin-left-1 govuk-!-font-size-16">
+          (open in a new tab)
         </a>
       </div>
 
@@ -35,6 +35,7 @@
       frameBorder="0"
       allowTransparency="true"
       scrolling="auto"
+      title="{{ exampleSlug }}"
       ></iframe>
     </div>
 
