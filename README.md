@@ -72,7 +72,7 @@ The reason for copying `govuk-frontend` to `src` is to ensure that `src` mirrors
 
 ## 2. Developing components/features and previewing
 
-Run `npm start dev`
+Run `npm run dev`
 
 - compiles sass and js from `src` and places in `app/public`
 - watch task for any file changes to `src`, compiles and reloads the browser (using browsersync)
