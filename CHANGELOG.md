@@ -2,6 +2,18 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🆕 New features:
+
+  - New component: Digital Marketplace List Input component
+    - Use the component `{{ dmListInput({...}) }}`. For its parameters, see its README and/or YAML. For examples, see the review app.
+
+🔧 Fixes:
+  - Ability to wrap components with `<main>` to avoid accessibility errors. [PR #148](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/148)
+  - Add title to iFrames. [PR #148](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/148)
+  - Fix "open in new tab" links [PR #148](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/148)
+
 ## 0.9.1
 
 🔧 Fixes:

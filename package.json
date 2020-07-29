@@ -58,7 +58,8 @@
     ],
     "ignore": [
       "/package/**/*",
-      "/node_modules/**/*"
+      "/node_modules/**/*",
+      "/src/digitalmarketplace/vendor/**/*"
     ]
   },
   "devDependencies": {
