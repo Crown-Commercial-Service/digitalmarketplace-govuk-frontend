@@ -16,7 +16,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-1\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">1</span></span>
 </button>
         </div>
@@ -28,7 +28,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">2</span></span>
 </button>
         </div>
@@ -40,7 +40,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-3\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">3</span></span>
 </button>
         </div>
@@ -52,7 +52,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-4\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">4</span></span>
 </button>
         </div>
@@ -64,7 +64,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-5\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">5</span></span>
 </button>
         </div>
@@ -76,7 +76,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-6\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">6</span></span>
 </button>
         </div>
@@ -88,7 +88,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-7\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">7</span></span>
 </button>
         </div>
@@ -100,7 +100,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-8\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">8</span></span>
 </button>
         </div>
@@ -112,7 +112,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-9\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">9</span></span>
 </button>
         </div>
@@ -124,13 +124,13 @@ exports[`List Input by default matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-10\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">10</span></span>
 </button>
         </div>
       </div>
   </div>
-  <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden\\">
+  <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden\\" data-module=\\"govuk-button\\">
   Add another requirement (<span class=\\"dm-list-input__js-remaining-counter\\">0</span> remaining)
 </button>
 </fieldset>
@@ -154,7 +154,7 @@ exports[`List Input when it is optional matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-1\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">1</span></span>
 </button>
         </div>
@@ -166,7 +166,7 @@ exports[`List Input when it is optional matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-2\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">2</span></span>
 </button>
         </div>
@@ -178,13 +178,13 @@ exports[`List Input when it is optional matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-3\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">3</span></span>
 </button>
         </div>
       </div>
   </div>
-  <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden\\">
+  <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden\\" data-module=\\"govuk-button\\">
   Add another requirement (<span class=\\"dm-list-input__js-remaining-counter\\">0</span> remaining)
 </button>
 </fieldset>
@@ -211,7 +211,7 @@ exports[`List Input with errors with component-level error matches existing snap
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-1\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">1</span></span>
 </button>
         </div>
@@ -223,7 +223,7 @@ exports[`List Input with errors with component-level error matches existing snap
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-2\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">2</span></span>
 </button>
         </div>
@@ -235,13 +235,13 @@ exports[`List Input with errors with component-level error matches existing snap
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-3\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">3</span></span>
 </button>
         </div>
       </div>
   </div>
-  <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden\\">
+  <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden\\" data-module=\\"govuk-button\\">
   Add another requirement (<span class=\\"dm-list-input__js-remaining-counter\\">0</span> remaining)
 </button>
 </fieldset>
@@ -255,9 +255,9 @@ exports[`List Input with errors with input-level errors matches existing snapsho
   <legend class=\\"govuk-fieldset__legend dm-list-input__legend\\">
     What requirements are essential to carry out the work?
   </legend>
-    <span id=\\"my-list-3-hint\\" class=\\"govuk-hint dm-list-input__hint \\">
+    <div id=\\"my-list-3-hint\\" class=\\"govuk-hint dm-list-input__hint \\">
     Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
-  </span>
+  </div>
   
 
   <div class=\\"dm-list-input__item-container\\" role=\\"region\\" aria-live=\\"assertive\\">
@@ -268,7 +268,7 @@ exports[`List Input with errors with input-level errors matches existing snapsho
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-3-1\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">1</span></span>
 </button>
         </div>
@@ -283,7 +283,7 @@ exports[`List Input with errors with input-level errors matches existing snapsho
     </span>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input govuk-input--error\\" id=\\"my-list-3-2\\" name=\\"requirements\\" type=\\"text\\" value=\\"Synergistically iterate scalable leadership skills without competitive testing procedures. Quickly envisioneer.\\" aria-describedby=\\"my-list-3-2-error\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">2</span></span>
 </button>
         </div>
@@ -298,13 +298,13 @@ exports[`List Input with errors with input-level errors matches existing snapsho
     </span>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input govuk-input--error\\" id=\\"my-list-3-3\\" name=\\"requirements\\" type=\\"text\\" value=\\"Saturday Night Fever\\" aria-describedby=\\"my-list-3-3-error\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">3</span></span>
 </button>
         </div>
       </div>
   </div>
-  <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden\\">
+  <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden\\" data-module=\\"govuk-button\\">
   Add another requirement (<span class=\\"dm-list-input__js-remaining-counter\\">0</span> remaining)
 </button>
 </fieldset>
@@ -328,7 +328,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-1\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">1</span></span>
 </button>
         </div>
@@ -340,7 +340,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2\\" name=\\"requirements\\" type=\\"text\\" value=\\"Synergistically iterate scalable leadership skills without competitive testing procedures. Quickly envisioneer.\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">2</span></span>
 </button>
         </div>
@@ -352,7 +352,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-3\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">3</span></span>
 </button>
         </div>
@@ -364,7 +364,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-4\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">4</span></span>
 </button>
         </div>
@@ -376,7 +376,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-5\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">5</span></span>
 </button>
         </div>
@@ -388,7 +388,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-6\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">6</span></span>
 </button>
         </div>
@@ -400,7 +400,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-7\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">7</span></span>
 </button>
         </div>
@@ -412,7 +412,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-8\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">8</span></span>
 </button>
         </div>
@@ -424,7 +424,7 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-9\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">9</span></span>
 </button>
         </div>
@@ -436,13 +436,13 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-10\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">10</span></span>
 </button>
         </div>
       </div>
   </div>
-  <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden\\">
+  <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden\\" data-module=\\"govuk-button\\">
   Add another requirement (<span class=\\"dm-list-input__js-remaining-counter\\">0</span> remaining)
 </button>
 </fieldset>
@@ -456,9 +456,9 @@ exports[`List Input with hint matches existing snapshot 1`] = `
   <legend class=\\"govuk-fieldset__legend dm-list-input__legend\\">
     What requirements are essential to carry out the work?
   </legend>
-    <span id=\\"my-list-2-hint\\" class=\\"govuk-hint dm-list-input__hint \\">
+    <div id=\\"my-list-2-hint\\" class=\\"govuk-hint dm-list-input__hint \\">
     Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
-  </span>
+  </div>
   
 
   <div class=\\"dm-list-input__item-container\\" role=\\"region\\" aria-live=\\"assertive\\">
@@ -469,7 +469,7 @@ exports[`List Input with hint matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-1\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">1</span></span>
 </button>
         </div>
@@ -481,7 +481,7 @@ exports[`List Input with hint matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-2\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">2</span></span>
 </button>
         </div>
@@ -493,13 +493,13 @@ exports[`List Input with hint matches existing snapshot 1`] = `
     </label>
     <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-3\\" name=\\"requirements\\" type=\\"text\\">
   </div>
-          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\">
+          <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">3</span></span>
 </button>
         </div>
       </div>
   </div>
-  <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden\\">
+  <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden\\" data-module=\\"govuk-button\\">
   Add another requirement (<span class=\\"dm-list-input__js-remaining-counter\\">0</span> remaining)
 </button>
 </fieldset>
