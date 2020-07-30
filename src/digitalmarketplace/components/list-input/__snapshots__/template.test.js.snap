@@ -252,9 +252,9 @@ exports[`List Input with errors with input-level errors matches existing snapsho
   <legend class=\\"govuk-fieldset__legend dm-list-input__legend \\">
     What requirements are essential to carry out the work?
   </legend>
-    <span id=\\"my-list-3-hint\\" class=\\"govuk-hint dm-list-input__hint \\">
+    <div id=\\"my-list-3-hint\\" class=\\"govuk-hint dm-list-input__hint \\">
     Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
-  </span>
+  </div>
 
   <div class=\\"dm-list-input__item-container\\" role=\\"region\\" aria-live=\\"assertive\\">
       <div class=\\"dm-list-input__item dm-list-input__item--visible\\"><div class=\\"dm-list-input__row\\">
@@ -451,9 +451,9 @@ exports[`List Input with hint matches existing snapshot 1`] = `
   <legend class=\\"govuk-fieldset__legend dm-list-input__legend \\">
     What requirements are essential to carry out the work?
   </legend>
-    <span id=\\"my-list-2-hint\\" class=\\"govuk-hint dm-list-input__hint \\">
+    <div id=\\"my-list-2-hint\\" class=\\"govuk-hint dm-list-input__hint \\">
     Include the technical features of your product, eg graphical workflow, remote access. (Maximum 10 words per feature. Maximum 10 features.)
-  </span>
+  </div>
 
   <div class=\\"dm-list-input__item-container\\" role=\\"region\\" aria-live=\\"assertive\\">
       <div class=\\"dm-list-input__item dm-list-input__item--visible\\"><div class=\\"dm-list-input__row\\">
