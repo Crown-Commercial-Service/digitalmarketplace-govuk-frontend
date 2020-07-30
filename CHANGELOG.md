@@ -2,6 +2,16 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+💥 Breaking changes:
+  
+- GOV.UK Frontend updated to version 3
+
+  To migrate, follow the instructions on the [govuk-frontend repo](https://github.com/alphagov/govuk-frontend/blob/master/CHANGELOG.md#300-breaking-release)
+
+  ([PR #149](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/149))
+
 ## 2.6.0
 
 🆕 New features:
@@ -104,7 +114,7 @@ See below for Changelog examples.
 ## 1.0.0
 
 💥 Breaking changes:
-
+  
 - Move Digital Marketplace files around
 
   We've moved some files around so their locations are consistent with govuk-frontend.
