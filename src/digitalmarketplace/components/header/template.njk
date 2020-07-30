@@ -1,4 +1,4 @@
-{% from "../../../govuk-frontend/components/header/macro.njk" import govukHeader -%}
+{% from "../../../govuk/components/header/macro.njk" import govukHeader -%}
 
 {% set user_logged_in = true if params.role else false %}
 {% set users_role = params.role|default(none) %}

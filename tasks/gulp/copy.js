@@ -1,7 +1,17 @@
 const { src, dest, parallel } = require('gulp')
 const emoji = require('node-emoji')
+const fs = require('fs')
 const { green } = require('chalk')
 const log = require('fancy-log')
+
+// Get the path to govuk-frontend source code
+//
+// Supports both govuk-frontend v2 and govuk-frontend v3, even though the
+// source code is located in difference places for the two.
+const getGOVUKFrontendSrc = () => {
+  const isV3 = fs.existsSync('node_modules/govuk-frontend/govuk/')
+  return isV3 ? 'node_modules/govuk-frontend/govuk/**' : 'node_modules/govuk-frontend/**'
+}
 
 // @params logMsg - string to log out to terminal
 // @params - srcToCopy - array/string of folders/files to copy
@@ -14,16 +24,16 @@ const copy = async (logMsg, srcToCopy, destTo) => {
 
 const CopyForDev = async (done) => {
   await copy('Copying GOV.UK Frontend to src directory',
-    ['node_modules/govuk-frontend/**'],
-    'src/govuk-frontend'
+    [getGOVUKFrontendSrc()],
+    'src/govuk'
   )
   await done()
 }
 
 const copyGOVUKFrontendForPublishing = async (done) => {
   await copy('Copying GOV.UK Frontend to package directory',
-    ['node_modules/govuk-frontend/**'],
-    'package/govuk-frontend'
+    [getGOVUKFrontendSrc()],
+    'package/govuk'
   )
   await done()
 }

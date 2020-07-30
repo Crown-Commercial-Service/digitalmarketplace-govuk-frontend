@@ -1,11 +1,11 @@
-@import "../../../govuk-frontend/settings/all";
-@import "../../../govuk-frontend/tools/all";
-@import "../../../govuk-frontend/helpers/all";
+@import "../../../govuk/settings/all";
+@import "../../../govuk/tools/all";
+@import "../../../govuk/helpers/all";
 
-@import "../../../govuk-frontend/components/error-message/error-message";
-@import "../../../govuk-frontend/components/fieldset/fieldset";
-@import "../../../govuk-frontend/components/hint/hint";
-@import "../../../govuk-frontend/components/input/input";
+@import "../../../govuk/components/error-message/error-message";
+@import "../../../govuk/components/fieldset/fieldset";
+@import "../../../govuk/components/hint/hint";
+@import "../../../govuk/components/input/input";
 
 @include govuk-exports("digitalmarketplace/component/list-input") {
   .dm-list-input__legend {

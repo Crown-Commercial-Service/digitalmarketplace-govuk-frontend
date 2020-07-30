@@ -19,18 +19,18 @@ const cleanupFoldersOrFiles = async (srcToClean) => {
 }
 
 const src = async (done) => {
-  await cleanupFoldersOrFiles(['src/govuk-frontend'])
+  await cleanupFoldersOrFiles(['src/govuk', 'src/govuk-frontend'])
   await done()
 }
 src.displayName = 'clean:src'
-src.description = 'Cleans `govuk-frontend` folder from src'
+src.description = 'Cleans `govuk` folder from src'
 
 const pkg = async (done) => {
-  await cleanupFoldersOrFiles(['package/govuk-frontend', 'package/digitalmarketplace'])
+  await cleanupFoldersOrFiles(['package/govuk', 'package/govuk-frontend', 'package/digitalmarketplace'])
   await done()
 }
 pkg.displayName = 'clean:package'
-pkg.description = 'Cleans `govuk-frontend` and `digitalmarketplace` folder from package'
+pkg.description = 'Cleans `govuk` and `digitalmarketplace` folder from package'
 
 module.exports = {
   src,
