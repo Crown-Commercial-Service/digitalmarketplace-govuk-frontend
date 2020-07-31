@@ -6,7 +6,6 @@ const rollup = require('gulp-better-rollup')
 const rollupPluginCommonjs = require('rollup-plugin-commonjs')
 const rollupPluginNodeResolve = require('rollup-plugin-node-resolve')
 const babel = require('gulp-babel')
-const rename = require('gulp-rename')
 const cssnano = require('cssnano')
 
 // Compile CSS task ---------------------
@@ -57,10 +56,6 @@ const js = async (done) => {
       presets: ['@babel/preset-env']
     }))
     .pipe(gulp.dest('app/public/assets/javascript/')) // save copy for review app
-    .pipe(rename({
-      basename: 'digitalmarketplace-govuk-frontend',
-      extname: '.js'
-    }))
     .pipe(gulp.dest('package/digitalmarketplace/')) // save copy for publishing
 
   await done()
