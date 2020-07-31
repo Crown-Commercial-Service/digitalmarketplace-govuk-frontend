@@ -4,6 +4,20 @@ See below for Changelog examples.
 
 ## Unreleased
 
+💥 Breaking changes:
+
+- Move govuk-frontend templates and styles to `govuk/`
+
+  You must change any paths containing `govuk-frontend/` to use `govuk/` instead.
+
+  For example, to import govukInput you now write:
+
+  ```
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+  ```
+
+  ([PR #151](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/151))
+
 🆕 New features:
 
   - New component: Digital Marketplace List Input component

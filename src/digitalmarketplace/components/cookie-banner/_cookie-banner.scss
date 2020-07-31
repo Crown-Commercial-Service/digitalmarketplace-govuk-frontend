@@ -1,13 +1,13 @@
-@import '../../../govuk-frontend/tools/all';
-@import '../../../govuk-frontend/helpers/all';
+@import '../../../govuk/tools/all';
+@import '../../../govuk/helpers/all';
 
 // Import govuk-frontend styling which this component depends on
 // It does not import twice if used by another component because
 // govuk-frontend is named in govuk-exports.
-@import '../../../govuk-frontend/objects/width-container';
-@import '../../../govuk-frontend/utilities/visually-hidden';
-@import '../../../govuk-frontend/core/typography';
-@import '../../../govuk-frontend/components/button/_button';
+@import '../../../govuk/objects/width-container';
+@import '../../../govuk/utilities/visually-hidden';
+@import '../../../govuk/core/typography';
+@import '../../../govuk/components/button/_button';
 
 @include govuk-exports("digitalmarketplace/component/cookie-banner") {
   // component should only be shown if JS is available, by the cookieMessage JS, so hide by default

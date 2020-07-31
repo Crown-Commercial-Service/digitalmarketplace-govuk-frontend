@@ -1,6 +1,6 @@
 /app/public
 
 node_modules
-package/govuk-frontend/
+package/govuk
 package/digitalmarketplace/
-src/govuk-frontend
+src/govuk
