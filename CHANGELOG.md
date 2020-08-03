@@ -26,6 +26,8 @@ See below for Changelog examples.
   @import "node_modules/digitalmarketplace-govuk-frontend/digitalmarketplace/all"
   ```
 
+  ([PR #153](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pulls/153))
+
 - Move govuk-frontend templates and styles to `govuk/`
 
   You must change any paths containing `govuk-frontend/` to use `govuk/` instead.
