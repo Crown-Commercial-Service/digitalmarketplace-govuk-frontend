@@ -2,7 +2,7 @@
 
 See below for Changelog examples.
 
-## Unreleased
+## 1.0.0
 
 💥 Breaking changes:
 
@@ -25,6 +25,8 @@ See below for Changelog examples.
   ```
   @import "node_modules/digitalmarketplace-govuk-frontend/digitalmarketplace/all"
   ```
+
+  ([PR #153](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pulls/153))
 
 - Move govuk-frontend templates and styles to `govuk/`
 
