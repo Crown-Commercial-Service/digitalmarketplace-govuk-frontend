@@ -2,7 +2,7 @@
 
 See below for Changelog examples.
 
-## Unreleased
+## 1.0.0
 
 💥 Breaking changes:
 
