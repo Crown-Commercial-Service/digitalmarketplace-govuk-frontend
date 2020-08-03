@@ -2,6 +2,11 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🔧 Fixes:
+  - Remove focusable state from alert and banner [PR #158](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/158)
+
 ## 1.0.0
 
 💥 Breaking changes:
