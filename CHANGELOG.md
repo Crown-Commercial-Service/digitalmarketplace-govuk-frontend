@@ -6,6 +6,26 @@ See below for Changelog examples.
 
 💥 Breaking changes:
 
+- Move Digital Marketplace files around
+
+  We've moved some files around so their locations are consistent with govuk-frontend.
+
+  - The Digital Marketplace JavaScript file is now found at `digitalmarketplace-govuk-frontend/digitalmarketplace/all.js`
+  - The Digital Marketplace Sass file is now found at `digitalmarketplace-govuk-frontend/digitalmarketplace/all.scss`
+
+  You must change how you copy or import Digital Marketplace JavaScript:
+
+  ```
+  // to copy Digital Marketplace JavaScript using gulp-include
+  //= require ../../../node_modules/digitalmarketplace-govuk-frontend/digitalmarketplace/all.js
+  ```
+
+  You may need to change how you import Digital Marketplace Sass:
+
+  ```
+  @import "node_modules/digitalmarketplace-govuk-frontend/digitalmarketplace/all"
+  ```
+
 - Move govuk-frontend templates and styles to `govuk/`
 
   You must change any paths containing `govuk-frontend/` to use `govuk/` instead.
