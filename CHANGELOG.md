@@ -4,9 +4,11 @@ See below for Changelog examples.
 
 ## Unreleased
 
+## 1.0.1
+
 🔧 Fixes:
-  - Give Cookie Banner an `aria-label` property [PR #161](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/161)
-  - Remove focusable state from alert and banner [PR #158](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/158)
+  - The cookie banner component now has a `aria-label` property [PR #161](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/161)
+  - The alert and banner components no longer have a focusable state [PR #158](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/158)
 
 ## 1.0.0
 
