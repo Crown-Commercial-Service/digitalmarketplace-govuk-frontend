@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`cookie-banner component renders a cookie banner with visible content and buttons 1`] = `
-"<html><head></head><body><div id=\\"dm-cookie-banner\\" class=\\"dm-cookie-banner govuk-width-container\\" data-module=\\"dm-cookie-banner\\" role=\\"region\\" aria-describedby=\\"dm-cookie-banner__heading\\">
+"<html><head></head><body><div id=\\"dm-cookie-banner\\" class=\\"dm-cookie-banner govuk-width-container\\" data-module=\\"dm-cookie-banner\\" role=\\"region\\" aria-label=\\"Cookie Banner\\" aria-describedby=\\"dm-cookie-banner__heading\\">
   <div class=\\"dm-cookie-banner__wrapper\\">
     <h2 class=\\"dm-cookie-banner__heading govuk-heading-m\\" id=\\"dm-cookie-banner__heading\\">
       Can we store analytics cookies on your device?
