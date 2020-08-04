@@ -1,0 +1,90 @@
+@import "../../../govuk/settings/all";
+@import "../../../govuk/tools/all";
+@import "../../../govuk/helpers/all";
+
+@import "../../../govuk/components/error-message/error-message";
+@import "../../../govuk/components/fieldset/fieldset";
+@import "../../../govuk/components/hint/hint";
+@import "../../../govuk/components/input/input";
+
+@include govuk-exports("digitalmarketplace/component/list-input") {
+  .dm-list-input__legend {
+    @include govuk-text-colour;
+    @include govuk-font($size: 24, $weight: bold);
+    @include govuk-responsive-margin(4, "bottom");
+  }
+
+  .dm-list-input__item-container {
+    margin-top: govuk-spacing(6);
+    margin-bottom: govuk-spacing(6);
+  }
+
+  .dm-list-input__item {
+    @include govuk-responsive-margin(3, "bottom");
+
+    &--hidden {
+      display: none;
+    }
+
+    .dm-list-input__row {
+      display: flex;
+      flex-flow: row nowrap;
+      position: relative; // Needed to position number inside input
+
+      .dm-list-input__item-label {
+        @include govuk-font($size: 19, $tabular: true, $weight: bold, $line-height: 1.25);
+    
+        width: 1.5em;
+        position: absolute;
+        top: 9px;
+        text-align: right;
+        left: govuk-spacing(1);
+        pointer-events: none;
+      }
+
+      // Spacing for inputs which have errors
+      .govuk-form-group--error .dm-list-input__item-label {
+        top: 46px;
+        left: govuk-spacing(5);
+        @include govuk-media-query($from: tablet) {
+          top: 49px;
+        }
+      }
+
+      .govuk-form-group--error + .dm-list-input__item-remove {
+        margin-top: 35px;
+        @include govuk-media-query($from: tablet) {
+          margin-top: 40px;
+        }
+      }
+
+      .dm-list-input__form-group {
+        flex: 1 1 auto;
+        margin-bottom: govuk-spacing(1);
+
+        .dm-list-input__item-input {
+          padding-left: 2em;
+        }
+      }
+
+      .dm-list-input__item-remove {
+        width: auto;
+        height: 38px;
+        margin-left: govuk-spacing(2);
+        margin-bottom: 0;
+
+        &--hidden {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .dm-list-input__item-add {
+    margin-bottom: govuk-spacing(1);
+
+    &--hidden {
+      display: none;
+    }
+  }
+}

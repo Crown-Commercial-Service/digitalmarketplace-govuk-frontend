@@ -1,0 +1,25 @@
+{% extends "_base_page.html" %}
+
+{% block pageTitle %}Access denied - 403 – Digital Marketplace{% endblock %}
+
+{% block breadcrumbs %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Admin home",
+        "href": url_for('main.index')
+      },
+      {
+        "text": "Access denied"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block mainContent %}
+  <h1 class="govuk-heading-xl">You don’t have permission to perform this action</h1>
+
+  <p class="govuk-body">
+    Email <a class="govuk-link" href="mailto:enquiries@digitalmarketplace.service.gov.uk?subject=Digital%20Marketplace%20feedback" title="Please send feedback to enquiries@digitalmarketplace.service.gov.uk">enquiries@digitalmarketplace.service.gov.uk</a> if you need to access this content.
+  </p>
+{% endblock %}

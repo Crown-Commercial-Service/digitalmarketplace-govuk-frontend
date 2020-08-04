@@ -1,0 +1,39 @@
+@import "../../../govuk/tools/all";
+@import "../../../govuk/helpers/all";
+
+@include govuk-exports("digitalmarketplace/component/banner") {
+
+    .dm-banner {
+        @include govuk-responsive-padding(4);
+        @include govuk-responsive-margin(8, "bottom");
+        // border: govuk-spacing(1) solid;
+        background-color: govuk-colour("blue");
+        color: govuk-colour("white");
+    }
+    .dm-banner__title {
+        @include govuk-font(19, $weight: bold);
+        margin: 0px;
+    }
+    .dm-banner__title--large {
+        @include govuk-font(24, $weight: bold);
+    }
+    .dm-banner__body {
+        @include govuk-font(19);
+        @include govuk-responsive-padding(4,"top");
+        @include govuk-responsive-padding(0,"bottom");
+    }
+
+    .dm-banner__body a {
+        // Override default link styling
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+            color: govuk-colour("white");
+        }
+
+        &:focus {
+            @include govuk-focused-text;
+        }
+    }
+}

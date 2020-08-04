@@ -1,0 +1,120 @@
+{%- from "../../../govuk/components/error-message/macro.njk" import govukErrorMessage -%}
+{%- from "../../../govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "../../../govuk/components/button/macro.njk" import govukButton -%}
+{%- from "../../../govuk/components/hint/macro.njk" import govukHint -%}
+{%- from "../../../govuk/components/label/macro.njk" import govukLabel -%}
+{%- from "../../../govuk/components/input/macro.njk" import govukInput -%}
+
+{#-  We need this for error messages and hints as well -#}
+{%- set id = params.id -%}
+
+{#- A record of elements we want associated with the fieldset's aria-describedby -#}
+{%- set describedBy = params.fieldset.describedBy -%}
+
+{%- if params.hint %}
+  {%- set hintId = id + '-hint' -%}
+  {%- set describedBy = describedBy + ' ' + hintId if describedBy and hintId not in describedBy else hintId -%}
+{% endif -%}
+
+{%- if params.errorMessage %}
+  {%- set listErrorId = id + '-error' -%}
+  {%- set describedBy = describedBy + ' ' + listErrorId if describedBy and listErrorId not in describedBy else listErrorId -%}
+{% endif -%}
+
+<div class="dm-list-input{% if params.classes %} params.classes {% endif %}{% if params.errorMessage %} govuk-form-group--error{% endif %}">
+  {% call govukFieldset({
+    describedBy: params.fieldset.describedBy if params.fieldset.describedBy else describedBy,
+    classes: params.fieldset.classes,
+    legend: {
+      html: params.fieldset.legend.text + ('<span class="dm-list-input__optional__optional"> (Optional)</span>' if params.optional) ,
+      classes: 'dm-list-input__legend ' + ( params.fieldset.legend.classes if params.fieldset.legend.classes)
+    },
+    attributes: {
+      'data-module': 'dm-list-input'
+    }
+  }) %}
+
+  {%- if params.hint %}
+    {{ govukHint({
+        id: hintId,
+        classes: 'dm-list-input__hint ' + ( params.hint.classes if params.hint.classes),
+        attributes: params.hint.attributes,
+        html: params.hint.html,
+        text: params.hint.text
+      }) | indent(2) | trim() }}
+  {% endif -%}  
+  
+  {% if params.errorMessage %}
+    {{ govukErrorMessage({
+      id: listErrorId,
+      classes: 'dm-list-input-error-message' + params.errorMessage.classes if params.errorMessage.classes,
+      attributes: params.errorMessage.attributes,
+      html: params.errorMessage.html,
+      text: params.errorMessage.text,
+      visuallyHiddenText: params.errorMessage.visuallyHiddenText
+    }) | indent(2) | trim }}
+  {% endif %}
+
+  <div class="dm-list-input__item-container" role="region" aria-live="assertive">
+    {% for i in range(0, params.maxItems) -%}
+      {%- set item = params.items[i] if params.items[i] else {} -%}
+      {%- if loop.first -%}
+       {%- set entryItemId = params.id -%}
+      {%- else -%}
+        {%- set entryItemId = params.id + '-' + loop.index -%}
+      {% endif %}
+      {# Classes #}
+      {%- set itemClassesBase = 'govuk-input dm-list-input__item-input' -%}
+      {%- set itemClassesLarge = ' dm-list-input__item-input--large' if i > 99 else '' -%}
+      {%- set itemClassesExternal = ' ' + item.classes if item.classes else '' -%}
+      {%- if item.errorMessage %}
+        {% set errorId = entryItemId + '-error' %}
+      {% endif -%}
+
+      <div class="dm-list-input__item dm-list-input__item--visible{% if item.errorMessage %} dm-list-input__item--error {% endif %}">
+        {#- Add label and input field -#}
+        <div class="dm-list-input__row">
+          {{ govukInput ({
+            attributes: item.attributes,
+            autocomplete: item.autocomplete,
+            classes: itemClassesBase + itemClassesLarge + itemClassesExternal,
+            describedBy: (item.describedBy if item.describedBy else describedBy),
+            errorMessage: {
+              id: errorId,
+              classes: 'dm-list-input-error-message  ' + (item.errorMessage.classes if item.errorMessage.classes),
+              attributes: item.errorMessage.attributes,
+              html: item.errorMessage.html,
+              text: item.errorMessage.text,
+              visuallyHiddenText: item.errorMessage.visuallyHiddenText
+            } if item.errorMessage,
+            formGroup: {
+              classes: 'dm-list-input__form-group'
+            },
+            id: entryItemId,
+            inputmode: item.inputmode,
+            label: {
+              classes: 'dm-list-input__item-label ' + (item.label.classes if item.label.classes),
+              html: '<span class="govuk-visually-hidden">' + (params.labelPrefix if params.labelPrefix else params.name) + '. Number </span><span class="dm-list-input__counter">' + ( i + 1 ) + '</span>.',
+              for: entryItemId
+            },
+            name: params.name,
+            pattern: item.pattern,
+            type: item.type | default('text'),
+            value: item.value
+          }) | indent(2) | trim }}
+          {{ govukButton({
+            html: 'Remove <span class="govuk-visually-hidden">entry number <span class="dm-list-input__counter"></span></span>',
+            classes: 'govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden',
+            type: 'button'
+          })}}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {{ govukButton({
+    html: 'Add another ' + params.addButtonName + ' (<span class="dm-list-input__js-remaining-counter">0</span> remaining)',
+    classes: 'govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden',
+    type: 'button'
+  })}}
+  {% endcall %}
+</div>

@@ -1,0 +1,77 @@
+{% from "../../../govuk/components/header/macro.njk" import govukHeader -%}
+
+{% set user_logged_in = true if params.role else false %}
+{% set users_role = params.role|default(none) %}
+
+{% set isAdmin = params.isAdmin | default(false) %}
+
+{% if isAdmin %}
+  {% set adminAppClass = 'dm-admin-header' %}
+  {% set productName = 'Digital Marketplace Admin' %}
+{% else %}
+  {% set adminAppClass = '' %}
+  {% set productName = 'Digital Marketplace' %}
+{% endif %}
+
+{% if user_logged_in %}
+
+  {% if users_role in['buyer', 'supplier'] %}
+    {% set headerNavigation = [
+      {
+        'text': 'Guidance',
+        'href': 'https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace'
+      },
+      {
+        'text': 'Help',
+        'href': url_for('external.help')
+      },
+      {
+        'text': 'View your account',
+        'href': url_for('external.' + users_role + '_dashboard')
+      },
+      {
+        'text': 'Log out',
+        'href': url_for('external.user_logout')
+      }
+    ]%}
+  {% else %}
+    {# Any other role #}
+    {% set headerNavigation = [
+      {
+        'text': 'Guidance',
+        'href': 'https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace'
+      },
+      {
+        'text': 'Help',
+        'href': url_for('external.help')
+      },
+      {
+        'text': 'Log out',
+        'href': url_for('external.user_logout')
+      }
+    ]%}
+  {% endif %}
+{% else %}
+  {% set headerNavigation = [
+    {
+      'text': 'Guidance',
+      'href': 'https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace'
+    },
+    {
+      'text': 'Help',
+      'href': url_for('external.help')
+    },
+    {
+      'text': 'Log in',
+      'href': url_for('external.render_login')
+    }
+  ]%}
+{% endif %}
+{{
+  govukHeader({
+    'productName': productName,
+    'homepageUrl': '/',
+    'classes': adminAppClass,
+    'navigation': headerNavigation
+  })
+}}

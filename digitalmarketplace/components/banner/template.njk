@@ -1,0 +1,18 @@
+<section
+    data-module="dm-banner"
+    role="region"
+    aria-label="{{ params.title }}"
+    class="dm-banner{%- if params.type %} dm-banner--{{ params.type }}{% endif %}{%- if params.classes %} {{ params.classes }}{% endif %}"
+    {%- for key, value in params.attributes %} {{key}}="{{value}}" {%- endfor %}
+>
+    <h{% if params.headingLevel %}{{ params.headingLevel }}{% else %}2{% endif %}
+        class="dm-banner__title{% if params.html or params.text %} dm-banner__title--large{% endif %}"
+    >
+        {{ params.title }}
+    </h{% if params.headingLevel %}{{ params.headingLevel }}{% else %}2{% endif %}>
+    {%- if params.html or params.text %}
+        <div class="dm-banner__body">
+            {{ params.html|safe if params.html else params.text }}
+        </div>
+    {% endif %}
+</section>
