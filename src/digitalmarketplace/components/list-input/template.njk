@@ -8,31 +8,27 @@
 {#-  We need this for error messages and hints as well -#}
 {%- set id = params.id -%}
 
-{#- A record of elements we want associated with the fieldset's aria-describedby -#}
-{%- set describedBy = params.fieldset.describedBy -%}
-
 {%- if params.hint %}
   {%- set hintId = id + '-hint' -%}
-  {%- set describedBy = describedBy + ' ' + hintId if describedBy and hintId not in describedBy else hintId -%}
 {% endif -%}
 
 {%- if params.errorMessage %}
   {%- set listErrorId = id + '-error' -%}
-  {%- set describedBy = describedBy + ' ' + listErrorId if describedBy and listErrorId not in describedBy else listErrorId -%}
 {% endif -%}
 
 <div class="dm-list-input{% if params.classes %} params.classes {% endif %}{% if params.errorMessage %} govuk-form-group--error{% endif %}">
-  {% call govukFieldset({
-    describedBy: params.fieldset.describedBy if params.fieldset.describedBy else describedBy,
-    classes: params.fieldset.classes,
-    legend: {
-      html: params.fieldset.legend.text + ('<span class="dm-list-input__optional__optional"> (Optional)</span>' if params.optional) ,
-      classes: 'dm-list-input__legend ' + ( params.fieldset.legend.classes if params.fieldset.legend.classes)
-    },
-    attributes: {
-      'data-module': 'dm-list-input'
-    }
-  }) %}
+    {% call govukFieldset({
+      describedBy: params.fieldset.describedBy if params.fieldset.describedBy else ((hintId if hintId) + ' ' + (listErrorId if listErrorId)),
+      classes: params.fieldset.classes,
+      legend: {
+        html: params.fieldset.legend.text + ' (Optional)' if params.optional else params.fieldset.legend.text,
+        classes: 'dm-list-input__legend ' + ( params.fieldset.legend.classes if params.fieldset.legend.classes),
+        isPageHeading: params.isPageHeading
+      } if params.fieldset.legend,
+      attributes: {
+        'data-module': 'dm-list-input'
+      }
+    }) %}
 
   {%- if params.hint %}
     {{ govukHint({
@@ -58,18 +54,15 @@
   <div class="dm-list-input__item-container" role="region" aria-live="assertive">
     {% for i in range(0, params.maxItems) -%}
       {%- set item = params.items[i] if params.items[i] else {} -%}
-      {%- if loop.first -%}
-       {%- set entryItemId = params.id -%}
-      {%- else -%}
-        {%- set entryItemId = params.id + '-' + loop.index -%}
-      {% endif %}
+      {%- set entryItemId = params.id + '-' + loop.index -%}
       {# Classes #}
       {%- set itemClassesBase = 'govuk-input dm-list-input__item-input' -%}
       {%- set itemClassesLarge = ' dm-list-input__item-input--large' if i > 99 else '' -%}
-      {%- set itemClassesExternal = ' ' + item.classes if item.classes else '' -%}
+      {%- set itemClassesExternal = (' ' + item.classes) if item.classes else '' -%}
       {%- if item.errorMessage %}
         {% set errorId = entryItemId + '-error' %}
       {% endif -%}
+      {%- set itemLabelText = params.itemLabelPrefix if params.itemLabelPrefix else (params.fieldset.legend.text if params.fieldset.legend.text else params.name) -%}
 
       <div class="dm-list-input__item dm-list-input__item--visible{% if item.errorMessage %} dm-list-input__item--error {% endif %}">
         {#- Add label and input field -#}
@@ -94,7 +87,7 @@
             inputmode: item.inputmode,
             label: {
               classes: 'dm-list-input__item-label ' + (item.label.classes if item.label.classes),
-              html: '<span class="govuk-visually-hidden">' + (params.labelPrefix if params.labelPrefix else params.name) + '. Number </span><span class="dm-list-input__counter">' + ( i + 1 ) + '</span>.',
+              html: '<span class="govuk-visually-hidden">' + itemLabelText + '. Number </span><span class="dm-list-input__counter">' + loop.index + '</span>.',
               for: entryItemId
             },
             name: params.name,
@@ -103,7 +96,7 @@
             value: item.value
           }) | indent(2) | trim }}
           {{ govukButton({
-            html: 'Remove <span class="govuk-visually-hidden">entry number <span class="dm-list-input__counter"></span></span>',
+            html: 'Remove <span class="govuk-visually-hidden">entry number <span class="dm-list-input__counter">' + loop.index + '</span></span>',
             classes: 'govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden',
             type: 'button'
           })}}
