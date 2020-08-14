@@ -43,11 +43,7 @@ describe('List Input', () => {
         expect($inputs.length).toEqual(examples.default.maxItems)
 
         for (let i = 1; i <= examples.default.maxItems; i++) {
-          if (i === 1) {
-            expect($inputs[i - 1].attribs.id).toEqual(examples.default.id)
-          } else {
-            expect($inputs[i - 1].attribs.id).toEqual(examples.default.id + '-' + i)
-          }
+          expect($inputs[i - 1].attribs.id).toEqual(examples.default.id + '-' + i)
         }
       })
 
