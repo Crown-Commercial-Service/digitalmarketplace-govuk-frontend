@@ -8,15 +8,18 @@
 @import "../../../govuk/components/input/input";
 
 @include govuk-exports("digitalmarketplace/component/list-input") {
+  .dm-list-input {
+    margin-bottom: govuk-spacing(6);
+  }
+  
   .dm-list-input__legend {
     @include govuk-text-colour;
     @include govuk-font($size: 24, $weight: bold);
     @include govuk-responsive-margin(4, "bottom");
   }
 
-  .dm-list-input__item-container {
-    margin-top: govuk-spacing(6);
-    margin-bottom: govuk-spacing(6);
+  .dm-list-input.govuk-form-group--error {
+    margin-bottom: govuk-spacing(6)
   }
 
   .dm-list-input__item {
