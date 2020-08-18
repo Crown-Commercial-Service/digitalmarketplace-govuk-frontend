@@ -39,10 +39,14 @@
     
         width: 1.5em;
         position: absolute;
-        top: 9px;
+        top: 11px;
         text-align: right;
         left: govuk-spacing(1);
         pointer-events: none;
+
+        @include govuk-media-query($from: tablet) {
+          top: 9px;
+        }
       }
 
       // Spacing for inputs which have errors
