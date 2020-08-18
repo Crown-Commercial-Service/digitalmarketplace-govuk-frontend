@@ -4,6 +4,16 @@ See below for Changelog examples.
 
 ## Unreleased
 
+🆕 New features:
+
+  - You can now use the parameter `question_advice` with the list input component to show question advice to the user [PR #163](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/163)
+  - You can now use the parameter `itemLabelPrefix` with the list input component to add a visually hidden label to inputs [PR #163](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/163)
+
+🔧 Fixes:
+
+  - The list input component now has simpler fieldset properties [PR #163](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/163)
+  - The list input component now has the first input id end in `-1` as expected by the content loader [PR #163](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/163)
+
 ## 1.0.1
 
 🔧 Fixes:

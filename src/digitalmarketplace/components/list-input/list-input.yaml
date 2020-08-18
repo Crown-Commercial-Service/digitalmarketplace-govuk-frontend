@@ -17,10 +17,9 @@ params:
 - name: items
   type: array
   required: false
-- name: label
-  type: object
-  required: true
-  description: Options for the label component.
+- name: itemLabelPrefix
+  type: string
+  description: Optional visually hidden label prefix for items.
 - name: maxItems
   type: integer
   required: true
