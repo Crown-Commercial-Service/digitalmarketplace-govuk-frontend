@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🔧 Fixes:
+
+  - The list input component input label numbers now align properly on smaller screens [PR #168](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/168)
+
 ## 1.1.0
 
 🆕 New features:
