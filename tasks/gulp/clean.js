@@ -26,7 +26,7 @@ src.displayName = 'clean:src'
 src.description = 'Cleans `govuk` folder from src'
 
 const pkg = async (done) => {
-  await cleanupFoldersOrFiles(['package/govuk', 'package/govuk-frontend', 'package/digitalmarketplace'])
+  await cleanupFoldersOrFiles(['package/govuk', 'package/digitalmarketplace'])
   await done()
 }
 pkg.displayName = 'clean:package'

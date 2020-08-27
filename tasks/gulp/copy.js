@@ -1,4 +1,4 @@
-const { src, dest, parallel } = require('gulp')
+const { src, dest } = require('gulp')
 const emoji = require('node-emoji')
 const fs = require('fs')
 const { green } = require('chalk')
