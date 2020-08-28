@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🔧 Fixes:
+
+  - You no longer need to use the govuk-frontend macros bundled with digitalmarketplace-govuk-frontend; Digital Marketplace components will now use macros under the govuk/ prefix in the template loader
+
 ## 1.1.1
 
 🔧 Fixes:
