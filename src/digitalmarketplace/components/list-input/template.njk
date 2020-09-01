@@ -58,7 +58,7 @@
   <div class="dm-list-input__item-container" role="region" aria-live="assertive">
     {% for i in range(0, params.maxItems) -%}
       {%- set item = params.items[i] if params.items[i] else {} -%}
-      {%- set entryItemId = params.id + '-' + loop.index -%}
+      {%- set entryItemId = params.id ~ '-' ~ loop.index -%}
       {# Classes #}
       {%- set itemClassesBase = 'govuk-input dm-list-input__item-input' -%}
       {%- set itemClassesLarge = ' dm-list-input__item-input--large' if i > 99 else '' -%}
@@ -91,7 +91,7 @@
             "inputmode": item.inputmode,
             "label": {
               "classes": 'dm-list-input__item-label ' + (item.label.classes if item.label.classes),
-              "html": '<span class="govuk-visually-hidden">' + (itemLabelText if itemLabelText else params.name) + '. Number </span><span class="dm-list-input__counter">' + loop.index + '</span>.',
+              "html": '<span class="govuk-visually-hidden">' + (itemLabelText if itemLabelText else params.name) + '. Number </span><span class="dm-list-input__counter">' ~ loop.index + '</span>.',
               "for": entryItemId
             },
             "name": params.name,
@@ -100,7 +100,7 @@
             "value": item.value
           }) | indent(2) | trim }}
           {{ govukButton({
-            "html": 'Remove <span class="govuk-visually-hidden">entry number <span class="dm-list-input__counter">' + loop.index + '</span></span>',
+            "html": 'Remove <span class="govuk-visually-hidden">entry number <span class="dm-list-input__counter">' ~ loop.index + '</span></span>',
             "classes": 'govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden',
             "type": 'button'
           })}}
