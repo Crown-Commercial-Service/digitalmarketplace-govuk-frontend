@@ -2,6 +2,21 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+💥 Breaking changes:
+
+  - You should [add GOV.UK Frontend to your Sass load paths](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#simplify-sass-import-paths)
+
+
+🆕 New features:
+
+  - You no longer need to use the govuk-frontend macros bundled with digitalmarketplace-govuk-frontend
+
+🔧 Fixes:
+
+  - The component macros no longer use relative imports, which do not work with Jinja2
+
 ## 1.1.1
 
 🔧 Fixes:
