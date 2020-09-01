@@ -18,36 +18,36 @@
 
 <div class="dm-list-input{% if params.classes %} params.classes {% endif %}{% if params.errorMessage %} govuk-form-group--error{% endif %}">
     {% call govukFieldset({
-      describedBy: params.fieldset.describedBy if params.fieldset.describedBy else ((hintId if hintId) + ' ' + (listErrorId if listErrorId)),
-      classes: params.fieldset.classes,
-      legend: {
-        html: params.fieldset.legend.text + ' (Optional)' if params.optional else params.fieldset.legend.text,
-        classes: params.fieldset.legend.classes if params.fieldset.legend.classes else 'dm-list-input__legend',
-        isPageHeading: params.fieldset.legend.isPageHeading
+      "describedBy": params.fieldset.describedBy if params.fieldset.describedBy else ((hintId if hintId) + ' ' + (listErrorId if listErrorId)),
+      "classes": params.fieldset.classes,
+      "legend": {
+        "html": params.fieldset.legend.text + ' (Optional)' if params.optional else params.fieldset.legend.text,
+        "classes": params.fieldset.legend.classes if params.fieldset.legend.classes else 'dm-list-input__legend',
+        "isPageHeading": params.fieldset.legend.isPageHeading
       } if params.fieldset.legend,
-      attributes: {
+      "attributes": {
         'data-module': 'dm-list-input'
       }
     }) %}
 
   {%- if params.hint %}
     {{ govukHint({
-        id: hintId,
-        classes: 'dm-list-input__hint ' + ( params.hint.classes if params.hint.classes),
-        attributes: params.hint.attributes,
-        html: params.hint.html,
-        text: params.hint.text
+        "id": hintId,
+        "classes": 'dm-list-input__hint ' + ( params.hint.classes if params.hint.classes),
+        "attributes": params.hint.attributes,
+        "html": params.hint.html,
+        "text": params.hint.text
       }) | indent(2) | trim() }}
   {% endif -%}  
   
   {% if params.errorMessage %}
     {{ govukErrorMessage({
-      id: listErrorId,
-      classes: 'dm-list-input-error-message' + params.errorMessage.classes if params.errorMessage.classes,
-      attributes: params.errorMessage.attributes,
-      html: params.errorMessage.html,
-      text: params.errorMessage.text,
-      visuallyHiddenText: params.errorMessage.visuallyHiddenText
+      "id": listErrorId,
+      "classes": 'dm-list-input-error-message' + params.errorMessage.classes if params.errorMessage.classes,
+      "attributes": params.errorMessage.attributes,
+      "html": params.errorMessage.html,
+      "text": params.errorMessage.text,
+      "visuallyHiddenText": params.errorMessage.visuallyHiddenText
     }) | indent(2) | trim }}
   {% endif %}
   
@@ -72,46 +72,46 @@
         {#- Add label and input field -#}
         <div class="dm-list-input__row">
           {{ govukInput ({
-            attributes: item.attributes,
-            autocomplete: item.autocomplete,
-            classes: itemClassesBase + itemClassesLarge + itemClassesExternal,
-            describedBy: (item.describedBy if item.describedBy else describedBy),
-            errorMessage: {
-              id: errorId,
-              classes: 'dm-list-input-error-message  ' + (item.errorMessage.classes if item.errorMessage.classes),
-              attributes: item.errorMessage.attributes,
-              html: item.errorMessage.html,
-              text: item.errorMessage.text,
-              visuallyHiddenText: item.errorMessage.visuallyHiddenText
+            "attributes": item.attributes,
+            "autocomplete": item.autocomplete,
+            "classes": itemClassesBase + itemClassesLarge + itemClassesExternal,
+            "describedBy": (item.describedBy if item.describedBy else describedBy),
+            "errorMessage": {
+              "id": errorId,
+              "classes": 'dm-list-input-error-message  ' + (item.errorMessage.classes if item.errorMessage.classes),
+              "attributes": item.errorMessage.attributes,
+              "html": item.errorMessage.html,
+              "text": item.errorMessage.text,
+              "visuallyHiddenText": item.errorMessage.visuallyHiddenText
             } if item.errorMessage,
-            formGroup: {
-              classes: 'dm-list-input__form-group'
+            "formGroup": {
+              "classes": 'dm-list-input__form-group'
             },
-            id: entryItemId,
-            inputmode: item.inputmode,
-            label: {
-              classes: 'dm-list-input__item-label ' + (item.label.classes if item.label.classes),
-              html: '<span class="govuk-visually-hidden">' + (itemLabelText if itemLabelText else params.name) + '. Number </span><span class="dm-list-input__counter">' + loop.index + '</span>.',
-              for: entryItemId
+            "id": entryItemId,
+            "inputmode": item.inputmode,
+            "label": {
+              "classes": 'dm-list-input__item-label ' + (item.label.classes if item.label.classes),
+              "html": '<span class="govuk-visually-hidden">' + (itemLabelText if itemLabelText else params.name) + '. Number </span><span class="dm-list-input__counter">' + loop.index + '</span>.',
+              "for": entryItemId
             },
-            name: params.name,
-            pattern: item.pattern,
-            type: item.type | default('text'),
-            value: item.value
+            "name": params.name,
+            "pattern": item.pattern,
+            "type": item.type | default('text'),
+            "value": item.value
           }) | indent(2) | trim }}
           {{ govukButton({
-            html: 'Remove <span class="govuk-visually-hidden">entry number <span class="dm-list-input__counter">' + loop.index + '</span></span>',
-            classes: 'govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden',
-            type: 'button'
+            "html": 'Remove <span class="govuk-visually-hidden">entry number <span class="dm-list-input__counter">' + loop.index + '</span></span>',
+            "classes": 'govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden',
+            "type": 'button'
           })}}
         </div>
       </div>
     {% endfor %}
   </div>
   {{ govukButton({
-    html: 'Add another ' + params.addButtonName + ' (<span class="dm-list-input__js-remaining-counter">0</span> remaining)',
-    classes: 'govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden',
-    type: 'button'
+    "html": 'Add another ' + params.addButtonName + ' (<span class="dm-list-input__js-remaining-counter">0</span> remaining)',
+    "classes": 'govuk-button--secondary dm-list-input__item-add dm-list-input__item-add--hidden',
+    "type": 'button'
   })}}
   {% endcall %}
 </div>
