@@ -45,6 +45,18 @@ Digital Marketplace GOV.UK Frontend is maintained by a team at Government Digita
 We recommend [installing Digital Marketplace GOV.UK Frontend using node package manager
 (npm)](docs/installation/installing-with-npm.md).
 
+### 2. Add GOV.UK Frontend to your Sass load paths
+
+Digital Marketplace GOV.UK Frontend relies on GOV.UK Frontend being available to Sass.
+
+If you're using Node Sass you can add GOV.UK Frontend to your Sass load paths using
+
+```
+{
+  includePaths: ['node_modules/digitalmarketplace-govuk-frontend']
+}
+```
+
 ## Getting updates
 
 To be notified when there’s a new release:
