@@ -3,31 +3,21 @@ Digital Marketplace GOV.UK Frontend ·
 [![Known Vulnerabilities](https://snyk.io/test/github/alphagov/digitalmarketplace-govuk-frontend/badge.svg?targetFile=package.json)](https://snyk.io/test/github/alphagov/digitalmarketplace-govuk-frontend?targetFile=package.json)
 =====================
 
-[Digital Marketplace] + [GOV.UK Frontend] = [Digital Marketplace GOV.UK Frontend]
-
-This repository does two things:
-
-- it provides a central repository for custom components used in the Digital Marketplace
-- it imports GOV.UK Frontend and serves it to Digital Marketplace frontend applications
-  where they can consume GOV.UK Frontend and all the custom components in a single dependency
+This repository provides a central repository for custom components used in the Digital Marketplace
 
 The problem we are trying to solve:
 
 - it is difficult to ensure that all our applications are using the same version of GOV.UK Frontend and digitalmarketplace-frontend-toolkit (which is being replaced).
 - it is difficult to ensure that we are only importing and using css/js for components we are actually using and not been removed.
 
-## GOV.UK Frontend
+## Dependencies
 
-GOV.UK Frontend contains the code you need to start building a user interface
-for government platforms and services.
-
-See live examples of GOV.UK Frontend components, and guidance on when to use
+* GOV.UK Frontend
+  * GOV.UK Frontend contains the code you need to start building a user interface for government platforms and services.
+  * See live examples of GOV.UK Frontend components, and guidance on when to use
 them in your service, in the [GOV.UK Design
 System](https://design-system.service.gov.uk/).
-
-### Contact the GOV.UK Frontend team
-
-GOV.UK Frontend is maintained by a team at Government Digital Service. If you want to know more about GOV.UK Frontend, please email the [Design System
+  * GOV.UK Frontend is maintained by a team at Government Digital Service. If you want to know more about GOV.UK Frontend, please email the [Design System
 team](mailto:govuk-design-system-support@digital.cabinet-office.gov.uk) or get in touch with them on [Slack](https://ukgovernmentdigital.slack.com/messages/govuk-design-system).
 
 ## Digital Marketplace GOV.UK Frontend
@@ -45,6 +35,8 @@ Digital Marketplace GOV.UK Frontend is maintained by a team at Government Digita
 We recommend [installing Digital Marketplace GOV.UK Frontend using node package manager
 (npm)](docs/installation/installing-with-npm.md).
 
+**Make sure GOV.UK Frontend is installed**
+
 ### 2. Add GOV.UK Frontend to your Sass load paths
 
 Digital Marketplace GOV.UK Frontend relies on GOV.UK Frontend being available to Sass.
@@ -56,6 +48,12 @@ If you're using Node Sass you can add GOV.UK Frontend to your Sass load paths us
   includePaths: ['node_modules/digitalmarketplace-govuk-frontend']
 }
 ```
+
+### 3. Load templates from GOV.UK Frontend
+
+If you are using v2 of GOV.UK Frontend, you'll need to ensure the `node_modules/govuk-frontend` directory is loaded into your templating environment with a `govuk` prefix so that Digital Marketplace components can target the correct GOV.UK Frontend components.
+
+With v3, targetting the `node_modules/govuk-frontend` directory is sufficient, as there is already a `govuk` subfolder.
 
 ## Getting updates
 
@@ -77,10 +75,10 @@ and what task are run
 After cloning this repository you will need to run `npm install`. After npm has successfully installed
 all packages and dependencies, an npm `postinstall` script will automatically run to do the following tasks:
 
-- Removes `govuk-frontend` from `src`(if it exists)
-- Copy `govuk-frontend` from `node_modules` to `src`
+- Removes the `govuk` folder containing `govuk-frontend` from `src`(if it exists)
+- Copy `govuk-frontend` from `node_modules` to `src/govuk`
 
-The reason for copying `govuk-frontend` to `src` is to ensure that `src` mirrors what will eventually become `package` and it also helps with import file paths as they would have vary between `src` and `packaged`
+The reason for copying `govuk-frontend` to `src/govuk` is to ensure that `govuk/` is available for templates in testing and development environments.
 
 ## 2. Developing components/features and previewing
 
