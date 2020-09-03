@@ -13,7 +13,8 @@
     "release": "./bin/release.sh",
     "release:dry-run": "npm run release -- --dry-run",
     "release-to-branch": "./bin/release-to-branch.sh",
-    "postinstall": "gulp postInstall"
+    "postinstall": "gulp postInstall",
+    "pythonTests": "cd python-tests && nox"
   },
   "license": "MIT",
   "dependencies": {
