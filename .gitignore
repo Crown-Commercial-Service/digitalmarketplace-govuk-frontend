@@ -4,3 +4,5 @@ node_modules
 package/govuk
 package/digitalmarketplace/
 src/govuk
+
+python-tests/__pycache__

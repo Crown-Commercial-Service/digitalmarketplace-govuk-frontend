@@ -6,7 +6,10 @@ See below for Changelog examples.
 
 💥 Breaking changes:
 
-  - You should [add GOV.UK Frontend to your Sass load paths](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#simplify-sass-import-paths)
+  - GOV.UK Frontend has been removed from the package.
+    - You will need to install GOV.UK Frontend separately - we recommend using (npm)](docs/installation/installing-with-npm.md).
+    - You should ensure that GOV.UK Frontend templates are loaded into your templating environment. If you are using v3, including `node_modules/govuk-frontend` should be sufficient. If you are using v2, you will need to prefix the templates with `govuk` to ensure they are correctly located.
+    - You should [add GOV.UK Frontend to your Sass load paths](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#simplify-sass-import-paths). If you're using v2, you will have to make these available at `govuk/`.
 
 
 🆕 New features:

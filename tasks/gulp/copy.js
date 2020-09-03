@@ -1,4 +1,4 @@
-const { src, dest, parallel } = require('gulp')
+const { src, dest } = require('gulp')
 const emoji = require('node-emoji')
 const fs = require('fs')
 const { green } = require('chalk')
@@ -23,21 +23,12 @@ const copy = async (logMsg, srcToCopy, destTo) => {
 }
 
 const CopyForDev = async (done) => {
-  await copy('Copying GOV.UK Frontend to src directory',
+  await copy('Copying GOV.UK Frontend to src directory for development',
     [getGOVUKFrontendSrc()],
     'src/govuk'
   )
   await done()
 }
-
-const copyGOVUKFrontendForPublishing = async (done) => {
-  await copy('Copying GOV.UK Frontend to package directory',
-    [getGOVUKFrontendSrc()],
-    'package/govuk'
-  )
-  await done()
-}
-copyGOVUKFrontendForPublishing.displayName = 'Copy: GOV.UK Frontend for Publishing'
 
 const copyDigitalMarketplaceForPublishing = async (done) => {
   await copy('Copying Digital Marketplace to package directory',
@@ -53,6 +44,5 @@ copyDigitalMarketplaceForPublishing.displayName = 'Copy: Digital Marketplace for
 
 module.exports = {
   development: CopyForDev,
-  forPublishing: parallel(copyDigitalMarketplaceForPublishing,
-    copyGOVUKFrontendForPublishing)
+  forPublishing: copyDigitalMarketplaceForPublishing
 }
