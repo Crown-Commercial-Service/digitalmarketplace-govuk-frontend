@@ -80,7 +80,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "jest": "^26.4.2",
-    "jest-axe": "^3.5.0",
+    "jest-axe": "^4.0.0",
     "install-peers": "^1.0.3",
     "jest-puppeteer": "^4.3.0",
     "nodemon": "^2.0.4",
