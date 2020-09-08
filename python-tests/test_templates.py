@@ -100,3 +100,17 @@ def test_template_renders(env, params, template_path, snapshot):
     template = env.get_template(template_path)
     template_output = template.render(params=params)
     assert template_output == snapshot
+
+
+def test_dm_alert_with_no_attributes(env, snapshot):
+    """Test that we don't get an undefined error when rendering dmAlert"""
+    # TODO: this test is here to catch a regression, ideally it would be
+    # replaced with a proper test suite for the component (see
+    # https://trello.com/c/gw8q0xdl)
+    template = env.from_string("""
+        {% from "digitalmarketplace/components/alert/macro.njk" import dmAlert %}
+        {{ dmAlert({"text": "Alert body"}) }}
+    """)
+    template_output = template.render()
+
+    assert template_output == snapshot

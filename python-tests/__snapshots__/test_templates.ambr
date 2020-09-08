@@ -1,3 +1,28 @@
+# name: test_dm_alert_with_no_attributes
+  '
+  
+          
+          <div
+      data-module="dm-alert"
+      role="alert"
+      aria-label=""
+      class="dm-alert"
+      tabindex="-1"
+  >
+      <h2
+          class="dm-alert__title dm-alert__title--large"
+      >
+          
+      </h2>
+      
+          <div class="dm-alert__body">
+              Alert body
+          </div>
+      
+  </div>
+      
+  '
+---
 # name: test_template_renders[template_path0]
   '
   
