@@ -3,7 +3,7 @@
     role="region"
     aria-label="{{ params.title }}"
     class="dm-banner{%- if params.type %} dm-banner--{{ params.type }}{% endif %}{%- if params.classes %} {{ params.classes }}{% endif %}"
-    {%- for attribute in (params.attributes | dictsort) if params.attributes %} {{attribute[0]}}="{{attribute[1]}}" {%- endfor %}
+    {%- for attribute in (params.attributes | default({}) | dictsort) %} {{attribute[0]}}="{{attribute[1]}}" {%- endfor %}
 >
     <h{% if params.headingLevel %}{{ params.headingLevel }}{% else %}2{% endif %}
         class="dm-banner__title{% if params.html or params.text %} dm-banner__title--large{% endif %}"
