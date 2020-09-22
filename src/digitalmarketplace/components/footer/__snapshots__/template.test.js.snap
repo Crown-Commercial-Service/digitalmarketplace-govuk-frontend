@@ -8,7 +8,7 @@ exports[`footer renders a footer component with all our standard links 1`] = `
             <h2 class=\\"govuk-footer__heading govuk-heading-m\\">About Digital Marketplace</h2>
               <ul class=\\"govuk-footer__list \\">
                     <li class=\\"govuk-footer__list-item\\">
-                      <a class=\\"govuk-footer__link\\" href=\\"http://www.google.com\\">
+                      <a class=\\"govuk-footer__link\\" href=\\"http://www.example.com/1\\">
                         Contact
                       </a>
                     </li>
@@ -33,7 +33,7 @@ exports[`footer renders a footer component with all our standard links 1`] = `
                       </a>
                     </li>
                     <li class=\\"govuk-footer__list-item\\">
-                      <a class=\\"govuk-footer__link\\" href=\\"http://www.gov.uk\\">
+                      <a class=\\"govuk-footer__link\\" href=\\"http://www.example.com/2\\">
                         G-Cloud supplier A to Z
                       </a>
                     </li>
@@ -81,18 +81,23 @@ exports[`footer renders a footer component with all our standard links 1`] = `
           <h2 class=\\"govuk-visually-hidden\\">Support links</h2>
             <ul class=\\"govuk-footer__inline-list\\">
                 <li class=\\"govuk-footer__inline-list-item\\">
-                  <a class=\\"govuk-footer__link\\" href=\\"http://www.yahoo.co.uk\\">
+                  <a class=\\"govuk-footer__link\\" href=\\"http://www.example.com/5\\">
                     Terms and conditions
                   </a>
                 </li>
                 <li class=\\"govuk-footer__inline-list-item\\">
-                  <a class=\\"govuk-footer__link\\" href=\\"http://www.bbc.co.uk\\">
+                  <a class=\\"govuk-footer__link\\" href=\\"http://www.example.com/3\\">
                     Cookies
                   </a>
                 </li>
                 <li class=\\"govuk-footer__inline-list-item\\">
-                  <a class=\\"govuk-footer__link\\" href=\\"http://www.amazon.co.uk\\">
+                  <a class=\\"govuk-footer__link\\" href=\\"http://www.example.com/4\\">
                     Privacy notice
+                  </a>
+                </li>
+                <li class=\\"govuk-footer__inline-list-item\\">
+                  <a class=\\"govuk-footer__link\\" href=\\"http://www.example.com/6\\">
+                    Accessibility statement
                   </a>
                 </li>
             </ul>
