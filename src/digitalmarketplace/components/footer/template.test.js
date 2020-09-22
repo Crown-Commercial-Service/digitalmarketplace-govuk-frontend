@@ -10,15 +10,17 @@ const examples = getExamples('footer')
 const urlForMock = jest.fn((param) => {
   let value = ''
   if (param === 'external.help') {
-    value = 'http://www.google.com'
+    value = 'http://www.example.com/1'
   } else if (param === 'external.suppliers_list_by_prefix') {
-    value = 'http://www.gov.uk'
+    value = 'http://www.example.com/2'
   } else if (param === 'external.cookies') {
-    value = 'http://www.bbc.co.uk'
+    value = 'http://www.example.com/3'
   } else if (param === 'external.privacy_notice') {
-    value = 'http://www.amazon.co.uk'
+    value = 'http://www.example.com/4'
   } else if (param === 'external.terms_and_conditions') {
-    value = 'http://www.yahoo.co.uk'
+    value = 'http://www.example.com/5'
+  } else if (param === 'external.accessibility_statement') {
+    value = 'http://www.example.com/6'
   }
 
   return value
