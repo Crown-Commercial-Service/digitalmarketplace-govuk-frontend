@@ -2,7 +2,7 @@
 
 See below for Changelog examples.
 
-## Unreleased
+## 2.1.0
 
 🆕 New features:
 
