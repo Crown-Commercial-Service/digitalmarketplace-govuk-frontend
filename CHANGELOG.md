@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🆕 New features:
+
+  - Footer component now contains link to accessibility statement [PR #180](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/180)
+
 ## 2.0.0
 
 💥 Breaking changes:
