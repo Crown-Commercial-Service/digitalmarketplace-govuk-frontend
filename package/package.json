@@ -3,7 +3,7 @@
   "description": "Digital Marketplace GOV.UK Frontend contains the code you need to start building a user interface for Digital Marketplace.",
   "version": "3.0.0-govuk-frontend-3-r1",
   "peerDependencies": {
-    "govuk-frontend": "^3.8.0"
+    "govuk-frontend": "^3.9.1"
   },
   "main": "digitalmarketplace/all.js",
   "sass": "digitalmarketplace/all.scss",
