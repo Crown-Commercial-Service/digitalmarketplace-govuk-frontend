@@ -1,0 +1,37 @@
+params:
+- name: title
+  type: string
+  required: true
+  description: The title of the option select
+- name: name
+  type: string
+  required: true
+  description: The name of the option select element
+- name: items
+  type: array
+  required: true
+  description: The checkbox items
+- name: closed_on_load
+  type: boolean
+  description: Whether to collapse the filter by default
+
+examples:
+  - name: default
+    description: 'With JavaScript enabled, a list input should display at least two inputs, including at least one empty input.'
+    data:
+      name: "example-title"
+      title: "Example filter"
+      items: 
+        - text: 'Option 1'
+          name: 'option-1'
+          value: '1'
+        - text: 'Option 2'
+          name: 'option-2'
+          value: '2'
+        - text: 'Option 3'
+          name: 'option-3'
+          value: '3'
+        - text: 'Option 4'
+          name: 'option-4'
+          value: '4'
+      closed_on_load: true
