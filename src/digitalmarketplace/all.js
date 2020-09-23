@@ -46,5 +46,6 @@ export {
   Analytics,
   CookieBanner,
   CookieSettings,
-  ListInput
+  ListInput,
+  OptionSelect
 }

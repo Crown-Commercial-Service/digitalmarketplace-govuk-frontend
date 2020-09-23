@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Input by default matches existing snapshot 1`] = `
+"<html><head></head><body><div class=\\"dm-option-select\\" data-module=\\"dm-option-select\\">
+    <h2 class=\\"dm-option-select__heading js-container-heading\\">
+      <span class=\\"dm-option-select__title js-container-button\\" id=\\"option-select-title-default\\">Default</span>
+      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--up\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z\\"/></svg>
+      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--down\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z\\"/></svg>
+    </h2>
+
+    <div role=\\"group\\" aria-labelledby=\\"option-select-title-default\\" class=\\"dm-option-select__container js-options-container\\" id=\\"default-options\\" tabindex=\\"-1\\">
+      <div class=\\"dm-option-select__container-inner js-auto-height-inner\\">
+      
+<div class=\\"govuk-form-group\\">
+<fieldset class=\\"govuk-fieldset\\">
+  <legend class=\\"govuk-fieldset__legend govuk-visually-hidden\\">
+    Default
+  </legend>
+  <div class=\\"govuk-checkboxes govuk-checkboxes--small\\">
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"default-1\\" name=\\"option-1\\" type=\\"checkbox\\" value=\\"1\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"default-1\\">
+        Option 1
+      </label>    </div>
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"default-2\\" name=\\"option-2\\" type=\\"checkbox\\" value=\\"2\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"default-2\\">
+        Option 2
+      </label>    </div>
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"default-3\\" name=\\"option-3\\" type=\\"checkbox\\" value=\\"3\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"default-3\\">
+        Option 3
+      </label>    </div>
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"default-4\\" name=\\"option-4\\" type=\\"checkbox\\" value=\\"4\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"default-4\\">
+        Option 4
+      </label>    </div>
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"default-5\\" name=\\"option-5\\" type=\\"checkbox\\" value=\\"5\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"default-5\\">
+        Option 5
+      </label>    </div>
+  </div>
+</fieldset>
+</div>
+
+      </div>
+    </div>
+
+</div>
+
+</body></html>"
+`;
+
+exports[`List Input when collapsed on load matches existing snapshot 1`] = `
+"<html><head></head><body><div class=\\"dm-option-select\\" data-module=\\"dm-option-select\\" data-closed-on-load=\\"true\\">
+    <h2 class=\\"dm-option-select__heading js-container-heading\\">
+      <span class=\\"dm-option-select__title js-container-button\\" id=\\"option-select-title-collapsed\\">Collapsed on load</span>
+      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--up\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z\\"/></svg>
+      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--down\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z\\"/></svg>
+    </h2>
+
+    <div role=\\"group\\" aria-labelledby=\\"option-select-title-collapsed\\" class=\\"dm-option-select__container js-options-container\\" id=\\"collapsed-options\\" tabindex=\\"-1\\">
+      <div class=\\"dm-option-select__container-inner js-auto-height-inner\\">
+      
+<div class=\\"govuk-form-group\\">
+<fieldset class=\\"govuk-fieldset\\">
+  <legend class=\\"govuk-fieldset__legend govuk-visually-hidden\\">
+    Collapsed on load
+  </legend>
+  <div class=\\"govuk-checkboxes govuk-checkboxes--small\\">
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"collapsed-1\\" name=\\"option-1\\" type=\\"checkbox\\" value=\\"1\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"collapsed-1\\">
+        Option 1
+      </label>    </div>
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"collapsed-2\\" name=\\"option-2\\" type=\\"checkbox\\" value=\\"2\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"collapsed-2\\">
+        Option 2
+      </label>    </div>
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"collapsed-3\\" name=\\"option-3\\" type=\\"checkbox\\" value=\\"3\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"collapsed-3\\">
+        Option 3
+      </label>    </div>
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"collapsed-4\\" name=\\"option-4\\" type=\\"checkbox\\" value=\\"4\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"collapsed-4\\">
+        Option 4
+      </label>    </div>
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"collapsed-5\\" name=\\"option-5\\" type=\\"checkbox\\" value=\\"5\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"collapsed-5\\">
+        Option 5
+      </label>    </div>
+  </div>
+</fieldset>
+</div>
+
+      </div>
+    </div>
+
+</div>
+
+</body></html>"
+`;
+
+exports[`List Input when few options matches existing snapshot 1`] = `
+"<html><head></head><body><div class=\\"dm-option-select\\" data-module=\\"dm-option-select\\">
+    <h2 class=\\"dm-option-select__heading js-container-heading\\">
+      <span class=\\"dm-option-select__title js-container-button\\" id=\\"option-select-title-short\\">With few options</span>
+      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--up\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z\\"/></svg>
+      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--down\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z\\"/></svg>
+    </h2>
+
+    <div role=\\"group\\" aria-labelledby=\\"option-select-title-short\\" class=\\"dm-option-select__container js-options-container\\" id=\\"short-options\\" tabindex=\\"-1\\">
+      <div class=\\"dm-option-select__container-inner js-auto-height-inner\\">
+      
+<div class=\\"govuk-form-group\\">
+<fieldset class=\\"govuk-fieldset\\">
+  <legend class=\\"govuk-fieldset__legend govuk-visually-hidden\\">
+    With few options
+  </legend>
+  <div class=\\"govuk-checkboxes govuk-checkboxes--small\\">
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"short-1\\" name=\\"option-1\\" type=\\"checkbox\\" value=\\"1\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"short-1\\">
+        Option 1
+      </label>    </div>
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"short-2\\" name=\\"option-2\\" type=\\"checkbox\\" value=\\"2\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"short-2\\">
+        Option 2
+      </label>    </div>
+  </div>
+</fieldset>
+</div>
+
+      </div>
+    </div>
+
+</div>
+
+</body></html>"
+`;
+
+exports[`List Input with option pre-checked matches existing snapshot 1`] = `
+"<html><head></head><body><div class=\\"dm-option-select\\" data-module=\\"dm-option-select\\">
+    <h2 class=\\"dm-option-select__heading js-container-heading\\">
+      <span class=\\"dm-option-select__title js-container-button\\" id=\\"option-select-title-with_checked_value_set\\">List of options</span>
+      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--up\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z\\"/></svg>
+      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--down\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z\\"/></svg>
+    </h2>
+
+    <div role=\\"group\\" aria-labelledby=\\"option-select-title-with_checked_value_set\\" class=\\"dm-option-select__container js-options-container\\" id=\\"list_of_vegetables\\" tabindex=\\"-1\\">
+      <div class=\\"dm-option-select__container-inner js-auto-height-inner\\">
+      
+<div class=\\"govuk-form-group\\">
+<fieldset class=\\"govuk-fieldset\\">
+  <legend class=\\"govuk-fieldset__legend govuk-visually-hidden\\">
+    List of options
+  </legend>
+  <div class=\\"govuk-checkboxes govuk-checkboxes--small\\">
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"with_checked_value_set-1\\" name=\\"with_checked_value_set\\" type=\\"checkbox\\" value=\\"potatoes\\" checked>
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"with_checked_value_set-1\\">
+        Potatoes
+      </label>    </div>
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"carrots\\" name=\\"with_checked_value_set\\" type=\\"checkbox\\" value=\\"carrots\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"carrots\\">
+        Carrots
+      </label>    </div>
+    <div class=\\"govuk-checkboxes__item\\">
+      <input class=\\"govuk-checkboxes__input\\" id=\\"mash\\" name=\\"with_checked_value_set\\" type=\\"checkbox\\" value=\\"mash\\">
+      <label class=\\"govuk-label govuk-checkboxes__label\\" for=\\"mash\\">
+        Mash
+      </label>    </div>
+  </div>
+</fieldset>
+</div>
+
+      </div>
+    </div>
+
+</div>
+
+</body></html>"
+`;

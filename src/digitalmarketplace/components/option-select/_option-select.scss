@@ -76,8 +76,7 @@
   .dm-option-select__icon {
     display: none;
     position: absolute;
-    top: 4px; /* Override for v2 */
-    /*top: 0; /* v3 */
+    top: 0;
     left: 9px;
     width: 30px;
     height: 40px;
@@ -98,6 +97,10 @@
   
   .dm-option-select__container-inner {
     padding: govuk-spacing(1) 13px;
+
+    .govuk-form-group {
+        margin-bottom: govuk-spacing(1);
+    }
   }
     
   .js-enabled {
@@ -140,3 +143,4 @@
       display: block;
     }
   }
+  

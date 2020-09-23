@@ -1,4 +1,4 @@
-function OptionSelect($module) {
+function OptionSelect ($module) {
   this.$optionSelect = $module
   this.$options = this.$optionSelect.querySelectorAll("input[type='checkbox']")
   this.$optionsContainer = this.$optionSelect.querySelector('.js-options-container')
@@ -9,7 +9,7 @@ function OptionSelect($module) {
 
 OptionSelect.prototype.init = function () {
   // Attach listener to update checked count
-  this.$optionSelect.addEventListener('change', function(event) {
+  this.$optionSelect.addEventListener('change', function (event) {
     var $changedEl = event.target
     if ($changedEl.tagName === 'INPUT' && $changedEl.type === 'checkbox') {
       this.updateCheckedCount()
@@ -24,7 +24,7 @@ OptionSelect.prototype.init = function () {
 
   // Add open/close listeners
   this.$optionSelect.querySelector('.js-container-button').addEventListener('click', this.toggleOptionSelect.bind(this))
-  if (this.$optionSelect.dataset.closedOnLoad === "true") {
+  if (this.$optionSelect.dataset.closedOnLoad === 'true') {
     this.close()
   } else {
     this.setupHeight()
@@ -65,12 +65,13 @@ OptionSelect.prototype.replaceHeadingSpanWithButton = function replaceHeadingSpa
   $button.setAttribute('id', $containerHead.id)
   $button.setAttribute('aria-controls', this.$optionsContainer.id)
   $button.innerHTML = jsContainerHeadHTML
-  $containerHead.replaceWith($button)
+  $containerHead.insertAdjacentHTML('afterend', $button.outerHTML)
+  $containerHead.remove()
 }
 
 OptionSelect.prototype.attachCheckedCounter = function attachCheckedCounter (checkedString) {
   this.$optionSelect.querySelector('.js-container-button')
-  .insertAdjacentHTML('afterend', '<div class="dm-option-select__selected-counter js-selected-counter">' + checkedString + '</div>')
+    .insertAdjacentHTML('afterend', '<div class="dm-option-select__selected-counter js-selected-counter">' + checkedString + '</div>')
 }
 
 OptionSelect.prototype.updateCheckedCount = function updateCheckedCount () {
@@ -130,21 +131,22 @@ OptionSelect.prototype.isClosed = function isClosed () {
 }
 
 OptionSelect.prototype.setContainerHeight = function setContainerHeight (height) {
-  this.$optionsContainer.style.height = height
+  this.$optionsContainer.style.height = height + 'px'
 }
 
-OptionSelect.prototype.isCheckboxVisible = function isCheckboxVisible (index, option) {
-  var $checkbox = $(option)
+OptionSelect.prototype.isCheckboxVisible = function isCheckboxVisible ($checkbox) {
   var initialOptionContainerHeight = this.$optionsContainer.clientHeight
-  var optionListOffsetTop = this.$optionList.offset().top
-  var distanceFromTopOfContainer = $checkbox.offset().top - optionListOffsetTop
+  var optionListOffsetTop = this.$optionList.getBoundingClientRect().top + document.body.scrollTop
+  var distanceFromTopOfContainer = ($checkbox.getBoundingClientRect().top + document.body.scrollTop) - optionListOffsetTop
   return distanceFromTopOfContainer < initialOptionContainerHeight
 }
 
 OptionSelect.prototype.getVisibleCheckboxes = function getVisibleCheckboxes () {
-  var visibleCheckboxes = this.$options.filter(this.isCheckboxVisible.bind(this))
+  var visibleCheckboxes = ([].slice.call(this.$options)).filter(this.isCheckboxVisible.bind(this))
   // add an extra checkbox, if the label of the first is too long it collapses onto itself
-  visibleCheckboxes = visibleCheckboxes.add(this.$options[visibleCheckboxes.length])
+  if (visibleCheckboxes.length < this.$options) {
+    visibleCheckboxes.push(this.$options[visibleCheckboxes.length])
+  }
   return visibleCheckboxes
 }
 
@@ -166,9 +168,10 @@ OptionSelect.prototype.setupHeight = function setupHeight () {
   }
 
   // Resize to cut last item cleanly in half
-  var lastVisibleCheckbox = this.getVisibleCheckboxes().last()
-  var position = lastVisibleCheckbox.parent()[0].offsetTop // parent element is relative
-  this.setContainerHeight(position + (lastVisibleCheckbox.height() / 1.5))
+  var visibleCheckboxes = this.getVisibleCheckboxes()
+  var lastVisibleCheckbox = visibleCheckboxes[visibleCheckboxes.length - 1]
+  var position = lastVisibleCheckbox.parentNode.offsetTop // parent element is relative
+  this.setContainerHeight(position + (parseFloat(window.getComputedStyle(lastVisibleCheckbox, null).height.replace('px', '')) / 1.5))
 }
 
-export default OptionSelect;
+export default OptionSelect
