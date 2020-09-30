@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Keyword search by default matches existing snapshot 1`] = `
+"<html><head></head><body><div id=\\"search-keywords\\" role=\\"search\\" aria-label=\\"keywords\\" data-module=\\"dm-keyword-search\\">
+    <div class=\\"dm-keyword-search dm-keyword-search--on-white\\">
+    <label for=\\"keywords\\" class=\\"dm-keyword-search__label\\">
+        Keyword search
+    </label>
+    <div class=\\"dm-keyword-search__item-wrapper\\">
+        <input type=\\"search\\" id=\\"keywords\\" name=\\"q\\" title=\\"Keyword search\\" class=\\"dm-keyword-search__item dm-keyword-search__input js-class-toggle\\">
+        <div class=\\"dm-keyword-search__item dm-keyword-search__submit-wrapper\\">
+        <button type=\\"submit\\" class=\\"dm-keyword-search__submit\\">Search</button>
+        </div>
+    </div>
+    </div>
+</div></body></html>"
+`;
+
+exports[`Keyword search with a value matches existing snapshot 1`] = `
+"<html><head></head><body><div id=\\"search-keywords\\" role=\\"search\\" aria-label=\\"keywords\\" data-module=\\"dm-keyword-search\\">
+    <div class=\\"dm-keyword-search dm-keyword-search--on-white\\">
+    <label for=\\"keywords\\" class=\\"dm-keyword-search__label\\">
+        Keyword search
+    </label>
+    <div class=\\"dm-keyword-search__item-wrapper\\">
+        <input type=\\"search\\" value=\\"This is a search term\\" id=\\"keywords\\" name=\\"q\\" title=\\"Keyword search\\" class=\\"dm-keyword-search__item dm-keyword-search__input js-class-toggle\\">
+        <div class=\\"dm-keyword-search__item dm-keyword-search__submit-wrapper\\">
+        <button type=\\"submit\\" class=\\"dm-keyword-search__submit\\">Search</button>
+        </div>
+    </div>
+    </div>
+</div></body></html>"
+`;
