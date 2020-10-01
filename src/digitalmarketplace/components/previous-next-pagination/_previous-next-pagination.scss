@@ -1,0 +1,93 @@
+.dm-pagination {
+    display: block;
+    margin: govuk-spacing(8) 0;
+  }
+  
+  .dm-pagination__list {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dm-pagination__item {
+    @include govuk-font($size: 16, $line-height: (20 / 16));
+    list-style: none;
+  
+    &:first-child {
+      margin-bottom: govuk-spacing(4);
+    }
+  }
+  
+  .dm-pagination__link {
+    @extend %govuk-link;
+    display: block;
+    text-decoration: none;
+    padding-bottom: govuk-spacing(4);
+  
+    &:hover,
+    &:active,
+    &:visited {
+      color: $govuk-link-colour;
+    }
+  
+    &:hover,
+    &:active {
+      background-color: $govuk-border-colour;
+    }
+  
+    &:focus {
+      // Replace below with govuk-focused-text
+      // @include govuk-focused-text;
+      @include govuk-not-ie8 {
+        outline: $govuk-focus-width solid transparent;
+      }
+      color: $govuk-focus-text-colour;
+      background-color: $govuk-focus-colour;
+      box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-focus-text-colour;
+      // When link is focussed, hide the default underline since the
+      // box shadow adds the "underline"
+      text-decoration: none;
+  
+      .dm-pagination__link-title {
+        border-top-color: transparent;
+      }
+  
+      .dm-pagination__link-icon {
+        fill: $govuk-text-colour;
+      }
+    }
+  }
+  
+  .dm-pagination__link-title {
+    display: block;
+    border-top: 1px solid $govuk-border-colour;
+    padding-top: govuk-spacing(3);
+  }
+  
+  .dm-pagination__link-divider {
+    @include govuk-visually-hidden;
+  }
+  
+  .dm-pagination__link-text {
+    @include govuk-font(19, $weight: bold);
+    margin-left: govuk-spacing(2);
+  }
+  
+  .dm-pagination__link-icon {
+    @include govuk-font($size: 24, $line-height: (33.75 / 27));
+    display: inline-block;
+    margin-bottom: 1px;
+    height: .482em;
+    width: .63em;
+    fill: $govuk-secondary-text-colour;
+  }
+  
+  .dm-pagination__link-label {
+    display: inline-block;
+    margin-top: .1em;
+    text-decoration: underline;
+    margin-left: govuk-spacing(5);
+  
+    @include govuk-media-query($from: tablet) {
+      margin-left: govuk-spacing(6);
+    }
+  }

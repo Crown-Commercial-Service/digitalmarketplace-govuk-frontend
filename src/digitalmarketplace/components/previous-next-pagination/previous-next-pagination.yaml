@@ -1,0 +1,47 @@
+params:
+- name: ariaLabel
+  type: string
+  description: An optional aria-label for the pagination nav. Defaults to "Pagination"
+- name: previousPage
+  type: object
+  description: Properties for the previous page url, title and optional label
+- name: nextPage
+  type: object
+  description: Properties for the next page url, title and optional label
+
+examples:
+  - name: default
+    description: 'Displaying previous and next links'
+    data:
+      previousPage:
+        url: '#'
+        title: 'Previous page'
+      nextPage:
+        url: '#'
+        title: 'Next page'
+  - name: with labels
+    description: 'Displaying previous and next links with labels'
+    data:
+      previousPage:
+        url: '#'
+        title: 'Previous page'
+        label: '2 of 432'
+      nextPage:
+        url: '#'
+        title: 'Next page'
+        label: '4 of 432'
+  - name: with aria label
+    description: 'Displaying previous and next links with custom aria-label'
+    data:
+      ariaLabel: "Custom aria label"
+      previousPage:
+        url: '#'
+        title: 'Previous page'
+        label: '2 of 432'
+      nextPage:
+        url: '#'
+        title: 'Next page'
+        label: '4 of 432'
+  - name: with no params
+    description: 'Should render nothing, with no errors'
+    data:
