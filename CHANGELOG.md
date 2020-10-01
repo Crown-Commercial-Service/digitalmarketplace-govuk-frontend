@@ -2,6 +2,13 @@
 
 See below for Changelog examples.
 
+## 2.2.0
+
+🆕 New features:
+
+  - New component: Digital Marketplace Option Select component
+    - Use the component `{{ dmOptionSelect({...}) }}`. For its parameters, see its README and/or YAML. For examples, see the review app. [PR #183](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/183)
+
 ## 2.1.0
 
 🆕 New features:
