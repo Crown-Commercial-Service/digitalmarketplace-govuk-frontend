@@ -1,0 +1,146 @@
+.dm-option-select {
+    position: relative;
+    padding: 0 0 govuk-spacing(2);
+    margin-bottom: govuk-spacing(2);
+    border-bottom: 1px solid $govuk-border-colour;
+  
+    @include govuk-media-query($from: desktop) {
+      // Redefine scrollbars on desktop where these lists are scrollable
+      // so they are always visible in option lists
+      ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 7px;
+      }
+  
+      ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+  
+        // scss-lint:disable ColorVariable
+        background-color: rgba(0, 0, 0, .5);
+        -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.87);
+      }
+    }
+  }
+  
+  .dm-option-select__title {
+    @include govuk-font(19);
+    margin: 0;
+  }
+  
+  .dm-option-select__button {
+    z-index: 1;
+    background: none;
+    border: 0;
+    text-align: left;
+    padding: 0;
+    cursor: pointer;
+    color: $govuk-link-colour;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  
+    &::-moz-focus-inner {
+      border: 0;
+    }
+  
+    &:focus {
+      outline: none;
+      text-decoration: none;
+      /* Replace with: */
+      /*@include govuk-focused-text;*/
+      outline: 3px solid transparent;
+      color: $govuk-input-border-colour;
+      background-color: $govuk-focus-colour;
+      box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-input-border-colour;
+      text-decoration: none;
+    }
+  
+    &[disabled] {
+      background-image: none;
+      color: inherit;
+    }
+  
+    // Extend the touch area of the button to span the heading
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+    }
+  }
+  
+  .dm-option-select__icon {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 9px;
+    width: 30px;
+    height: 40px;
+    fill: govuk-colour("black");
+  }
+  
+  .dm-option-select__container {
+    position: relative;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: govuk-colour("white");
+  
+    &:focus {
+      outline: 0;
+    }
+  }
+  
+  .dm-option-select__container-inner {
+    padding: govuk-spacing(1) 13px;
+
+    .govuk-form-group {
+        margin-bottom: govuk-spacing(1);
+    }
+  }
+    
+  .js-enabled {
+    .dm-option-select__heading {
+      position: relative;
+      padding: 10px 8px 5px 43px;
+    }
+  
+    [aria-expanded="true"] ~ .dm-option-select__icon--up {
+      display: block;
+    }
+  
+    [aria-expanded="false"] ~ .dm-option-select__icon--down {
+      display: block;
+    }
+  
+    .dm-option-select__container {
+      height: 200px;
+    }
+  
+    [data-closed-on-load="true"] .dm-option-select__container {
+      display: none;
+    }
+  }
+  
+  .dm-option-select__selected-counter {
+    @include govuk-font($size: 14);
+    color: $govuk-text-colour;
+    margin-top: 3px;
+  }
+  
+  .dm-option-select.js-closed {
+    .dm-option-select__container {
+      display: none;
+    }
+  }
+  
+  .dm-option-select.js-opened {
+    .dm-option-select__container {
+      display: block;
+    }
+  }
+  

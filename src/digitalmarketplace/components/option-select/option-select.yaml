@@ -1,0 +1,96 @@
+params:
+- name: title
+  type: string
+  required: true
+  description: The title of the option select
+- name: name
+  type: string
+  required: true
+  description: The name of the option select element
+- name: options_container_id
+  type: string
+  required: true
+  description: The ID of the container for the Checkboxes component
+- name: items
+  type: array
+  required: true
+  description: The checkbox items. See https://design-system.service.gov.uk/components/checkboxes/#options-checkboxes-example--items
+- name: closed_on_load
+  type: boolean
+  description: Whether to collapse the filter. Defaults to False.
+
+examples:
+  - name: default
+    description: 'A basic option select'
+    data:
+      name: "default"
+      title: "Default"
+      items: 
+        - text: 'Option 1'
+          name: 'option-1'
+          value: '1'
+        - text: 'Option 2'
+          name: 'option-2'
+          value: '2'
+        - text: 'Option 3'
+          name: 'option-3'
+          value: '3'
+        - text: 'Option 4'
+          name: 'option-4'
+          value: '4'
+        - text: 'Option 5'
+          name: 'option-5'
+          value: '5'
+      options_container_id: 'default-options'
+  - name: with options collapsed
+    description: 'An option select with the property closed_on_load set to true should collapse by default.'
+    data:
+      name: "collapsed"
+      title: "Collapsed on load"
+      items: 
+        - text: 'Option 1'
+          name: 'option-1'
+          value: '1'
+        - text: 'Option 2'
+          name: 'option-2'
+          value: '2'
+        - text: 'Option 3'
+          name: 'option-3'
+          value: '3'
+        - text: 'Option 4'
+          name: 'option-4'
+          value: '4'
+        - text: 'Option 5'
+          name: 'option-5'
+          value: '5'
+      options_container_id: 'collapsed-options'
+      closed_on_load: true
+  - name: with few options
+    description: 'A short option select'
+    data:
+      name: "short"
+      title: "With few options"
+      items: 
+        - text: 'Option 1'
+          name: 'option-1'
+          value: '1'
+        - text: 'Option 2'
+          name: 'option-2'
+          value: '2'
+      options_container_id: 'short-options'
+  - name: with option pre checked
+    description: 'An option select with an option pre-checked'
+    data:
+      name: 'with_checked_value_set'
+      title: 'List of options'
+      options_container_id: list_of_vegetables
+      items:
+      - value: potatoes
+        text: Potatoes
+        checked: true
+      - value: carrots
+        text: Carrots
+        id: carrots
+      - value: mash
+        text: Mash
+        id: mash

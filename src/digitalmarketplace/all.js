@@ -5,6 +5,7 @@ import * as Analytics from './components/analytics/analytics'
 import initAnalytics from './components/analytics/init'
 import { getConsentCookie } from './helpers/cookie/cookie-functions'
 import ListInput from './components/list-input/list-input'
+import OptionSelect from './components/option-select/option-select'
 
 function initAll (options) {
   // Set the options to an empty object by default if no options are passed.
@@ -32,6 +33,11 @@ function initAll (options) {
   $ListInput.forEach(function ($ListInput) {
     new ListInput($ListInput).init()
   })
+
+  var $OptionSelect = scope.querySelectorAll('[data-module="dm-option-select"]')
+  $OptionSelect.forEach(function ($OptionSelect) {
+    new OptionSelect($OptionSelect).init()
+  })
 }
 
 export {
@@ -40,5 +46,6 @@ export {
   Analytics,
   CookieBanner,
   CookieSettings,
-  ListInput
+  ListInput,
+  OptionSelect
 }
