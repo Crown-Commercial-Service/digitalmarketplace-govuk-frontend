@@ -2,6 +2,13 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🔧 Fixes:
+
+  - Option Select now uses camelCase instead of snake_case to match govuk-frontend [PR #186](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/186)
+
+
 ## 2.2.0
 
 🆕 New features:

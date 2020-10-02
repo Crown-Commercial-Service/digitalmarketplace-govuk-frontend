@@ -7,7 +7,7 @@ params:
   type: string
   required: true
   description: The name of the option select element
-- name: options_container_id
+- name: optionsContainerId
   type: string
   required: true
   description: The ID of the container for the Checkboxes component
@@ -15,7 +15,7 @@ params:
   type: array
   required: true
   description: The checkbox items. See https://design-system.service.gov.uk/components/checkboxes/#options-checkboxes-example--items
-- name: closed_on_load
+- name: closedOnLoad
   type: boolean
   description: Whether to collapse the filter. Defaults to False.
 
@@ -41,7 +41,7 @@ examples:
         - text: 'Option 5'
           name: 'option-5'
           value: '5'
-      options_container_id: 'default-options'
+      optionsContainerId: 'default-options'
   - name: with options collapsed
     description: 'An option select with the property closed_on_load set to true should collapse by default.'
     data:
@@ -63,8 +63,8 @@ examples:
         - text: 'Option 5'
           name: 'option-5'
           value: '5'
-      options_container_id: 'collapsed-options'
-      closed_on_load: true
+      optionsContainerId: 'collapsed-options'
+      closedOnLoad: true
   - name: with few options
     description: 'A short option select'
     data:
@@ -77,13 +77,13 @@ examples:
         - text: 'Option 2'
           name: 'option-2'
           value: '2'
-      options_container_id: 'short-options'
+      optionsContainerId: 'short-options'
   - name: with option pre checked
     description: 'An option select with an option pre-checked'
     data:
       name: 'with_checked_value_set'
       title: 'List of options'
-      options_container_id: list_of_vegetables
+      optionsContainerId: list_of_vegetables
       items:
       - value: potatoes
         text: Potatoes

@@ -48,9 +48,7 @@ exports[`List Input by default matches existing snapshot 1`] = `
 
       </div>
     </div>
-
 </div>
-
 </body></html>"
 `;
 
@@ -102,9 +100,7 @@ exports[`List Input when collapsed on load matches existing snapshot 1`] = `
 
       </div>
     </div>
-
 </div>
-
 </body></html>"
 `;
 
@@ -141,9 +137,7 @@ exports[`List Input when few options matches existing snapshot 1`] = `
 
       </div>
     </div>
-
 </div>
-
 </body></html>"
 `;
 
@@ -185,8 +179,6 @@ exports[`List Input with option pre-checked matches existing snapshot 1`] = `
 
       </div>
     </div>
-
 </div>
-
 </body></html>"
 `;
