@@ -4,10 +4,14 @@ See below for Changelog examples.
 
 ## Unreleased
 
+🆕 New features:
+
+  - New component: Digital Marketplace Keyword search component
+    - Use the component `{{ dmKeywordSearch({...}) }}`. For its parameters, see its README and/or YAML. For examples, see the review app. [PR #185](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/185)
+
 🔧 Fixes:
 
-  - Option Select now uses camelCase instead of snake_case to match govuk-frontend [PR #186](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/186)
-
+  - Option Select now uses camelCase instead of snake_case to match govuk-frontend [PR #187](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/187)
 
 ## 2.2.0
 
