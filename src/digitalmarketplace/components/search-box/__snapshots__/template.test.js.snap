@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search box by default matches existing snapshot 1`] = `
+"<html><head></head><body><div id=\\"search-keywords\\" role=\\"search\\" aria-label=\\"keywords\\" data-module=\\"dm-search-box\\">
+  <div class=\\"dm-search-box dm-search-box--on-white\\">
+    <label for=\\"keywords\\" class=\\"dm-search-box__label\\">
+      Keyword search
+    </label>
+    <div class=\\"dm-search-box__item-wrapper\\">
+      <input type=\\"search\\" id=\\"keywords\\" name=\\"q\\" title=\\"Keyword search\\" class=\\"dm-search-box__item dm-search-box__input js-class-toggle\\">
+      <div class=\\"dm-search-box__item dm-search-box__submit-wrapper\\">
+        <button type=\\"submit\\" class=\\"dm-search-box__submit\\">Search</button>
+      </div>
+    </div>
+  </div>
+</div></body></html>"
+`;
+
+exports[`Search box with a value matches existing snapshot 1`] = `
+"<html><head></head><body><div id=\\"search-keywords\\" role=\\"search\\" aria-label=\\"keywords\\" data-module=\\"dm-search-box\\">
+  <div class=\\"dm-search-box dm-search-box--on-white\\">
+    <label for=\\"keywords\\" class=\\"dm-search-box__label\\">
+      Keyword search
+    </label>
+    <div class=\\"dm-search-box__item-wrapper\\">
+      <input type=\\"search\\" value=\\"This is a search term\\" id=\\"keywords\\" name=\\"q\\" title=\\"Keyword search\\" class=\\"dm-search-box__item dm-search-box__input js-class-toggle\\">
+      <div class=\\"dm-search-box__item dm-search-box__submit-wrapper\\">
+        <button type=\\"submit\\" class=\\"dm-search-box__submit\\">Search</button>
+      </div>
+    </div>
+  </div>
+</div></body></html>"
+`;

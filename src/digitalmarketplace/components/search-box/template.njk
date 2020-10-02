@@ -1,0 +1,21 @@
+<div id="{{ params.id }}" role="search" aria-label="{{ params.ariaLabel}}" data-module="dm-search-box">
+  <div class="dm-search-box dm-search-box--on-white">
+    <label for="{{ params.inputId }}" class="dm-search-box__label">
+      {{ params.label }}
+    </label>
+    <div class="dm-search-box__item-wrapper">
+      <input
+        type="search"
+        {% if params.inputValue %} value="{{ params.inputValue }}" {% endif %}
+        id="{{ params.inputId }}"
+        name="{{ params.inputName }}"
+        title="{{ params.inputLabel }}"
+        {% if params.inputAriaControls %} aria-controls="{{ params.inputAriaControls}}" {% endif %}
+        class="dm-search-box__item dm-search-box__input js-class-toggle"
+      >
+      <div class="dm-search-box__item dm-search-box__submit-wrapper">
+        <button type="submit" class="dm-search-box__submit">Search</button>
+      </div>
+    </div>
+  </div>
+</div>

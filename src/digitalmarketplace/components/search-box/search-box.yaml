@@ -1,0 +1,47 @@
+params:
+- name: id
+  type: string
+  required: true
+  description: The id of the search box component
+- name: ariaLabel
+  type: string
+  description: The aria label for the search box component
+- name: inputId
+  type: string
+  required: true
+  description: The id of the search input
+- name: inputName
+  type: string
+  required: true
+  description: The name of the search input
+- name: inputValue
+  type: string
+  description: The value of the search input
+- name: inputLabel
+  type: string
+  required: true
+  description: The label of the search input
+- name: inputAriaControls
+  type: string
+  description: Aria controls for search input
+
+examples:
+  - name: default
+    description: "Default search box"
+    data:
+      id: 'search-keywords'
+      label: 'Keyword search'
+      ariaLabel: 'keywords'
+      inputId: 'keywords'
+      inputName: 'q'
+      inputLabel: 'Keyword search'
+  - name: with value
+    description: "with a value"
+    data:
+      id: 'search-keywords'
+      label: 'Keyword search'
+      ariaLabel: 'keywords'
+      inputId: 'keywords'
+      inputName: 'q'
+      inputLabel: 'Keyword search'
+      inputValue: 'This is a search term'
