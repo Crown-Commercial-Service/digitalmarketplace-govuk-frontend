@@ -6,7 +6,7 @@ import initAnalytics from './components/analytics/init'
 import { getConsentCookie } from './helpers/cookie/cookie-functions'
 import ListInput from './components/list-input/list-input'
 import OptionSelect from './components/option-select/option-select'
-import KeywordSearch from './components/keyword-search/keyword-search'
+import SearchBox from './components/search-box/search-box'
 
 function initAll (options) {
   // Set the options to an empty object by default if no options are passed.
@@ -40,9 +40,9 @@ function initAll (options) {
     new OptionSelect($OptionSelect).init()
   })
 
-  var $KeywordSearch = scope.querySelectorAll('[data-module="dm-keyword-search"]')
-  $KeywordSearch.forEach(function ($KeywordSearch) {
-    new KeywordSearch($KeywordSearch).init()
+  var $SearchBox = scope.querySelectorAll('[data-module="dm-search-box"]')
+  $SearchBox.forEach(function ($SearchBox) {
+    new SearchBox($SearchBox).init()
   })
 }
 
@@ -54,5 +54,5 @@ export {
   CookieSettings,
   ListInput,
   OptionSelect,
-  KeywordSearch
+  SearchBox
 }

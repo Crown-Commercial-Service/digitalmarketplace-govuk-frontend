@@ -2,10 +2,10 @@ params:
 - name: id
   type: string
   required: true
-  description: The id of the keyword search component
+  description: The id of the search box component
 - name: ariaLabel
   type: string
-  description: The aria label for the keyword search component
+  description: The aria label for the search box component
 - name: inputId
   type: string
   required: true
@@ -27,7 +27,7 @@ params:
 
 examples:
   - name: default
-    description: "Default keyword search"
+    description: "Default search box"
     data:
       id: 'search-keywords'
       label: 'Keyword search'

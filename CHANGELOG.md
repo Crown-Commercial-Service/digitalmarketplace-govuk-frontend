@@ -6,8 +6,8 @@ See below for Changelog examples.
 
 🆕 New features:
 
-  - New component: Digital Marketplace Keyword search component
-    - Use the component `{{ dmKeywordSearch({...}) }}`. For its parameters, see its README and/or YAML. For examples, see the review app. [PR #185](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/185)
+  - New component: Digital Marketplace Search Box component
+    - Use the component `{{ dmSearchBox({...}) }}`. For its parameters, see its README and/or YAML. For examples, see the review app. [PR #185](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/185)
 
 🔧 Fixes:
 

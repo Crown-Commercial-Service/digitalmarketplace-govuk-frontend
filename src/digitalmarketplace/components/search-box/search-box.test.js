@@ -3,11 +3,11 @@ const PORT = configPaths.ports.test
 
 // URLs
 const BASE_URL = 'http://localhost:' + PORT
-const DEFAULT_EXAMPLE_URL = BASE_URL + '/components/keyword-search/preview'
-const VALUE_EXAMPLE_URL = BASE_URL + '/components/keyword-search/with-value/preview'
+const DEFAULT_EXAMPLE_URL = BASE_URL + '/components/search-box/preview'
+const VALUE_EXAMPLE_URL = BASE_URL + '/components/search-box/with-value/preview'
 
-describe('/components/keyword-search', () => {
-  describe('/components/keyword-search/preview', () => {
+describe('/components/search-box', () => {
+  describe('/components/search-box/preview', () => {
     describe('when JavaScript is unavailable or fails', () => {
       beforeAll(async () => {
         await page.setJavaScriptEnabled(false)
@@ -46,7 +46,7 @@ describe('/components/keyword-search', () => {
     })
   })
 
-  describe('/components/keyword-search/with-value/preview', () => {
+  describe('/components/search-box/with-value/preview', () => {
     beforeEach(async () => {
       await page.goto(VALUE_EXAMPLE_URL, { waitUntil: 'load' })
     })

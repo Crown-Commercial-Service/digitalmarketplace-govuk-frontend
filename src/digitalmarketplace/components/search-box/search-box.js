@@ -1,9 +1,9 @@
-function KeywordSearch ($module) {
+function SearchBox ($module) {
   this.$module = $module
   this.toggleTarget = this.$module.querySelector('.js-class-toggle')
 }
 
-KeywordSearch.prototype.init = function () {
+SearchBox.prototype.init = function () {
   // Check for module
   if (!this.$module) {
     return
@@ -19,18 +19,18 @@ KeywordSearch.prototype.init = function () {
   this.toggleTarget.addEventListener('blur', this.$module.removeFocusClassFromEmptyInput)
 }
 
-KeywordSearch.prototype.inputIsEmpty = function () {
+SearchBox.prototype.inputIsEmpty = function () {
   return this.toggleTarget.value === ''
 }
 
-KeywordSearch.prototype.addFocusClass = function () {
+SearchBox.prototype.addFocusClass = function () {
   this.toggleTarget.classList.add('focus')
 }
 
-KeywordSearch.prototype.removeFocusClassFromEmptyInput = function () {
+SearchBox.prototype.removeFocusClassFromEmptyInput = function () {
   if (this.inputIsEmpty()) {
     this.toggleTarget.classList.remove('focus')
   }
 }
 
-export default KeywordSearch
+export default SearchBox

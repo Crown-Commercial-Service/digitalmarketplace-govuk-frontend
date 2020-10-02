@@ -11,12 +11,12 @@
 $input-size: 40px;
 $large-input-size: 50px;
 
-.dm-keyword-search {
+.dm-search-box {
   position: relative;
   margin-bottom: 30px;
 }
 
-.dm-keyword-search__label {
+.dm-search-box__label {
   @include govuk-font($size: 19, $line-height: $input-size);
   display: block;
   background: govuk-colour("white");
@@ -39,12 +39,12 @@ $large-input-size: 50px;
 
   // match label colour with the label component colour
   // when javascript is enabled and inline_label option  is set to false
-  .js-enabled .dm-keyword-search--separate-label & {
+  .js-enabled .dm-search-box--separate-label & {
     color: $govuk-text-colour;
   }
 }
 
-.dm-keyword-search__input[type="search"] { // overly specific to prevent some overrides from outside
+.dm-search-box__input[type="search"] { // overly specific to prevent some overrides from outside
   @include govuk-font($size: 19, $line-height: (28 / 19));
 
   padding: 6px;
@@ -81,7 +81,7 @@ $large-input-size: 50px;
   }
 }
 
-.dm-keyword-search__submit {
+.dm-search-box__submit {
   border: 0;
   cursor: pointer;
   border-radius: 0;
@@ -118,25 +118,25 @@ $large-input-size: 50px;
   }
 }
 
-.dm-keyword-search__item-wrapper {
+.dm-search-box__item-wrapper {
   display: table;
   width: 100%;
   background: govuk-colour("white");
 }
 
 //general class applied to search input and button wrapper
-.dm-keyword-search__item {
+.dm-search-box__item {
   position: relative;
   display: table-cell;
   vertical-align: top;
 }
 
-.dm-keyword-search__submit-wrapper {
+.dm-search-box__submit-wrapper {
   width: 1%;
 }
 
-.dm-keyword-search--on-govuk-blue {
-  .dm-keyword-search__input {
+.dm-search-box--on-govuk-blue {
+  .dm-search-box__input {
     border-width: 0;
 
     // no need for black outline as there is enough contrast
@@ -146,7 +146,7 @@ $large-input-size: 50px;
     }
   }
 
-  .dm-keyword-search__submit {
+  .dm-search-box__submit {
     background-color: govuk-colour("black");
     color: govuk-colour("white");
 
@@ -156,14 +156,14 @@ $large-input-size: 50px;
   }
 
   .js-enabled & {
-    .dm-keyword-search__label {
+    .dm-search-box__label {
       color: $govuk-secondary-text-colour;
     }
   }
 }
 
-.dm-keyword-search--on-white {
-  .dm-keyword-search__submit {
+.dm-search-box--on-white {
+  .dm-search-box__submit {
     background-color: govuk-colour("blue");
     color: govuk-colour("white");
 
@@ -172,7 +172,7 @@ $large-input-size: 50px;
     }
   }
 
-  .dm-keyword-search__input[type="search"] {
+  .dm-search-box__input[type="search"] {
     border-right-width: 0;
 
     // add the border once focused
@@ -182,8 +182,8 @@ $large-input-size: 50px;
   }
 }
 
-.dm-keyword-search--no-border {
-  .dm-keyword-search__input[type="search"] {
+.dm-search-box--no-border {
+  .dm-search-box__input[type="search"] {
     border: 0;
   }
 }
