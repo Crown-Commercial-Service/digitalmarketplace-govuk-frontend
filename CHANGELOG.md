@@ -2,6 +2,13 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🆕 New features:
+
+  - New component: Digital Marketplace Previous Next Pagination component
+    - Use the component `{{ dmPreviousNextPagination({...}) }}`. For its parameters, see its README and/or YAML. For examples, see the review app. [PR #189](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/189)
+
 ## 2.3.0
 
 🆕 New features:
