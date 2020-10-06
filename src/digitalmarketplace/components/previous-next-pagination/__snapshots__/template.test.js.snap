@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Previous and Next Pagination by default matches existing snapshot 1`] = `
+"<html><head></head><body><nav class=\\"dm-pagination\\" role=\\"navigation\\" aria-label=\\"Pagination\\">
+    <ul class=\\"dm-pagination__list\\">
+        <li class=\\"dm-pagination__item dm-pagination__item--previous\\">
+          <a href=\\"#\\" class=\\"dm-pagination__link\\" rel=\\"prev\\">
+            <span class=\\"dm-pagination__link-title\\">
+              <svg class=\\"dm-pagination__link-icon\\" xmlns=\\"http://www.w3.org/2000/svg\\" height=\\"13\\" width=\\"17\\" viewBox=\\"0 0 17 13\\">
+                <path d=\\"m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z\\"/>
+              </svg>
+              <span class=\\"dm-pagination__link-text\\">
+                Previous page
+              </span>
+            </span>
+          </a>
+        </li> 
+        <li class=\\"dm-pagination__item dm-pagination__item--next\\">
+          <a href=\\"#\\" class=\\"dm-pagination__link\\" rel=\\"next\\">
+            <span class=\\"dm-pagination__link-title\\">
+              <svg class=\\"dm-pagination__link-icon\\" xmlns=\\"http://www.w3.org/2000/svg\\" height=\\"13\\" width=\\"17\\" viewBox=\\"0 0 17 13\\">
+                <path d=\\"m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z\\"/>
+              </svg>
+              <span class=\\"dm-pagination__link-text\\">
+                Next page
+              </span>
+            </span>
+          </a>
+        </li> 
+    </ul>
+ </nav>
+</body></html>"
+`;
+
+exports[`Previous and Next Pagination with custom aria label matches existing snapshot 1`] = `
+"<html><head></head><body><nav class=\\"dm-pagination\\" role=\\"navigation\\" aria-label=\\"Custom aria label\\">
+    <ul class=\\"dm-pagination__list\\">
+        <li class=\\"dm-pagination__item dm-pagination__item--previous\\">
+          <a href=\\"#\\" class=\\"dm-pagination__link\\" rel=\\"prev\\">
+            <span class=\\"dm-pagination__link-title\\">
+              <svg class=\\"dm-pagination__link-icon\\" xmlns=\\"http://www.w3.org/2000/svg\\" height=\\"13\\" width=\\"17\\" viewBox=\\"0 0 17 13\\">
+                <path d=\\"m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z\\"/>
+              </svg>
+              <span class=\\"dm-pagination__link-text\\">
+                Previous page
+              </span>
+            </span>
+              <span class=\\"dm-pagination__link-divider govuk-visually-hidden\\">:</span>
+              <span class=\\"dm-pagination__link-label\\">2 of 432</span>
+          </a>
+        </li> 
+        <li class=\\"dm-pagination__item dm-pagination__item--next\\">
+          <a href=\\"#\\" class=\\"dm-pagination__link\\" rel=\\"next\\">
+            <span class=\\"dm-pagination__link-title\\">
+              <svg class=\\"dm-pagination__link-icon\\" xmlns=\\"http://www.w3.org/2000/svg\\" height=\\"13\\" width=\\"17\\" viewBox=\\"0 0 17 13\\">
+                <path d=\\"m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z\\"/>
+              </svg>
+              <span class=\\"dm-pagination__link-text\\">
+                Next page
+              </span>
+            </span>
+              <span class=\\"dm-pagination__link-divider govuk-visually-hidden\\">:</span>
+              <span class=\\"dm-pagination__link-label\\">4 of 432</span>
+          </a>
+        </li> 
+    </ul>
+ </nav>
+</body></html>"
+`;
+
+exports[`Previous and Next Pagination with labels matches existing snapshot 1`] = `
+"<html><head></head><body><nav class=\\"dm-pagination\\" role=\\"navigation\\" aria-label=\\"Pagination\\">
+    <ul class=\\"dm-pagination__list\\">
+        <li class=\\"dm-pagination__item dm-pagination__item--previous\\">
+          <a href=\\"#\\" class=\\"dm-pagination__link\\" rel=\\"prev\\">
+            <span class=\\"dm-pagination__link-title\\">
+              <svg class=\\"dm-pagination__link-icon\\" xmlns=\\"http://www.w3.org/2000/svg\\" height=\\"13\\" width=\\"17\\" viewBox=\\"0 0 17 13\\">
+                <path d=\\"m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z\\"/>
+              </svg>
+              <span class=\\"dm-pagination__link-text\\">
+                Previous page
+              </span>
+            </span>
+              <span class=\\"dm-pagination__link-divider govuk-visually-hidden\\">:</span>
+              <span class=\\"dm-pagination__link-label\\">2 of 432</span>
+          </a>
+        </li> 
+        <li class=\\"dm-pagination__item dm-pagination__item--next\\">
+          <a href=\\"#\\" class=\\"dm-pagination__link\\" rel=\\"next\\">
+            <span class=\\"dm-pagination__link-title\\">
+              <svg class=\\"dm-pagination__link-icon\\" xmlns=\\"http://www.w3.org/2000/svg\\" height=\\"13\\" width=\\"17\\" viewBox=\\"0 0 17 13\\">
+                <path d=\\"m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z\\"/>
+              </svg>
+              <span class=\\"dm-pagination__link-text\\">
+                Next page
+              </span>
+            </span>
+              <span class=\\"dm-pagination__link-divider govuk-visually-hidden\\">:</span>
+              <span class=\\"dm-pagination__link-label\\">4 of 432</span>
+          </a>
+        </li> 
+    </ul>
+ </nav>
+</body></html>"
+`;
+
+exports[`Previous and Next Pagination with no params matches existing snapshot 1`] = `"<html><head></head><body></body></html>"`;
