@@ -2,6 +2,13 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🆕 New features:
+
+  - New component: Digital Marketplace Expander component
+    - Use the component `{{ dmExpander({...}) }}`. For its parameters, see its README and/or YAML. For examples, see the review app. [PR #192](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/192)
+
 ## 2.4.1
 
 🔧 Fixes:
