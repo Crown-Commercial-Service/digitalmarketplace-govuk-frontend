@@ -7,6 +7,7 @@ import { getConsentCookie } from './helpers/cookie/cookie-functions'
 import ListInput from './components/list-input/list-input'
 import OptionSelect from './components/option-select/option-select'
 import SearchBox from './components/search-box/search-box'
+import Expander from './components/expander/expander'
 
 function initAll (options) {
   // Set the options to an empty object by default if no options are passed.
@@ -44,6 +45,11 @@ function initAll (options) {
   $SearchBox.forEach(function ($SearchBox) {
     new SearchBox($SearchBox).init()
   })
+
+  var $Expander = scope.querySelectorAll('[data-module="dm-expander"]')
+  $Expander.forEach(function ($Expander) {
+    new Expander($Expander).init()
+  })
 }
 
 export {
@@ -52,6 +58,7 @@ export {
   Analytics,
   CookieBanner,
   CookieSettings,
+  Expander,
   ListInput,
   OptionSelect,
   SearchBox

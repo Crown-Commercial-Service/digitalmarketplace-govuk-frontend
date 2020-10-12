@@ -1,0 +1,38 @@
+params:
+- name: title
+  type: string
+  required: true
+  description: The title of the Expander
+- name: id
+  type: string
+  required: true
+  description: The id of the Expander
+- name: openOnLoad
+  type: boolean
+  description: Whether to open the expander. Defaults to False.
+- name: content
+  type: string
+  description: HTML inner content
+
+examples:
+  - name: default
+    description: 'A basic expander'
+    data:
+      id: "default"
+      title: "Default"
+      content: '<div><p>Dummy content</p></div>'
+  - name: expanded
+    description: 'A basic expander, expanded'
+    data:
+      id: "expanded"
+      title: "Expanded"
+      content: '<div><p>Dummy content</p></div>'
+      openOnLoad: True
+  - name: selected
+    description: 'A basic expander, with selected message'
+    data:
+      id: "selected"
+      title: "Selected"
+      content: '<div><p>Dummy content</p></div>'
+      openOnLoad: True
+      selectedMessage: '1 selected'

@@ -1,0 +1,123 @@
+.dm-expander {
+    position: relative;
+    padding: 0 0 govuk-spacing(2);
+    margin-bottom: govuk-spacing(2);
+    border-bottom: 1px solid $govuk-border-colour;
+
+    @include govuk-media-query($from: desktop) {
+      // Redefine scrollbars on desktop where these lists are scrollable
+      // so they are always visible in option lists
+      ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 7px;
+      }
+  
+      ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+  
+        // scss-lint:disable ColorVariable
+        background-color: rgba(0, 0, 0, .5);
+        -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.87);
+      }
+    }
+  }
+  
+  .dm-expander__title {
+    @include govuk-font(19);
+    cursor: pointer;
+  }
+  
+  .dm-expander__content {
+    padding: govuk-spacing(2) 13px;
+    position: relative;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: govuk-colour("white");
+  
+    &:focus {
+      outline: 0;
+    }
+
+    .govuk-form-group:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .js-enabled {
+    .dm-expander__heading {
+      position: relative;
+      padding: 10px 8px 5px 43px;
+    }
+  
+    .dm-expander__content {
+      display: none;
+    }
+  
+    .dm-expander__content--visible {
+      display: block;
+    }
+  }
+  
+  .dm-expander__icon {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 9px;
+    width: 30px;
+    height: 40px;
+    fill: govuk-colour("black");
+  }
+  
+  .dm-expander__button {
+    @include govuk-font(19);
+    border: 0;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    padding: 0;
+    color: $govuk-link-colour;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  
+    &:focus {
+      outline: none;
+      text-decoration: none;
+      /* Replace with: */
+      /*@include govuk-focused-text;*/
+      outline: 3px solid transparent;
+      color: $govuk-input-border-colour;
+      background-color: $govuk-focus-colour;
+      box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-input-border-colour;
+      text-decoration: none;
+    }
+  
+    // Extend the touch area of the button to span the heading
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+    }
+  }
+
+  .dm-expander__selected-counter {
+    @include govuk-font($size: 14);
+    color: $govuk-text-colour;
+    margin-top: 3px;
+  }
+    
+  .js-enabled {
+    [aria-expanded="true"] ~ .dm-expander__icon--up {
+      display: block;
+    }
+  
+    [aria-expanded="false"] ~ .dm-expander__icon--down {
+      display: block;
+    }
+  }
