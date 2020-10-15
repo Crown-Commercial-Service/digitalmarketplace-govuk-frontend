@@ -6,7 +6,8 @@ function Expander ($module) {
 }
 
 /*
- * This JavaScript provides open/closing of the content
+ * This JavaScript provides open/closing of the content, as well as
+ * an input selection counter
  */
 
 Expander.prototype.init = function () {
@@ -18,6 +19,10 @@ Expander.prototype.init = function () {
   this.$toggleButton.addEventListener('click', this.$module.toggleContent)
 }
 
+/**
+ * Handle collapsing and expanding
+ */
+
 Expander.prototype.replaceHeadingSpanWithButton = function (expanded) {
   var toggleHtml = this.$toggle.innerHTML
 
@@ -25,6 +30,7 @@ Expander.prototype.replaceHeadingSpanWithButton = function (expanded) {
   $button.classList.add('dm-expander__button')
   $button.classList.add('js-button')
   $button.setAttribute('type', 'button')
+  $button.setAttribute('id', 'expander-title-' + this.$content.getAttribute('id'))
   $button.setAttribute('aria-expanded', expanded)
   $button.setAttribute('aria-controls', this.$content.getAttribute('id'))
   $button.innerHTML = toggleHtml

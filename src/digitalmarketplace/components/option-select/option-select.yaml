@@ -15,9 +15,9 @@ params:
   type: array
   required: true
   description: The checkbox items. See https://design-system.service.gov.uk/components/checkboxes/#options-checkboxes-example--items
-- name: closedOnLoad
+- name: openOnLoad
   type: boolean
-  description: Whether to collapse the filter. Defaults to False.
+  description: Whether to expand the filter. Defaults to False.
 
 examples:
   - name: default
@@ -42,8 +42,9 @@ examples:
           name: 'option-5'
           value: '5'
       optionsContainerId: 'default-options'
+      openOnLoad: True
   - name: with options collapsed
-    description: 'An option select with the property closed_on_load set to true should collapse by default.'
+    description: 'An option select with no openOnLoad property should collapse by default.'
     data:
       name: "collapsed"
       title: "Collapsed on load"
@@ -64,7 +65,6 @@ examples:
           name: 'option-5'
           value: '5'
       optionsContainerId: 'collapsed-options'
-      closedOnLoad: true
   - name: with few options
     description: 'A short option select'
     data:
@@ -78,6 +78,7 @@ examples:
           name: 'option-2'
           value: '2'
       optionsContainerId: 'short-options'
+      openOnLoad: True
   - name: with option pre checked
     description: 'An option select with an option pre-checked'
     data:
@@ -94,3 +95,4 @@ examples:
       - value: mash
         text: Mash
         id: mash
+      openOnLoad: True
