@@ -2,7 +2,7 @@
 
 See below for Changelog examples.
 
-## Unreleased
+## 2.4.1
 
 🔧 Fixes:
 
