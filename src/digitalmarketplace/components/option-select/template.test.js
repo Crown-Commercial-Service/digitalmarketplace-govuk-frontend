@@ -23,7 +23,7 @@ describe('List Input', () => {
 
     it('renders a heading for the option select box containing the title', async () => {
       const $ = render('option-select', examples.default)
-      const title = $('.dm-option-select__title').text().trim()
+      const title = $('.dm-expander__title').text().trim()
 
       expect(title).toEqual('Default')
     })

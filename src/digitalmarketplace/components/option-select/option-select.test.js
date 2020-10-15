@@ -22,12 +22,6 @@ describe('/components/option-select', () => {
         await page.goto(DEFAULT_EXAMPLE_URL, { waitUntil: 'load' })
       })
 
-      it('does not display SVG up/down arrows', async () => {
-        const arrowIcons = await page.$$('.dm-option-select__icon')
-        await page.waitForSelector('.dm-option-select__icon', { visible: false })
-        expect(arrowIcons.length).toBe(2)
-      })
-
       it('displays all checkboxes', async () => {
         await page.waitForSelector('.govuk-checkboxes__item', { visible: true })
         const checkboxes = await page.$$('.govuk-checkboxes__item')
@@ -42,22 +36,6 @@ describe('/components/option-select', () => {
 
       beforeEach(async () => {
         await page.goto(DEFAULT_EXAMPLE_URL, { waitUntil: 'load' })
-      })
-
-      it('displays SVG up/down arrows', async () => {
-        await page.waitForSelector('.dm-option-select__icon', { visible: true })
-        const arrowIcons = await page.$$('.dm-option-select__icon')
-        expect(arrowIcons.length).toBe(2)
-      })
-
-      it('can collapse and expand', async () => {
-        await page.click('.dm-option-select__button')
-        await page.waitForSelector('.govuk-checkboxes', { visible: false })
-        expect(await page.$$('.dm-option-select__button[aria-expanded="false"]')).toBeTruthy()
-
-        await page.click('.dm-option-select__button')
-        await page.waitForSelector('.govuk-checkboxes', { visible: true })
-        expect(await page.$('.dm-option-select__button[aria-expanded="true"]')).toBeTruthy()
       })
 
       it('increments and decrements checked counter when checkbox checked and unchecked', async () => {
@@ -87,11 +65,11 @@ describe('/components/option-select', () => {
     })
 
     it('can begin with the option select closed on load', async () => {
-      const container = await page.$$('.dm-option-select[data-closed-on-load="true"]')
+      const container = await page.$$('.dm-expander[data-open-on-load="false"]')
       expect(container.length).toBe(1)
 
       await page.waitForSelector('.govuk-checkboxes', { visible: false })
-      expect(await page.$('.dm-option-select__button[aria-expanded="false"]')).toBeTruthy()
+      expect(await page.$('.dm-expander__button[aria-expanded="false"]')).toBeTruthy()
     })
   })
 
