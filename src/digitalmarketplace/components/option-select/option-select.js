@@ -66,7 +66,7 @@ OptionSelect.prototype.replaceHeadingSpanWithButton = function replaceHeadingSpa
   $button.setAttribute('aria-controls', this.$optionsContainer.id)
   $button.innerHTML = jsContainerHeadHTML
   $containerHead.insertAdjacentHTML('afterend', $button.outerHTML)
-  $containerHead.remove()
+  $containerHead.parentNode.removeChild($containerHead)
 }
 
 OptionSelect.prototype.attachCheckedCounter = function attachCheckedCounter (checkedString) {
@@ -85,7 +85,7 @@ OptionSelect.prototype.updateCheckedCount = function updateCheckedCount () {
       this.attachCheckedCounter(checkedString)
     }
   } else {
-    checkedStringElement.remove()
+    checkedStringElement.parentNode.removeChild(checkedStringElement)
   }
 }
 
