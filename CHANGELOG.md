@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🔧 Fixes:
+
+  - Option Select now works properly in IE11. [PR #193](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/193)
+
 ## 2.4.0
 
 🆕 New features:
