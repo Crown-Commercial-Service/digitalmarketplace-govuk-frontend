@@ -1,0 +1,57 @@
+params:
+- name: text
+  type: string
+  required: true
+  description: The title of the attached document
+- name: href
+  type: string
+  required: true
+  description: The href for the attached document
+- name: contentType
+  type: string
+  description: The filetype of the attached document (eg - 'text/csv')
+- name: fileSize
+  type: string
+  description: The file size of the attached document. This should be a human-readable size like "25 KB" or "1.2 MB"
+- name: numberOfPages
+  type: integer
+  description: Number of pages in the attached document
+- name: alternativeFormatHtml
+  type: string
+  description: Information on how to request an accessible format
+- name: alternativeFormatContactEmail
+  type: string
+  description: Used to provide an email to request an accessible format
+
+examples:
+  - name: default
+    description: 'A basic attachment'
+    data:
+      text: "Default attachment"
+      href: "https://digitalmarketplace.service.gov.uk/attachment"
+  - name: spreadsheet
+    description: 'A spreadsheet attachment'
+    data:
+      text: "Comma-separated values attachment"
+      href: "https://digitalmarketplace.service.gov.uk/attachment.csv"
+      contentType: 'text/csv'
+  - name: pdf
+    description: 'A PDF attachment'
+    data:
+      text: "Portable Document Format attachment"
+      href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      contentType: 'application/pdf'
+  - name: with file size
+    description: 'Attachment with file size'
+    data:
+      text: "Attachment with file size"
+      href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      contentType: 'application/pdf'
+      fileSize: '21.5 KB'
+  - name: with page count
+    description: 'Attachment with page count'
+    data:
+      text: "Attachment with page count"
+      href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      contentType: 'application/pdf'
+      numberOfPages: 12
