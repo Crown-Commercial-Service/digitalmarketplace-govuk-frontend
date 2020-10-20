@@ -1,3 +1,5 @@
+{% from "govuk/components/details/macro.njk" import govukDetails -%}
+
 {% set contentType = params.contentType if params.contentType %}
 {% set abbr %}
   {%- if contentType == 'application/pdf' -%}
@@ -9,6 +11,14 @@
   {%- elseif contentType == 'application/vnd.oasis.opendocument.text' -%}
     <abbr title="OpenDocument Text document" class="dm-attachment__abbr">ODT</abbr>
   {%- endif -%}
+{% endset %}
+
+{% set alternativeFormatDetails %}
+  {% if params.alternativeFormatHtml %}
+    {{ params.alternativeFormatHtml | safe }}
+  {% elseif params.alternativeFormatContactEmail %}
+    If you use assistive technology (such as a screen reader) and need a version of this document in a more accessible format, please email <a href="mailto:{{ params.alternativeFormatContactEmail }}" target="_blank" class="govuk-link">{{ params.alternativeFormatContactEmail }}</a>. Please tell us what format you need. It will help us if you say what assistive technology you use.
+  {% endif %}
 {% endset %}
 
 <section class="dm-attachment" data-module="dm-attachment">
@@ -45,5 +55,11 @@
         , <span class="dm-attachment__attribute">{{ params.numberOfPages }} pages</span>
       {% endif -%}
     </p>
+    {% if alternativeFormatDetails %}
+      {{ govukDetails({
+        "summaryText": "Request an accessible format",
+        "html": alternativeFormatDetails
+      })}}
+    {% endif %}
   </div>
 </section>

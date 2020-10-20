@@ -18,7 +18,7 @@ params:
   description: Number of pages in the attached document
 - name: alternativeFormatHtml
   type: string
-  description: Information on how to request an accessible format
+  description: Information on how to request an accessible format.
 - name: alternativeFormatContactEmail
   type: string
   description: Used to provide an email to request an accessible format
@@ -55,3 +55,17 @@ examples:
       href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
       numberOfPages: 12
+  - name: with alternative format contact email
+    description: 'Attachment with alternative format contact email'
+    data:
+      text: "Attachment with alternative format contact email"
+      href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      contentType: 'application/pdf'
+      alternativeFormatContactEmail: 'help@digitalmarketplace.service.gov.uk'
+  - name: with alternative format HTML
+    description: 'Attachment with alternative format HTML'
+    data:
+      text: "Attachment with alternative format HTML"
+      href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      contentType: 'application/pdf'
+      alternativeFormatHtml: 'If you need help with this file, please <a href="https://www.digitalmarketplace.service.gov.uk" class="govuk-link">contact us via our contact form</a>.'
