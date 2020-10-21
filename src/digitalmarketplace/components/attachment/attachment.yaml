@@ -1,12 +1,23 @@
 params:
-- name: text
-  type: string
+- name: link
+  type: object
   required: true
   description: The title of the attached document
-- name: href
-  type: string
-  required: true
-  description: The href for the attached document
+  params:
+  - name: href
+    type: string
+    required: true
+    description: The href for the attached document
+  - name: text
+    type: string
+    required: true
+    description: The title of the attached document
+  - name: textOnly
+    type: boolean
+    description: Whether to display the link only
+  - name: classes
+    type: string
+    description: Classes to apply to the link
 - name: contentType
   type: string
   description: The filetype of the attached document (eg - 'text/csv')
@@ -27,45 +38,62 @@ examples:
   - name: default
     description: 'A basic attachment'
     data:
-      text: "Default attachment"
-      href: "https://digitalmarketplace.service.gov.uk/attachment"
+      link:
+        text: "Default attachment"
+        href: "https://digitalmarketplace.service.gov.uk/attachment"
   - name: spreadsheet
     description: 'A spreadsheet attachment'
     data:
-      text: "Comma-separated values attachment"
-      href: "https://digitalmarketplace.service.gov.uk/attachment.csv"
+      link:
+        text: "Comma-separated values attachment"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.csv"
       contentType: 'text/csv'
   - name: pdf
     description: 'A PDF attachment'
     data:
-      text: "Portable Document Format attachment"
-      href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      link:
+        text: "Portable Document Format attachment"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
   - name: with file size
     description: 'Attachment with file size'
     data:
-      text: "Attachment with file size"
-      href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      link:
+        text: "Attachment with file size"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
       fileSize: '21.5 KB'
   - name: with page count
     description: 'Attachment with page count'
     data:
-      text: "Attachment with page count"
-      href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      link:
+        text: "Attachment with page count"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
       numberOfPages: 12
   - name: with alternative format contact email
     description: 'Attachment with alternative format contact email'
     data:
-      text: "Attachment with alternative format contact email"
-      href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      link:
+        text: "Attachment with alternative format contact email"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
       alternativeFormatContactEmail: 'help@digitalmarketplace.service.gov.uk'
   - name: with alternative format HTML
     description: 'Attachment with alternative format HTML'
     data:
-      text: "Attachment with alternative format HTML"
-      href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      link:
+        text: "Attachment with alternative format HTML"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
       alternativeFormatHtml: 'If you need help with this file, please <a href="https://www.digitalmarketplace.service.gov.uk" class="govuk-link">contact us via our contact form</a>.'
+  - name: as only text
+    description: 'Attachment with no thumbnail, for insertion into body text, etc'
+    data:
+      contentType: 'application/pdf'
+      fileSize: '21.5 KB'
+      link:
+        text: "Attachment with no thumbnail"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+        classes: 'govuk-body'
+        textOnly: True
