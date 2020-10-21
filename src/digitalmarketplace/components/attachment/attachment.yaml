@@ -2,7 +2,7 @@ params:
 - name: link
   type: object
   required: true
-  description: The title of the attached document
+  description: Link details
   params:
   - name: href
     type: string
@@ -55,6 +55,13 @@ examples:
         text: "Portable Document Format attachment"
         href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
+  - name: unknown filetype
+    description: 'An unknown filetype'
+    data:
+      link:
+        text: "Unknown filetype attachment"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.txt"
+      contentType: 'txt'
   - name: with file size
     description: 'Attachment with file size'
     data:
