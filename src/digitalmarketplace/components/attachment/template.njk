@@ -1,0 +1,78 @@
+{% from "govuk/components/details/macro.njk" import govukDetails -%}
+
+{% set contentType = params.contentType if params.contentType %}
+{% set abbr %}
+  {%- if contentType == 'application/pdf' -%}
+    <abbr title="Portable Document Format" class="dm-attachment__abbr">PDF</abbr>
+  {%- elseif contentType == 'text/csv' -%}
+    <abbr title="Comma-separated Values" class="dm-attachment__abbr">CSV</abbr>
+  {%- elseif contentType == 'application/vnd.oasis.opendocument.spreadsheet' -%}
+    <abbr title="OpenDocument Spreadsheet" class="dm-attachment__abbr">ODS</abbr>
+  {%- elseif contentType == 'application/vnd.oasis.opendocument.text' -%}
+    <abbr title="OpenDocument Text document" class="dm-attachment__abbr">ODT</abbr>
+  {%- else -%}
+    {{ contentType }}
+  {%- endif -%}
+{% endset %}
+
+{% set alternativeFormatDetails %}
+  {% if params.alternativeFormatHtml %}
+    {{ params.alternativeFormatHtml | safe }}
+  {% elseif params.alternativeFormatContactEmail %}
+    If you use assistive technology (such as a screen reader) and need a version of this document in a more accessible format, please email <a href="mailto:{{ params.alternativeFormatContactEmail }}" target="_blank" class="govuk-link">{{ params.alternativeFormatContactEmail }}</a>. Please tell us what format you need. It will help us if you say what assistive technology you use.
+  {% endif %}
+{% endset %}
+
+{% if params.link.textOnly %}
+  <span class="dm-attachment-link{% if params.link.classes %} {{params.link.classes}}{%endif%}">
+    <a href="{{ params.link.href }}" class="govuk-link dm-attachment__link" target="_self">{{ params.link.text }}</a>
+    ({{ abbr | safe }}
+    {%- if params.fileSize -%}, {{ params.fileSize }}{% endif -%}
+    {%- if params.numberOfPages -%}, {{ params.numberOfPages }} {% if params.numberOfPages == 1 %}page{% else %}pages{% endif %}{% endif -%})
+  </span>
+{% else %}
+  <section class="dm-attachment" data-module="dm-attachment">
+    <div class="dm-attachment__thumbnail">
+      <a class="govuk-link" href="{{ params.link.href }}" target="_self" tabindex="-1" aria-hidden="true">
+        {% if contentType == 'application/pdf' %}
+          <svg class="dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf" version="1.1" viewBox="0 0 99 140" width="99" height="140" aria-hidden="true">
+            <path d="M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z" stroke-width="0"/>
+          </svg>
+        {% elseif contentType == 'text/csv' or contentType == 'application/vnd.oasis.opendocument.spreadsheet' %}
+          <svg class="dm-attachment__thumbnail-image dm-attachment__thumbnail--csv" version="1.1" viewBox="0 0 99 140" width="99" height="140" aria-hidden="true">
+            <path d="M12 12h75v27H12zm0 47h18.75v63H12zm55 2v59H51V61h16m2-2H49v63h20V59z" stroke-width="0"/>
+            <path d="M49 61.05V120H32.8V61.05H49m2-2H30.75v63H51V59zm34 2V120H69.05V61.05H85m2-2H67v63h20V59z" stroke-width="0"/>
+            <path d="M30 68.5h56.5M30 77.34h56.5M30 112.7h56.5M30 95.02h56.5M30 86.18h56.5M30 103.86h56.5" fill="none" stroke-miterlimit="10" stroke-width="2"/>
+          </svg>
+        {% else %}
+          <svg class="dm-attachment__thumbnail-image dm-attachment__thumbnail--doc" version="1.1" viewBox="0 0 84 120" width="84" height="120" aria-hidden="true">
+            <path d="M74.85 5v106H5" fill="none" stroke-miterlimit="10" stroke-width="2"/>
+            <path d="M79.85 10v106H10" fill="none" stroke-miterlimit="10" stroke-width="2"/>
+          </svg>
+        {% endif %}
+      </a>
+    </div>
+    <div class="dm-attachment__details">
+      <h2 class="dm-attachment__title{% if params.link.classes %} {{params.link.classes}}{%endif%}">
+        <a href="{{ params.link.href }}" class="govuk-link dm-attachment__link" target="_self">{{ params.link.text }}</a>
+      </h2>
+      {% if params.contentType %}
+        <p class="dm-attachment__metadata">
+          <span class="dm-attachment__attribute">{{ abbr | safe }}</span>
+          {%- if params.fileSize -%}
+            , <span class="dm-attachment__attribute">{{ params.fileSize }}</span>
+          {% endif -%}
+          {%- if params.numberOfPages -%}
+            , <span class="dm-attachment__attribute">{{ params.numberOfPages }} {% if params.numberOfPages == 1 %}page{% else %}pages{% endif %}</span>
+          {% endif -%}
+        </p>
+      {% endif %}
+      {% if alternativeFormatDetails %}
+        {{ govukDetails({
+          "summaryText": "Request an accessible format",
+          "html": alternativeFormatDetails
+        })}}
+      {% endif %}
+    </div>
+  </section>
+{% endif %}

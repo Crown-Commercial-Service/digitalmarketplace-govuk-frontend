@@ -2,6 +2,13 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🆕 New features:
+
+  - New component: Digital Marketplace Attachment component
+    - Use the component `{{ dmAttachment({...}) }}`. For its parameters, see its README and/or YAML. For examples, see the review app. [PR #200](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/200)
+
 ## 2.4.1
 
 🔧 Fixes:
