@@ -1,5 +1,5 @@
-# Option select
+# Attachment
 
-An option select is used for filter forms. It consists of a govukCheckboxes component which is wrapped by a collapsing/expanding element.
+An attachment is used to link to a document which can be downloaded. It is heavily based on the [GOV.UK Publishing Components Attachment](https://components.publishing.service.gov.uk/component-guide/attachment)
 
-It is based heavily on the Finder app's option select: https://github.com/alphagov/finder-frontend/blob/master/app/views/components/_option-select.html.erb
+See attachment.yaml for the parameters that can be passed to the component.
