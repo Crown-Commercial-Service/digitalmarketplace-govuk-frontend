@@ -2,6 +2,19 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🆕 New features:
+
+  - The Header component now supports active nav items [PR #207](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/207)
+    - The current active path can be passed into the component call:
+      ```
+      {{ dmHeader({
+        "role": "supplier",
+        "active": request.path
+      })}}
+      ```
+
 ## 2.5.0
 
 🆕 New features:
