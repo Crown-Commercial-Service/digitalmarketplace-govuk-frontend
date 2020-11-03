@@ -4,25 +4,11 @@
 const axe = require('../../../../lib/axe-helper')
 
 const { render, getExamples } = require('../../../../lib/jest-helpers.js')
+const { urlFor } = require('../../../../lib/helper-functions.js')
 
 const examples = getExamples('header')
 
-const urlForMock = jest.fn((param) => {
-  let value = ''
-  if (param === 'external.help') {
-    value = 'http://www.google.com'
-  } else if (param === 'external.render_login') {
-    value = 'http://www.logmein.now'
-  } else if (param === 'external.buyer_dashboard') {
-    value = 'http://www.buyer.dashboard'
-  } else if (param === 'external.supplier_dashboard') {
-    value = 'http://www.supplier.dashboard'
-  } else if (param === 'external.user_logout') {
-    value = 'http://www.logmeout.now'
-  }
-
-  return value
-})
+const urlForMock = jest.fn(urlFor)
 
 let mockedMethods
 
@@ -145,6 +131,21 @@ describe('header', () => {
     it('renders a header component with all our standard links', () => {
       const $ = render('header', examples['for user who is not signed in'], mockedMethods)
       expect($.html()).toMatchSnapshot()
+    })
+  })
+
+  describe('on an active page', () => {
+    beforeAll(() => {
+      mockedMethods = {
+        url_for: urlForMock
+      }
+    })
+    it('renders navigation with active item', () => {
+      const $ = render('header', examples['on an active page'], mockedMethods)
+
+      expect($.html()).toMatchSnapshot()
+
+      expect($('.govuk-header__navigation-item--active').length).toBe(1)
     })
   })
 })

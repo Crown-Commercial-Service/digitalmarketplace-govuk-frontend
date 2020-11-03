@@ -7,6 +7,10 @@ params:
   type: boolean
   required: false
   description: Determines whether or not to apply a special css class to the component to give it a different coloured border to the original header component
+- name: active
+  type: string
+  required: false
+  description: Used to provide a URL/path which should trigger the relevant nav item to set to "active"
 previewLayout: full-width
 examples:
   - name: default
@@ -27,5 +31,7 @@ examples:
   - name: for user who is not signed in
     data:
       role: null
-
-
+  - name: on an active page
+    data:
+      role: null,
+      active: '/help'
