@@ -20,23 +20,23 @@ exports[`header admin or any other type of use is signed in renders a header com
       </a>
     </div>
     <div class=\\"govuk-header__content\\">
-    <button type=\\"button\\" class=\\"govuk-header__menu-button govuk-js-header-toggle\\" aria-controls=\\"navigation\\" aria-label=\\"Show or hide Top Level Navigation\\">Menu</button>
+    <button type=\\"button\\" class=\\"govuk-header__menu-button govuk-js-header-toggle\\" aria-controls=\\"navigation\\" aria-label=\\"Show or hide navigation menu\\">Menu</button>
     <nav>
-      <ul id=\\"navigation\\" class=\\"govuk-header__navigation \\" aria-label=\\"Top Level Navigation\\">
+      <ul id=\\"navigation\\" class=\\"govuk-header__navigation \\" aria-label=\\"Navigation menu\\">
             <li class=\\"govuk-header__navigation-item\\">
-              <a class=\\"govuk-header__link\\" href=\\"https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace\\">
+                <a class=\\"govuk-header__link\\" href=\\"https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace\\">
                 Guidance
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/help\\">
                 Help
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/logout\\">
                 Log out
-              </a>
+                </a>
             </li>
       </ul>
     </nav>
@@ -67,28 +67,28 @@ exports[`header buyer signed in renders a header component with all our standard
       </a>
     </div>
     <div class=\\"govuk-header__content\\">
-    <button type=\\"button\\" class=\\"govuk-header__menu-button govuk-js-header-toggle\\" aria-controls=\\"navigation\\" aria-label=\\"Show or hide Top Level Navigation\\">Menu</button>
+    <button type=\\"button\\" class=\\"govuk-header__menu-button govuk-js-header-toggle\\" aria-controls=\\"navigation\\" aria-label=\\"Show or hide navigation menu\\">Menu</button>
     <nav>
-      <ul id=\\"navigation\\" class=\\"govuk-header__navigation \\" aria-label=\\"Top Level Navigation\\">
+      <ul id=\\"navigation\\" class=\\"govuk-header__navigation \\" aria-label=\\"Navigation menu\\">
             <li class=\\"govuk-header__navigation-item\\">
-              <a class=\\"govuk-header__link\\" href=\\"https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace\\">
+                <a class=\\"govuk-header__link\\" href=\\"https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace\\">
                 Guidance
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/help\\">
                 Help
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/buyer-dashboard\\">
                 View your account
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/logout\\">
                 Log out
-              </a>
+                </a>
             </li>
       </ul>
     </nav>
@@ -119,23 +119,23 @@ exports[`header component being used in admin frontend renders a header componen
       </a>
     </div>
     <div class=\\"govuk-header__content\\">
-    <button type=\\"button\\" class=\\"govuk-header__menu-button govuk-js-header-toggle\\" aria-controls=\\"navigation\\" aria-label=\\"Show or hide Top Level Navigation\\">Menu</button>
+    <button type=\\"button\\" class=\\"govuk-header__menu-button govuk-js-header-toggle\\" aria-controls=\\"navigation\\" aria-label=\\"Show or hide navigation menu\\">Menu</button>
     <nav>
-      <ul id=\\"navigation\\" class=\\"govuk-header__navigation \\" aria-label=\\"Top Level Navigation\\">
+      <ul id=\\"navigation\\" class=\\"govuk-header__navigation \\" aria-label=\\"Navigation menu\\">
             <li class=\\"govuk-header__navigation-item\\">
-              <a class=\\"govuk-header__link\\" href=\\"https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace\\">
+                <a class=\\"govuk-header__link\\" href=\\"https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace\\">
                 Guidance
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/help\\">
                 Help
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/login\\">
                 Log in
-              </a>
+                </a>
             </li>
       </ul>
     </nav>
@@ -216,28 +216,28 @@ exports[`header supplier signed in renders a header component with all our stand
       </a>
     </div>
     <div class=\\"govuk-header__content\\">
-    <button type=\\"button\\" class=\\"govuk-header__menu-button govuk-js-header-toggle\\" aria-controls=\\"navigation\\" aria-label=\\"Show or hide Top Level Navigation\\">Menu</button>
+    <button type=\\"button\\" class=\\"govuk-header__menu-button govuk-js-header-toggle\\" aria-controls=\\"navigation\\" aria-label=\\"Show or hide navigation menu\\">Menu</button>
     <nav>
-      <ul id=\\"navigation\\" class=\\"govuk-header__navigation \\" aria-label=\\"Top Level Navigation\\">
+      <ul id=\\"navigation\\" class=\\"govuk-header__navigation \\" aria-label=\\"Navigation menu\\">
             <li class=\\"govuk-header__navigation-item\\">
-              <a class=\\"govuk-header__link\\" href=\\"https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace\\">
+                <a class=\\"govuk-header__link\\" href=\\"https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace\\">
                 Guidance
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/help\\">
                 Help
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/supplier-dashboard\\">
                 View your account
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/logout\\">
                 Log out
-              </a>
+                </a>
             </li>
       </ul>
     </nav>
@@ -268,23 +268,23 @@ exports[`header when a user is not logged in renders a header component with all
       </a>
     </div>
     <div class=\\"govuk-header__content\\">
-    <button type=\\"button\\" class=\\"govuk-header__menu-button govuk-js-header-toggle\\" aria-controls=\\"navigation\\" aria-label=\\"Show or hide Top Level Navigation\\">Menu</button>
+    <button type=\\"button\\" class=\\"govuk-header__menu-button govuk-js-header-toggle\\" aria-controls=\\"navigation\\" aria-label=\\"Show or hide navigation menu\\">Menu</button>
     <nav>
-      <ul id=\\"navigation\\" class=\\"govuk-header__navigation \\" aria-label=\\"Top Level Navigation\\">
+      <ul id=\\"navigation\\" class=\\"govuk-header__navigation \\" aria-label=\\"Navigation menu\\">
             <li class=\\"govuk-header__navigation-item\\">
-              <a class=\\"govuk-header__link\\" href=\\"https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace\\">
+                <a class=\\"govuk-header__link\\" href=\\"https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace\\">
                 Guidance
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/help\\">
                 Help
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/login\\">
                 Log in
-              </a>
+                </a>
             </li>
       </ul>
     </nav>
@@ -319,21 +319,21 @@ exports[`header when a user is signed out or not signed in specifically renders 
 
     <button type=\\"button\\" role=\\"button\\" class=\\"govuk-header__menu-button js-header-toggle\\" aria-controls=\\"navigation\\" aria-label=\\"Show or hide Top Level Navigation\\">Menu</button>
     <nav>
-      <ul id=\\"navigation\\" class=\\"govuk-header__navigation \\" aria-label=\\"Top Level Navigation\\">
+      <ul id=\\"navigation\\" class=\\"govuk-header__navigation \\" aria-label=\\"Navigation menu\\">
             <li class=\\"govuk-header__navigation-item\\">
-              <a class=\\"govuk-header__link\\" href=\\"https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace\\">
+                <a class=\\"govuk-header__link\\" href=\\"https://www.gov.uk/guidance/buying-and-selling-on-the-digital-marketplace\\">
                 Guidance
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/help\\">
                 Help
-              </a>
+                </a>
             </li>
             <li class=\\"govuk-header__navigation-item\\">
               <a class=\\"govuk-header__link\\" href=\\"/login\\">
                 Log in
-              </a>
+                </a>
             </li>
       </ul>
     </nav>

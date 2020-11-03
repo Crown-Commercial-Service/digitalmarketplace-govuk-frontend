@@ -15,6 +15,7 @@ exports[`Attachment as text only matches existing snapshot 1`] = `
 <fieldset class=\\"govuk-fieldset\\">
   <div class=\\"govuk-checkboxes govuk-checkboxes--small\\">
   </div>
+
 </fieldset>
 </div>
 
@@ -121,6 +122,7 @@ exports[`Attachment with alternative format HTML matches existing snapshot 1`] =
 <fieldset class=\\"govuk-fieldset\\">
   <div class=\\"govuk-checkboxes govuk-checkboxes--small\\">
   </div>
+
 </fieldset>
 </div>
 
@@ -145,7 +147,7 @@ exports[`Attachment with alternative format contact email matches existing snaps
       </h2>
         <p class=\\"dm-attachment__metadata\\">
           <span class=\\"dm-attachment__attribute\\"><abbr title=\\"Portable Document Format\\" class=\\"dm-attachment__abbr\\">PDF</abbr></span></p>
-        <details class=\\"govuk-details\\">
+        <details class=\\"govuk-details\\" data-module=\\"govuk-details\\">
   <summary class=\\"govuk-details__summary\\">
     <span class=\\"govuk-details__summary-text\\">
       Request an accessible format
