@@ -23,15 +23,18 @@
       },
       {
         'text': 'Help',
-        'href': url_for('external.help')
+        'href': url_for('external.help'),
+        'active': params.active == url_for('external.help')
       },
       {
         'text': 'View your account',
-        'href': url_for('external.' + users_role + '_dashboard')
+        'href': url_for('external.' + users_role + '_dashboard'),
+        'active': params.active == url_for('external.' + users_role + '_dashboard')
       },
       {
         'text': 'Log out',
-        'href': url_for('external.user_logout')
+        'href': url_for('external.user_logout'),
+        'active': params.active == url_for('external.user_logout')
       }
     ]%}
   {% else %}
@@ -43,11 +46,13 @@
       },
       {
         'text': 'Help',
-        'href': url_for('external.help')
+        'href': url_for('external.help'),
+        'active': params.active == url_for('external.help')
       },
       {
         'text': 'Log out',
-        'href': url_for('external.user_logout')
+        'href': url_for('external.user_logout'),
+        'active': params.active == url_for('external.user_logout')
       }
     ]%}
   {% endif %}
@@ -59,11 +64,13 @@
     },
     {
       'text': 'Help',
-      'href': url_for('external.help')
+      'href': url_for('external.help'),
+      'active': params.active == url_for('external.help')
     },
     {
       'text': 'Log in',
-      'href': url_for('external.render_login')
+      'href': url_for('external.render_login'),
+      'active': params.active == url_for('external.render_login')
     }
   ]%}
 {% endif %}

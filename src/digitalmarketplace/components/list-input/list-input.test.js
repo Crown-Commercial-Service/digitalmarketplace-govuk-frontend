@@ -32,17 +32,15 @@ describe('/components/list-input', () => {
       })
 
       it('falls back to displaying every input', async () => {
-        const numberOfInputs = (await page.$$('.dm-list-input__item')).length
         const numberOfVisibleInputs = (await page.$$(VISIBLE_INPUT_SELECTOR)).length
 
-        expect(numberOfVisibleInputs).toBe(numberOfInputs)
+        expect(numberOfVisibleInputs).toBe(10)
       })
 
       it('does not display any remove buttons', async () => {
-        const numberOfVisibleInputs = (await page.$$(VISIBLE_INPUT_SELECTOR)).length
         const numberOfHiddenRemoveButtons = (await page.$$(HIDDEN_REMOVE_BUTTON_SELECTOR)).length
 
-        expect(numberOfHiddenRemoveButtons).toEqual(numberOfVisibleInputs)
+        expect(numberOfHiddenRemoveButtons).toEqual(10)
       })
 
       it('does not display "Add more" button', async () => {
@@ -68,10 +66,9 @@ describe('/components/list-input', () => {
       })
 
       it('displays a remove option next to each visible input if there are more than 1', async () => {
-        const numberOfVisibleInputs = (await page.$$(VISIBLE_INPUT_SELECTOR)).length
         const numberOfVisibleRemoveButtons = (await page.$$(REMOVE_BUTTON_SELECTOR)).length
 
-        expect(numberOfVisibleRemoveButtons).toBe(numberOfVisibleInputs)
+        expect(numberOfVisibleRemoveButtons).toBe(2)
       })
 
       it('displays "Add more" button', async () => {
@@ -88,9 +85,6 @@ describe('/components/list-input', () => {
 
       describe('when an input is removed', () => {
         const firstRow = ROW_SELECTOR + ':nth-child(1)'
-        beforeEach(async () => {
-          await page.goto(DEFAULT_EXAMPLE_URL, { waitUntil: 'load' })
-        })
 
         it('"removes" the input by hiding it', async () => {
           await page.click(firstRow + ' .govuk-button')

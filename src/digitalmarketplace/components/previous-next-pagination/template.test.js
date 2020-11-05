@@ -60,7 +60,6 @@ describe('Previous and Next Pagination', () => {
     it('renders custom aria label', async () => {
       const $ = render('previous-next-pagination', examples['with aria label'], false, false, true)
 
-      console.log($('.dm-pagination').html())
       expect($('.dm-pagination').attr('aria-label')).toEqual('Custom aria label')
     })
   })
