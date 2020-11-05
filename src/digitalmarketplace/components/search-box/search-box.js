@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 function SearchBox ($module) {
   this.$module = $module
   this.toggleTarget = this.$module.querySelector('.js-class-toggle')

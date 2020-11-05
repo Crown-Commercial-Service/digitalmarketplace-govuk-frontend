@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 import { getCookie, setConsentCookie } from '../../helpers/cookie/cookie-functions'
 import InitialiseAnalytics from '../analytics/init'
 

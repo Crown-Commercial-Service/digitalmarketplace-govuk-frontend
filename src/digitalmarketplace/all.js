@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 import './vendor/polyfills/NodeList/prototype/forEach'
 import CookieBanner from './components/cookie-banner/cookie-banner'
 import CookieSettings from './components/cookie-settings/cookie-settings'

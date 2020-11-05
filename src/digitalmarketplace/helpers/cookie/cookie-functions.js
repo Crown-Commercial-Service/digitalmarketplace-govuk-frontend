@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 // used by the cookie banner component
 const DEFAULT_COOKIE_CONSENT = {
   analytics: false

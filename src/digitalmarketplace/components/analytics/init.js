@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 import * as PageAnalytics from './analytics'
 
 window.DMGOVUKFrontend = window.DMGOVUKFrontend || {}

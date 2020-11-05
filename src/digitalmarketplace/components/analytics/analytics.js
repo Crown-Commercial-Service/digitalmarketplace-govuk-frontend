@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 import stripPII from './pii'
 
 // Stripped-down wrapper for Google Analytics, based on:

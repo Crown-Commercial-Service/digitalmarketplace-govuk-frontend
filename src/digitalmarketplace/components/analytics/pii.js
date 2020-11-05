@@ -1,4 +1,4 @@
-
+/* eslint-disable no-var */
 // Based on https://github.com/alphagov/static/pull/1863
 const EMAIL_PATTERN = /[^\s=/?&]+(?:@|%40)[^\s=/?&]+/g
 
