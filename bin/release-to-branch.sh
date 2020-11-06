@@ -2,7 +2,17 @@
 set -e
 
 CURRENT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
-BRANCH_NAME="pre-release-$CURRENT_BRANCH_NAME"
+
+if [ $# -eq 1 ]; then
+  BRANCH_NAME=$1
+elif [ $# -eq 0 ]; then
+  BRANCH_NAME="pre-release-$CURRENT_BRANCH_NAME"
+else
+  echo $0 [BRANCH_NAME]
+  exit 1
+fi
+
+echo "Releasing Digital Marketplace GOV.UK Frontend to '$BRANCH_NAME'"
 
 # Check if there are files that need to be commited
 if [[ -n $(git status --porcelain) ]]; then
