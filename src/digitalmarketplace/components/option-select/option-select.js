@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 function OptionSelect ($module) {
   this.$optionSelect = $module
   this.$options = this.$optionSelect.querySelectorAll("input[type='checkbox']")

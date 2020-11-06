@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 var getSibling = function (direction, elem, selector) {
   // Get the next sibling element
   var sibling = (direction === 'next') ? elem.nextElementSibling : elem.previousElementSibling

@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 // Javascript code to support the Cookie Settings page
 import { getConsentCookie, setConsentCookie } from '../../helpers/cookie/cookie-functions'
 import InitialiseAnalytics from '../analytics/init'
