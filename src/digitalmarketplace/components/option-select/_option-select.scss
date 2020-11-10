@@ -76,7 +76,7 @@
   .dm-option-select__icon {
     display: none;
     position: absolute;
-    top: 0;
+    top: 4px;
     left: 9px;
     width: 30px;
     height: 40px;
@@ -107,6 +107,7 @@
     .dm-option-select__heading {
       position: relative;
       padding: 10px 8px 5px 43px;
+      margin: 0;
     }
   
     [aria-expanded="true"] ~ .dm-option-select__icon--up {
