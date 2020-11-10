@@ -12,6 +12,11 @@ See below for Changelog examples.
 
   ([PR #149](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/149))
 
+🔧 Fixes:
+
+- Option select header spacing adjustments [PR #219](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/219)
+
+
 ## 2.6.0
 
 🆕 New features:
