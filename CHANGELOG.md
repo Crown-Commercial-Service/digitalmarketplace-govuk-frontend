@@ -2,6 +2,13 @@
 
 See below for Changelog examples.
 
+## Unreleased
+
+🆕 New features:
+
+  - A description can now be added to the Attachment component [PR #230](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/230)
+
+
 ## 2.6.0
 
 🆕 New features:
