@@ -33,6 +33,9 @@ params:
 - name: alternativeFormatContactEmail
   type: string
   description: Used to provide an email to request an accessible format
+- name: description
+  type: string
+  description: Used to provide a description of the document
 
 examples:
   - name: default
@@ -104,3 +107,11 @@ examples:
         href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
         classes: 'govuk-body'
         textOnly: True
+  - name: with description
+    description: 'Attachment with description'
+    data:
+      link:
+        text: "Attachment with description"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      contentType: 'application/pdf'
+      description: 'This is the agreement you signed.'
