@@ -179,7 +179,7 @@ describe('Attachment', () => {
 
   describe('as text only', () => {
     it('matches existing snapshot', () => {
-      const $ = render('option-select', examples['as only text'])
+      const $ = render('attachment', examples['as only text'])
       expect($.html()).toMatchSnapshot()
     })
 
@@ -203,6 +203,20 @@ describe('Attachment', () => {
 
       expect(linkText).toContain('Attachment with no thumbnail')
       expect(linkText).toContain('(PDF, 21.5 KB)')
+    })
+  })
+
+  describe('with description', () => {
+    it('matches existing snapshot', () => {
+      const $ = render('attachment', examples['with description'])
+      expect($.html()).toMatchSnapshot()
+    })
+
+    it('renders a description', async () => {
+      const $ = render('attachment', examples['with description'])
+      const description = $('.govuk-hint')
+
+      expect(description.text().trim()).toEqual('This is the agreement you signed.')
     })
   })
 })

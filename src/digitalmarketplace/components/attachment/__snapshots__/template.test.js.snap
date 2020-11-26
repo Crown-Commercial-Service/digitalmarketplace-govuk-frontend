@@ -1,26 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Attachment as text only matches existing snapshot 1`] = `
-"<html><head></head><body><div class=\\"dm-option-select\\" data-module=\\"dm-option-select\\">
-    <h2 class=\\"dm-option-select__heading js-container-heading\\">
-      <span class=\\"dm-option-select__title js-container-button\\" id=\\"option-select-title-undefined\\"></span>
-      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--up\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z\\"/></svg>
-      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--down\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z\\"/></svg>
-    </h2>
-
-    <div role=\\"group\\" aria-labelledby=\\"option-select-title-undefined\\" class=\\"dm-option-select__container js-options-container\\" id tabindex=\\"-1\\">
-      <div class=\\"dm-option-select__container-inner js-auto-height-inner\\">
-      
-<div class=\\"govuk-form-group\\">
-<fieldset class=\\"govuk-fieldset\\">
-  <div class=\\"govuk-checkboxes govuk-checkboxes--small\\">
-  </div>
-</fieldset>
-</div>
-
-      </div>
-    </div>
-</div>
+"<html><head></head><body><span class=\\"dm-attachment-link govuk-body\\">
+    <a href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" class=\\"govuk-link dm-attachment__link\\" target=\\"_self\\">Attachment with no thumbnail</a>
+    (<abbr title=\\"Portable Document Format\\" class=\\"dm-attachment__abbr\\">PDF</abbr>, 21.5 KB)
+  </span>
 </body></html>"
 `;
 
@@ -157,6 +141,27 @@ exports[`Attachment with alternative format contact email matches existing snaps
   </div>
 </details>
 
+    </div>
+  </section>
+</body></html>"
+`;
+
+exports[`Attachment with description matches existing snapshot 1`] = `
+"<html><head></head><body><section class=\\"dm-attachment\\" data-module=\\"dm-attachment\\">
+    <div class=\\"dm-attachment__thumbnail\\">
+      <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
+          <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf\\" version=\\"1.1\\" viewBox=\\"0 0 99 140\\" width=\\"99\\" height=\\"140\\" aria-hidden=\\"true\\">
+            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"/>
+          </svg>
+      </a>
+    </div>
+    <div class=\\"dm-attachment__details\\">
+      <h2 class=\\"dm-attachment__title\\">
+        <a href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" class=\\"govuk-link dm-attachment__link\\" target=\\"_self\\">Attachment with description</a>
+      </h2>
+        <p class=\\"govuk-hint\\">This is the agreement you signed.</p>
+        <p class=\\"dm-attachment__metadata\\">
+          <span class=\\"dm-attachment__attribute\\"><abbr title=\\"Portable Document Format\\" class=\\"dm-attachment__abbr\\">PDF</abbr></span></p>
     </div>
   </section>
 </body></html>"
