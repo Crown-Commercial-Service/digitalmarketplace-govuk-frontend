@@ -219,4 +219,19 @@ describe('Attachment', () => {
       expect(description.text().trim()).toEqual('This is the agreement you signed.')
     })
   })
+
+  describe('with custom heading level', () => {
+    it('matches existing snapshot', () => {
+      const $ = render('attachment', examples['with custom heading level'])
+      expect($.html()).toMatchSnapshot()
+    })
+
+    it('renders a description', async () => {
+      const $ = render('attachment', examples['with custom heading level'])
+      console.log($.html())
+      const heading = $('h3')
+
+      expect(heading.text().trim()).toEqual('Attachment with custom heading level')
+    })
+  })
 })

@@ -53,9 +53,9 @@
       </a>
     </div>
     <div class="dm-attachment__details">
-      <h2 class="dm-attachment__title{% if params.link.classes %} {{params.link.classes}}{%endif%}">
+      <h{% if params.headingLevel %}{{params.headingLevel}}{% else %}2{%endif%} class="dm-attachment__title{% if params.link.classes %} {{params.link.classes}}{%endif%}">
         <a href="{{ params.link.href }}" class="govuk-link dm-attachment__link" target="_self">{{ params.link.text }}</a>
-      </h2>
+      </h{% if params.headingLevel %}{{params.headingLevel}}{% else %}2{%endif%}>
       {% if params.description %}
         <p class="govuk-hint">{{ params.description }}</p>
       {% endif %}

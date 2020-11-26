@@ -36,6 +36,9 @@ params:
 - name: description
   type: string
   description: Used to provide a description of the document
+- name: headingLevel
+  type: integer
+  description: 1 - 6. Used to set the heading level of the download link. Defaults to 2.
 
 examples:
   - name: default
@@ -115,3 +118,11 @@ examples:
         href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
       description: 'This is the agreement you signed.'
+  - name: with custom heading level
+    description: 'Attachment with custom heading level'
+    data:
+      link:
+        text: "Attachment with custom heading level"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      contentType: 'application/pdf'
+      headingLevel: 3
