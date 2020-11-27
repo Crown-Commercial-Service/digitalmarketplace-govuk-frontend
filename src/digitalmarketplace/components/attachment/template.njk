@@ -56,9 +56,9 @@
       </a>
     </div>
     <div class="dm-attachment__details">
-      <h{% if params.headingLevel %}{{params.headingLevel}}{% else %}2{%endif%} class="dm-attachment__title{% if params.link.classes %} {{params.link.classes}}{%endif%}">
+      <{% if params.headingTag %}{{params.headingTag}}{% else %}h2{%endif%} class="dm-attachment__title{% if params.link.classes %} {{params.link.classes}}{%endif%}">
         <a href="{{ params.link.href }}" class="govuk-link dm-attachment__link" target="_self">{{ params.link.text }}</a>
-      </h{% if params.headingLevel %}{{params.headingLevel}}{% else %}2{%endif%}>
+      </{% if params.headingTag %}{{params.headingTag}}{% else %}h2{%endif%}>
       {% if params.description %}
         <div class="govuk-hint">{% if params.description.html %}{{ params.description.html | safe }}{% else %}{{ params.description.text }}{% endif %}</div>
       {% endif %}
