@@ -18,6 +18,7 @@
 {% set thumbnailClasses = " dm-attachment__thumbnail--small" if params.thumbnailSize == "small" %}
 {% set thumbnailImageClasses = " dm-attachment__thumbnail-image--small" if params.thumbnailSize == "small" %}
 
+{% set hasAlternativeFormat = params.alternativeFormatHtml is defined or params.alternativeFormatContactEmail is defined %}
 {% set alternativeFormatDetails %}
   {% if params.alternativeFormatHtml %}
     {{ params.alternativeFormatHtml | safe }}
@@ -76,7 +77,7 @@
           {% endif -%}
         </p>
       {% endif %}
-      {% if alternativeFormatDetails %}
+      {% if hasAlternativeFormat %}
         {{ govukDetails({
           "summaryText": "Request an accessible format",
           "html": alternativeFormatDetails
