@@ -34,8 +34,17 @@ params:
   type: string
   description: Used to provide an email to request an accessible format
 - name: description
-  type: string
+  type: object
   description: Used to provide a description of the document
+  params:
+  - name: html
+    type: string
+    required: true
+    description: HTML for the description. Either this or text must be provided.
+  - name: text
+    type: string
+    required: true
+    description: Text for the description. Either this or html must be provided.
 - name: headingLevel
   type: integer
   description: 1 - 6. Used to set the heading level of the download link. Defaults to 2.
@@ -117,7 +126,8 @@ examples:
         text: "Attachment with description"
         href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
-      description: 'This is the agreement you signed.'
+      description: 
+        text: 'This is the agreement you signed.'
   - name: with custom heading level
     description: 'Attachment with custom heading level'
     data:

@@ -228,7 +228,6 @@ describe('Attachment', () => {
 
     it('renders a description', async () => {
       const $ = render('attachment', examples['with custom heading level'])
-      console.log($.html())
       const heading = $('h3')
 
       expect(heading.text().trim()).toEqual('Attachment with custom heading level')

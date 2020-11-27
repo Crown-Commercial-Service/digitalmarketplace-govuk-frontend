@@ -57,7 +57,7 @@
         <a href="{{ params.link.href }}" class="govuk-link dm-attachment__link" target="_self">{{ params.link.text }}</a>
       </h{% if params.headingLevel %}{{params.headingLevel}}{% else %}2{%endif%}>
       {% if params.description %}
-        <p class="govuk-hint">{{ params.description }}</p>
+        <div class="govuk-hint">{% if params.description.html %}{{ params.description.html | safe }}{% else %}{{ params.description.text }}{% endif %}</div>
       {% endif %}
       {% if params.contentType %}
         <p class="dm-attachment__metadata">
