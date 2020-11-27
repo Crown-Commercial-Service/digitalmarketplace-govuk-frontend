@@ -68,6 +68,9 @@
           {%- if params.numberOfPages -%}
             , <span class="dm-attachment__attribute">{{ params.numberOfPages }} {% if params.numberOfPages == 1 %}page{% else %}pages{% endif %}</span>
           {% endif -%}
+          {%- if params.lastUpdated -%}
+            , <span class="dm-attachment__attribute">Last updated: <time datetime="{{ params.lastUpdated.datetime }}">{{ params.lastUpdated.text }}</time></span>
+          {% endif -%}
         </p>
       {% endif %}
       {% if alternativeFormatDetails %}

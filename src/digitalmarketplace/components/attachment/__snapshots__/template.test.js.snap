@@ -179,7 +179,7 @@ exports[`Attachment with description matches existing snapshot 1`] = `
       <h2 class=\\"dm-attachment__title\\">
         <a href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" class=\\"govuk-link dm-attachment__link\\" target=\\"_self\\">Attachment with description</a>
       </h2>
-        <p class=\\"govuk-hint\\">This is the agreement you signed.</p>
+        <div class=\\"govuk-hint\\">This is the agreement you signed.</div>
         <p class=\\"dm-attachment__metadata\\">
           <span class=\\"dm-attachment__attribute\\"><abbr title=\\"Portable Document Format\\" class=\\"dm-attachment__abbr\\">PDF</abbr></span></p>
     </div>
@@ -202,6 +202,27 @@ exports[`Attachment with file size matches existing snapshot 1`] = `
       </h2>
         <p class=\\"dm-attachment__metadata\\">
           <span class=\\"dm-attachment__attribute\\"><abbr title=\\"Portable Document Format\\" class=\\"dm-attachment__abbr\\">PDF</abbr></span>, <span class=\\"dm-attachment__attribute\\">21.5 KB</span>
+</p>
+    </div>
+  </section>
+</body></html>"
+`;
+
+exports[`Attachment with last updated matches existing snapshot 1`] = `
+"<html><head></head><body><section class=\\"dm-attachment\\" data-module=\\"dm-attachment\\">
+    <div class=\\"dm-attachment__thumbnail\\">
+      <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
+          <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf\\" version=\\"1.1\\" viewBox=\\"0 0 99 140\\" width=\\"99\\" height=\\"140\\" aria-hidden=\\"true\\">
+            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"/>
+          </svg>
+      </a>
+    </div>
+    <div class=\\"dm-attachment__details\\">
+      <h2 class=\\"dm-attachment__title\\">
+        <a href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" class=\\"govuk-link dm-attachment__link\\" target=\\"_self\\">Attachment with last updated</a>
+      </h2>
+        <p class=\\"dm-attachment__metadata\\">
+          <span class=\\"dm-attachment__attribute\\"><abbr title=\\"Portable Document Format\\" class=\\"dm-attachment__abbr\\">PDF</abbr></span>, <span class=\\"dm-attachment__attribute\\">Last updated: <time datetime=\\"2020-01-01\\">New year&apos;s day</time></span>
 </p>
     </div>
   </section>

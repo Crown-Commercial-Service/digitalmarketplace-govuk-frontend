@@ -233,4 +233,19 @@ describe('Attachment', () => {
       expect(heading.text().trim()).toEqual('Attachment with custom heading level')
     })
   })
+
+  describe('with last updated', () => {
+    it('matches existing snapshot', () => {
+      const $ = render('attachment', examples['with last updated'])
+      expect($.html()).toMatchSnapshot()
+    })
+
+    it('renders a time tag', async () => {
+      const $ = render('attachment', examples['with last updated'])
+      const time = $('time')
+
+      expect(time.text().trim()).toEqual("New year's day")
+      expect(time.attr('datetime')).toEqual('2020-01-01')
+    })
+  })
 })

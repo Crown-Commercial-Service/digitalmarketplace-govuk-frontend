@@ -27,6 +27,18 @@ params:
 - name: numberOfPages
   type: integer
   description: Number of pages in the attached document
+- name: lastUpdated
+  type: object
+  description: When the document was last updated
+  params:
+  - name: datetime
+    type: string
+    required: true
+    description: The datetime string
+  - name: text
+    type: string
+    required: true
+    description: The time string
 - name: alternativeFormatHtml
   type: string
   description: Information on how to request an accessible format.
@@ -85,6 +97,16 @@ examples:
         href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
       fileSize: '21.5 KB'
+  - name: with last updated
+    description: 'Attachment with last updated'
+    data:
+      link:
+        text: "Attachment with last updated"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      contentType: 'application/pdf'
+      lastUpdated:
+        datetime: '2020-01-01'
+        text: "New year's day"
   - name: with page count
     description: 'Attachment with page count'
     data:
