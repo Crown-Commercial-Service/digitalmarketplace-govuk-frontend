@@ -26,6 +26,9 @@ describe('Attachment', () => {
       const thumbnail = $('.dm-attachment__thumbnail--doc')
 
       expect(thumbnail.length).toBe(1)
+
+      const thumbnailSmall = $('dm-attachment__thumbnail--small')
+      expect(thumbnailSmall.length).toBe(0)
     })
 
     it('renders a download link with correct text and url', async () => {
@@ -246,6 +249,19 @@ describe('Attachment', () => {
 
       expect(time.text().trim()).toEqual("New year's day")
       expect(time.attr('datetime')).toEqual('2020-01-01')
+    })
+  })
+
+  describe('with small thumbnail', () => {
+    it('matches existing snapshot', () => {
+      const $ = render('attachment', examples['with small thumbnail'])
+      expect($.html()).toMatchSnapshot()
+    })
+
+    it('renders a small thumbnail', async () => {
+      const $ = render('attachment', examples['with small thumbnail'])
+      const thumbnail = $('.dm-attachment__thumbnail--small')
+      expect(thumbnail.length).toBe(1)
     })
   })
 })

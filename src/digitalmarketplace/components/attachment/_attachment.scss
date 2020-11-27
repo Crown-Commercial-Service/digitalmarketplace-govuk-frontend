@@ -1,5 +1,7 @@
 $thumbnail-width: 99px;
+$thumbnail-small-width: 30px;
 $thumbnail-height: 140px;
+$thumbnail-small-height: 43px;
 $thumbnail-border-width: 5px;
 $thumbnail-background: govuk-colour("white");
 $thumbnail-border-colour: rgba(11, 12, 12, .1);
@@ -25,6 +27,17 @@ $thumbnail-icon-border-colour: $govuk-border-colour;
   padding: $thumbnail-border-width;
   float: left;
 }
+.dm-attachment__thumbnail--small {
+  margin-right: govuk-spacing(2);
+  margin-bottom: govuk-spacing(0);
+  + div.dm-attachment__details {
+    padding-left: 60px;
+    .dm-attachment__title {
+      @include govuk-font($size: 19);
+      margin-bottom: govuk-spacing(1);
+    }
+  }
+}
 
 .dm-attachment__thumbnail-image {
   display: block;
@@ -37,6 +50,10 @@ $thumbnail-icon-border-colour: $govuk-border-colour;
   box-shadow: $thumbnail-shadow-width $thumbnail-shadow-colour;
   fill: $thumbnail-icon-border-colour;
   stroke: $thumbnail-icon-border-colour;
+}
+.dm-attachment__thumbnail-image--small {
+  max-width: $thumbnail-small-width;
+  height: $thumbnail-small-height;
 }
 
 .dm-attachment__details {

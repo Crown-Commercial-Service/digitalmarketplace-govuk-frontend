@@ -60,6 +60,9 @@ params:
 - name: headingLevel
   type: integer
   description: 1 - 6. Used to set the heading level of the download link. Defaults to 2.
+- name: thumbnailSize
+  type: string
+  description: Set to "small" to reduce thumbnail size. Defaults to a larger size.
 
 examples:
   - name: default
@@ -158,3 +161,12 @@ examples:
         href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
       headingLevel: 3
+  - name: with small thumbnail
+    description: 'Attachment with small thumbnail'
+    data:
+      link:
+        classes: 'govuk-!-font-size-19'
+        text: "Attachment with small thumbnail"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      contentType: 'application/pdf'
+      thumbnailSize: 'small'
