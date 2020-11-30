@@ -15,6 +15,10 @@
   {%- endif -%}
 {% endset %}
 
+{% set thumbnailClasses = " dm-attachment__thumbnail--small" if params.thumbnailSize == "small" %}
+{% set thumbnailImageClasses = " dm-attachment__thumbnail-image--small" if params.thumbnailSize == "small" %}
+
+{% set hasAlternativeFormat = params.alternativeFormatHtml is defined or params.alternativeFormatContactEmail is defined %}
 {% set alternativeFormatDetails %}
   {% if params.alternativeFormatHtml %}
     {{ params.alternativeFormatHtml | safe }}
@@ -32,20 +36,20 @@
   </span>
 {% else %}
   <section class="dm-attachment" data-module="dm-attachment">
-    <div class="dm-attachment__thumbnail">
+    <div class="dm-attachment__thumbnail{{ thumbnailClasses }}">
       <a class="govuk-link" href="{{ params.link.href }}" target="_self" tabindex="-1" aria-hidden="true">
         {% if contentType == 'application/pdf' %}
-          <svg class="dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf" version="1.1" viewBox="0 0 99 140" width="99" height="140" aria-hidden="true">
+          <svg class="dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf{{ thumbnailImageClasses }}" version="1.1" viewBox="0 0 99 140" width="99" height="140" aria-hidden="true">
             <path d="M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z" stroke-width="0"/>
           </svg>
         {% elseif contentType == 'text/csv' or contentType == 'application/vnd.oasis.opendocument.spreadsheet' %}
-          <svg class="dm-attachment__thumbnail-image dm-attachment__thumbnail--csv" version="1.1" viewBox="0 0 99 140" width="99" height="140" aria-hidden="true">
+          <svg class="dm-attachment__thumbnail-image dm-attachment__thumbnail--csv{{ thumbnailImageClasses }}" version="1.1" viewBox="0 0 99 140" width="99" height="140" aria-hidden="true">
             <path d="M12 12h75v27H12zm0 47h18.75v63H12zm55 2v59H51V61h16m2-2H49v63h20V59z" stroke-width="0"/>
             <path d="M49 61.05V120H32.8V61.05H49m2-2H30.75v63H51V59zm34 2V120H69.05V61.05H85m2-2H67v63h20V59z" stroke-width="0"/>
             <path d="M30 68.5h56.5M30 77.34h56.5M30 112.7h56.5M30 95.02h56.5M30 86.18h56.5M30 103.86h56.5" fill="none" stroke-miterlimit="10" stroke-width="2"/>
           </svg>
         {% else %}
-          <svg class="dm-attachment__thumbnail-image dm-attachment__thumbnail--doc" version="1.1" viewBox="0 0 84 120" width="84" height="120" aria-hidden="true">
+          <svg class="dm-attachment__thumbnail-image dm-attachment__thumbnail--doc{{ thumbnailImageClasses }}" version="1.1" viewBox="0 0 84 120" width="84" height="120" aria-hidden="true">
             <path d="M74.85 5v106H5" fill="none" stroke-miterlimit="10" stroke-width="2"/>
             <path d="M79.85 10v106H10" fill="none" stroke-miterlimit="10" stroke-width="2"/>
           </svg>
@@ -53,11 +57,11 @@
       </a>
     </div>
     <div class="dm-attachment__details">
-      <h2 class="dm-attachment__title{% if params.link.classes %} {{params.link.classes}}{%endif%}">
+      <{% if params.headingTag %}{{params.headingTag}}{% else %}h2{%endif%} class="dm-attachment__title{% if params.link.classes %} {{params.link.classes}}{%endif%}">
         <a href="{{ params.link.href }}" class="govuk-link dm-attachment__link" target="_self">{{ params.link.text }}</a>
-      </h2>
+      </{% if params.headingTag %}{{params.headingTag}}{% else %}h2{%endif%}>
       {% if params.description %}
-        <p class="govuk-hint">{{ params.description }}</p>
+        <div class="govuk-hint">{% if params.description.html %}{{ params.description.html | safe }}{% else %}{{ params.description.text }}{% endif %}</div>
       {% endif %}
       {% if params.contentType %}
         <p class="dm-attachment__metadata">
@@ -68,9 +72,12 @@
           {%- if params.numberOfPages -%}
             , <span class="dm-attachment__attribute">{{ params.numberOfPages }} {% if params.numberOfPages == 1 %}page{% else %}pages{% endif %}</span>
           {% endif -%}
+          {%- if params.lastUpdated -%}
+            , <span class="dm-attachment__attribute">Last updated: <time datetime="{{ params.lastUpdated.datetime }}">{{ params.lastUpdated.text }}</time></span>
+          {% endif -%}
         </p>
       {% endif %}
-      {% if alternativeFormatDetails %}
+      {% if hasAlternativeFormat %}
         {{ govukDetails({
           "summaryText": "Request an accessible format",
           "html": alternativeFormatDetails

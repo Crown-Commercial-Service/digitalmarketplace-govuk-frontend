@@ -27,6 +27,18 @@ params:
 - name: numberOfPages
   type: integer
   description: Number of pages in the attached document
+- name: lastUpdated
+  type: object
+  description: When the document was last updated
+  params:
+  - name: datetime
+    type: string
+    required: true
+    description: The datetime string
+  - name: text
+    type: string
+    required: true
+    description: The time string
 - name: alternativeFormatHtml
   type: string
   description: Information on how to request an accessible format.
@@ -34,8 +46,23 @@ params:
   type: string
   description: Used to provide an email to request an accessible format
 - name: description
-  type: string
+  type: object
   description: Used to provide a description of the document
+  params:
+  - name: html
+    type: string
+    required: true
+    description: HTML for the description. Either this or text must be provided.
+  - name: text
+    type: string
+    required: true
+    description: Text for the description. Either this or html must be provided.
+- name: headingTag
+  type: string
+  description: Used to set the tag of the download link wrapper. Defaults to h2.
+- name: thumbnailSize
+  type: string
+  description: Set to "small" to reduce thumbnail size. Defaults to a larger size.
 
 examples:
   - name: default
@@ -73,6 +100,16 @@ examples:
         href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
       fileSize: '21.5 KB'
+  - name: with last updated
+    description: 'Attachment with last updated'
+    data:
+      link:
+        text: "Attachment with last updated"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      contentType: 'application/pdf'
+      lastUpdated:
+        datetime: '2020-01-01'
+        text: "New year's day"
   - name: with page count
     description: 'Attachment with page count'
     data:
@@ -114,4 +151,22 @@ examples:
         text: "Attachment with description"
         href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
-      description: 'This is the agreement you signed.'
+      description: 
+        text: 'This is the agreement you signed.'
+  - name: with custom heading level
+    description: 'Attachment with custom heading level'
+    data:
+      link:
+        text: "Attachment with custom heading level"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      contentType: 'application/pdf'
+      headingTag: 'h3'
+  - name: with small thumbnail
+    description: 'Attachment with small thumbnail'
+    data:
+      link:
+        classes: 'govuk-!-font-size-19'
+        text: "Attachment with small thumbnail"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+      contentType: 'application/pdf'
+      thumbnailSize: 'small'
