@@ -2,6 +2,18 @@
 
 See below for Changelog examples.
 
+## 2.8.0
+
+🆕 New features:
+
+  - Attachments can have custom tags for link text [PR #233](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/233)
+  - Adds a "last updated" property to attachments [PR #233](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/233)
+  - Adds a slimline version of the attachment with a smaller thumbnail [PR #233](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/233)
+
+🔧 Fixes:
+
+  - Attachment accessible format details now do not display if not set [PR #233](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/233)
+
 ## 2.7.0
 
 🆕 New features:
