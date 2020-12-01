@@ -18,6 +18,9 @@ params:
   - name: classes
     type: string
     description: Classes to apply to the link
+  - name: attributes
+    type: object
+    description: HTML attributes to add to the link
 - name: contentType
   type: string
   description: The filetype of the attached document (eg - 'text/csv')
@@ -170,3 +173,14 @@ examples:
         href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
       thumbnailSize: 'small'
+  - name: with link attributes
+    description: 'Attachment with link attributes'
+    data:
+      link:
+        classes: 'govuk-!-font-size-19'
+        text: "Attachment with link attributes"
+        href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
+        attributes: 
+          key1: "value1"
+          key2: "value2"
+      contentType: 'application/pdf'

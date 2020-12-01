@@ -264,4 +264,23 @@ describe('Attachment', () => {
       expect(thumbnail.length).toBe(1)
     })
   })
+
+  describe('with link attributes', () => {
+    it('matches existing snapshot', () => {
+      const $ = render('attachment', examples['with link attributes'])
+      expect($.html()).toMatchSnapshot()
+    })
+
+    it('applies attributes to link', async () => {
+      const $ = render('attachment', examples['with link attributes'])
+      const $component = $('.dm-attachment')
+      const links = $component.find('.govuk-link')
+      expect(links.length).toBe(2)
+
+      for (let i = 0; i < links.length; i++) {
+        expect(links[i].attribs.key1).toEqual('value1')
+        expect(links[i].attribs.key2).toEqual('value2')
+      }
+    })
+  })
 })
