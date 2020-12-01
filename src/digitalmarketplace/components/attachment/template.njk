@@ -29,7 +29,12 @@
 
 {% if params.link.textOnly %}
   <span class="dm-attachment-link{% if params.link.classes %} {{params.link.classes}}{%endif%}">
-    <a href="{{ params.link.href }}" class="govuk-link dm-attachment__link" target="_self">{{ params.link.text }}</a>
+    <a
+      href="{{ params.link.href }}"
+      class="govuk-link dm-attachment__link"
+      target="_self"
+      {%- for attribute in (params.link.attributes | default({}) | dictsort) %} {{attribute[0]}}="{{attribute[1]}}" {%- endfor %}
+    >{{ params.link.text }}</a>
     ({{ abbr | safe }}
     {%- if params.fileSize -%}, {{ params.fileSize }}{% endif -%}
     {%- if params.numberOfPages -%}, {{ params.numberOfPages }} {% if params.numberOfPages == 1 %}page{% else %}pages{% endif %}{% endif -%})
@@ -37,7 +42,14 @@
 {% else %}
   <section class="dm-attachment" data-module="dm-attachment">
     <div class="dm-attachment__thumbnail{{ thumbnailClasses }}">
-      <a class="govuk-link" href="{{ params.link.href }}" target="_self" tabindex="-1" aria-hidden="true">
+      <a
+        class="govuk-link"
+        href="{{ params.link.href }}"
+        target="_self"
+        tabindex="-1"
+        aria-hidden="true"
+        {%- for attribute in (params.link.attributes | default({}) | dictsort) %} {{attribute[0]}}="{{attribute[1]}}" {%- endfor %}
+      >
         {% if contentType == 'application/pdf' %}
           <svg class="dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf{{ thumbnailImageClasses }}" version="1.1" viewBox="0 0 99 140" width="99" height="140" aria-hidden="true">
             <path d="M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z" stroke-width="0"/>
@@ -58,7 +70,12 @@
     </div>
     <div class="dm-attachment__details">
       <{% if params.headingTag %}{{params.headingTag}}{% else %}h2{%endif%} class="dm-attachment__title{% if params.link.classes %} {{params.link.classes}}{%endif%}">
-        <a href="{{ params.link.href }}" class="govuk-link dm-attachment__link" target="_self">{{ params.link.text }}</a>
+        <a 
+          href="{{ params.link.href }}"
+          class="govuk-link dm-attachment__link"
+          target="_self"
+          {%- for attribute in (params.link.attributes | default({}) | dictsort) %} {{attribute[0]}}="{{attribute[1]}}" {%- endfor %}
+        >{{ params.link.text }}</a>
       </{% if params.headingTag %}{{params.headingTag}}{% else %}h2{%endif%}>
       {% if params.description %}
         <div class="govuk-hint">{% if params.description.html %}{{ params.description.html | safe }}{% else %}{{ params.description.text }}{% endif %}</div>
