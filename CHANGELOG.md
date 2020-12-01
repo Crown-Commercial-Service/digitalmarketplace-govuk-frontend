@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## 2.9.0
+
+🆕 New features:
+
+  - Attachments links can have custom attributes [PR #235](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/235)
+
 ## 2.8.0
 
 🆕 New features:
