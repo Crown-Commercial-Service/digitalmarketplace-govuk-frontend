@@ -11,10 +11,10 @@ exports[`List Input by default matches existing snapshot 1`] = `
   <div class=\\"dm-list-input__item-container\\" role=\\"region\\" aria-live=\\"assertive\\">
 <div class=\\"dm-list-input__item dm-list-input__item--visible\\"><div class=\\"dm-list-input__row\\">
           <div class=\\"govuk-form-group dm-list-input__form-group\\">
-    <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-1\\">
+    <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list\\">
       <span class=\\"govuk-visually-hidden\\">What requirements are essential to carry out the work?. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
     </label>
-  <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-1\\" name=\\"requirements\\" type=\\"text\\"></div>
+  <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list\\" name=\\"requirements\\" type=\\"text\\"></div>
           <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">1</span></span>
 </button>
@@ -140,10 +140,10 @@ exports[`List Input when it is optional matches existing snapshot 1`] = `
   <div class=\\"dm-list-input__item-container\\" role=\\"region\\" aria-live=\\"assertive\\">
 <div class=\\"dm-list-input__item dm-list-input__item--visible\\"><div class=\\"dm-list-input__row\\">
           <div class=\\"govuk-form-group dm-list-input__form-group\\">
-    <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-1\\">
+    <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2\\">
       <span class=\\"govuk-visually-hidden\\">What requirements are essential to carry out the work?. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
     </label>
-  <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-1\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\"></div>
+  <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\"></div>
           <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">1</span></span>
 </button>
@@ -195,10 +195,10 @@ exports[`List Input with errors with component-level error matches existing snap
   <div class=\\"dm-list-input__item-container\\" role=\\"region\\" aria-live=\\"assertive\\">
 <div class=\\"dm-list-input__item dm-list-input__item--visible\\"><div class=\\"dm-list-input__row\\">
           <div class=\\"govuk-form-group dm-list-input__form-group\\">
-    <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-1\\">
+    <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2\\">
       <span class=\\"govuk-visually-hidden\\">What requirements are essential to carry out the work?. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
     </label>
-  <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-1\\" name=\\"requirements\\" type=\\"text\\"></div>
+  <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2\\" name=\\"requirements\\" type=\\"text\\"></div>
           <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">1</span></span>
 </button>
@@ -250,10 +250,10 @@ exports[`List Input with errors with input-level errors matches existing snapsho
   <div class=\\"dm-list-input__item-container\\" role=\\"region\\" aria-live=\\"assertive\\">
 <div class=\\"dm-list-input__item dm-list-input__item--visible\\"><div class=\\"dm-list-input__row\\">
           <div class=\\"govuk-form-group dm-list-input__form-group\\">
-    <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-3-1\\">
+    <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-3\\">
       <span class=\\"govuk-visually-hidden\\">What requirements are essential to carry out the work?. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
     </label>
-  <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-3-1\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\"></div>
+  <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-3\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\"></div>
           <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">1</span></span>
 </button>
@@ -308,10 +308,10 @@ exports[`List Input with existing values matches existing snapshot 1`] = `
   <div class=\\"dm-list-input__item-container\\" role=\\"region\\" aria-live=\\"assertive\\">
 <div class=\\"dm-list-input__item dm-list-input__item--visible\\"><div class=\\"dm-list-input__row\\">
           <div class=\\"govuk-form-group dm-list-input__form-group\\">
-    <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-1\\">
+    <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list\\">
       <span class=\\"govuk-visually-hidden\\">What requirements are essential to carry out the work?. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
     </label>
-  <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-1\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\"></div>
+  <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\"></div>
           <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">1</span></span>
 </button>
@@ -440,10 +440,10 @@ exports[`List Input with hint matches existing snapshot 1`] = `
   <div class=\\"dm-list-input__item-container\\" role=\\"region\\" aria-live=\\"assertive\\">
 <div class=\\"dm-list-input__item dm-list-input__item--visible\\"><div class=\\"dm-list-input__row\\">
           <div class=\\"govuk-form-group dm-list-input__form-group\\">
-    <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2-1\\">
+    <label class=\\"govuk-label dm-list-input__item-label \\" for=\\"my-list-2\\">
       <span class=\\"govuk-visually-hidden\\">What requirements are essential to carry out the work?. Number </span><span class=\\"dm-list-input__counter\\">1</span>.
     </label>
-  <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2-1\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\"></div>
+  <input class=\\"govuk-input govuk-input dm-list-input__item-input\\" id=\\"my-list-2\\" name=\\"requirements\\" type=\\"text\\" value=\\"Professionally initiate innovative partnerships.\\"></div>
           <button type=\\"button\\" class=\\"govuk-button govuk-button--secondary dm-list-input__item-remove dm-list-input__item-remove--hidden\\" data-module=\\"govuk-button\\">
   Remove <span class=\\"govuk-visually-hidden\\">entry number <span class=\\"dm-list-input__counter\\">1</span></span>
 </button>
