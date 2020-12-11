@@ -58,7 +58,11 @@
   <div class="dm-list-input__item-container" role="region" aria-live="assertive">
     {% for i in range(0, params.maxItems) -%}
       {%- set item = params.items[i] if params.items[i] else {} -%}
-      {%- set entryItemId = params.id ~ '-' ~ loop.index -%}
+      {%- if loop.first -%}
+        {%- set entryItemId = params.id -%}
+      {% else %}
+        {%- set entryItemId = params.id ~ '-' ~ loop.index -%}
+      {%- endif -%}
       {# Classes #}
       {%- set itemClassesBase = 'govuk-input dm-list-input__item-input' -%}
       {%- set itemClassesLarge = ' dm-list-input__item-input--large' if i > 99 else '' -%}
