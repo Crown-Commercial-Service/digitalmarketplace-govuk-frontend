@@ -11,7 +11,9 @@ See below for Changelog examples.
   To migrate, follow the instructions on the [govuk-frontend repo](https://github.com/alphagov/govuk-frontend/blob/master/CHANGELOG.md#300-breaking-release)
 
   ([PR #149](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/149))
-  
+
+- The list input component no longer has a suffix on the id of the first input element ([PR #238](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/238))
+
 🔧 Fixes:
 
 - Option select header spacing adjustments [PR #219](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/219)
