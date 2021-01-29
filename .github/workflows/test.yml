@@ -24,7 +24,7 @@ jobs:
         key: ${{ runner.os }}-${{ matrix.node-version }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-${{ matrix.node-version }}-node-     
-    - run: npm install
+    - run: npm ci
       if: steps.node-cache.outputs.cache-hit != 'true'
     - run: npm run build
     - run: npm test
