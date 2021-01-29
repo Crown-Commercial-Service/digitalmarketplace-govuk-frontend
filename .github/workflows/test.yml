@@ -13,6 +13,7 @@ jobs:
 
     steps:
     - uses: actions/cache@v2
+      id: node-cache
       with:
         path: ~/.npm
         key: ${{ runner.os }}-${{ matrix.node-version }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -24,5 +25,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
+      if: steps.node-cache.outputs.cache-hit != 'true'
     - run: npm run build
     - run: npm test
