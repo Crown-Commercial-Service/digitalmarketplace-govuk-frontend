@@ -12,6 +12,11 @@ jobs:
         node-version: [10.x, 12.x]
 
     steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
     - uses: actions/cache@v2
       id: node-cache
       with:
@@ -19,12 +24,6 @@ jobs:
         key: ${{ runner.os }}-${{ matrix.node-version }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-${{ matrix.node-version }}-node-     
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install
-      if: steps.node-cache.outputs.cache-hit != 'true'
+    - run: npm ci
     - run: npm run build
     - run: npm test
