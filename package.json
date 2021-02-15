@@ -88,7 +88,7 @@
     "jest-axe": "4.1.0",
     "install-peers": "^1.0.3",
     "jest-puppeteer": "4.4.0",
-    "nodemon": "^2.0.6",
+    "nodemon": "^2.0.7",
     "nunjucks": "^3.2.2",
     "puppeteer": "^2.1.1",
     "rollup": "^1.32.1",
