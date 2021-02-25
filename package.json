@@ -89,7 +89,7 @@
     "install-peers": "^1.0.3",
     "jest-puppeteer": "4.4.0",
     "nodemon": "^2.0.6",
-    "nunjucks": "^3.2.2",
+    "nunjucks": "^3.2.3",
     "puppeteer": "^2.1.1",
     "rollup": "^1.32.1",
     "rollup-plugin-babel": "^4.4.0",
