@@ -2,9 +2,6 @@
   "private": true,
   "name": "digitalmarketplace-govuk-frontend-repository",
   "description": "Used only for the development of Digital Marketplace GOV.UK Frontend, see `package/package.json` for the published `package.json`",
-  "engines": {
-    "node": "10.15.1"
-  },
   "scripts": {
     "dev": "gulp dev --gulpfile 'app/gulpfile.js'",
     "heroku": "node app/start.js",
