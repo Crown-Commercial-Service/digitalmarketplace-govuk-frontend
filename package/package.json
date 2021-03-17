@@ -8,7 +8,7 @@
   "main": "digitalmarketplace/all.js",
   "sass": "digitalmarketplace/all.scss",
   "engines": {
-    "node": "10.19.0"
+    "node": ">= 10.19.0"
   },
   "author": {
     "name": "Digital Marketplace Development",
