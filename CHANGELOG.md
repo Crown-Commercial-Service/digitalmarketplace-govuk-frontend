@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## 2.9.1
+
+🔧 Fixes:
+
+  - The header component now has the correct path for the fallback crown logo image [PR #283](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/283)
+
 ## 2.9.0
 
 🆕 New features:
