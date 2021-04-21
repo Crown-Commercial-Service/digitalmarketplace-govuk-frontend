@@ -39,7 +39,7 @@ describe('banner', () => {
       text: 'An action has been <span style="color: red">completed</span> that lead to an error banner.'
     })
     const bannerBody = $('.dm-banner__body').html().trim()
-    expect(bannerBody).toEqual('An action has been &lt;span style=&quot;color: red&quot;&gt;completed&lt;/span&gt; that lead to an error banner.')
+    expect(bannerBody).toEqual('An action has been &lt;span style="color: red"&gt;completed&lt;/span&gt; that lead to an error banner.')
   })
 
   it('renders title HTML and without escaping HTML entities', () => {
