@@ -70,7 +70,7 @@
     "@rollup/plugin-node-resolve": "^11.2.1",
     "autoprefixer": "^10.2.5",
     "browser-sync": "^2.26.14",
-    "cheerio": "^1.0.0-rc.3",
+    "cheerio": "^1.0.0-rc.6",
     "cookie-parser": "^1.4.5",
     "cssnano": "^5.0.1",
     "express": "^4.17.1",

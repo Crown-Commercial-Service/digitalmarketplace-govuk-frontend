@@ -34,7 +34,7 @@ describe('alert', () => {
       titleText: 'An action has been <span style="color: red">completed</span> that lead to an error alert.'
     })
     const alertTitle = $('.dm-alert__title').html().trim()
-    expect(alertTitle).toEqual('An action has been &lt;span style=&quot;color: red&quot;&gt;completed&lt;/span&gt; that lead to an error alert.')
+    expect(alertTitle).toEqual('An action has been &lt;span style="color: red"&gt;completed&lt;/span&gt; that lead to an error alert.')
   })
 
   it('renders title HTML and without escaping HTML entities', () => {
@@ -60,7 +60,7 @@ describe('alert', () => {
       text: 'An action has been <span style="color: red">completed</span> that lead to an error alert.'
     })
     const alertBody = $('.dm-alert__body').html().trim()
-    expect(alertBody).toEqual('An action has been &lt;span style=&quot;color: red&quot;&gt;completed&lt;/span&gt; that lead to an error alert.')
+    expect(alertBody).toEqual('An action has been &lt;span style="color: red"&gt;completed&lt;/span&gt; that lead to an error alert.')
   })
 
   it('renders title HTML and without escaping HTML entities', () => {
