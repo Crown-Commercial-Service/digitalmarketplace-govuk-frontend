@@ -6,17 +6,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Install Node version from nvm
-      shell: bash -l {0}
-      run: nvm install
-
     - uses: actions/checkout@v2
     # Setup .npmrc file to publish to npm
     - uses: actions/setup-node@v2
       with:
+        # TODO: Can we derive this from .nvmrc
+        node-version: '14'
         registry-url: 'https://registry.npmjs.org'
     - run: npm install
     - run: npm publish
       working-directory: ./package
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} 
