@@ -6,15 +6,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Read .nvmrc
+    - name: Install Node version from nvm
       run: echo ::set-output name=NVMRC::$(cat .nvmrc)
-      id: nvm
+      id: nvm install
 
     - uses: actions/checkout@v2
     # Setup .npmrc file to publish to npm
     - uses: actions/setup-node@v2
       with:
-        node-version: '${{ steps.nvm.outputs.NVMRC }}'
         registry-url: 'https://registry.npmjs.org'
     - run: npm install
     - run: npm publish
