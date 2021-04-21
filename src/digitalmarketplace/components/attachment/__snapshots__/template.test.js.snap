@@ -13,8 +13,8 @@ exports[`Attachment by default matches existing snapshot 1`] = `
     <div class=\\"dm-attachment__thumbnail\\">
       <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
           <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--doc\\" version=\\"1.1\\" viewBox=\\"0 0 84 120\\" width=\\"84\\" height=\\"120\\" aria-hidden=\\"true\\">
-            <path d=\\"M74.85 5v106H5\\" fill=\\"none\\" stroke-miterlimit=\\"10\\" stroke-width=\\"2\\"/>
-            <path d=\\"M79.85 10v106H10\\" fill=\\"none\\" stroke-miterlimit=\\"10\\" stroke-width=\\"2\\"/>
+            <path d=\\"M74.85 5v106H5\\" fill=\\"none\\" stroke-miterlimit=\\"10\\" stroke-width=\\"2\\"></path>
+            <path d=\\"M79.85 10v106H10\\" fill=\\"none\\" stroke-miterlimit=\\"10\\" stroke-width=\\"2\\"></path>
           </svg>
       </a>
     </div>
@@ -32,7 +32,7 @@ exports[`Attachment if pdf matches existing snapshot 1`] = `
     <div class=\\"dm-attachment__thumbnail\\">
       <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
           <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf\\" version=\\"1.1\\" viewBox=\\"0 0 99 140\\" width=\\"99\\" height=\\"140\\" aria-hidden=\\"true\\">
-            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"/>
+            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"></path>
           </svg>
       </a>
     </div>
@@ -52,9 +52,9 @@ exports[`Attachment if spreadsheet matches existing snapshot 1`] = `
     <div class=\\"dm-attachment__thumbnail\\">
       <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.csv\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
           <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--csv\\" version=\\"1.1\\" viewBox=\\"0 0 99 140\\" width=\\"99\\" height=\\"140\\" aria-hidden=\\"true\\">
-            <path d=\\"M12 12h75v27H12zm0 47h18.75v63H12zm55 2v59H51V61h16m2-2H49v63h20V59z\\" stroke-width=\\"0\\"/>
-            <path d=\\"M49 61.05V120H32.8V61.05H49m2-2H30.75v63H51V59zm34 2V120H69.05V61.05H85m2-2H67v63h20V59z\\" stroke-width=\\"0\\"/>
-            <path d=\\"M30 68.5h56.5M30 77.34h56.5M30 112.7h56.5M30 95.02h56.5M30 86.18h56.5M30 103.86h56.5\\" fill=\\"none\\" stroke-miterlimit=\\"10\\" stroke-width=\\"2\\"/>
+            <path d=\\"M12 12h75v27H12zm0 47h18.75v63H12zm55 2v59H51V61h16m2-2H49v63h20V59z\\" stroke-width=\\"0\\"></path>
+            <path d=\\"M49 61.05V120H32.8V61.05H49m2-2H30.75v63H51V59zm34 2V120H69.05V61.05H85m2-2H67v63h20V59z\\" stroke-width=\\"0\\"></path>
+            <path d=\\"M30 68.5h56.5M30 77.34h56.5M30 112.7h56.5M30 95.02h56.5M30 86.18h56.5M30 103.86h56.5\\" fill=\\"none\\" stroke-miterlimit=\\"10\\" stroke-width=\\"2\\"></path>
           </svg>
       </a>
     </div>
@@ -74,8 +74,8 @@ exports[`Attachment if unknown filetype matches existing snapshot 1`] = `
     <div class=\\"dm-attachment__thumbnail\\">
       <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.txt\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
           <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--doc\\" version=\\"1.1\\" viewBox=\\"0 0 84 120\\" width=\\"84\\" height=\\"120\\" aria-hidden=\\"true\\">
-            <path d=\\"M74.85 5v106H5\\" fill=\\"none\\" stroke-miterlimit=\\"10\\" stroke-width=\\"2\\"/>
-            <path d=\\"M79.85 10v106H10\\" fill=\\"none\\" stroke-miterlimit=\\"10\\" stroke-width=\\"2\\"/>
+            <path d=\\"M74.85 5v106H5\\" fill=\\"none\\" stroke-miterlimit=\\"10\\" stroke-width=\\"2\\"></path>
+            <path d=\\"M79.85 10v106H10\\" fill=\\"none\\" stroke-miterlimit=\\"10\\" stroke-width=\\"2\\"></path>
           </svg>
       </a>
     </div>
@@ -94,11 +94,11 @@ exports[`Attachment with alternative format HTML matches existing snapshot 1`] =
 "<html><head></head><body><div class=\\"dm-option-select\\" data-module=\\"dm-option-select\\">
     <h2 class=\\"dm-option-select__heading js-container-heading\\">
       <span class=\\"dm-option-select__title js-container-button\\" id=\\"option-select-title-undefined\\"></span>
-      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--up\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z\\"/></svg>
-      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--down\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z\\"/></svg>
+      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--up\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z\\"></path></svg>
+      <svg version=\\"1.1\\" viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"dm-option-select__icon dm-option-select__icon--down\\" aria-hidden=\\"true\\" focusable=\\"false\\"><path d=\\"m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z\\"></path></svg>
     </h2>
 
-    <div role=\\"group\\" aria-labelledby=\\"option-select-title-undefined\\" class=\\"dm-option-select__container js-options-container\\" id tabindex=\\"-1\\">
+    <div role=\\"group\\" aria-labelledby=\\"option-select-title-undefined\\" class=\\"dm-option-select__container js-options-container\\" id=\\"\\" tabindex=\\"-1\\">
       <div class=\\"dm-option-select__container-inner js-auto-height-inner\\">
       
 <div class=\\"govuk-form-group\\">
@@ -120,7 +120,7 @@ exports[`Attachment with alternative format contact email matches existing snaps
     <div class=\\"dm-attachment__thumbnail\\">
       <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
           <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf\\" version=\\"1.1\\" viewBox=\\"0 0 99 140\\" width=\\"99\\" height=\\"140\\" aria-hidden=\\"true\\">
-            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"/>
+            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"></path>
           </svg>
       </a>
     </div>
@@ -152,7 +152,7 @@ exports[`Attachment with custom heading level matches existing snapshot 1`] = `
     <div class=\\"dm-attachment__thumbnail\\">
       <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
           <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf\\" version=\\"1.1\\" viewBox=\\"0 0 99 140\\" width=\\"99\\" height=\\"140\\" aria-hidden=\\"true\\">
-            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"/>
+            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"></path>
           </svg>
       </a>
     </div>
@@ -172,7 +172,7 @@ exports[`Attachment with description matches existing snapshot 1`] = `
     <div class=\\"dm-attachment__thumbnail\\">
       <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
           <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf\\" version=\\"1.1\\" viewBox=\\"0 0 99 140\\" width=\\"99\\" height=\\"140\\" aria-hidden=\\"true\\">
-            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"/>
+            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"></path>
           </svg>
       </a>
     </div>
@@ -193,7 +193,7 @@ exports[`Attachment with file size matches existing snapshot 1`] = `
     <div class=\\"dm-attachment__thumbnail\\">
       <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
           <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf\\" version=\\"1.1\\" viewBox=\\"0 0 99 140\\" width=\\"99\\" height=\\"140\\" aria-hidden=\\"true\\">
-            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"/>
+            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"></path>
           </svg>
       </a>
     </div>
@@ -214,7 +214,7 @@ exports[`Attachment with last updated matches existing snapshot 1`] = `
     <div class=\\"dm-attachment__thumbnail\\">
       <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
           <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf\\" version=\\"1.1\\" viewBox=\\"0 0 99 140\\" width=\\"99\\" height=\\"140\\" aria-hidden=\\"true\\">
-            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"/>
+            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"></path>
           </svg>
       </a>
     </div>
@@ -223,7 +223,7 @@ exports[`Attachment with last updated matches existing snapshot 1`] = `
         <a href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" class=\\"govuk-link dm-attachment__link\\" target=\\"_self\\">Attachment with last updated</a>
       </h2>
         <p class=\\"dm-attachment__metadata\\">
-          <span class=\\"dm-attachment__attribute\\"><abbr title=\\"Portable Document Format\\" class=\\"dm-attachment__abbr\\">PDF</abbr></span>, <span class=\\"dm-attachment__attribute\\">Last updated: <time datetime=\\"2020-01-01\\">New year&apos;s day</time></span>
+          <span class=\\"dm-attachment__attribute\\"><abbr title=\\"Portable Document Format\\" class=\\"dm-attachment__abbr\\">PDF</abbr></span>, <span class=\\"dm-attachment__attribute\\">Last updated: <time datetime=\\"2020-01-01\\">New year's day</time></span>
 </p>
     </div>
   </section>
@@ -235,7 +235,7 @@ exports[`Attachment with link attributes matches existing snapshot 1`] = `
     <div class=\\"dm-attachment__thumbnail\\">
       <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\" key1=\\"value1\\" key2=\\"value2\\">
           <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf\\" version=\\"1.1\\" viewBox=\\"0 0 99 140\\" width=\\"99\\" height=\\"140\\" aria-hidden=\\"true\\">
-            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"/>
+            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"></path>
           </svg>
       </a>
     </div>
@@ -255,7 +255,7 @@ exports[`Attachment with page count matches existing snapshot 1`] = `
     <div class=\\"dm-attachment__thumbnail\\">
       <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
           <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf\\" version=\\"1.1\\" viewBox=\\"0 0 99 140\\" width=\\"99\\" height=\\"140\\" aria-hidden=\\"true\\">
-            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"/>
+            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"></path>
           </svg>
       </a>
     </div>
@@ -276,7 +276,7 @@ exports[`Attachment with small thumbnail matches existing snapshot 1`] = `
     <div class=\\"dm-attachment__thumbnail dm-attachment__thumbnail--small\\">
       <a class=\\"govuk-link\\" href=\\"https://digitalmarketplace.service.gov.uk/attachment.pdf\\" target=\\"_self\\" tabindex=\\"-1\\" aria-hidden=\\"true\\">
           <svg class=\\"dm-attachment__thumbnail-image dm-attachment__thumbnail--pdf dm-attachment__thumbnail-image--small\\" version=\\"1.1\\" viewBox=\\"0 0 99 140\\" width=\\"99\\" height=\\"140\\" aria-hidden=\\"true\\">
-            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"/>
+            <path d=\\"M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z\\" stroke-width=\\"0\\"></path>
           </svg>
       </a>
     </div>

@@ -5,18 +5,24 @@ See below for Changelog examples.
 ## Unreleased
 
 💥 Breaking changes:
-  
-- GOV.UK Frontend updated to version 3
 
-  To migrate, follow the instructions on the [govuk-frontend repo](https://github.com/alphagov/govuk-frontend/blob/master/CHANGELOG.md#300-breaking-release)
+  - GOV.UK Frontend updated to version 3
 
-  ([PR #149](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/149))
+    To migrate, follow the instructions on the [govuk-frontend repo](https://github.com/alphagov/govuk-frontend/blob/master/CHANGELOG.md#300-breaking-release)
 
-- The list input component no longer has a suffix on the id of the first input element ([PR #238](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/238))
+    ([PR #149](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/149))
+
+  - The list input component no longer has a suffix on the id of the first input element ([PR #238](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/238))
 
 🔧 Fixes:
 
-- Option select header spacing adjustments [PR #219](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/219)
+  - Option select header spacing adjustments [PR #219](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/219)
+
+## 2.9.1
+
+🔧 Fixes:
+
+  - The header component now has the correct path for the fallback crown logo image [PR #283](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/283)
 
 ## 2.9.0
 
