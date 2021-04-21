@@ -10,10 +10,10 @@ exports[`cookie-banner component renders a cookie banner with visible content an
       Analytics cookies help us understand how our website is being used.
     </p>
     <div class=\\"dm-cookie-banner__buttons\\">
-      <button class=\\"govuk-button dm-cookie-banner__button dm-cookie-banner__button--accept\\" type=\\"submit\\" data-accept-cookies=\\"true\\" aria-describedby=\\"dm-cookie-banner__heading\\">
+      <button class=\\"govuk-button dm-cookie-banner__button dm-cookie-banner__button--accept\\" type=\\"submit\\" data-accept-cookies=\\"true\\" aria-describedby=\\"dm-cookie-banner__heading\\" data-module=\\"govuk-button\\">
         Yes<span class=\\"govuk-visually-hidden\\">, Digital Marketplace can store analytics cookies on your device</span>
       </button>
-      <button class=\\"govuk-button dm-cookie-banner__button dm-cookie-banner__button--reject\\" type=\\"submit\\" data-accept-cookies=\\"false\\" aria-describedby=\\"dm-cookie-banner__heading\\">
+      <button class=\\"govuk-button dm-cookie-banner__button dm-cookie-banner__button--reject\\" type=\\"submit\\" data-accept-cookies=\\"false\\" aria-describedby=\\"dm-cookie-banner__heading\\" data-module=\\"govuk-button\\">
         No<span class=\\"govuk-visually-hidden\\">, Digital Marketplace cannot store analytics cookies on your device</span>
       </button>
       <a class=\\"govuk-link dm-cookie-banner__link\\" href=\\"/cookies\\">How Digital Marketplace uses cookies</a>
@@ -24,7 +24,7 @@ exports[`cookie-banner component renders a cookie banner with visible content an
     <p class=\\"dm-cookie-banner__confirmation-message govuk-body\\">
       You can <a class=\\"govuk-link\\" href=\\"/user/cookie-settings\\">change your cookie settings</a> at any time.
     </p>
-    <button class=\\"dm-cookie-banner__hide-button govuk-link\\" data-hide-cookie-banner=\\"true\\" role=\\"link\\">Hide</button>
+    <button class=\\"dm-cookie-banner__hide-button govuk-link\\" data-hide-cookie-banner=\\"true\\" role=\\"link\\" data-module=\\"govuk-button\\">Hide</button>
   </div>
 </div>
 </body></html>"

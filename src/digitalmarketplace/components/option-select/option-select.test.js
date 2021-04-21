@@ -61,7 +61,7 @@ describe('/components/option-select', () => {
       })
 
       it('increments and decrements checked counter when checkbox checked and unchecked', async () => {
-        await page.click('.govuk-checkboxes__input#default-1')
+        await page.click('.govuk-checkboxes__input#default')
         await page.click('.govuk-checkboxes__input#default-2')
         await page.click('.govuk-checkboxes__input#default-3')
         await page.click('.govuk-checkboxes__input#default-4')
@@ -71,7 +71,7 @@ describe('/components/option-select', () => {
         const counterText = await page.evaluate(counter => counter.textContent, counter)
         expect(counterText).toEqual('5 selected')
 
-        await page.click('.govuk-checkboxes__input#default-1')
+        await page.click('.govuk-checkboxes__input#default')
         await page.click('.govuk-checkboxes__input#default-2')
         await page.click('.govuk-checkboxes__input#default-3')
         await page.click('.govuk-checkboxes__input#default-4')

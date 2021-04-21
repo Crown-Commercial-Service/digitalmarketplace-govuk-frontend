@@ -8,7 +8,7 @@ const { render, getExamples } = require('../../../../lib/jest-helpers.js')
 
 const examples = getExamples('option-select')
 
-describe('List Input', () => {
+describe('Option Select', () => {
   describe('by default', () => {
     it('matches existing snapshot', () => {
       const $ = render('option-select', examples.default)
@@ -87,7 +87,7 @@ describe('List Input', () => {
 
     it('renders a checked checkbox', async () => {
       const $ = render('option-select', examples['with option pre checked'])
-      const selectedCheckbox = $('#with_checked_value_set-1')
+      const selectedCheckbox = $('#with_checked_value_set')
 
       expect(selectedCheckbox.length).toBe(1)
       expect(selectedCheckbox.attr('checked')).toBeTruthy()

@@ -42,7 +42,9 @@ describe('List Input', () => {
         const $inputs = $component.find(`input[name="${examples.default.name}"]`)
         expect($inputs.length).toEqual(examples.default.maxItems)
 
-        for (let i = 1; i <= examples.default.maxItems; i++) {
+        expect($inputs[0].attribs.id).toEqual(examples.default.id)
+
+        for (let i = 2; i <= examples.default.maxItems; i++) {
           expect($inputs[i - 1].attribs.id).toEqual(examples.default.id + '-' + i)
         }
       })

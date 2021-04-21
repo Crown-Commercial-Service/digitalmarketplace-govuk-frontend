@@ -114,7 +114,7 @@ describe('/components/list-input', () => {
           await page.click(lastRow + ' .govuk-button')
           await page.waitForSelector(lastRow, { visible: false })
           const focussedInputID = await page.evaluate(() => document.activeElement.getAttribute('id'))
-          const firstRowInputID = 'my-list-1'
+          const firstRowInputID = 'my-list'
 
           expect(focussedInputID).toEqual(firstRowInputID)
         })
