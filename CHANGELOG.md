@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## 2.9.2
+
+🔧 Fixes:
+
+  - The Node.js Package workflow now publishes to npm correctly (backports PRs [#303](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/303), [#307](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/307), [#308](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/308))
+
 ## 2.9.1
 
 🔧 Fixes:
