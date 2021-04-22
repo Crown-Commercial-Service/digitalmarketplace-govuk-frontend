@@ -107,6 +107,12 @@ Alternatively, you can create a package locally using `npm run build`:
 
 Follow the steps in `docs/publishing.md`.
 
+## Using govuk-frontend v2
+
+Release series 2.x.x of digitalmarketplace-govuk-frontend supports govuk-frontend v2.
+
+If you need to backport changes to the 2.x.x series follow the steps in [`docs/backporting.md`](docs/backporting.md).
+
 ## Licence
 
 Unless stated otherwise, the codebase is released under [the MIT License][mit].
