@@ -20,6 +20,11 @@ describe('/components/search-box', () => {
       beforeEach(async () => {
         await page.goto(DEFAULT_EXAMPLE_URL, { waitUntil: 'load' })
       })
+
+      it('still loads the search box', async () => {
+        const searchBox = await page.$('.dm-search-box__input')
+        expect(searchBox).toBeTruthy()
+      })
     })
 
     describe('when JavaScript is available', () => {
