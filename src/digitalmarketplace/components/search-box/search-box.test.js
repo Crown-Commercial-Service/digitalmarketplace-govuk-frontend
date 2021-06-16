@@ -8,20 +8,6 @@ const VALUE_EXAMPLE_URL = BASE_URL + '/components/search-box/with-value/preview'
 
 describe('/components/search-box', () => {
   describe('/components/search-box/preview', () => {
-    describe('when JavaScript is unavailable or fails', () => {
-      beforeAll(async () => {
-        await page.setJavaScriptEnabled(false)
-      })
-
-      afterAll(async () => {
-        await page.setJavaScriptEnabled(true)
-      })
-
-      beforeEach(async () => {
-        await page.goto(DEFAULT_EXAMPLE_URL, { waitUntil: 'load' })
-      })
-    })
-
     describe('when JavaScript is available', () => {
       beforeAll(async () => {
         await page.setJavaScriptEnabled(true)
