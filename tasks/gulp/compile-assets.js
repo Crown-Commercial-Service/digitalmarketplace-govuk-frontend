@@ -1,5 +1,5 @@
 const gulp = require('gulp')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'))
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 const rollup = require('gulp-better-rollup')
