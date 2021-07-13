@@ -85,7 +85,7 @@
     "jest": "27.0.6",
     "jest-axe": "5.0.1",
     "jest-puppeteer": "5.0.4",
-    "nodemon": "^2.0.9",
+    "nodemon": "^2.0.12",
     "nunjucks": "^3.2.3",
     "postcss": "^8.3.5",
     "puppeteer": "^10.1.0",
