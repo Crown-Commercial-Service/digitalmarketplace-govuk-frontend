@@ -19,7 +19,7 @@
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.0",
-    "node-emoji": "^1.10.0",
+    "node-emoji": "^1.11.0",
     "standardx": "^7.0.0"
   },
   "jest": {
