@@ -1,6 +1,6 @@
 Digital Marketplace GOV.UK Frontend ·
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Known Vulnerabilities](https://snyk.io/test/github/alphagov/digitalmarketplace-govuk-frontend/badge.svg?targetFile=package.json)](https://snyk.io/test/github/alphagov/digitalmarketplace-govuk-frontend?targetFile=package.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/badge.svg?targetFile=package.json)
 =====================
 
 This repository provides a central repository for custom components used in the Digital Marketplace
@@ -121,9 +121,9 @@ This covers both the codebase and any sample code in the documentation.
 The documentation is [&copy; Crown copyright][copyright] and available under the terms
 of the [Open Government 3.0][ogl] licence.
 
-[Digital Marketplace]: https://github.com/alphagov?q=digitalmarketplace&type=&language=
+[Digital Marketplace]: https://github.com/Crown-Commercial-Service?q=digitalmarketplace&type=&language=
 [GOV.UK Frontend]: https://github.com/alphagov/govuk-frontend
-[Digital Marketplace GOV.UK Frontend]: https://github.com/alphagov/digitalmarketplace-govuk-frontend
+[Digital Marketplace GOV.UK Frontend]: https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend
 
 [mit]: LICENCE
 [copyright]: http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/
