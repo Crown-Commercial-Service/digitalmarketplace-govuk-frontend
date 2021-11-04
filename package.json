@@ -67,7 +67,7 @@
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
-    "@rollup/plugin-node-resolve": "^13.0.5",
+    "@rollup/plugin-node-resolve": "^13.0.6",
     "autoprefixer": "^10.3.7",
     "browser-sync": "^2.27.5",
     "cheerio": "^1.0.0-rc.10",
