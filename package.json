@@ -87,7 +87,7 @@
     "jest-puppeteer": "6.0.2",
     "nodemon": "^2.0.15",
     "nunjucks": "^3.2.3",
-    "postcss": "^8.3.11",
+    "postcss": "^8.4.4",
     "puppeteer": "^11.0.0",
     "rollup": "^2.60.1",
     "rollup-plugin-babel": "^4.4.0",
