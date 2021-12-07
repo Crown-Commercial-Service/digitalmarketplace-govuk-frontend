@@ -128,7 +128,7 @@ examples:
         text: "Attachment with alternative format contact email"
         href: "https://digitalmarketplace.service.gov.uk/attachment.pdf"
       contentType: 'application/pdf'
-      alternativeFormatContactEmail: 'help@digitalmarketplace.service.gov.uk'
+      alternativeFormatContactEmail: 'info@crowncommercial.gov.uk'
   - name: with alternative format HTML
     description: 'Attachment with alternative format HTML'
     data:
