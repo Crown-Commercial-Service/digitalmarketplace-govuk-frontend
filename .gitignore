@@ -6,3 +6,4 @@ package/digitalmarketplace/
 src/govuk
 
 python-tests/__pycache__
+.snyk
