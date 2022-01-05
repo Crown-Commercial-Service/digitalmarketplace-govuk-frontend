@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## 3.1.0
+
+🆕 New features:
+
+  - Add banner component with directions to apply to new DMP framework [PR #474](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/474)
+
 ## 3.0.1
 
 🔧 Fixes:
