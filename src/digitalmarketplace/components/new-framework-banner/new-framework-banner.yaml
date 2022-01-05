@@ -1,0 +1,4 @@
+params:
+examples:
+  - name: default
+    description: A banner to inform users where to sign up for the new DOS6 framework.
