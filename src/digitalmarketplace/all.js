@@ -7,6 +7,7 @@ import { getConsentCookie } from './helpers/cookie/cookie-functions'
 import ListInput from './components/list-input/list-input'
 import OptionSelect from './components/option-select/option-select'
 import SearchBox from './components/search-box/search-box'
+import NewFrameworkBanner from './components/new-framework-banner/new-framework-banner'
 
 function initAll (options) {
   // Set the options to an empty object by default if no options are passed.
@@ -44,6 +45,11 @@ function initAll (options) {
   $SearchBox.forEach(function ($SearchBox) {
     new SearchBox($SearchBox).init()
   })
+
+  var $NewFrameworkBanner = scope.querySelectorAll('[data-module="govuk-notification-banner"]')
+  $NewFrameworkBanner.forEach(function ($NewFrameworkBanner) {
+    new NewFrameworkBanner($NewFrameworkBanner).init()
+  })
 }
 
 export {
@@ -54,5 +60,6 @@ export {
   CookieSettings,
   ListInput,
   OptionSelect,
-  SearchBox
+  SearchBox,
+  NewFrameworkBanner
 }
