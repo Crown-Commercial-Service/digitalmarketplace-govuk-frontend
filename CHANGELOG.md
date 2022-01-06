@@ -2,7 +2,7 @@
 
 See below for Changelog examples.
 
-## Unreleased Changes
+## 2.10.0
 🆕 New features:
 
   - Add banner component with directions to apply to new DMP framework PR #480
