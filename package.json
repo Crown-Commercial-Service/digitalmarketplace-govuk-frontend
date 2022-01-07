@@ -84,7 +84,7 @@
     "install-peers": "^1.0.3",
     "jest": "27.4.7",
     "jest-axe": "5.0.1",
-    "jest-puppeteer": "6.0.2",
+    "jest-puppeteer": "6.0.3",
     "nodemon": "^2.0.15",
     "nunjucks": "^3.2.3",
     "postcss": "^8.4.5",
