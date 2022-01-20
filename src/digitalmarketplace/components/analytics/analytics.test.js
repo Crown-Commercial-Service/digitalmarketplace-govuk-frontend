@@ -140,4 +140,24 @@ describe('analytics component', () => {
       expect(window.ga.mock.calls[6]).toEqual(['myDomain.set', 'location', '/search?q=[email]'])
     })
   })
+
+  describe('sanitises personal data when the URL is contains double encoded email', () => {
+    beforeEach(() => {
+      jest.spyOn(window, 'location', 'get').mockImplementation(() => {
+        return {
+          pathname: '/user/login',
+          search: '?next=%2Fadmin%2Fusers%3Femail_address%3Demail%2540example.com',
+          href: '/user/login?next=%2Fadmin%2Fusers%3Femail_address%3Demail%2540example.com'
+        }
+      })
+    })
+
+    it('AddLinkedTrackerDomain removes the PII', () => {
+      window.ga.mockClear()
+
+      Analytics.AddLinkedTrackerDomain('UA-54321', 'myDomain', ['www.example.com'])
+
+      expect(window.ga.mock.calls[6]).toEqual(['myDomain.set', 'location', '/user/login?next=[email]'])
+    })
+  })
 })
