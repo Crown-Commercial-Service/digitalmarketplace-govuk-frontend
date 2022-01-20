@@ -1,6 +1,6 @@
 
 // Based on https://github.com/alphagov/static/pull/1863
-const EMAIL_PATTERN = /[^\s=/?&]+(?:@|%40)[^\s=/?&]+/g
+const EMAIL_PATTERN = /[^\s=/?&]+(?:@|%40|%2540)[^\s=/?&]+/g
 
 // Not quite sure what this is doing,
 // see https://github.com/alphagov/digitalmarketplace-frontend-toolkit/blob/master/toolkit/javascripts/analytics/_govukAnalytics.js#L19
