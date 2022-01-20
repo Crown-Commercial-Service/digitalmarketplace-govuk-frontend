@@ -2,6 +2,11 @@
 
 See below for Changelog examples.
 
+## 3.1.2
+
+🔧 Fixes:
+  - Remove email from URL sent to Google Analytics for an edge case [PR #493](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/493)
+
 ## 3.1.0
 
 🆕 New features:
