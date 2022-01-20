@@ -140,4 +140,45 @@ describe('analytics component', () => {
       expect(window.ga.mock.calls[6]).toEqual(['myDomain.set', 'location', '/search?q=[email]'])
     })
   })
+
+  describe('sanitises personal data when the URL is contains two query strings', () => {
+    beforeEach(() => {
+      jest.spyOn(window, 'location', 'get').mockImplementation(() => {
+        return {
+          pathname: '/user/login',
+          search: '?next=/admin/users?email_address=email@example.com',
+          href: '/user/login?next=/admin/users?email_address=email@example.com'
+        }
+      })
+    })
+
+    it('AddLinkedTrackerDomain removes the PII', () => {
+      window.ga.mockClear()
+
+      Analytics.AddLinkedTrackerDomain('UA-54321', 'myDomain', ['www.example.com'])
+
+      expect(window.ga.mock.calls[6]).toEqual(['myDomain.set', 'location', '/user/login?next=/admin/users?email_address=[email]'])
+    })
+  })
+
+  describe('sanitises personal data when the URL is containspartial email address', () => {
+    beforeEach(() => {
+      jest.spyOn(window, 'location', 'get').mockImplementation(() => {
+        return {
+          pathname: '/search',
+          search: '?q=@example.com',
+          href: '/search?q=@example.com'
+        }
+      })
+    })
+
+    it('AddLinkedTrackerDomain removes the PII', () => {
+      window.ga.mockClear()
+
+      Analytics.AddLinkedTrackerDomain('UA-54321', 'myDomain', ['www.example.com'])
+
+      // Assert location has been stripped of PII when setting up tracker
+      expect(window.ga.mock.calls[6]).toEqual(['myDomain.set', 'location', '/search?q=[email]'])
+    })
+  })
 })

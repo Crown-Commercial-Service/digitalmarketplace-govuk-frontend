@@ -76,4 +76,14 @@ describe('removeExcludedQueryParams', () => {
       expect(results).toEqual('https://www.digitalmarketplace.service.gov.uk')
     })
   })
+
+  describe('when the url contains two query params including one with an email', () => {
+    it('returns the url without the email param', () => {
+      const pageQueryParams = '?next=/admin/users?email_address=test@example.com'
+      const pageURL = hostname + '/user/login' + pageQueryParams
+
+      const results = removeExcludedQueryParams(pageURL, pageQueryParams)
+      expect(results).toEqual('https://www.digitalmarketplace.service.gov.uk/user/login?next=/admin/users')
+    })
+  })
 })
