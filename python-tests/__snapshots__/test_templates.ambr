@@ -113,6 +113,14 @@
                   
                     
                       <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" href="https://www.gov.uk/guidance/how-to-sell-your-digital-outcomes-and-specialists-services">
+                          Responding to buyer requirements on the DOS framework
+                        </a>
+                      </li>
+                    
+                  
+                    
+                      <li class="govuk-footer__list-item">
                         <a class="govuk-footer__link" href="https://www.gov.uk/guidance/g-cloud-buyers-guide">
                           Buying on the G-Cloud framework
                         </a>
