@@ -48,7 +48,7 @@ exports[`footer renders a footer component with all our standard links 1`] = `
                       </a>
                     </li>
                     <li class=\\"govuk-footer__list-item\\">
-                      <a class=\\"govuk-footer__link\\" href=\\"https://www.gov.uk/guidance/digital-outcomes-and-specialists-suppliers-guide\\">
+                      <a class=\\"govuk-footer__link\\" href=\\"https://www.gov.uk/guidance/how-to-apply-to-sell-on-the-digital-outcomes-framework\\">
                         Applying to sell on the DOS framework
                       </a>
                     </li>
