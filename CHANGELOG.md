@@ -2,21 +2,47 @@
 
 See below for Changelog examples.
 
-## 2.10.2
+## 3.1.3
 
 🔧 Fixes:
-  - Remove email from URL sent to Google Analytics for an edge case [PR #493](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/494)
+  - Updates footer link [PR #516](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/516)
 
-## 2.10.0
+  🆕 New features:
+
+  - Add link to docs [PR #517](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/517)
+
+## 3.1.2
+
+🔧 Fixes:
+  - Remove email from URL sent to Google Analytics for an edge case [PR #493](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/493)
+
+## 3.1.0
+
 🆕 New features:
 
-  - Add banner component with directions to apply to new DMP framework PR #480
+  - Add banner component with directions to apply to new DMP framework [PR #474](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/474)
 
-## 2.9.2
+## 3.0.1
 
 🔧 Fixes:
 
-  - The Node.js Package workflow now publishes to npm correctly (backports PRs [#303](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/303), [#307](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/307), [#308](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/308))
+  - The Node.js Package workflow now publishes to npm correctly (PRs [#303](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/303), [#307](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/307), [#308](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/308))
+
+## 3.0.0
+
+💥 Breaking changes:
+
+  - GOV.UK Frontend updated to version 3
+
+    To migrate, follow the instructions on the [govuk-frontend repo](https://github.com/alphagov/govuk-frontend/blob/master/CHANGELOG.md#300-breaking-release)
+
+    ([PR #149](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/149))
+
+  - The list input component no longer has a suffix on the id of the first input element ([PR #238](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/238))
+
+🔧 Fixes:
+
+  - Option select header spacing adjustments [PR #219](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/219)
 
 ## 2.9.1
 
@@ -47,7 +73,6 @@ See below for Changelog examples.
 🆕 New features:
 
   - A description can now be added to the Attachment component [PR #230](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/230)
-
 
 ## 2.6.0
 
@@ -105,7 +130,7 @@ See below for Changelog examples.
 🆕 New features:
 
   - Footer component now contains link to accessibility statement [PR #180](https://github.com/alphagov/digitalmarketplace-govuk-frontend/pull/180)
-
+  
 ## 2.0.0
 
 💥 Breaking changes:
@@ -151,7 +176,7 @@ See below for Changelog examples.
 ## 1.0.0
 
 💥 Breaking changes:
-
+  
 - Move Digital Marketplace files around
 
   We've moved some files around so their locations are consistent with govuk-frontend.
