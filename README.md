@@ -93,7 +93,7 @@ Run `npm run dev`
 
 ## 3. Testing features in apps
 
-Follow the steps in `docs/publishing-a-pre-release.md` to push a branch to GitHub as a release that can be consumed by other NodeJS apps.
+Follow the steps in [`docs/publishing-a-pre-release.md`](docs/publishing-a-pre-release.md) to push a branch to GitHub as a release that can be consumed by other NodeJS apps.
 
 Alternatively, you can create a package locally using `npm run build`:
 
@@ -105,7 +105,7 @@ Alternatively, you can create a package locally using `npm run build`:
 
 ## 3. Publishing
 
-Follow the steps in `docs/publishing.md`.
+Follow the steps in [`docs/publishing.md`](docs/publishing.md).
 
 ## Using govuk-frontend v2
 
