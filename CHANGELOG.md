@@ -2,6 +2,11 @@
 
 See below for Changelog examples.
 
+## 2.10.3
+
+🔧 Fixes:
+  - Updates footer link [PR #523](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/523)
+
 ## 2.10.2
 
 🔧 Fixes:
