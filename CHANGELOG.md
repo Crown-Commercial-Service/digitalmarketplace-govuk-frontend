@@ -2,10 +2,15 @@
 
 See below for Changelog examples.
 
-## 3.1.4
+## 3.1.5
 
 🔧 Fixes:
   - Updates banner text [PR #531](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/531)
+
+## 3.1.4
+
+🔧 Fixes:
+  - Skip this version, as it already exists in npm, causing a 400 error on publish.
 
 ## 3.1.3
 
