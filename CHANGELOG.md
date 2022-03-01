@@ -2,6 +2,11 @@
 
 See below for Changelog examples.
 
+## 2.10.4
+
+🔧 Fixes:
+  - Updates banner text [PR #533](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/533)
+
 ## 2.10.3
 
 🔧 Fixes:
