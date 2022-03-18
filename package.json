@@ -83,7 +83,7 @@
     "gulp-sass": "^5.1.0",
     "install-peers": "^1.0.3",
     "jest": "27.5.1",
-    "jest-axe": "5.0.1",
+    "jest-axe": "6.0.0",
     "jest-puppeteer": "6.1.0",
     "nodemon": "^2.0.15",
     "nunjucks": "^3.2.3",
