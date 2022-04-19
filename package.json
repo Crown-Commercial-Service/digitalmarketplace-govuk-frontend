@@ -65,7 +65,7 @@
     }
   },
   "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@rollup/plugin-node-resolve": "^13.2.1",
     "autoprefixer": "^10.4.2",
