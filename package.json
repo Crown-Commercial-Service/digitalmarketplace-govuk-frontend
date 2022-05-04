@@ -69,7 +69,7 @@
     "@babel/preset-env": "^7.17.10",
     "@rollup/plugin-node-resolve": "^13.2.1",
     "autoprefixer": "^10.4.7",
-    "browser-sync": "^2.27.8",
+    "browser-sync": "^2.27.9",
     "cheerio": "^1.0.0-rc.10",
     "cookie-parser": "^1.4.6",
     "cssnano": "^5.1.7",
