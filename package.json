@@ -81,7 +81,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
-    "install-peers": "^1.0.3",
+    "install-peers": "^1.0.4",
     "jest": "27.5.1",
     "jest-axe": "6.0.0",
     "jest-puppeteer": "6.1.0",
