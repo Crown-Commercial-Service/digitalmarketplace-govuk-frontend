@@ -72,7 +72,7 @@
     "browser-sync": "^2.27.10",
     "cheerio": "^1.0.0-rc.11",
     "cookie-parser": "^1.4.6",
-    "cssnano": "^5.1.7",
+    "cssnano": "^5.1.9",
     "express": "^4.18.1",
     "govuk-frontend": "^3.9.1",
     "gulp-babel": "^8.0.0",
