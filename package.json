@@ -89,7 +89,7 @@
     "nodemon": "^2.0.19",
     "nunjucks": "^3.2.3",
     "postcss": "^8.4.14",
-    "puppeteer": "^14.3.0",
+    "puppeteer": "^15.5.0",
     "rollup": "^2.77.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
