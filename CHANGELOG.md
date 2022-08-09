@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## 2.10.6
+
+🔧 Fixes:
+
+  - Update Banner helper text, for DMP 1.5 [PR #164](https://github.com/Crown-Commercial-Service/ccs-digitalmarketplace-govuk-frontend/pull/164)
+
 ## 2.10.5
 
 🔧 Fixes:
