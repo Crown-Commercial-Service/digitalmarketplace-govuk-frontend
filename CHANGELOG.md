@@ -2,11 +2,17 @@
 
 See below for Changelog examples.
 
+## 3.1.7
+
+🔧 Fixes:
+
+  - Update Banner helper text again, for DMP 1.0 [PR #647](https://github.com/Crown-Commercial-Service/ccs-digitalmarketplace-govuk-frontend/pull/647)
+
 ## 3.1.6
 
 🔧 Fixes:
 
-  - Update Banner helper text, for DMP 1.5 [PR #638](https://github.com/Crown-Commercial-Service/ccs-digitalmarketplace-govuk-frontend/pull/638)
+  - Update Banner helper text, for DMP 1.0 [PR #638](https://github.com/Crown-Commercial-Service/ccs-digitalmarketplace-govuk-frontend/pull/638)
 
 ## 3.1.5
 
