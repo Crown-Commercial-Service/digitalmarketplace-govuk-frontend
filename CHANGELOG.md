@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## 2.10.9
+
+🔧 Changes:
+
+  - Update Banner text to ask buyers to sign up with PPG, for DMP 1.0 [PR #691](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/691)
+
 ## 2.10.8
 
 🔧 Fixes:
