@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## 2.11.0
+
+🔧 Changes:
+
+  - Update Banner text to ask to show G-Cloud 13 is live [PR #701](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/701)
+
 ## 2.10.9
 
 🔧 Changes:
