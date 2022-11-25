@@ -1,11 +1,34 @@
 {%- from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner -%}
 
 {% set html %}
-  <p class="govuk-notification-banner__heading">
-    Register with CCS's Public Procurement Gateway to get ready for DOS 6.
-    G-Cloud 13 is now live.
-    <a class="govuk-notification-banner__link" href="https://auth.identify.crowncommercial.gov.uk">Sign in to the Public Procurement Gateway</a>.
-  </p>
+  {% if params.gCloudLive %}
+    <p class="govuk-body">
+      Crown Commercial Services advises that GCloud 12 will expire at 09:00 on Monday 28th November.
+    </p>
+
+    <p class="govuk-body">
+      At this time the digital platform for GCloud 12 will be switched off and no services or suppliers will be visible.
+    </p>
+
+    <p class="govuk-body">
+      All procurements being undertaken through GCloud 12 MUST be completed before this time.
+      Any procurement activity started that has not completed by this time will need to be restarted via GCloud 13 which is now live and available through Crown Commercial Services Contract Award Service (CAS).
+      Buyers must
+      <a class="govuk-notification-banner__link" href="https://identify.crowncommercial.gov.uk/manage-org/register">register with Public Procurement Gateway (PPG)</a>
+      in order to use CAS.
+    </p>
+
+    <p class="govuk-body">
+      Information about G-Cloud 13 can be found on the
+      <a class="govuk-notification-banner__link" href="https://www.crowncommercial.gov.uk/agreements/RM1557.13">CCS web page</a>.
+    </p>
+  {% else %}
+    <p class="govuk-notification-banner__heading">
+      Register with CCS's Public Procurement Gateway to get ready for DOS 6.
+      G-Cloud 13 is now live.
+      <a class="govuk-notification-banner__link" href="https://auth.identify.crowncommercial.gov.uk">Sign in to the Public Procurement Gateway</a>.
+    </p>
+  {% endif %}
 {% endset %}
 
 {{ govukNotificationBanner({
