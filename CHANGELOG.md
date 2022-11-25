@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## 3.11.0
+
+🔧 Changes:
+
+  - Update Banner text again to warn of G-Cloud 12 closing [PR #704](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/704)
+
 ## 3.10.0
 
 🔧 Changes:
