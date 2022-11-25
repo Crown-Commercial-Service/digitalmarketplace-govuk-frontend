@@ -1,3 +1,15 @@
 params:
+- name: gCloudLive
+  type: boolean
+  description: Shows the correct banner depending on if there is a live G-Cloud framework
+
 examples:
   - name: default
+
+  - name:  G-Cloud live
+    data:
+      gCloudLive: true
+
+  - name:  G-Cloud not live
+    data:
+      gCloudLive: false
