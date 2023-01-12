@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## 3.11.1
+
+🔧 Changes:
+
+  - Update Banner text again to notify that DOS6 and G-Cloud 13 are live [PR #726](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/726)
+
 ## 3.11.0
 
 🔧 Changes:
