@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## 3.11.2
+
+🔧 Changes:
+
+  - Update Banner text again to notify that DOS5 is closing [PR #733](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/733)
+
 ## 3.11.1
 
 🔧 Changes:
