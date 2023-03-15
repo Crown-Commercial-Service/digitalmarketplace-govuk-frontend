@@ -68,7 +68,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.21.2",
     "@babel/preset-env": "^7.20.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "autoprefixer": "^10.4.13",
+    "autoprefixer": "^10.4.14",
     "browser-sync": "^2.28.3",
     "cheerio": "^1.0.0-rc.12",
     "cookie-parser": "^1.4.6",
