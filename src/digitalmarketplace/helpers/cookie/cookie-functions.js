@@ -9,6 +9,10 @@ const COOKIE_CATEGORIES = {
   _gat_govuk_shared: 'analytics'
 }
 
+function getCookies () {
+  return document.cookie.split('; ').map((fullCookie) => fullCookie.split('=')[0])
+}
+
 export function getCookie (name) {
   var nameEQ = name + '='
   var cookies = document.cookie.split(';')
@@ -90,11 +94,13 @@ export function setConsentCookie (options) {
     if (!options[cookieType]) {
       for (var cookie in COOKIE_CATEGORIES) {
         if (COOKIE_CATEGORIES[cookie] === cookieType) {
-          Cookie(cookie, null)
+          getCookies().filter((cookieName) => cookieName.startsWith(cookie)).forEach((cookieName) => {
+            Cookie(cookieName, null)
 
-          if (Cookie(cookie)) {
-            document.cookie = cookie + '=;expires=' + new Date() + ';domain=' + window.location.hostname.replace(/^www\./, '.') + ';path=/'
-          }
+            if (Cookie(cookieName)) {
+              document.cookie = cookieName + '=;expires=' + new Date() + ';domain=' + window.location.hostname.replace(/^www\./, '.') + ';path=/'
+            }
+          })
         }
       }
     }

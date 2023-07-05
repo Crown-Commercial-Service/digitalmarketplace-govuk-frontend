@@ -86,7 +86,16 @@ describe('Cookie settings', () => {
       })
 
       it('deletes existing analytics cookies', async () => {
-        document.cookie = '_ga=test;_gid=test;_gat_govuk_shared=test'
+        const cookieList = ['_ga', '_gid', '_gat_govuk_shared', '_ga_123456789']
+        cookieList.forEach((cookieName) => {
+          document.cookie = `${cookieName}=test`
+        })
+
+        // Make sure those analytics cookies are definitely there
+        expect(CookieHelpers.getCookie('_ga')).toEqual('test')
+        expect(CookieHelpers.getCookie('_gid')).toEqual('test')
+        expect(CookieHelpers.getCookie('_gat_govuk_shared')).toEqual('test')
+        expect(CookieHelpers.getCookie('_ga_123456789')).toEqual('test')
 
         CookieHelpers.setConsentCookie({ analytics: false })
 
@@ -95,6 +104,7 @@ describe('Cookie settings', () => {
         expect(CookieHelpers.getCookie('_ga')).toEqual(null)
         expect(CookieHelpers.getCookie('_gid')).toEqual(null)
         expect(CookieHelpers.getCookie('_gat_govuk_shared')).toEqual(null)
+        expect(CookieHelpers.getCookie('_ga_123456789')).toEqual(null)
       })
     })
 
