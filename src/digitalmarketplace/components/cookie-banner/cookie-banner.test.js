@@ -81,6 +81,12 @@ describe('cookie-banner new user', () => {
       await page.deleteCookie({ name: '_gid' })
       await page.deleteCookie({ name: '_ga' })
       await page.deleteCookie({ name: '_gat_govuk_shared' })
+      // Clear up remaining cookies including GTM
+      const remainingCookies = await page.cookies()
+
+      for (const cookie of remainingCookies) {
+        await page.deleteCookie({ name: cookie.name })
+      }
 
       await goToAndGetComponent('cookie-banner')
       await page.click('.dm-cookie-banner__button--accept')

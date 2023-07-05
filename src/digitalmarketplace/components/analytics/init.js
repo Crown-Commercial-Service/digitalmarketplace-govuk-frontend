@@ -1,10 +1,12 @@
 import * as PageAnalytics from './analytics'
+import * as PageTagManager from './tagManager'
 
 window.DMGOVUKFrontend = window.DMGOVUKFrontend || {}
 
 // TODO: Remove hard coded tracking IDs to make this more generic and useful to others
 const trackingId = 'UA-49258698-1'
 const linkedTrackingId = 'UA-145652997-1'
+const googleTagManagerId = 'GTM-NMNTD5C'
 
 window[`ga-disable-${trackingId}`] = true
 
@@ -35,6 +37,9 @@ function InitialiseAnalytics () {
 
     // Track initial pageview
     PageAnalytics.TrackPageview()
+
+    // Load google Tag Manager
+    PageTagManager.LoadGoogleTagManager(googleTagManagerId)
   }
 }
 
