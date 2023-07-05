@@ -2,6 +2,12 @@
 
 See below for Changelog examples.
 
+## 3.12.0
+
+🚧 Fixes:
+
+  - Add Google Tag Manager for DMP 1.0 [PR #788](https://github.com/Crown-Commercial-Service/digitalmarketplace-govuk-frontend/pull/788)
+
 ## 3.11.3
 
 🔧 Changes:
